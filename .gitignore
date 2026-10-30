@@ -1,0 +1,28 @@
+# Dependency directories
+node_modules/
+.pnpm-store/
+
+# Build artifacts
+dist/
+build/
+.next/
+.out/
+
+# Environment and sensitive keys
+.env
+.env*.local
+*.pem
+
+# Large video binaries (Hosted externally on GitHub Releases / Cloudflare R2 / CDN)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+
+# Keep directory structures
+!**/.gitkeep
+
+# System files
+.DS_Store
+Thumbs.db
