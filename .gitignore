@@ -1,6 +1,9 @@
 # Dependency directories
 node_modules/
 .pnpm-store/
+venv/
+__pycache__/
+*.pyc
 
 # Build artifacts
 dist/
@@ -8,12 +11,16 @@ build/
 .next/
 .out/
 
-# Environment and sensitive keys
+# Environment and sensitive keys / Google OAuth credentials
 .env
 .env*.local
 *.pem
+credentials.json
+token.json
+service_account.json
+client_secret*.json
 
-# Large video binaries (Hosted externally on GitHub Releases / Cloudflare R2 / CDN)
+# Large video binaries (Hosted externally on Google Drive / Cloud / CDN)
 *.mp4
 *.mov
 *.avi

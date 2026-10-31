@@ -1,65 +1,83 @@
-# NeoCut Digital — Master Asset Inventory (Matching Video & Thumbnail Schema)
+# NeoCut Digital — Master Asset Inventory & Cloud Database Mapping
 
-> Standardized matching naming structure: `{category}-{id}-video.mp4` & `{category}-{id}-thumbnail.webp`.
+> Comprehensive ledger of all local assets, matching filenames, cloud storage destinations, and video preview compatibility.
 
-## 1. Summary Statistics
+## 1. Storage & Integration Status
 
-- **Total Cataloged Assets**: 47
-- **Brand Promotion**: 2 (`promotion-1` to `promotion-2`)
-- **Kids Animation**: 8 (`kids-animation-1` to `kids-animation-8`)
-- **Storytelling**: 3 (`storytelling-1` to `storytelling-3`)
-- **Cinematography**: 1 (`cinematography-1`)
-- **Hero Showcase**: 1 (`hero-1`)
-- **3D Explanation Videos**: 32 (`explanation-1` to `explanation-32`)
+- **Local Asset Repository**: `D:\Software\NeoCut-Digital\public\assets`
+- **Target Cloud Storage**: Google Drive (`NEOCUT_DIGITAL_ASSETS`)
+- **Total Cataloged Assets**: 48
+- **Local Video Storage Footprint**: 5.29 GB (47 video files)
+- **Drive Synchronization Status**: `awaiting_oauth_credentials`
+- **Integration Script**: `python server/sync_to_drive.py`
 
-## 2. Matched Video & Thumbnail Inventory
+## 2. Category Distribution & Folder Mappings
 
-| # | Matched Video Name | Matched Thumbnail Name | Category | Resolution | Duration | Size | Thumbnail Status | Original File | Description |
-|---|---|---|---|---|---|---|---|---|---|
-| 01 | `promotion-1-video.mp4` | `promotion-1-thumbnail.webp` | **brand-promotion** | 1920x1080 (16:9) | 39s | 93.91 MB | ✅ Generated | `messneger bot.mp4` | 3D character overwhelmed by customer inquiries, presenting automated AI messenger bot solution for e-commerce. |
-| 02 | `promotion-2-video.mp4` | `promotion-2-thumbnail.webp` | **brand-promotion** | 1920x1080 (16:9) | 41s | 40.81 MB | ✅ Generated | `totopac.mp4` | Commercial beach product showcase for TOTOPAC clear waterproof pouch with phone, car key, and cash. |
-| 03 | `kids-animation-1-video.mp4` | `kids-animation-1-thumbnail.webp` | **kids-animation** | 1920x1080 (16:9) | 2m 03s | 297.59 MB | ⏳ Ref Ready | `123 counting.mp4` | 3D animated educational song teaching young children counting from 1 to 20 with colorful characters. |
-| 04 | `kids-animation-2-video.mp4` | `kids-animation-2-thumbnail.webp` | **kids-animation** | 1920x1080 (16:9) | 3m 15s | 469.69 MB | ⏳ Ref Ready | `ALERO KIDS WITH FULL.mp4` | Full-length 3D animated musical nursery rhymes compilation featuring the Alero Kids character ensemble. |
-| 05 | `kids-animation-3-video.mp4` | `kids-animation-3-thumbnail.webp` | **kids-animation** | 1920x1080 (16:9) | 1m 45s | 103.52 MB | ⏳ Ref Ready | `BEnny the bunny.mp4` | 3D cartoon children's story following Benny the Bunny on an outdoor learning and play adventure. |
-| 06 | `kids-animation-4-video.mp4` | `kids-animation-4-thumbnail.webp` | **kids-animation** | 1920x1080 (16:9) | 2m 01s | 187.28 MB | ⏳ Ref Ready | `DAISY.mp4` | Character-led 3D animated narrative following Daisy through an engaging children's story. |
-| 07 | `kids-animation-5-video.mp4` | `kids-animation-5-thumbnail.webp` | **kids-animation** | 1920x1080 (16:9) | 12s | 29.0 MB | ⏳ Ref Ready | `ghori dekha demo.mp4` | Bengali 3D educational animation with teacher teaching students how to read time on a classroom clock. |
-| 08 | `kids-animation-6-video.mp4` | `kids-animation-6-thumbnail.webp` | **kids-animation** | 1920x1080 (16:9) | 1m 59s | 285.14 MB | ⏳ Ref Ready | `kids colors.mp4` | Vibrant 3D educational learning animation teaching primary and secondary colors with interactive visual objects. |
-| 09 | `kids-animation-7-video.mp4` | `kids-animation-7-thumbnail.webp` | **kids-animation** | 1920x1080 (16:9) | 1m 42s | 246.06 MB | ⏳ Ref Ready | `SHApes.mp4` | Playful 3D animated lesson introducing basic geometric shapes (circle, square, triangle) to preschool kids. |
-| 10 | `kids-animation-8-video.mp4` | `kids-animation-8-thumbnail.webp` | **kids-animation** | 1920x1080 (16:9) | 2m 36s | 376.86 MB | ⏳ Ref Ready | `Timmy train song.mp4` | Upbeat 3D animated train song featuring Timmy the Train traveling through countryside landscapes. |
-| 11 | `storytelling-1-video.mp4` | `storytelling-1-thumbnail.webp` | **storytelling** | 1440x1080 (1440:1080) | 2m 39s | 186.15 MB | ⏳ Ref Ready | `HAMID F.mp4` | Chaksu Election 2025 student candidate campaign profile video highlighting candidate Hamid's leadership manifesto. |
-| 12 | `cinematography-1-video.mp4` | `cinematography-1-thumbnail.webp` | **cinematography** | 1920x1080 (16:9) | 3m 47s | 265.83 MB | ⏳ Ref Ready | `PAYRA SAZZAD.mp4` | Cinematic outdoor documentary profile of Sazzad in lush green agricultural paddy fields and hillside landscapes. |
-| 13 | `storytelling-2-video.mp4` | `storytelling-2-thumbnail.webp` | **storytelling** | 1080x1920 (9:16) | 2m 13s | 232.35 MB | ⏳ Ref Ready | `SHOTONTRO .mp4` | Vertical documentary street interview with student voters at Begum Khaleda Zia Hall for Chaksu 2025 election. |
-| 14 | `storytelling-3-video.mp4` | `storytelling-3-thumbnail.webp` | **storytelling** | 1920x1080 (16:9) | 30s | 73.42 MB | ⏳ Ref Ready | `SAFETY MEASURES.mp4` | High-fidelity 3D narrative animation showcasing road construction workers in safety gear guiding a schoolgirl. |
-| 15 | `hero-1-video.mp4` | `hero-1-thumbnail.webp` | **hero** | 1920x1080 (16:9) | 30s | 73.42 MB | ⏳ Ref Ready | `SAFETY MEASURES.mp4 (Showcase Copy)` | Flagship 3D animated cinematic showcase chosen for the website hero section header and showreel background. |
-| 16 | `explanation-1-video.mp4` | `explanation-1-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 41s | 50.98 MB | ⏳ Ref Ready | `37.mp4` | 3D microscopic medical animation demonstrating how a tick embeds its hypostome mouthparts into human skin. |
-| 17 | `explanation-2-video.mp4` | `explanation-2-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 44s | 54.28 MB | ⏳ Ref Ready | `38.mp4` | 3D anatomical animation explaining how diaphragm muscle contractions and sudden vocal cord closure cause hiccups. |
-| 18 | `explanation-3-video.mp4` | `explanation-3-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 43s | 52.51 MB | ⏳ Ref Ready | `39.mp4` | 3D physiological animation explaining lacrimal gland tear production, eye lubrication, and crying overflow. |
-| 19 | `explanation-4-video.mp4` | `explanation-4-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 41s | 50.3 MB | ⏳ Ref Ready | `41.mp4` | 3D medical animation showing an insect crawling into the external auditory canal towards the tympanic membrane. |
-| 20 | `explanation-5-video.mp4` | `explanation-5-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 54s | 130.58 MB | ⏳ Ref Ready | `AIRBAG.mp4` | 3D automotive safety animation showing pyrotechnic chemical inflation and facial deceleration protection. |
-| 21 | `explanation-6-video.mp4` | `explanation-6-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 40s | 39.12 MB | ⏳ Ref Ready | `aIRPOD.mp4` | 3D acoustic animation explaining earbud transducer sound waves traveling through ear canal to middle ear bones. |
-| 22 | `explanation-7-video.mp4` | `explanation-7-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 49s | 118.89 MB | ⏳ Ref Ready | `aNTS.mp4` | Macro 3D biological animation of an ant latching mandibles onto human epidermis and injecting formic acid. |
-| 23 | `explanation-8-video.mp4` | `explanation-8-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 44s | 54.25 MB | ⏳ Ref Ready | `Bee .mp4` | 3D anatomical animation showing barbed bee stinger detachment, autonomous venom sac pumping, and histamines. |
-| 24 | `explanation-9-video.mp4` | `explanation-9-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 43s | 70.74 MB | ⏳ Ref Ready | `Blister Mistake.mp4` | 3D dermatology animation illustrating why popping a friction blister introduces bacterial infection into dermis. |
-| 25 | `explanation-10-video.mp4` | `explanation-10-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 49s | 118.82 MB | ⏳ Ref Ready | `Breathing.mp4` | 3D respiratory animation demonstrating thoracic expansion, diaphragm contraction, and alveolar gas exchange. |
-| 26 | `explanation-11-video.mp4` | `explanation-11-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 42s | 51.43 MB | ⏳ Ref Ready | `EAR.mp4` | 3D inner ear animation showing eardrum vibrations transferring through malleus, incus, stapes to the cochlea. |
-| 27 | `explanation-12-video.mp4` | `explanation-12-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 37s | 45.39 MB | ⏳ Ref Ready | `ELEPHANT.mp4` | 3D zoological animation showing elephant trunk musculature, nasal cavities, and negative pressure water suction. |
-| 28 | `explanation-13-video.mp4` | `explanation-13-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 44s | 106.05 MB | ⏳ Ref Ready | `EYE CRAWLER.mp4` | 3D medical pathology animation of a parasitic worm (Loa loa) migrating beneath the ocular conjunctiva. |
-| 29 | `explanation-14-video.mp4` | `explanation-14-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 47s | 57.7 MB | ⏳ Ref Ready | `EYE.mp4` | 3D optometry animation showing iris sphincter muscle pupil dilation and crystalline lens ciliary accommodation. |
-| 30 | `explanation-15-video.mp4` | `explanation-15-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 43s | 103.72 MB | ⏳ Ref Ready | `FEAR.mp4` | 3D neuroscience animation showing sensory thalami routing signals to the amygdala and adrenal adrenaline release. |
-| 31 | `explanation-16-video.mp4` | `explanation-16-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 38s | 46.63 MB | ⏳ Ref Ready | `gRAPES.mp4` | 3D pediatric emergency animation showing a whole uncut grape wedged in an infant trachea causing airway occlusion. |
-| 32 | `explanation-17-video.mp4` | `explanation-17-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 45s | 55.92 MB | ⏳ Ref Ready | `INGROWN hair.mp4` | 3D dermatological animation showing curved hair shaft curling back into the skin causing foreign body papules. |
-| 33 | `explanation-18-video.mp4` | `explanation-18-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 38s | 47.15 MB | ⏳ Ref Ready | `Jellyfish sting.mp4` | Microscopic 3D marine biology animation showing firing cnidocytes and barbed coiled nematocyst venom threads. |
-| 34 | `explanation-19-video.mp4` | `explanation-19-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 48s | 116.51 MB | ⏳ Ref Ready | `LADDER 2.mp4` | 3D biomechanics animation showing kinetic force impact on vertebrae and long bones during a construction fall. |
-| 35 | `explanation-20-video.mp4` | `explanation-20-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 38s | 61.63 MB | ⏳ Ref Ready | `Mosqito bite.mp4` | Macro 3D entomology animation showing mosquito fascicle piercing capillary vessel and injecting saliva. |
-| 36 | `explanation-21-video.mp4` | `explanation-21-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 50s | 81.96 MB | ⏳ Ref Ready | `MUSCLE.mp4` | 3D physiology animation showing actin-myosin micro-tears during resistance exercise and satellite cell repair. |
-| 37 | `explanation-22-video.mp4` | `explanation-22-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 50s | 121.97 MB | ⏳ Ref Ready | `OCTOPUS ARM.mp4` | 3D marine anatomy animation explaining acetabulum musculature, infundibulum seal, and independent arm nerves. |
-| 38 | `explanation-23-video.mp4` | `explanation-23-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 49s | 118.41 MB | ⏳ Ref Ready | `oil is heated.mp4` | 3D physics animation showing water sinking beneath boiling cooking oil, vaporizing, and creating fireball explosion. |
-| 39 | `explanation-24-video.mp4` | `explanation-24-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 38s | 62.85 MB | ⏳ Ref Ready | `Pyranha Myth.mp4` | 3D biology animation analyzing sensationalized piranha movie myths versus actual scavenger behavior. |
-| 40 | `explanation-25-video.mp4` | `explanation-25-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 43s | 104.81 MB | ⏳ Ref Ready | `SCARS.mp4` | 3D wound healing animation showing platelet clotting, fibroblast migration, and aligned collagen scar deposition. |
-| 41 | `explanation-26-video.mp4` | `explanation-26-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 43s | 103.49 MB | ⏳ Ref Ready | `STINGRAY.mp4` | 3D marine biology animation illustrating defensive caudal spine reflex, serrated denticles, and venom sheath. |
-| 42 | `explanation-27-video.mp4` | `explanation-27-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 45s | 54.63 MB | ⏳ Ref Ready | `SWALLOW CHEWING GUM.mp4` | 3D gastroenterology animation tracking synthetic gum base transit through peristalsis in stomach and intestines. |
-| 43 | `explanation-28-video.mp4` | `explanation-28-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 43s | 53.13 MB | ⏳ Ref Ready | `tHE SPLINTER.mp4` | 3D microscopic anatomy animation of subungual splinter penetration, localized neutrophilic pus, and extraction. |
-| 44 | `explanation-29-video.mp4` | `explanation-29-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 48s | 77.5 MB | ⏳ Ref Ready | `TICKLE.mp4` | 3D sensory neurology animation tracking Meissner's corpuscles signals to primary somatosensory cortex and laughter. |
-| 45 | `explanation-30-video.mp4` | `explanation-30-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 42s | 69.84 MB | ⏳ Ref Ready | `Undercoocked Meat.mp4` | 3D infectious disease animation showing ingested Taenia solium tapeworm cysticerci hatching inside gastrointestinal tract. |
-| 46 | `explanation-31-video.mp4` | `explanation-31-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 41s | 49.69 MB | ⏳ Ref Ready | `Water.mp4` | 3D cellular osmosis animation demonstrating aquaporin water absorption, renal filtration, and electrolyte balance. |
-| 47 | `explanation-32-video.mp4` | `explanation-32-thumbnail.webp` | **explanation-videos** | 1080x1920 (9:16) | 45s | 110.5 MB | ⏳ Ref Ready | `WET FINGER SKIn.mp4` | 3D dermatology and neuroscience animation showing autonomic vasoconstriction causing glabrous skin wrinkling. |
+| Category | Asset Count | Local Source Directory | Google Drive Destination Folder |
+|---|---|---|---|
+| **Brand Assets** | 1 | `public/assets/logo/` | `NEOCUT_DIGITAL_ASSETS/01_BRAND_ASSETS/Logos` |
+| **Hero Media** | 1 | `public/assets/videos/hero/` | `NEOCUT_DIGITAL_ASSETS/02_HERO_MEDIA/Videos` |
+| **Brand Promotion** | 2 | `public/assets/videos/brand-promotion/` | `NEOCUT_DIGITAL_ASSETS/03_PORTFOLIO/Brand_Promotion` |
+| **Kids Animation** | 8 | `public/assets/videos/kids-animation/` | `NEOCUT_DIGITAL_ASSETS/03_PORTFOLIO/Kids_Animation` |
+| **Storytelling** | 3 | `public/assets/videos/storytelling/` | `NEOCUT_DIGITAL_ASSETS/03_PORTFOLIO/Storytelling` |
+| **Cinematography** | 1 | `public/assets/videos/cinematography/` | `NEOCUT_DIGITAL_ASSETS/03_PORTFOLIO/Cinematography` |
+| **Explanation Videos** | 32 | `public/assets/videos/explanation-videos/` | `NEOCUT_DIGITAL_ASSETS/03_PORTFOLIO/Explanation_Videos` |
+
+## 3. Master Asset Ledger & Drive Mapping
+
+| # | Matched Asset Name | Category | Resolution | Duration | File Size | Target Drive Folder | Sync Status | Video Embed Strategy |
+|---|---|---|---|---|---|---|---|---|
+| 01 | `neocut-logo.png.jpg` | **brand-assets** | 16:9 | N/A | 0.94 MB | `01_BRAND_ASSETS/Logos` | `⏳ Pending Auth` | Direct Public Image Link |
+| 02 | `promotion-1-video.mp4` | **brand-promotion** | 16:9 | 39s | 93.91 MB | `03_PORTFOLIO/Brand_Promotion` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 03 | `promotion-2-video.mp4` | **brand-promotion** | 16:9 | 41s | 40.81 MB | `03_PORTFOLIO/Brand_Promotion` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 04 | `kids-animation-1-video.mp4` | **kids-animation** | 16:9 | 2m 03s | 297.59 MB | `03_PORTFOLIO/Kids_Animation` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 05 | `kids-animation-2-video.mp4` | **kids-animation** | 16:9 | 3m 15s | 469.69 MB | `03_PORTFOLIO/Kids_Animation` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 06 | `kids-animation-3-video.mp4` | **kids-animation** | 16:9 | 1m 45s | 103.52 MB | `03_PORTFOLIO/Kids_Animation` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 07 | `kids-animation-4-video.mp4` | **kids-animation** | 16:9 | 2m 01s | 187.28 MB | `03_PORTFOLIO/Kids_Animation` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 08 | `kids-animation-5-video.mp4` | **kids-animation** | 16:9 | 12s | 29.0 MB | `03_PORTFOLIO/Kids_Animation` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 09 | `kids-animation-6-video.mp4` | **kids-animation** | 16:9 | 1m 59s | 285.14 MB | `03_PORTFOLIO/Kids_Animation` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 10 | `kids-animation-7-video.mp4` | **kids-animation** | 16:9 | 1m 42s | 246.06 MB | `03_PORTFOLIO/Kids_Animation` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 11 | `kids-animation-8-video.mp4` | **kids-animation** | 16:9 | 2m 36s | 376.86 MB | `03_PORTFOLIO/Kids_Animation` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 12 | `storytelling-1-video.mp4` | **storytelling** | 1440:1080 | 2m 39s | 186.15 MB | `03_PORTFOLIO/Storytelling` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 13 | `cinematography-1-video.mp4` | **cinematography** | 16:9 | 3m 47s | 265.83 MB | `03_PORTFOLIO/Cinematography` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 14 | `storytelling-2-video.mp4` | **storytelling** | 9:16 | 2m 13s | 232.35 MB | `03_PORTFOLIO/Storytelling` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 15 | `storytelling-3-video.mp4` | **storytelling** | 16:9 | 30s | 73.42 MB | `03_PORTFOLIO/Storytelling` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 16 | `hero-1-video.mp4` | **hero** | 16:9 | 30s | 73.42 MB | `02_HERO_MEDIA/Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 17 | `explanation-1-video.mp4` | **explanation-videos** | 9:16 | 41s | 50.98 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 18 | `explanation-2-video.mp4` | **explanation-videos** | 9:16 | 44s | 54.28 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 19 | `explanation-3-video.mp4` | **explanation-videos** | 9:16 | 43s | 52.51 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 20 | `explanation-4-video.mp4` | **explanation-videos** | 9:16 | 41s | 50.3 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 21 | `explanation-5-video.mp4` | **explanation-videos** | 9:16 | 54s | 130.58 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 22 | `explanation-6-video.mp4` | **explanation-videos** | 9:16 | 40s | 39.12 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 23 | `explanation-7-video.mp4` | **explanation-videos** | 9:16 | 49s | 118.89 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 24 | `explanation-8-video.mp4` | **explanation-videos** | 9:16 | 44s | 54.25 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 25 | `explanation-9-video.mp4` | **explanation-videos** | 9:16 | 43s | 70.74 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 26 | `explanation-10-video.mp4` | **explanation-videos** | 9:16 | 49s | 118.82 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 27 | `explanation-11-video.mp4` | **explanation-videos** | 9:16 | 42s | 51.43 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 28 | `explanation-12-video.mp4` | **explanation-videos** | 9:16 | 37s | 45.39 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 29 | `explanation-13-video.mp4` | **explanation-videos** | 9:16 | 44s | 106.05 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 30 | `explanation-14-video.mp4` | **explanation-videos** | 9:16 | 47s | 57.7 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 31 | `explanation-15-video.mp4` | **explanation-videos** | 9:16 | 43s | 103.72 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 32 | `explanation-16-video.mp4` | **explanation-videos** | 9:16 | 38s | 46.63 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 33 | `explanation-17-video.mp4` | **explanation-videos** | 9:16 | 45s | 55.92 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 34 | `explanation-18-video.mp4` | **explanation-videos** | 9:16 | 38s | 47.15 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 35 | `explanation-19-video.mp4` | **explanation-videos** | 9:16 | 48s | 116.51 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 36 | `explanation-20-video.mp4` | **explanation-videos** | 9:16 | 38s | 61.63 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 37 | `explanation-21-video.mp4` | **explanation-videos** | 9:16 | 50s | 81.96 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 38 | `explanation-22-video.mp4` | **explanation-videos** | 9:16 | 50s | 121.97 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 39 | `explanation-23-video.mp4` | **explanation-videos** | 9:16 | 49s | 118.41 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 40 | `explanation-24-video.mp4` | **explanation-videos** | 9:16 | 38s | 62.85 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 41 | `explanation-25-video.mp4` | **explanation-videos** | 9:16 | 43s | 104.81 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 42 | `explanation-26-video.mp4` | **explanation-videos** | 9:16 | 43s | 103.49 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 43 | `explanation-27-video.mp4` | **explanation-videos** | 9:16 | 45s | 54.63 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 44 | `explanation-28-video.mp4` | **explanation-videos** | 9:16 | 43s | 53.13 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 45 | `explanation-29-video.mp4` | **explanation-videos** | 9:16 | 48s | 77.5 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 46 | `explanation-30-video.mp4` | **explanation-videos** | 9:16 | 42s | 69.84 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 47 | `explanation-31-video.mp4` | **explanation-videos** | 9:16 | 41s | 49.69 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+| 48 | `explanation-32-video.mp4` | **explanation-videos** | 9:16 | 45s | 110.5 MB | `03_PORTFOLIO/Explanation_Videos` | `⏳ Pending Auth` | Iframe Player (`file/d/{id}/preview`) |
+
+## 4. Video Preview Compatibility Findings
+
+- **Large File Constraint**: 21 video files exceed 100 MB. Google Drive strictly blocks direct binary download streaming (`uc?export=download`) for files exceeding 100 MB by serving a virus scan confirmation page.
+- **Verified Embed Solution**: The official Google Drive preview player (`https://drive.google.com/file/d/{fileId}/preview`) must be embedded within a responsive `<iframe>` inside the website's modal lightbox. This delivers high-performance 1080p adaptive streaming with zero file size restrictions.
+- **Permission Safeguard**: Only portfolio video and thumbnail files are granted `reader` permission for `anyone`. Administrative documentation and folder roots remain strictly private.
