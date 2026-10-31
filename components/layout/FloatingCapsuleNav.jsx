@@ -1,29 +1,34 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { ArrowUpRight, Menu, X, ShieldCheck } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'About', href: '#about' },
-  { label: 'Process', href: '#process' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/', hash: '#home' },
+  { label: 'Services', href: '/services', hash: '#services' },
+  { label: 'Portfolio', href: '/portfolio', hash: '#portfolio' },
+  { label: 'About', href: '/about', hash: '#about' },
+  { label: 'Process', href: '/process', hash: '#process' },
+  { label: 'Contact', href: '/contact', hash: '#contact' },
 ];
 
 export default function FloatingCapsuleNav() {
+  const pathname = usePathname() || '/';
+  const isHome = pathname === '/';
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHash, setActiveHash] = useState('#home');
 
   useEffect(() => {
+    if (!isHome) return;
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      // Simple active link detection
-      const sections = NAV_LINKS.map(l => document.querySelector(l.href));
+      // Section active detection on home
+      const sections = NAV_LINKS.map(l => document.querySelector(l.hash));
       const scrollPos = window.scrollY + 200;
 
       sections.forEach((sec, idx) => {
@@ -31,7 +36,7 @@ export default function FloatingCapsuleNav() {
           const top = sec.offsetTop;
           const height = sec.offsetHeight;
           if (scrollPos >= top && scrollPos < top + height) {
-            setActiveHash(NAV_LINKS[idx].href);
+            setActiveHash(NAV_LINKS[idx].hash);
           }
         }
       });
@@ -39,7 +44,7 @@ export default function FloatingCapsuleNav() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHome]);
 
   return (
     <>
@@ -53,7 +58,7 @@ export default function FloatingCapsuleNav() {
         >
           {/* Logo & Brand Wordmark */}
           <a
-            href="#home"
+            href={isHome ? '#home' : '/'}
             className="flex items-center gap-2.5 group pr-2 border-r border-white/10"
             aria-label="NeoCut Digital Home"
           >
@@ -73,11 +78,12 @@ export default function FloatingCapsuleNav() {
           {/* Desktop Navigation Links with Subtle Stretch Snap */}
           <ul className="hidden md:flex items-center gap-1 list-none m-0 p-0">
             {NAV_LINKS.map((link, idx) => {
-              const isActive = activeHash === link.href;
+              const isActive = isHome ? activeHash === link.hash : pathname === link.href;
+              const targetHref = isHome ? link.hash : link.href;
               return (
                 <li key={link.label}>
                   <a
-                    href={link.href}
+                    href={targetHref}
                     className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 ${
                       isActive
                         ? 'text-white bg-white/10 font-semibold'
@@ -128,17 +134,20 @@ export default function FloatingCapsuleNav() {
       {mobileOpen && (
         <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-xl md:hidden flex flex-col justify-center px-8">
           <ul className="space-y-6 text-center list-none p-0 m-0">
-            {NAV_LINKS.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="font-editorial text-3xl font-medium text-slate-200 hover:text-[#82C8E5] transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const targetHref = isHome ? link.hash : link.href;
+              return (
+                <li key={link.label}>
+                  <a
+                    href={targetHref}
+                    onClick={() => setMobileOpen(false)}
+                    className="font-editorial text-3xl font-medium text-slate-200 hover:text-[#82C8E5] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <div className="mt-12 text-center">
             <a

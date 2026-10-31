@@ -1,4 +1,5 @@
 import './globals.css';
+import GlobalAmbientBackground from '@/components/effects/GlobalAmbientBackground';
 
 export const metadata = {
   title: 'NeoCut Digital — High-Impact Video Production Studio',
@@ -11,7 +12,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body className="min-h-screen bg-[#090B0E] text-[#EDEDED] antialiased">
+      <body className="min-h-screen bg-[#050914] text-[#EDEDED] antialiased relative">
+        <GlobalAmbientBackground />
         {children}
       </body>
     </html>

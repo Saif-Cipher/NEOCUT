@@ -7,7 +7,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative py-28 sm:py-36 px-4 bg-[#080B10] border-t border-white/5 overflow-hidden"
+      className="relative py-28 sm:py-36 px-4 bg-transparent border-t border-white/5 overflow-hidden"
     >
       {/* Background radial glow */}
       <div className="pointer-events-none absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-[#000080]/20 rounded-full blur-[140px]" />

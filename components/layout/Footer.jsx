@@ -16,7 +16,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#040508] border-t border-white/5 pt-20 pb-12 overflow-hidden">
+    <footer className="relative bg-transparent border-t border-white/5 pt-20 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Top Tier: Logo, Navigation, Direct Channels */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/5 items-start">

@@ -260,7 +260,7 @@ export default function PortfolioSection({ onSelectVideo }) {
     <section
       id="portfolio"
       ref={sectionRef}
-      className="relative bg-[#06080C] border-t border-white/5"
+      className="relative bg-transparent border-t border-white/5"
     >
       {/* Pinned Sticky Visual Stage for Scroll-Driven Image Stretch Transition */}
       <div

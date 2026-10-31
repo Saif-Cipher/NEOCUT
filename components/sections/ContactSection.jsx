@@ -7,7 +7,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-32 sm:py-44 px-4 bg-[#080B10] border-t border-white/5 overflow-hidden"
+      className="relative py-32 sm:py-44 px-4 bg-transparent border-t border-white/5 overflow-hidden"
     >
       {/* Background glowing sphere */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[900px] h-[450px] bg-gradient-to-tr from-[#000080]/30 via-[#0047AB]/25 to-transparent blur-[160px] rounded-full" />

@@ -30,7 +30,7 @@ export default function HomePage() {
 
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-[#06080C] text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden">
+      <div className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden">
         {/* Floating Capsule Navigation Bar */}
         <FloatingCapsuleNav />
 
@@ -50,7 +50,7 @@ export default function HomePage() {
         <ProcessSection />
 
         {/* Anubi-Inspired WebGL Interactive Particle Typography Interlude */}
-        <section className="py-12 bg-[#06080C] border-t border-white/5 relative overflow-hidden text-center">
+        <section className="py-12 bg-transparent border-t border-white/5 relative overflow-hidden text-center">
           <div className="max-w-4xl mx-auto px-4">
             <span className="text-[10px] font-mono uppercase tracking-widest text-[#82C8E5] block mb-2">
               [ WEBGL SENSORY CRAFT ]

@@ -46,7 +46,7 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="relative py-28 sm:py-36 px-4 bg-[#06080C] border-t border-white/5 overflow-hidden"
+      className="relative py-28 sm:py-36 px-4 bg-transparent border-t border-white/5 overflow-hidden"
     >
       {/* Background ambient lighting */}
       <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#000080]/20 rounded-full blur-[140px]" />

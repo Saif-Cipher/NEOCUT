@@ -85,7 +85,7 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={sectionRef}
-      className="relative py-28 sm:py-36 px-4 bg-[#080B10] border-t border-white/5 overflow-hidden"
+      className="relative py-28 sm:py-36 px-4 bg-transparent border-t border-white/5 overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute top-1/2 -right-40 w-96 h-96 bg-[#0047AB]/10 rounded-full blur-[140px]" />

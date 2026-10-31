@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #06080C;
+  --background: #050914;
   --foreground: #EDEDED;
 }
 
@@ -32,4 +32,109 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #253046;
+}
+
+/* ==============================================================================
+   Kindle-Style Global Ambient Background Animations
+   - Organic, slow-breathing harmonic bloom oscillations
+   - Hardware accelerated (translate3d, scale, will-change)
+   ============================================================================== */
+
+@keyframes kindleBloomPrimary {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.82;
+  }
+  50% {
+    transform: translate3d(7vw, 9vh, 0) scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-5vw, 11vh, 0) scale(0.94);
+    opacity: 0.78;
+  }
+}
+
+@keyframes kindleBloomSecondary {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(-9vw, -11vh, 0) scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-14vw, 7vh, 0) scale(0.92);
+    opacity: 0.76;
+  }
+}
+
+@keyframes kindleBloomHighlight {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translate3d(8vw, -6vh, 0) scale(1.16);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-6vw, -8vh, 0) scale(0.88);
+    opacity: 0.70;
+  }
+}
+
+@keyframes kindleBloomTertiary {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(6vw, -7vh, 0) scale(1.07);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-6vw, -4vh, 0) scale(0.95);
+    opacity: 0.75;
+  }
+}
+
+@keyframes kindleGrainShift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  20% { transform: translate3d(-1px, 1px, 0); }
+  40% { transform: translate3d(1px, -1px, 0); }
+  60% { transform: translate3d(-1px, -1px, 0); }
+  80% { transform: translate3d(1px, 1px, 0); }
+}
+
+.kindle-bloom-primary {
+  animation: kindleBloomPrimary 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.kindle-bloom-secondary {
+  animation: kindleBloomSecondary 22s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.kindle-bloom-highlight {
+  animation: kindleBloomHighlight 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.kindle-bloom-tertiary {
+  animation: kindleBloomTertiary 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.kindle-film-grain {
+  animation: kindleGrainShift 1.2s steps(4) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kindle-bloom-primary,
+  .kindle-bloom-secondary,
+  .kindle-bloom-highlight,
+  .kindle-bloom-tertiary,
+  .kindle-film-grain {
+    animation: none !important;
+    transform: none !important;
+  }
 }
