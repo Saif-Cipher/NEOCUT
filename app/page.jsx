@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, ShieldCheck, Film, Play } from 'lucide-react';
+import { X, ShieldCheck, Film, Play, ExternalLink } from 'lucide-react';
 import SmoothScroll from '@/components/motion/SmoothScroll';
 import FloatingCapsuleNav from '@/components/layout/FloatingCapsuleNav';
 import HeroSection from '@/components/sections/HeroSection';
@@ -71,12 +71,16 @@ export default function HomePage() {
         {/* Cinematic Video Modal Player */}
         {activeModalVideo && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
             role="dialog"
             aria-modal="true"
             aria-label={`Playing ${activeModalVideo.name || activeModalVideo.title}`}
+            onClick={() => setActiveModalVideo(null)}
           >
-            <div className="relative w-full max-w-4xl bg-[#0C1017] border border-white/15 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col">
+            <div
+              className="relative w-full max-w-4xl bg-[#0C1017] border border-white/15 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Modal Header */}
               <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/50">
                 <div>
@@ -87,22 +91,49 @@ export default function HomePage() {
                     {activeModalVideo.title || activeModalVideo.name?.replace('-video.mp4', '').replace(/-/g, ' ')}
                   </h3>
                 </div>
-                <button
-                  onClick={() => setActiveModalVideo(null)}
-                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-95"
-                  aria-label="Close modal"
-                >
-                  <X className="w-4 h-4" />
-                </button>
+                <div className="flex items-center gap-2">
+                  {(activeModalVideo.webViewLink || activeModalVideo.previewUrl) && (
+                    <a
+                      href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white text-xs font-mono transition-colors"
+                      title="Open directly in Google Drive"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 text-[#82C8E5]" />
+                      <span className="hidden sm:inline">Drive Cloud</span>
+                    </a>
+                  )}
+                  <button
+                    onClick={() => setActiveModalVideo(null)}
+                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-95"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
 
               {/* Iframe Video Embed Player (Official Google Drive Streaming) */}
               <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+                {/* Background Loading Spinner */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-slate-500 pointer-events-none">
+                  <div className="w-8 h-8 rounded-full border-2 border-white/20 border-t-[#82C8E5] animate-spin" />
+                  <span className="font-mono text-xs tracking-wider uppercase text-slate-400">
+                    Connecting to Google Drive Stream...
+                  </span>
+                </div>
+
                 <iframe
-                  src={activeModalVideo.previewUrl}
-                  allow="autoplay; fullscreen"
+                  src={
+                    activeModalVideo.previewUrl ||
+                    (activeModalVideo.driveFileId
+                      ? `https://drive.google.com/file/d/${activeModalVideo.driveFileId}/preview`
+                      : '')
+                  }
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                   allowFullScreen
-                  className="w-full h-full border-0"
+                  className="w-full h-full border-0 relative z-10"
                   title={activeModalVideo.title || activeModalVideo.name}
                 />
               </div>
@@ -117,6 +148,16 @@ export default function HomePage() {
                   <span>{activeModalVideo.aspectRatio || '16:9'}</span>
                   <span>●</span>
                   <span>{activeModalVideo.duration || 'Full Film'}</span>
+                  <span>●</span>
+                  <a
+                    href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#82C8E5] hover:underline inline-flex items-center gap-1"
+                  >
+                    Open in Drive
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
                 </div>
               </div>
             </div>
