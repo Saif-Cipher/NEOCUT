@@ -25,7 +25,7 @@ const FEATURED_PROJECTS = [
     aspectRatio: '16:9',
     description: 'A master editorial montage showcasing AI-driven particle simulations, hyper-realistic character renders, and commercial product direction.',
     previewUrl: 'https://drive.google.com/file/d/1w_L9Q7pN3s1K4t-8Zz6V5qD2X7y9A3B0/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1p-8aJn_yT6xP4s2Cd5i0bZ4w8r3Y6fN2&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/hero/references/hero-1-ref.jpg',
     number: '01',
   },
   {
@@ -37,7 +37,7 @@ const FEATURED_PROJECTS = [
     aspectRatio: '16:9',
     description: '3D character-led narrative depicting customer inquiry overload, presenting automated AI conversational sales solutions for direct-to-consumer brands.',
     previewUrl: 'https://drive.google.com/file/d/1Q9E_e5gQ6CE-rMuJh8MntNHrEnXBd0Pr/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1fYRBGjQCdgxEfLB4ffa1dLW-g3b0AQfO&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/brand-promotion/promotion-1-thumbnail.webp',
     number: '02',
   },
   {
@@ -49,7 +49,7 @@ const FEATURED_PROJECTS = [
     aspectRatio: '16:9',
     description: 'Cinematic sunset beach lifestyle spot highlighting product waterproofing, clear phone responsiveness, and high-frequency wave protection.',
     previewUrl: 'https://drive.google.com/file/d/1PmzLDHmFe4SKDPV8qCWUXdPvvz113dkz/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1xGfcPTqvdO6huiuwqycY8ddiezwHQ3jY&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/brand-promotion/promotion-2-thumbnail.webp',
     number: '03',
   },
   {
@@ -61,7 +61,7 @@ const FEATURED_PROJECTS = [
     aspectRatio: '16:9',
     description: 'Engaging, colorful 3D educational musical animation guiding toddlers and preschool audiences through numerical sequences with animated character companions.',
     previewUrl: 'https://drive.google.com/file/d/17y4tDk4Wl60V9qWwz8R8ZfQn2-3uXf9k/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1H-5xGk_vQ3uM1p9Za2f7yW1t5o0V3cK9&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/kids-animation/references/kids-animation-1-ref.jpg',
     number: '04',
   },
   {
@@ -73,7 +73,7 @@ const FEATURED_PROJECTS = [
     aspectRatio: '1440:1080',
     description: 'Human-centered documentary narrative exploring leadership, perseverance, and institutional student vision through intimate cinematic framing.',
     previewUrl: 'https://drive.google.com/file/d/1d_qQ38N1K-3bBv2Zz7Xm1_vP4W5x9Y6Z/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1x-7zIm_xS5wO3r1Bc4h9aY3v7q2X5eM1&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/storytelling/references/storytelling-1-ref.jpg',
     number: '05',
   },
   {
@@ -85,7 +85,7 @@ const FEATURED_PROJECTS = [
     aspectRatio: '9:16',
     description: 'Medical-grade 3D anatomical visualization breaking down spinal cord vertebrae compression, disc alignment, and therapeutic physical ergonomics.',
     previewUrl: 'https://drive.google.com/file/d/1w_N8Q4pK2s9L3t-7Zz5W6qC1X8y0A2B9/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1m9cztSrwu3aVMWY-5hG9CkY0RwOMj0lw&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/explanation-videos/references/explanation-1-ref.jpg',
     number: '06',
   },
 ];
@@ -232,8 +232,12 @@ export default function PortfolioSection({ onSelectVideo }) {
                   {project.thumbnailUrl ? (
                     <img
                       src={project.thumbnailUrl}
-                      alt={project.title}
+                      alt={project.title || 'NeoCut Production Film'}
                       className="w-full h-full object-cover group-hover/media:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center text-slate-600">

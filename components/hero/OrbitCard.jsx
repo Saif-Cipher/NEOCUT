@@ -44,11 +44,14 @@ export default function OrbitCard({
           {item.thumbnailUrl ? (
             <img
               src={item.thumbnailUrl}
-              alt={item.name}
+              alt={item.name?.replace('-video.mp4', '').replace(/-/g, ' ') || 'NeoCut Portfolio Preview'}
               className={`w-full h-full object-cover transition-transform duration-700 ${
                 hovered ? 'scale-110' : 'scale-100'
               }`}
               loading="lazy"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
             />
           ) : (
             <div className="flex flex-col items-center justify-center text-slate-600">

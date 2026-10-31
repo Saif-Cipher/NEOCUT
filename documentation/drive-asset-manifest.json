@@ -20,7 +20,8 @@
       "previewUrl": "https://drive.google.com/file/d/1Q124pfJ2SAD3GpZ1497vy2dZ6RtC2dT8/preview",
       "webViewLink": "https://drive.google.com/file/d/1Q124pfJ2SAD3GpZ1497vy2dZ6RtC2dT8/view?usp=drivesdk",
       "status": "uploaded",
-      "uploadedAt": null
+      "uploadedAt": null,
+      "thumbnailUrl": "/assets/logo/neocut-logo.png.jpg"
     },
     {
       "assetId": "promotion-1-video",
@@ -40,7 +41,8 @@
       "durationFormatted": "39s",
       "status": "uploaded",
       "uploadedAt": null,
-      "shortDescription": "3D character overwhelmed by customer inquiries, presenting automated AI messenger bot solution for e-commerce."
+      "shortDescription": "3D character overwhelmed by customer inquiries, presenting automated AI messenger bot solution for e-commerce.",
+      "thumbnailUrl": "/assets/thumbnails/brand-promotion/promotion-1-thumbnail.webp"
     },
     {
       "assetId": "promotion-2-video",
@@ -60,7 +62,8 @@
       "durationFormatted": "41s",
       "status": "uploaded",
       "uploadedAt": null,
-      "shortDescription": "Commercial beach product showcase for TOTOPAC clear waterproof pouch with phone, car key, and cash."
+      "shortDescription": "Commercial beach product showcase for TOTOPAC clear waterproof pouch with phone, car key, and cash.",
+      "thumbnailUrl": "/assets/thumbnails/brand-promotion/promotion-2-thumbnail.webp"
     },
     {
       "assetId": "kids-animation-1-video",
@@ -80,7 +83,8 @@
       "durationFormatted": "2m 03s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:18:17.731458Z",
-      "shortDescription": "3D animated educational song teaching young children counting from 1 to 20 with colorful characters."
+      "shortDescription": "3D animated educational song teaching young children counting from 1 to 20 with colorful characters.",
+      "thumbnailUrl": "/assets/thumbnails/kids-animation/references/kids-animation-1-ref.jpg"
     },
     {
       "assetId": "kids-animation-2-video",
@@ -100,7 +104,8 @@
       "durationFormatted": "3m 15s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:21:34.379860Z",
-      "shortDescription": "Full-length 3D animated musical nursery rhymes compilation featuring the Alero Kids character ensemble."
+      "shortDescription": "Full-length 3D animated musical nursery rhymes compilation featuring the Alero Kids character ensemble.",
+      "thumbnailUrl": "/assets/thumbnails/kids-animation/references/kids-animation-2-ref.jpg"
     },
     {
       "assetId": "kids-animation-3-video",
@@ -120,7 +125,8 @@
       "durationFormatted": "1m 45s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:21:53.079090Z",
-      "shortDescription": "3D cartoon children's story following Benny the Bunny on an outdoor learning and play adventure."
+      "shortDescription": "3D cartoon children's story following Benny the Bunny on an outdoor learning and play adventure.",
+      "thumbnailUrl": "/assets/thumbnails/kids-animation/references/kids-animation-3-ref.jpg"
     },
     {
       "assetId": "kids-animation-4-video",
@@ -140,7 +146,8 @@
       "durationFormatted": "2m 01s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:24:19.797394Z",
-      "shortDescription": "Character-led 3D animated narrative following Daisy through an engaging children's story."
+      "shortDescription": "Character-led 3D animated narrative following Daisy through an engaging children's story.",
+      "thumbnailUrl": "/assets/thumbnails/kids-animation/references/kids-animation-4-ref.jpg"
     },
     {
       "assetId": "kids-animation-5-video",
@@ -160,7 +167,8 @@
       "durationFormatted": "12s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:24:41.002322Z",
-      "shortDescription": "Bengali 3D educational animation with teacher teaching students how to read time on a classroom clock."
+      "shortDescription": "Bengali 3D educational animation with teacher teaching students how to read time on a classroom clock.",
+      "thumbnailUrl": "/assets/thumbnails/kids-animation/references/kids-animation-5-ref.jpg"
     },
     {
       "assetId": "kids-animation-6-video",
@@ -180,7 +188,8 @@
       "durationFormatted": "1m 59s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:25:22.900680Z",
-      "shortDescription": "Vibrant 3D educational learning animation teaching primary and secondary colors with interactive visual objects."
+      "shortDescription": "Vibrant 3D educational learning animation teaching primary and secondary colors with interactive visual objects.",
+      "thumbnailUrl": "/assets/thumbnails/kids-animation/references/kids-animation-6-ref.jpg"
     },
     {
       "assetId": "kids-animation-7-video",
@@ -200,7 +209,8 @@
       "durationFormatted": "1m 42s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:26:00.409146Z",
-      "shortDescription": "Playful 3D animated lesson introducing basic geometric shapes (circle, square, triangle) to preschool kids."
+      "shortDescription": "Playful 3D animated lesson introducing basic geometric shapes (circle, square, triangle) to preschool kids.",
+      "thumbnailUrl": "/assets/thumbnails/kids-animation/references/kids-animation-7-ref.jpg"
     },
     {
       "assetId": "kids-animation-8-video",
@@ -220,7 +230,8 @@
       "durationFormatted": "2m 36s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:26:54.488997Z",
-      "shortDescription": "Upbeat 3D animated train song featuring Timmy the Train traveling through countryside landscapes."
+      "shortDescription": "Upbeat 3D animated train song featuring Timmy the Train traveling through countryside landscapes.",
+      "thumbnailUrl": "/assets/thumbnails/kids-animation/references/kids-animation-8-ref.jpg"
     },
     {
       "assetId": "storytelling-1-video",
@@ -240,7 +251,8 @@
       "durationFormatted": "2m 39s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:27:23.678487Z",
-      "shortDescription": "Chaksu Election 2025 student candidate campaign profile video highlighting candidate Hamid's leadership manifesto."
+      "shortDescription": "Chaksu Election 2025 student candidate campaign profile video highlighting candidate Hamid's leadership manifesto.",
+      "thumbnailUrl": "/assets/thumbnails/storytelling/references/storytelling-1-ref.jpg"
     },
     {
       "assetId": "cinematography-1-video",
@@ -260,7 +272,8 @@
       "durationFormatted": "3m 47s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:28:24.116352Z",
-      "shortDescription": "Cinematic outdoor documentary profile of Sazzad in lush green agricultural paddy fields and hillside landscapes."
+      "shortDescription": "Cinematic outdoor documentary profile of Sazzad in lush green agricultural paddy fields and hillside landscapes.",
+      "thumbnailUrl": "/assets/thumbnails/cinematography/references/cinematography-1-ref.jpg"
     },
     {
       "assetId": "storytelling-2-video",
@@ -280,7 +293,8 @@
       "durationFormatted": "2m 13s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:31:47.449833Z",
-      "shortDescription": "Vertical documentary street interview with student voters at Begum Khaleda Zia Hall for Chaksu 2025 election."
+      "shortDescription": "Vertical documentary street interview with student voters at Begum Khaleda Zia Hall for Chaksu 2025 election.",
+      "thumbnailUrl": "/assets/thumbnails/storytelling/references/storytelling-2-ref.jpg"
     },
     {
       "assetId": "storytelling-3-video",
@@ -300,7 +314,8 @@
       "durationFormatted": "30s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:32:50.884766Z",
-      "shortDescription": "High-fidelity 3D narrative animation showcasing road construction workers in safety gear guiding a schoolgirl."
+      "shortDescription": "High-fidelity 3D narrative animation showcasing road construction workers in safety gear guiding a schoolgirl.",
+      "thumbnailUrl": "/assets/thumbnails/storytelling/references/storytelling-3-ref.jpg"
     },
     {
       "assetId": "hero-1-video",
@@ -320,7 +335,8 @@
       "durationFormatted": "30s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:33:50.736836Z",
-      "shortDescription": "Flagship 3D animated cinematic showcase chosen for the website hero section header and showreel background."
+      "shortDescription": "Flagship 3D animated cinematic showcase chosen for the website hero section header and showreel background.",
+      "thumbnailUrl": "/assets/thumbnails/hero/references/hero-1-ref.jpg"
     },
     {
       "assetId": "explanation-1-video",
@@ -340,7 +356,8 @@
       "durationFormatted": "41s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:34:34.716388Z",
-      "shortDescription": "3D microscopic medical animation demonstrating how a tick embeds its hypostome mouthparts into human skin."
+      "shortDescription": "3D microscopic medical animation demonstrating how a tick embeds its hypostome mouthparts into human skin.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-1-ref.jpg"
     },
     {
       "assetId": "explanation-2-video",
@@ -360,7 +377,8 @@
       "durationFormatted": "44s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:35:26.436438Z",
-      "shortDescription": "3D anatomical animation explaining how diaphragm muscle contractions and sudden vocal cord closure cause hiccups."
+      "shortDescription": "3D anatomical animation explaining how diaphragm muscle contractions and sudden vocal cord closure cause hiccups.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-2-ref.jpg"
     },
     {
       "assetId": "explanation-3-video",
@@ -380,7 +398,8 @@
       "durationFormatted": "43s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:36:18.358290Z",
-      "shortDescription": "3D physiological animation explaining lacrimal gland tear production, eye lubrication, and crying overflow."
+      "shortDescription": "3D physiological animation explaining lacrimal gland tear production, eye lubrication, and crying overflow.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-3-ref.jpg"
     },
     {
       "assetId": "explanation-4-video",
@@ -400,7 +419,8 @@
       "durationFormatted": "41s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:37:12.302051Z",
-      "shortDescription": "3D medical animation showing an insect crawling into the external auditory canal towards the tympanic membrane."
+      "shortDescription": "3D medical animation showing an insect crawling into the external auditory canal towards the tympanic membrane.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-4-ref.jpg"
     },
     {
       "assetId": "explanation-5-video",
@@ -420,7 +440,8 @@
       "durationFormatted": "54s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:39:11.803659Z",
-      "shortDescription": "3D automotive safety animation showing pyrotechnic chemical inflation and facial deceleration protection."
+      "shortDescription": "3D automotive safety animation showing pyrotechnic chemical inflation and facial deceleration protection.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-5-ref.jpg"
     },
     {
       "assetId": "explanation-6-video",
@@ -440,7 +461,8 @@
       "durationFormatted": "40s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:39:45.716224Z",
-      "shortDescription": "3D acoustic animation explaining earbud transducer sound waves traveling through ear canal to middle ear bones."
+      "shortDescription": "3D acoustic animation explaining earbud transducer sound waves traveling through ear canal to middle ear bones.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-6-ref.jpg"
     },
     {
       "assetId": "explanation-7-video",
@@ -460,7 +482,8 @@
       "durationFormatted": "49s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:41:59.929831Z",
-      "shortDescription": "Macro 3D biological animation of an ant latching mandibles onto human epidermis and injecting formic acid."
+      "shortDescription": "Macro 3D biological animation of an ant latching mandibles onto human epidermis and injecting formic acid.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-7-ref.jpg"
     },
     {
       "assetId": "explanation-8-video",
@@ -480,7 +503,8 @@
       "durationFormatted": "44s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:42:48.049302Z",
-      "shortDescription": "3D anatomical animation showing barbed bee stinger detachment, autonomous venom sac pumping, and histamines."
+      "shortDescription": "3D anatomical animation showing barbed bee stinger detachment, autonomous venom sac pumping, and histamines.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-8-ref.jpg"
     },
     {
       "assetId": "explanation-9-video",
@@ -500,7 +524,8 @@
       "durationFormatted": "43s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:43:48.644931Z",
-      "shortDescription": "3D dermatology animation illustrating why popping a friction blister introduces bacterial infection into dermis."
+      "shortDescription": "3D dermatology animation illustrating why popping a friction blister introduces bacterial infection into dermis.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-9-ref.jpg"
     },
     {
       "assetId": "explanation-10-video",
@@ -520,7 +545,8 @@
       "durationFormatted": "49s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:45:29.812664Z",
-      "shortDescription": "3D respiratory animation demonstrating thoracic expansion, diaphragm contraction, and alveolar gas exchange."
+      "shortDescription": "3D respiratory animation demonstrating thoracic expansion, diaphragm contraction, and alveolar gas exchange.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-10-ref.jpg"
     },
     {
       "assetId": "explanation-11-video",
@@ -540,7 +566,8 @@
       "durationFormatted": "42s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:46:13.884591Z",
-      "shortDescription": "3D inner ear animation showing eardrum vibrations transferring through malleus, incus, stapes to the cochlea."
+      "shortDescription": "3D inner ear animation showing eardrum vibrations transferring through malleus, incus, stapes to the cochlea.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-11-ref.jpg"
     },
     {
       "assetId": "explanation-12-video",
@@ -560,7 +587,8 @@
       "durationFormatted": "37s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:46:55.303593Z",
-      "shortDescription": "3D zoological animation showing elephant trunk musculature, nasal cavities, and negative pressure water suction."
+      "shortDescription": "3D zoological animation showing elephant trunk musculature, nasal cavities, and negative pressure water suction.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-12-ref.jpg"
     },
     {
       "assetId": "explanation-13-video",
@@ -580,7 +608,8 @@
       "durationFormatted": "44s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:48:35.761354Z",
-      "shortDescription": "3D medical pathology animation of a parasitic worm (Loa loa) migrating beneath the ocular conjunctiva."
+      "shortDescription": "3D medical pathology animation of a parasitic worm (Loa loa) migrating beneath the ocular conjunctiva.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-13-ref.jpg"
     },
     {
       "assetId": "explanation-14-video",
@@ -600,7 +629,8 @@
       "durationFormatted": "47s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:49:43.932186Z",
-      "shortDescription": "3D optometry animation showing iris sphincter muscle pupil dilation and crystalline lens ciliary accommodation."
+      "shortDescription": "3D optometry animation showing iris sphincter muscle pupil dilation and crystalline lens ciliary accommodation.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-14-ref.jpg"
     },
     {
       "assetId": "explanation-15-video",
@@ -620,7 +650,8 @@
       "durationFormatted": "43s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:51:09.957550Z",
-      "shortDescription": "3D neuroscience animation showing sensory thalami routing signals to the amygdala and adrenal adrenaline release."
+      "shortDescription": "3D neuroscience animation showing sensory thalami routing signals to the amygdala and adrenal adrenaline release.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-15-ref.jpg"
     },
     {
       "assetId": "explanation-16-video",
@@ -640,7 +671,8 @@
       "durationFormatted": "38s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:51:50.992540Z",
-      "shortDescription": "3D pediatric emergency animation showing a whole uncut grape wedged in an infant trachea causing airway occlusion."
+      "shortDescription": "3D pediatric emergency animation showing a whole uncut grape wedged in an infant trachea causing airway occlusion.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-16-ref.jpg"
     },
     {
       "assetId": "explanation-17-video",
@@ -660,7 +692,8 @@
       "durationFormatted": "45s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:52:38.784560Z",
-      "shortDescription": "3D dermatological animation showing curved hair shaft curling back into the skin causing foreign body papules."
+      "shortDescription": "3D dermatological animation showing curved hair shaft curling back into the skin causing foreign body papules.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-17-ref.jpg"
     },
     {
       "assetId": "explanation-18-video",
@@ -680,7 +713,8 @@
       "durationFormatted": "38s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:53:20.190334Z",
-      "shortDescription": "Microscopic 3D marine biology animation showing firing cnidocytes and barbed coiled nematocyst venom threads."
+      "shortDescription": "Microscopic 3D marine biology animation showing firing cnidocytes and barbed coiled nematocyst venom threads.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-18-ref.jpg"
     },
     {
       "assetId": "explanation-19-video",
@@ -700,7 +734,8 @@
       "durationFormatted": "48s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:54:55.635080Z",
-      "shortDescription": "3D biomechanics animation showing kinetic force impact on vertebrae and long bones during a construction fall."
+      "shortDescription": "3D biomechanics animation showing kinetic force impact on vertebrae and long bones during a construction fall.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-19-ref.jpg"
     },
     {
       "assetId": "explanation-20-video",
@@ -720,7 +755,8 @@
       "durationFormatted": "38s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:55:20.990925Z",
-      "shortDescription": "Macro 3D entomology animation showing mosquito fascicle piercing capillary vessel and injecting saliva."
+      "shortDescription": "Macro 3D entomology animation showing mosquito fascicle piercing capillary vessel and injecting saliva.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-20-ref.jpg"
     },
     {
       "assetId": "explanation-21-video",
@@ -740,7 +776,8 @@
       "durationFormatted": "50s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:55:39.298692Z",
-      "shortDescription": "3D physiology animation showing actin-myosin micro-tears during resistance exercise and satellite cell repair."
+      "shortDescription": "3D physiology animation showing actin-myosin micro-tears during resistance exercise and satellite cell repair.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-21-ref.jpg"
     },
     {
       "assetId": "explanation-22-video",
@@ -760,7 +797,8 @@
       "durationFormatted": "50s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:56:06.374565Z",
-      "shortDescription": "3D marine anatomy animation explaining acetabulum musculature, infundibulum seal, and independent arm nerves."
+      "shortDescription": "3D marine anatomy animation explaining acetabulum musculature, infundibulum seal, and independent arm nerves.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-22-ref.jpg"
     },
     {
       "assetId": "explanation-23-video",
@@ -780,7 +818,8 @@
       "durationFormatted": "49s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:56:28.380927Z",
-      "shortDescription": "3D physics animation showing water sinking beneath boiling cooking oil, vaporizing, and creating fireball explosion."
+      "shortDescription": "3D physics animation showing water sinking beneath boiling cooking oil, vaporizing, and creating fireball explosion.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-23-ref.jpg"
     },
     {
       "assetId": "explanation-24-video",
@@ -800,7 +839,8 @@
       "durationFormatted": "38s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:56:41.096625Z",
-      "shortDescription": "3D biology animation analyzing sensationalized piranha movie myths versus actual scavenger behavior."
+      "shortDescription": "3D biology animation analyzing sensationalized piranha movie myths versus actual scavenger behavior.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-24-ref.jpg"
     },
     {
       "assetId": "explanation-25-video",
@@ -820,7 +860,8 @@
       "durationFormatted": "43s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:56:58.872107Z",
-      "shortDescription": "3D wound healing animation showing platelet clotting, fibroblast migration, and aligned collagen scar deposition."
+      "shortDescription": "3D wound healing animation showing platelet clotting, fibroblast migration, and aligned collagen scar deposition.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-25-ref.jpg"
     },
     {
       "assetId": "explanation-26-video",
@@ -840,7 +881,8 @@
       "durationFormatted": "43s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:57:17.855886Z",
-      "shortDescription": "3D marine biology animation illustrating defensive caudal spine reflex, serrated denticles, and venom sheath."
+      "shortDescription": "3D marine biology animation illustrating defensive caudal spine reflex, serrated denticles, and venom sheath.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-26-ref.jpg"
     },
     {
       "assetId": "explanation-27-video",
@@ -860,7 +902,8 @@
       "durationFormatted": "45s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:57:29.145315Z",
-      "shortDescription": "3D gastroenterology animation tracking synthetic gum base transit through peristalsis in stomach and intestines."
+      "shortDescription": "3D gastroenterology animation tracking synthetic gum base transit through peristalsis in stomach and intestines.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-27-ref.jpg"
     },
     {
       "assetId": "explanation-28-video",
@@ -880,7 +923,8 @@
       "durationFormatted": "43s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:57:42.001551Z",
-      "shortDescription": "3D microscopic anatomy animation of subungual splinter penetration, localized neutrophilic pus, and extraction."
+      "shortDescription": "3D microscopic anatomy animation of subungual splinter penetration, localized neutrophilic pus, and extraction.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-28-ref.jpg"
     },
     {
       "assetId": "explanation-29-video",
@@ -900,7 +944,8 @@
       "durationFormatted": "48s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:57:59.516851Z",
-      "shortDescription": "3D sensory neurology animation tracking Meissner's corpuscles signals to primary somatosensory cortex and laughter."
+      "shortDescription": "3D sensory neurology animation tracking Meissner's corpuscles signals to primary somatosensory cortex and laughter.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-29-ref.jpg"
     },
     {
       "assetId": "explanation-30-video",
@@ -920,7 +965,8 @@
       "durationFormatted": "42s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:58:14.789728Z",
-      "shortDescription": "3D infectious disease animation showing ingested Taenia solium tapeworm cysticerci hatching inside gastrointestinal tract."
+      "shortDescription": "3D infectious disease animation showing ingested Taenia solium tapeworm cysticerci hatching inside gastrointestinal tract.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-30-ref.jpg"
     },
     {
       "assetId": "explanation-31-video",
@@ -940,7 +986,8 @@
       "durationFormatted": "41s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:58:28.456828Z",
-      "shortDescription": "3D cellular osmosis animation demonstrating aquaporin water absorption, renal filtration, and electrolyte balance."
+      "shortDescription": "3D cellular osmosis animation demonstrating aquaporin water absorption, renal filtration, and electrolyte balance.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-31-ref.jpg"
     },
     {
       "assetId": "explanation-32-video",
@@ -960,7 +1007,8 @@
       "durationFormatted": "45s",
       "status": "uploaded",
       "uploadedAt": "2026-10-31T07:58:48.465827Z",
-      "shortDescription": "3D dermatology and neuroscience animation showing autonomic vasoconstriction causing glabrous skin wrinkling."
+      "shortDescription": "3D dermatology and neuroscience animation showing autonomic vasoconstriction causing glabrous skin wrinkling.",
+      "thumbnailUrl": "/assets/thumbnails/explanation-videos/references/explanation-32-ref.jpg"
     }
   ]
 }

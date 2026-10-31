@@ -3,14 +3,14 @@
 import { useState, useEffect, useRef } from 'react';
 import OrbitCard from './OrbitCard';
 
-// 8 Verified, Approved Master Portfolio Assets for the 3D Orbit
+// 8 Verified, Approved Master Portfolio Assets with Local High-Resolution Thumbnails
 const FEATURED_ORBIT_ASSETS = [
   {
     assetId: 'promotion-1-video',
     name: 'AI Messenger Bot Commercial',
     category: 'Brand Promotion',
     previewUrl: 'https://drive.google.com/file/d/1Q9E_e5gQ6CE-rMuJh8MntNHrEnXBd0Pr/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1fYRBGjQCdgxEfLB4ffa1dLW-g3b0AQfO&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/brand-promotion/promotion-1-thumbnail.webp',
     aspectRatio: '16:9',
   },
   {
@@ -18,7 +18,7 @@ const FEATURED_ORBIT_ASSETS = [
     name: 'Totopac Waterproof Pouch Commercial',
     category: 'Brand Promotion',
     previewUrl: 'https://drive.google.com/file/d/1PmzLDHmFe4SKDPV8qCWUXdPvvz113dkz/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1xGfcPTqvdO6huiuwqycY8ddiezwHQ3jY&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/brand-promotion/promotion-2-thumbnail.webp',
     aspectRatio: '16:9',
   },
   {
@@ -26,7 +26,7 @@ const FEATURED_ORBIT_ASSETS = [
     name: 'Counting Numbers 1 to 20 Song',
     category: 'Kids Animation',
     previewUrl: 'https://drive.google.com/file/d/17y4tDk4Wl60V9qWwz8R8ZfQn2-3uXf9k/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1H-5xGk_vQ3uM1p9Za2f7yW1t5o0V3cK9&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/kids-animation/references/kids-animation-1-ref.jpg',
     aspectRatio: '16:9',
   },
   {
@@ -34,7 +34,7 @@ const FEATURED_ORBIT_ASSETS = [
     name: 'Alero Kids Nursery Rhymes Compilation',
     category: 'Kids Animation',
     previewUrl: 'https://drive.google.com/file/d/1zJv_9KwLp1O3m4t5Qy6R7u-8W9f0E1s2/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1w-6yHl_wR4vN2q0Ab3g8zX2u6p1W4dL0&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/kids-animation/references/kids-animation-2-ref.jpg',
     aspectRatio: '16:9',
   },
   {
@@ -42,7 +42,7 @@ const FEATURED_ORBIT_ASSETS = [
     name: 'Student Leadership Profile Story',
     category: 'Storytelling',
     previewUrl: 'https://drive.google.com/file/d/1d_qQ38N1K-3bBv2Zz7Xm1_vP4W5x9Y6Z/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1x-7zIm_xS5wO3r1Bc4h9aY3v7q2X5eM1&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/storytelling/references/storytelling-1-ref.jpg',
     aspectRatio: '1440:1080',
   },
   {
@@ -50,7 +50,7 @@ const FEATURED_ORBIT_ASSETS = [
     name: 'Canyon Landscape Documentary Film',
     category: 'Cinematography',
     previewUrl: 'https://drive.google.com/file/d/1r_K8P5jN0s4L3t-9Zz2W7qF5V6y1X8B9/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1cM-4YM1aumUsmS7k7rWxt6ZJyHRrlDwh&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/cinematography/references/cinematography-1-ref.jpg',
     aspectRatio: '16:9',
   },
   {
@@ -58,7 +58,7 @@ const FEATURED_ORBIT_ASSETS = [
     name: 'Cinematic Studio Showreel',
     category: 'Showcase',
     previewUrl: 'https://drive.google.com/file/d/1w_L9Q7pN3s1K4t-8Zz6V5qD2X7y9A3B0/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1p-8aJn_yT6xP4s2Cd5i0bZ4w8r3Y6fN2&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/hero/references/hero-1-ref.jpg',
     aspectRatio: '16:9',
   },
   {
@@ -66,7 +66,7 @@ const FEATURED_ORBIT_ASSETS = [
     name: '3D Human Spine Anatomy & Health',
     category: 'Explanation Videos',
     previewUrl: 'https://drive.google.com/file/d/1w_N8Q4pK2s9L3t-7Zz5W6qC1X8y0A2B9/preview',
-    thumbnailUrl: 'https://drive.google.com/thumbnail?id=1m9cztSrwu3aVMWY-5hG9CkY0RwOMj0lw&sz=w1280',
+    thumbnailUrl: '/assets/thumbnails/explanation-videos/references/explanation-1-ref.jpg',
     aspectRatio: '9:16',
   },
 ];
