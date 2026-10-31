@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpRight, Award, Video, Cpu, ShieldCheck } from 'lucide-react';
+import StretchSnapText from '../motion/StretchSnapText';
 
 export default function AboutSection() {
   return (
@@ -14,9 +15,13 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="mb-16">
-          <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
+          <StretchSnapText
+            as="h2"
+            level="display"
+            className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none"
+          >
             About <span className="text-[#82C8E5] italic font-normal">NeoCut</span>
-          </h2>
+          </StretchSnapText>
         </div>
 
         {/* Two-Column Editorial Layout */}
@@ -47,13 +52,15 @@ export default function AboutSection() {
                     </span>
                   </div>
                 </div>
-                <h4 className="font-editorial text-2xl font-bold text-white">Saif</h4>
+                <StretchSnapText as="h4" level="secondary" className="font-editorial text-2xl font-bold text-white">
+                  Saif
+                </StretchSnapText>
                 <p className="text-xs font-mono uppercase tracking-widest text-[#82C8E5] mt-1">
                   Creative Technologist &amp; Founder
                 </p>
-                <p className="text-xs text-slate-400 max-w-xs mt-3 leading-relaxed">
+                <StretchSnapText as="p" level="subtle" split="words" className="text-xs text-slate-400 max-w-xs mt-3 leading-relaxed">
                   Directing cutting-edge AI visual pipelines, procedural 3D animation, and cinematic commercial films.
-                </p>
+                </StretchSnapText>
               </div>
 
               {/* Bottom Credential Tag */}
@@ -66,20 +73,24 @@ export default function AboutSection() {
 
           {/* Right Column: Studio Narrative & Vision */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
-            <h3 className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+            <StretchSnapText
+              as="h3"
+              level="secondary"
+              className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight"
+            >
               Where artificial intelligence meets{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#82C8E5] to-[#0047AB]">
                 cinematic intuition.
               </span>
-            </h3>
+            </StretchSnapText>
 
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+            <StretchSnapText as="p" level="subtle" split="words" className="text-slate-300 text-base sm:text-lg leading-relaxed">
               NeoCut Digital was founded on a singular conviction: traditional video production is too slow, too rigid, and too costly for modern digital brands. By marrying cutting-edge neural rendering, 3D character animation, and high-end cinematic post-production, we empower forward-thinking creators and enterprises to tell unforgettable visual stories.
-            </p>
+            </StretchSnapText>
 
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <StretchSnapText as="p" level="subtle" split="words" className="text-slate-400 text-sm sm:text-base leading-relaxed">
               Whether architecting a hyper-realistic 3D anatomical explainer, producing a viral commercial product campaign, or animating preschool educational characters, our team treats every frame as an artistic statement.
-            </p>
+            </StretchSnapText>
 
             {/* Core Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-white/10">

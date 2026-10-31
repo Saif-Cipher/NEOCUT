@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Lightbulb, FileText, Clapperboard, CheckCircle2 } from 'lucide-react';
 import WireframeTorus from '../3d/WireframeTorus';
+import StretchSnapText from '../motion/StretchSnapText';
 
 const PROCESS_STEPS = [
   {
@@ -53,12 +54,21 @@ export default function ProcessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="mb-16">
-          <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
+          <StretchSnapText
+            as="h2"
+            level="display"
+            className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none"
+          >
             Creative <span className="text-[#82C8E5] italic font-normal">Process</span>
-          </h2>
-          <p className="text-slate-400 max-w-xl text-sm sm:text-base mt-4 leading-relaxed">
+          </StretchSnapText>
+          <StretchSnapText
+            as="p"
+            level="subtle"
+            split="words"
+            className="text-slate-400 max-w-xl text-sm sm:text-base mt-4 leading-relaxed"
+          >
             Our disciplined four-stage pipeline transforms raw concepts into market-defining digital cinema.
-          </p>
+          </StretchSnapText>
         </div>
 
         {/* Process Layout: Left interactive timeline + Right interactive 3D Wireframe Torus */}
@@ -94,17 +104,17 @@ export default function ProcessSection() {
                     {/* Step Title & Content */}
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <h4 className="font-editorial text-2xl font-bold text-white">
+                        <StretchSnapText as="h4" level="secondary" className="font-editorial text-2xl font-bold text-white">
                           {step.title}
-                        </h4>
+                        </StretchSnapText>
                         <span className="text-[11px] font-mono text-[#82C8E5] uppercase tracking-wider">
                           {step.phase}
                         </span>
                       </div>
 
-                      <p className="text-slate-400 text-sm mt-2 leading-relaxed">
+                      <StretchSnapText as="p" level="subtle" split="words" className="text-slate-400 text-sm mt-2 leading-relaxed">
                         {step.description}
-                      </p>
+                      </StretchSnapText>
 
                       {/* Deliverables tags on active */}
                       {isActive && (

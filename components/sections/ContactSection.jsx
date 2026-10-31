@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpRight, MessageSquare, Mail, Phone, Sparkles } from 'lucide-react';
+import StretchSnapText from '../motion/StretchSnapText';
 
 export default function ContactSection() {
   return (
@@ -18,17 +19,26 @@ export default function ContactSection() {
           <span>[ 06 / START PRODUCTION ]</span>
         </div>
 
-        {/* Original Headline in Big Editorial Typography */}
-        <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.08] max-w-4xl">
+        {/* Original Headline in Big Editorial Typography with Stretch Snap Kinetics */}
+        <StretchSnapText
+          as="h2"
+          level="display"
+          className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.08] max-w-4xl"
+        >
           Let’s Create Something{' '}
           <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-[#82C8E5] to-[#0047AB]">
             Cinematic.
           </span>
-        </h2>
+        </StretchSnapText>
 
-        <p className="mt-6 text-base sm:text-xl text-slate-400 max-w-2xl leading-relaxed">
+        <StretchSnapText
+          as="p"
+          level="subtle"
+          split="words"
+          className="mt-6 text-base sm:text-xl text-slate-400 max-w-2xl leading-relaxed"
+        >
           Ready to elevate your brand with world-class AI video production and high-impact storytelling? Connect directly with our creative team.
-        </p>
+        </StretchSnapText>
 
         {/* Contact Action Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl mt-12">

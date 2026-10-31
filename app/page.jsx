@@ -12,6 +12,7 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import ParticleTypography from '@/components/3d/ParticleTypography';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/layout/Footer';
+import StretchSnapText from '@/components/motion/StretchSnapText';
 
 export default function HomePage() {
   const [activeModalVideo, setActiveModalVideo] = useState(null);
@@ -55,9 +56,9 @@ export default function HomePage() {
               [ WEBGL SENSORY CRAFT ]
             </span>
             <ParticleTypography />
-            <p className="text-xs font-mono text-slate-500 mt-2">
+            <StretchSnapText as="p" level="subtle" split="words" className="text-xs font-mono text-slate-500 mt-2">
               Move cursor over particles to interact with neural point-cloud repulsion.
-            </p>
+            </StretchSnapText>
           </div>
         </section>
 

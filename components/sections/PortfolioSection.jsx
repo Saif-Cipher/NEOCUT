@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Play, Film, Layers } from 'lucide-react';
+import StretchSnapText from '../motion/StretchSnapText';
 
 const CATEGORIES = [
   { id: 'all', label: 'All Works' },
@@ -144,9 +145,13 @@ export default function PortfolioSection({ onSelectVideo }) {
         {/* Header with Category Filter */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
+            <StretchSnapText
+              as="h2"
+              level="display"
+              className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none"
+            >
               Selected <span className="text-[#82C8E5] italic font-normal">Portfolio</span>
-            </h2>
+            </StretchSnapText>
           </div>
 
           {/* Category Filter Pills */}
@@ -161,7 +166,9 @@ export default function PortfolioSection({ onSelectVideo }) {
                     : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
                 }`}
               >
-                {cat.label}
+                <StretchSnapText as="span" level="subtle" split="words" interactive>
+                  {cat.label}
+                </StretchSnapText>
               </button>
             ))}
           </div>
@@ -192,13 +199,22 @@ export default function PortfolioSection({ onSelectVideo }) {
                       </span>
                     </div>
 
-                    <h3 className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight group-hover:text-[#82C8E5] transition-colors">
+                    <StretchSnapText
+                      as="h3"
+                      level="secondary"
+                      className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight group-hover:text-[#82C8E5] transition-colors"
+                    >
                       {project.title}
-                    </h3>
+                    </StretchSnapText>
 
-                    <p className="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed">
+                    <StretchSnapText
+                      as="p"
+                      level="subtle"
+                      split="words"
+                      className="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed"
+                    >
                       {project.description}
-                    </p>
+                    </StretchSnapText>
                   </div>
 
                   {/* Specs & Launch CTA */}
@@ -216,7 +232,9 @@ export default function PortfolioSection({ onSelectVideo }) {
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#06080C] hover:bg-[#82C8E5] font-semibold text-xs uppercase tracking-wider transition-all duration-300 active:scale-95"
                     >
                       <Play className="w-3.5 h-3.5 fill-current" />
-                      <span>Play Film</span>
+                      <StretchSnapText as="span" level="subtle" split="words" interactive>
+                        Play Film
+                      </StretchSnapText>
                     </button>
                   </div>
                 </div>

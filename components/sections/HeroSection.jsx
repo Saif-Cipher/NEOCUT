@@ -5,47 +5,38 @@ import gsap from 'gsap';
 import { ArrowUpRight, Play, Sparkles } from 'lucide-react';
 import HeroOrbitRing from '../hero/HeroOrbitRing';
 import HeroDecorations from '../hero/HeroDecorations';
+import StretchSnapText from '../motion/StretchSnapText';
 
 export default function HeroSection() {
   const heroRef = useRef(null);
-  const headlineRef = useRef(null);
-  const wordmarkRef = useRef(null);
-  const subtextRef = useRef(null);
-  const ctaRef = useRef(null);
   const doodleRef = useRef(null);
+  const ctaRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Coordinated entrance sequence (Emil Kowalski / Anubi cinematic timing)
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      // Coordinated doodle line draw triggered as the headline stretches & snaps
+      gsap.fromTo(
+        doodleRef.current,
+        { strokeDashoffset: 600 },
+        {
+          strokeDashoffset: 0,
+          duration: 1.2,
+          ease: 'power2.out',
+          delay: 0.85,
+        }
+      );
 
-      tl.from(wordmarkRef.current, {
-        opacity: 0,
-        y: 40,
-        scale: 0.96,
-        duration: 1.4,
-        delay: 0.2,
-      })
-      .from(headlineRef.current, {
-        opacity: 0,
-        y: 30,
-        duration: 1.0,
-      }, '-=0.9')
-      .from(doodleRef.current, {
-        strokeDashoffset: 600,
-        duration: 1.6,
-        ease: 'power2.inOut',
-      }, '-=0.6')
-      .from(subtextRef.current, {
-        opacity: 0,
-        y: 20,
-        duration: 0.9,
-      }, '-=1.0')
-      .from(ctaRef.current, {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-      }, '-=0.7');
+      gsap.fromTo(
+        ctaRef.current,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          delay: 0.95,
+        }
+      );
     }, heroRef);
 
     return () => ctx.revert();
@@ -71,26 +62,45 @@ export default function HeroSection() {
         {/* Studio Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#82C8E5]/30 bg-[#0C1017]/80 backdrop-blur-md text-[#82C8E5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
           <Sparkles className="w-3.5 h-3.5 text-[#82C8E5]" />
-          <span>AI Video Production & Cinematic Storytelling</span>
+          <StretchSnapText as="span" level="subtle" split="words" trigger="mount" delay={0.1}>
+            AI Video Production &amp; Cinematic Storytelling
+          </StretchSnapText>
         </div>
 
-        {/* Central Display Wordmark (Anubi Editorial Staging) */}
-        <div ref={wordmarkRef} className="select-none mb-3">
-          <h2 className="font-editorial text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white drop-shadow-[0_15px_30px_rgba(0,0,128,0.5)]">
+        {/* Central Display Wordmark (Anubi Editorial Staging with Stretch Snap Kinetics) */}
+        <div className="select-none mb-3">
+          <StretchSnapText
+            as="h2"
+            level="display"
+            trigger="mount"
+            delay={0.2}
+            className="font-editorial text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white drop-shadow-[0_15px_30px_rgba(0,0,128,0.5)]"
+          >
             NEOCUT
             <span className="text-[#82C8E5] italic ml-2 sm:ml-4 font-normal">Digital</span>
-          </h2>
+          </StretchSnapText>
         </div>
 
         {/* Original Headline with Hand-Drawn Animated SVG Accent Underline */}
-        <div ref={headlineRef} className="relative max-w-3xl">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-100 leading-[1.15]">
+        <div className="relative max-w-3xl">
+          <StretchSnapText
+            as="h1"
+            level="display"
+            trigger="mount"
+            delay={0.45}
+            className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-100 leading-[1.15]"
+          >
             Cinematic Video Production for{' '}
             <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#82C8E5] to-[#0047AB]">
               Modern Brands
-              {/* Hand-drawn SVG doodle underline */}
+            </span>
+          </StretchSnapText>
+
+          {/* Hand-drawn SVG doodle underline anchored beneath the keyword */}
+          <div className="w-full flex justify-end">
+            <div className="w-48 sm:w-64 -mt-2">
               <svg
-                className="absolute -bottom-2 left-0 w-full h-3.5 overflow-visible"
+                className="w-full h-3.5 overflow-visible"
                 viewBox="0 0 260 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -103,20 +113,24 @@ export default function HeroSection() {
                   strokeWidth="3.5"
                   strokeLinecap="round"
                   strokeDasharray="600"
-                  strokeDashoffset="0"
+                  strokeDashoffset="600"
                 />
               </svg>
-            </span>
-          </h1>
+            </div>
+          </div>
         </div>
 
         {/* Original Supporting Copy */}
-        <p
-          ref={subtextRef}
-          className="mt-8 text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed"
+        <StretchSnapText
+          as="p"
+          level="subtle"
+          split="words"
+          trigger="mount"
+          delay={0.7}
+          className="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed"
         >
           We help brands, creators, and businesses turn ideas into powerful cinematic stories using AI-powered video production.
-        </p>
+        </StretchSnapText>
 
         {/* CTAs: Primary (View Portfolio) & Secondary (Start a Project via WhatsApp) */}
         <div ref={ctaRef} className="flex flex-wrap items-center justify-center gap-4 mt-10">
@@ -125,7 +139,9 @@ export default function HeroSection() {
             className="group px-7 py-3.5 rounded-full bg-white text-[#06080C] font-semibold text-xs uppercase tracking-wider hover:bg-[#82C8E5] hover:text-[#06080C] transition-all duration-300 shadow-xl shadow-white/10 active:scale-95 flex items-center gap-2"
           >
             <Play className="w-3.5 h-3.5 fill-current" />
-            <span>View Portfolio</span>
+            <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.9}>
+              View Portfolio
+            </StretchSnapText>
           </a>
 
           <a
@@ -134,7 +150,9 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             className="group px-7 py-3.5 rounded-full border border-white/20 hover:border-[#82C8E5] bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg active:scale-95 flex items-center gap-2"
           >
-            <span>Start a Project</span>
+            <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.95}>
+              Start a Project
+            </StretchSnapText>
             <ArrowUpRight className="w-3.5 h-3.5 text-[#82C8E5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>

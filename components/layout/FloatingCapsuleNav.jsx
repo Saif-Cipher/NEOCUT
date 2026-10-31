@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ArrowUpRight, Menu, X, ShieldCheck } from 'lucide-react';
+import StretchSnapText from '../motion/StretchSnapText';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
@@ -69,9 +70,9 @@ export default function FloatingCapsuleNav() {
             </div>
           </a>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links with Subtle Stretch Snap */}
           <ul className="hidden md:flex items-center gap-1 list-none m-0 p-0">
-            {NAV_LINKS.map((link) => {
+            {NAV_LINKS.map((link, idx) => {
               const isActive = activeHash === link.href;
               return (
                 <li key={link.label}>
@@ -83,7 +84,9 @@ export default function FloatingCapsuleNav() {
                         : 'text-slate-400 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    {link.label}
+                    <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.05 + idx * 0.03}>
+                      {link.label}
+                    </StretchSnapText>
                     {isActive && (
                       <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#82C8E5]" />
                     )}
@@ -93,7 +96,7 @@ export default function FloatingCapsuleNav() {
             })}
           </ul>
 
-          {/* Start a Project Primary CTA Button */}
+          {/* Start a Project Primary CTA Button with Subtle Stretch Snap */}
           <div className="flex items-center gap-2">
             <a
               href="https://wa.me/8801931245914"
@@ -101,7 +104,9 @@ export default function FloatingCapsuleNav() {
               rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#000080] to-[#0047AB] hover:from-[#0047AB] hover:to-[#0055CC] text-white text-xs font-semibold tracking-wide border border-[#82C8E5]/30 hover:border-[#82C8E5]/70 shadow-lg shadow-[#0047AB]/25 transition-all duration-300 active:scale-95"
             >
-              <span>Start a Project</span>
+              <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.25}>
+                Start a Project
+              </StretchSnapText>
               <span className="w-4 h-4 rounded-full bg-white/15 flex items-center justify-center group-hover:rotate-45 group-hover:bg-white/30 transition-transform duration-300">
                 <ArrowUpRight className="w-3 h-3 text-[#82C8E5]" />
               </span>

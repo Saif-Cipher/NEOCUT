@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Film, Sparkles, Wand2, Eye, Compass } from 'lucide-react';
+import StretchSnapText from '../motion/StretchSnapText';
 
 const SERVICES = [
   {
@@ -93,13 +94,22 @@ export default function ServicesSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
+            <StretchSnapText
+              as="h2"
+              level="display"
+              className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none"
+            >
               Services <span className="text-[#82C8E5] italic font-normal">&amp; Verticals</span>
-            </h2>
+            </StretchSnapText>
           </div>
-          <p className="text-slate-400 max-w-md text-sm sm:text-base leading-relaxed">
+          <StretchSnapText
+            as="p"
+            level="subtle"
+            split="words"
+            className="text-slate-400 max-w-md text-sm sm:text-base leading-relaxed"
+          >
             Five specialized creative pipelines fusing advanced AI modeling, cinematic camera craft, and narrative pacing.
-          </p>
+          </StretchSnapText>
         </div>
 
         {/* Asymmetric Services Bento Grid */}
@@ -128,17 +138,26 @@ export default function ServicesSection() {
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-white mt-6 group-hover:text-[#82C8E5] transition-colors leading-tight">
+                  <StretchSnapText
+                    as="h3"
+                    level="secondary"
+                    className="font-editorial text-2xl sm:text-3xl font-bold text-white mt-6 group-hover:text-[#82C8E5] transition-colors leading-tight"
+                  >
                     {srv.title}
-                  </h3>
+                  </StretchSnapText>
                   <div className="text-xs uppercase font-mono tracking-wider text-[#6D8196] mt-1 font-medium">
                     {srv.subtitle}
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-400 text-sm mt-4 leading-relaxed">
+                  <StretchSnapText
+                    as="p"
+                    level="subtle"
+                    split="words"
+                    className="text-slate-400 text-sm mt-4 leading-relaxed"
+                  >
                     {srv.description}
-                  </p>
+                  </StretchSnapText>
                 </div>
 
                 {/* Card Footer: Metric & Action */}

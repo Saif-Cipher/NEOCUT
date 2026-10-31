@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpRight, Database, ExternalLink } from 'lucide-react';
+import StretchSnapText from '../motion/StretchSnapText';
 
 const FOOTER_LINKS = [
   { label: 'Home', href: '#home' },
@@ -36,9 +37,9 @@ export default function Footer() {
                 </span>
               </div>
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm max-w-sm leading-relaxed">
+            <StretchSnapText as="p" level="subtle" split="words" className="text-slate-400 text-xs sm:text-sm max-w-sm leading-relaxed">
               Award-winning creative production studio synthesizing AI visual synthesis, 3D character design, and cinematic storytelling.
-            </p>
+            </StretchSnapText>
           </div>
 
           {/* Quick Navigation Links */}
