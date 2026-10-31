@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Play, Film, Layers } from 'lucide-react';
+import { Play, Film, ArrowUpRight, Sparkles, Layers } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
 
 const CATEGORIES = [
@@ -15,7 +15,7 @@ const CATEGORIES = [
   { id: 'explanation-videos', label: 'Explanation Videos' },
 ];
 
-// 6 Flagship Featured Projects for the Sticky Stacking Presentation
+// 6 Flagship Featured Projects for the Scroll-Driven Image Stretch Transition
 const FEATURED_PROJECTS = [
   {
     assetId: 'hero-1-video',
@@ -93,43 +93,152 @@ const FEATURED_PROJECTS = [
 
 export default function PortfolioSection({ onSelectVideo }) {
   const [selectedFilter, setSelectedFilter] = useState('all');
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const sectionRef = useRef(null);
-  const cardsContainerRef = useRef(null);
-  const cardRefs = useRef([]);
+  const stageRef = useRef(null);
+  const imageLayersRef = useRef([]);
+  const imageInnersRef = useRef([]);
 
   const filteredProjects = selectedFilter === 'all'
     ? FEATURED_PROJECTS
     : FEATURED_PROJECTS.filter(p => p.category === selectedFilter);
 
+  const activeProject = filteredProjects[activeIndex] || filteredProjects[0] || FEATURED_PROJECTS[0];
+
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     gsap.registerPlugin(ScrollTrigger);
 
-    const cards = cardRefs.current.filter(Boolean);
-    if (cards.length === 0) return;
+    const count = filteredProjects.length;
+    if (count <= 1 || !sectionRef.current || !stageRef.current) return;
 
-    // Sticky stacking animation inspired by Anubi
+    // Reset initial layer states
+    imageLayersRef.current.forEach((layer, idx) => {
+      if (!layer) return;
+      if (idx === 0) {
+        gsap.set(layer, { opacity: 1, zIndex: 10, clipPath: 'inset(0% 0% 0% 0%)' });
+      } else {
+        gsap.set(layer, { opacity: 0, zIndex: 1, clipPath: 'inset(0% 0% 0% 100%)' });
+      }
+    });
+
+    imageInnersRef.current.forEach((inner) => {
+      if (!inner) return;
+      gsap.set(inner, { scaleX: 1, scaleY: 1, xPercent: 0, filter: 'blur(0px)' });
+    });
+
+    const isMob = window.innerWidth < 768;
+    const isTab = window.innerWidth >= 768 && window.innerWidth < 1024;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Calibrated elastic stretch factors inspired by Jitter Image Stretch Transition
+    const stretchX = prefersReduced ? 1.0 : isMob ? 1.15 : isTab ? 1.25 : 1.38;
+    const squashY = prefersReduced ? 1.0 : isMob ? 0.94 : isTab ? 0.88 : 0.82;
+    const pullX = prefersReduced ? 0 : -22;
+    const blurVal = prefersReduced ? 'blur(0px)' : isMob ? 'blur(0px)' : 'blur(2.5px)';
+
+    // Scroll distance proportional to project count
+    const scrollDistance = (count - 1) * (isMob ? 550 : 700);
+
     const ctx = gsap.context(() => {
-      cards.forEach((card, index) => {
-        if (index === cards.length - 1) return; // Last card doesn't need to scale down
-
-        const nextCard = cards[index + 1];
-
-        ScrollTrigger.create({
-          trigger: nextCard,
-          start: 'top 80%',
-          end: 'top 20%',
-          scrub: 1,
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          id: 'portfolio-stretch-trigger',
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: `+=${scrollDistance}`,
+          pin: stageRef.current,
+          scrub: 0.6,
+          anticipatePin: 1,
           onUpdate: (self) => {
-            const progress = self.progress;
-            // Scale down previous card to ~0.94 and subtly dim opacity to 0.75
-            gsap.set(card, {
-              scale: 1 - progress * 0.06,
-              opacity: 1 - progress * 0.25,
-              y: progress * -10,
-            });
+            const p = self.progress;
+            const idx = Math.min(Math.floor(p * count), count - 1);
+            setActiveIndex(idx);
           },
-        });
+        },
       });
+
+      // Construct sequential scroll-driven stretch transitions between consecutive project thumbnails
+      for (let i = 0; i < count - 1; i++) {
+        const outgoingLayer = imageLayersRef.current[i];
+        const outgoingInner = imageInnersRef.current[i];
+        const incomingLayer = imageLayersRef.current[i + 1];
+        const incomingInner = imageInnersRef.current[i + 1];
+
+        if (!outgoingLayer || !incomingLayer) continue;
+
+        const stepTime = i * 1.0;
+
+        // 1. Outgoing thumbnail: stretches horizontally, squashes vertically, and pulls left
+        tl.to(
+          outgoingInner,
+          {
+            scaleX: stretchX,
+            scaleY: squashY,
+            xPercent: pullX,
+            filter: blurVal,
+            duration: 0.6,
+            ease: 'power2.inOut',
+          },
+          stepTime + 0.2
+        );
+
+        tl.to(
+          outgoingLayer,
+          {
+            opacity: 0,
+            duration: 0.35,
+            ease: 'power1.in',
+          },
+          stepTime + 0.45
+        );
+
+        // 2. Incoming thumbnail: reveals through clipping mask, starting stretched and settling into natural 1:1 proportions
+        tl.set(
+          incomingLayer,
+          {
+            opacity: 1,
+            zIndex: 10 + i + 1,
+            clipPath: 'inset(0% 0% 0% 100%)',
+          },
+          stepTime + 0.2
+        );
+
+        tl.set(
+          incomingInner,
+          {
+            scaleX: stretchX,
+            scaleY: squashY,
+            xPercent: Math.abs(pullX),
+            filter: blurVal,
+          },
+          stepTime + 0.2
+        );
+
+        tl.to(
+          incomingLayer,
+          {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            duration: 0.6,
+            ease: 'power2.inOut',
+          },
+          stepTime + 0.2
+        );
+
+        tl.to(
+          incomingInner,
+          {
+            scaleX: 1,
+            scaleY: 1,
+            xPercent: 0,
+            filter: 'blur(0px)',
+            duration: 0.6,
+            ease: 'power2.out',
+          },
+          stepTime + 0.2
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -139,143 +248,194 @@ export default function PortfolioSection({ onSelectVideo }) {
     <section
       id="portfolio"
       ref={sectionRef}
-      className="relative py-28 sm:py-36 px-4 bg-[#06080C] border-t border-white/5"
+      className="relative bg-[#06080C] border-t border-white/5"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Header with Category Filter */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <StretchSnapText
-              as="h2"
-              level="display"
-              className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none"
-            >
-              Selected <span className="text-[#82C8E5] italic font-normal">Portfolio</span>
-            </StretchSnapText>
-          </div>
-
-          {/* Category Filter Pills */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedFilter(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${
-                  selectedFilter === cat.id
-                    ? 'bg-[#0047AB] text-white border border-[#82C8E5]/50 shadow-lg shadow-[#0047AB]/30'
-                    : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
-                }`}
+      {/* Pinned Sticky Visual Stage for Scroll-Driven Image Stretch Transition */}
+      <div
+        ref={stageRef}
+        className="min-h-screen w-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-10 lg:py-16 relative"
+      >
+        <div className="max-w-7xl mx-auto w-full">
+          {/* Section Header with Category Filter */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 lg:mb-12 gap-4">
+            <div>
+              <StretchSnapText
+                as="h2"
+                level="display"
+                className="font-editorial text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-none"
               >
-                <StretchSnapText as="span" level="subtle" split="words" interactive>
-                  {cat.label}
-                </StretchSnapText>
-              </button>
-            ))}
+                Selected <span className="text-[#82C8E5] italic font-normal">Portfolio</span>
+              </StretchSnapText>
+            </div>
+
+            {/* Category Filter Pills */}
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+              {CATEGORIES.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => {
+                    setSelectedFilter(cat.id);
+                    setActiveIndex(0);
+                  }}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${
+                    selectedFilter === cat.id
+                      ? 'bg-[#0047AB] text-white border border-[#82C8E5]/50 shadow-lg shadow-[#0047AB]/30'
+                      : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
+                  }`}
+                >
+                  <StretchSnapText as="span" level="subtle" split="words" interactive>
+                    {cat.label}
+                  </StretchSnapText>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Sticky Stacking Cards Container */}
-        <div ref={cardsContainerRef} className="space-y-12 sm:space-y-16">
-          {filteredProjects.map((project, idx) => (
-            <div
-              key={project.assetId}
-              ref={(el) => (cardRefs.current[idx] = el)}
-              className="sticky top-28 rounded-3xl border border-white/10 bg-[#0C1017]/95 backdrop-blur-2xl p-6 sm:p-10 shadow-2xl shadow-black/90 overflow-hidden group transition-all duration-300"
-              style={{
-                zIndex: idx + 1,
-              }}
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                {/* Left Column: Metadata & Narrative */}
-                <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6">
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono text-xs font-bold text-[#82C8E5]">
-                        {project.number}
-                      </span>
-                      <span className="w-6 h-px bg-white/20" />
-                      <span className="font-mono text-xs uppercase tracking-wider text-slate-400">
-                        {project.categoryLabel}
-                      </span>
-                    </div>
-
-                    <StretchSnapText
-                      as="h3"
-                      level="secondary"
-                      className="font-editorial text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight group-hover:text-[#82C8E5] transition-colors"
-                    >
-                      {project.title}
-                    </StretchSnapText>
-
-                    <StretchSnapText
-                      as="p"
-                      level="subtle"
-                      split="words"
-                      className="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed"
-                    >
-                      {project.description}
-                    </StretchSnapText>
+          {/* Master Two-Column Pinned Stage */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Synchronized Project Metadata & Narrative */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+              <div
+                key={activeProject.assetId}
+                className="flex flex-col justify-between space-y-5 animate-in fade-in duration-300"
+              >
+                <div>
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono text-xs font-bold text-[#82C8E5]">
+                      {activeProject.number} / {String(filteredProjects.length).padStart(2, '0')}
+                    </span>
+                    <span className="w-6 h-px bg-white/20" />
+                    <span className="font-mono text-xs uppercase tracking-wider text-slate-400">
+                      {activeProject.categoryLabel}
+                    </span>
                   </div>
 
-                  {/* Specs & Launch CTA */}
-                  <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
-                      <span>{project.duration}</span>
-                      <span>●</span>
-                      <span>{project.aspectRatio}</span>
-                      <span>●</span>
-                      <span className="text-emerald-400 font-semibold">Drive Stream</span>
-                    </div>
+                  <StretchSnapText
+                    as="h3"
+                    level="secondary"
+                    className="font-editorial text-2xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight transition-colors"
+                  >
+                    {activeProject.title}
+                  </StretchSnapText>
 
-                    <button
-                      onClick={() => onSelectVideo && onSelectVideo(project)}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#06080C] hover:bg-[#82C8E5] font-semibold text-xs uppercase tracking-wider transition-all duration-300 active:scale-95"
-                    >
-                      <Play className="w-3.5 h-3.5 fill-current" />
-                      <StretchSnapText as="span" level="subtle" split="words" interactive>
-                        Play Film
-                      </StretchSnapText>
-                    </button>
-                  </div>
+                  <StretchSnapText
+                    as="p"
+                    level="subtle"
+                    split="words"
+                    className="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed line-clamp-3 sm:line-clamp-none"
+                  >
+                    {activeProject.description}
+                  </StretchSnapText>
                 </div>
 
-                {/* Right Column: 16:9 Media Showcase Card */}
+                {/* Specs & Launch CTA */}
+                <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                  <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
+                    <span>{activeProject.duration}</span>
+                    <span>●</span>
+                    <span>{activeProject.aspectRatio}</span>
+                    <span>●</span>
+                    <span className="text-emerald-400 font-semibold">Drive Stream</span>
+                  </div>
+
+                  <button
+                    onClick={() => onSelectVideo && onSelectVideo(activeProject)}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#06080C] hover:bg-[#82C8E5] font-semibold text-xs uppercase tracking-wider transition-all duration-300 active:scale-95 shadow-xl shadow-white/10"
+                  >
+                    <Play className="w-3.5 h-3.5 fill-current" />
+                    <StretchSnapText as="span" level="subtle" split="words" interactive>
+                      Play Film
+                    </StretchSnapText>
+                  </button>
+                </div>
+
+                {/* Interactive Project Scrub Indicator Track */}
+                <div className="flex items-center gap-2 pt-4 border-t border-white/10">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mr-2">
+                    SCROLL TRANSITION:
+                  </span>
+                  {filteredProjects.map((p, idx) => (
+                    <button
+                      key={p.assetId}
+                      onClick={() => {
+                        const st = ScrollTrigger.getById('portfolio-stretch-trigger');
+                        if (st && filteredProjects.length > 1) {
+                          const target =
+                            st.start +
+                            (idx / (filteredProjects.length - 1)) *
+                              ((filteredProjects.length - 1) * 700);
+                          window.scrollTo({ top: target, behavior: 'smooth' });
+                        }
+                      }}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        activeIndex === idx
+                          ? 'w-8 bg-[#82C8E5] shadow-sm shadow-[#82C8E5]/50'
+                          : 'w-2 bg-white/20 hover:bg-white/40'
+                      }`}
+                      aria-label={`Jump to project ${p.number}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Jitter-Inspired Image Stretch Transition Showcase Frame */}
+            <div
+              onClick={() => onSelectVideo && onSelectVideo(activeProject)}
+              className="lg:col-span-7 relative aspect-video rounded-2xl overflow-hidden bg-black/95 border border-white/15 cursor-pointer group/media shadow-2xl shadow-black/90"
+              style={{ perspective: 1200 }}
+            >
+              {/* Stacked Project Image Layers for Seamless Scroll Stretch Transition */}
+              {filteredProjects.map((project, idx) => (
                 <div
-                  onClick={() => onSelectVideo && onSelectVideo(project)}
-                  className="lg:col-span-7 relative aspect-video rounded-2xl overflow-hidden bg-black/80 border border-white/10 cursor-pointer group/media shadow-xl shadow-black/80"
+                  key={project.assetId}
+                  ref={(el) => (imageLayersRef.current[idx] = el)}
+                  className="absolute inset-0 w-full h-full overflow-hidden"
+                  style={{
+                    zIndex: idx === 0 ? 10 : 1,
+                    opacity: idx === 0 ? 1 : 0,
+                    clipPath: idx === 0 ? 'inset(0% 0% 0% 0%)' : 'inset(0% 0% 0% 100%)',
+                  }}
                 >
-                  {project.thumbnailUrl ? (
+                  <div
+                    ref={(el) => (imageInnersRef.current[idx] = el)}
+                    className="w-full h-full transform-gpu will-change-transform"
+                    style={{ transformOrigin: '50% 50%' }}
+                  >
                     <img
                       src={project.thumbnailUrl}
                       alt={project.title || 'NeoCut Production Film'}
-                      className="w-full h-full object-cover group-hover/media:scale-105 transition-transform duration-700"
-                      loading="lazy"
+                      className="w-full h-full object-cover"
+                      loading={idx === 0 ? 'eager' : 'lazy'}
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                       }}
                     />
-                  ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center text-slate-600">
-                      <Film className="w-12 h-12 mb-2" />
-                      <span className="font-mono text-xs uppercase">NeoCut Film</span>
-                    </div>
-                  )}
-
-                  {/* Hover Overlay with Pulsing Play Button */}
-                  <div className="absolute inset-0 bg-black/40 group-hover/media:bg-black/20 transition-colors flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-[#0047AB]/90 border border-[#82C8E5]/50 text-white flex items-center justify-center shadow-2xl group-hover/media:scale-110 group-hover/media:bg-[#82C8E5] group-hover/media:text-[#06080C] transition-all duration-300">
-                      <Play className="w-6 h-6 ml-1 fill-current" />
-                    </div>
-                  </div>
-
-                  {/* Duration Tag */}
-                  <div className="absolute bottom-4 right-4 px-3 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/15 text-xs font-mono font-medium text-white">
-                    {project.duration}
                   </div>
                 </div>
+              ))}
+
+              {/* Hover Overlay with Pulsing Play Button */}
+              <div className="absolute inset-0 z-30 bg-black/30 group-hover/media:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
+                <div className="w-16 h-16 rounded-full bg-[#0047AB]/90 border border-[#82C8E5]/50 text-white flex items-center justify-center shadow-2xl group-hover/media:scale-110 group-hover/media:bg-[#82C8E5] group-hover/media:text-[#06080C] transition-all duration-300">
+                  <Play className="w-6 h-6 ml-1 fill-current" />
+                </div>
+              </div>
+
+              {/* Active Project Tag & Info Pill */}
+              <div className="absolute bottom-4 left-4 z-30 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-white/15 text-xs font-mono text-white flex items-center gap-2 pointer-events-none max-w-[70%] truncate">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
+                <span className="font-bold text-[#82C8E5]">{activeProject.number}</span>
+                <span className="text-slate-400">|</span>
+                <span className="truncate">{activeProject.title}</span>
+              </div>
+
+              {/* Duration Tag */}
+              <div className="absolute bottom-4 right-4 z-30 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-white/15 text-xs font-mono font-medium text-white pointer-events-none">
+                {activeProject.duration}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
