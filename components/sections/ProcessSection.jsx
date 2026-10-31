@@ -51,11 +51,8 @@ export default function ProcessSection() {
       <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#000080]/20 rounded-full blur-[140px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Chapter Header */}
+        {/* Header */}
         <div className="mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#82C8E5] mb-3">
-            <span>[ 05 / METHODOLOGY ]</span>
-          </div>
           <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
             Creative <span className="text-[#82C8E5] italic font-normal">Process</span>
           </h2>

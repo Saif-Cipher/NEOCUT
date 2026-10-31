@@ -34,7 +34,7 @@ export default function HomePage() {
         <FloatingCapsuleNav />
 
         {/* Section 01: Hero with 3D Orbit */}
-        <HeroSection onSelectVideo={(item) => setActiveModalVideo(item)} />
+        <HeroSection />
 
         {/* Section 02: Services Preview */}
         <ServicesSection />

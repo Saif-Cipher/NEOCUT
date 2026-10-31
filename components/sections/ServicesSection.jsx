@@ -90,12 +90,9 @@ export default function ServicesSection() {
       <div className="pointer-events-none absolute top-1/2 -right-40 w-96 h-96 bg-[#0047AB]/10 rounded-full blur-[140px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Section Header with Anubi-style Chapter Numbering */}
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#82C8E5] mb-3">
-              <span>[ 02 / CAPABILITIES ]</span>
-            </div>
             <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
               Services <span className="text-[#82C8E5] italic font-normal">&amp; Verticals</span>
             </h2>

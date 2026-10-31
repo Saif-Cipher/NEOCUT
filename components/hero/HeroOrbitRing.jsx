@@ -71,10 +71,11 @@ const FEATURED_ORBIT_ASSETS = [
   },
 ];
 
-export default function HeroOrbitRing({ onSelectAsset }) {
+export default function HeroOrbitRing() {
   const [angleOffset, setAngleOffset] = useState(0);
   const [mouseTilt, setMouseTilt] = useState({ x: 0, y: 0 });
-  const [isMobile, setIsMobile] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(1200);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
   const containerRef = useRef(null);
@@ -83,11 +84,17 @@ export default function HeroOrbitRing({ onSelectAsset }) {
   const currentMouseRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    // Respect user's motion preferences
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(motionQuery.matches);
+    const handleMotionChange = (e) => setPrefersReducedMotion(e.matches);
+    motionQuery.addEventListener('change', handleMotionChange);
 
     // Mouse movement listener with damped pointer tracking
     const handleMouseMove = (e) => {
@@ -105,19 +112,23 @@ export default function HeroOrbitRing({ onSelectAsset }) {
       const delta = (now - lastTime) / 1000;
       lastTime = now;
 
-      if (!isPaused) {
+      if (!isPaused && !prefersReducedMotion) {
         // Continuous gentle angular rotation
-        setAngleOffset((prev) => (prev + delta * 0.15) % (Math.PI * 2));
+        setAngleOffset((prev) => (prev + delta * 0.12) % (Math.PI * 2));
       }
 
-      // Smooth mouse lerp damping
-      currentMouseRef.current.x += (targetMouseRef.current.x - currentMouseRef.current.x) * 0.05;
-      currentMouseRef.current.y += (targetMouseRef.current.y - currentMouseRef.current.y) * 0.05;
+      if (prefersReducedMotion) {
+        setMouseTilt({ x: 0, y: 0 });
+      } else {
+        // Smooth mouse lerp damping
+        currentMouseRef.current.x += (targetMouseRef.current.x - currentMouseRef.current.x) * 0.05;
+        currentMouseRef.current.y += (targetMouseRef.current.y - currentMouseRef.current.y) * 0.05;
 
-      setMouseTilt({
-        x: currentMouseRef.current.y * 14, // tilt X around horizontal axis
-        y: -currentMouseRef.current.x * 22, // tilt Y around vertical axis
-      });
+        setMouseTilt({
+          x: currentMouseRef.current.y * 10, // tilt X around horizontal axis
+          y: -currentMouseRef.current.x * 16, // tilt Y around vertical axis
+        });
+      }
 
       animFrameRef.current = requestAnimationFrame(updateLoop);
     };
@@ -125,22 +136,34 @@ export default function HeroOrbitRing({ onSelectAsset }) {
     animFrameRef.current = requestAnimationFrame(updateLoop);
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      motionQuery.removeEventListener('change', handleMotionChange);
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
     };
-  }, [isPaused]);
+  }, [isPaused, prefersReducedMotion]);
+
+  // Viewport-based responsive tuning
+  const isMobile = viewportWidth < 640;
+  const isTablet = viewportWidth >= 640 && viewportWidth < 1024;
+
+  // Mobile uses 4 cards to keep viewport clean; Tablet uses 6 cards; Desktop displays all 8 cards
+  const displayAssets = isMobile
+    ? FEATURED_ORBIT_ASSETS.slice(0, 4)
+    : isTablet
+    ? FEATURED_ORBIT_ASSETS.slice(0, 6)
+    : FEATURED_ORBIT_ASSETS;
 
   // Elliptical orbit radii based on viewport
-  const radiusX = isMobile ? 260 : 520;
-  const radiusY = isMobile ? 120 : 220;
-  const radiusZ = isMobile ? 180 : 380;
-  const totalCards = FEATURED_ORBIT_ASSETS.length;
+  const radiusX = isMobile ? Math.min(viewportWidth * 0.42, 175) : isTablet ? 360 : 520;
+  const radiusY = isMobile ? 110 : isTablet ? 150 : 200;
+  const radiusZ = isMobile ? 140 : isTablet ? 240 : 380;
+  const totalCards = displayAssets.length;
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[580px] sm:h-[720px] flex items-center justify-center orbit-stage-container pointer-events-none select-none"
+      className="relative w-full h-full min-h-[640px] sm:min-h-[760px] lg:min-h-[860px] flex items-center justify-center orbit-stage-container pointer-events-none select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -152,19 +175,19 @@ export default function HeroOrbitRing({ onSelectAsset }) {
           transition: 'transform 0.1s ease-out',
         }}
       >
-        {FEATURED_ORBIT_ASSETS.map((asset, index) => {
-          // Calculate angle for 8 symmetrically distributed elliptical slots
+        {displayAssets.map((asset, index) => {
+          // Calculate angle for symmetrically distributed elliptical slots
           const baseAngle = (index / totalCards) * Math.PI * 2;
           const currentAngle = baseAngle + angleOffset;
 
           const x = Math.cos(currentAngle) * radiusX;
-          const y = Math.sin(currentAngle) * radiusY * 0.6; // angled ellipse
+          const y = Math.sin(currentAngle) * radiusY * 0.7; // angled ellipse
           const z = Math.sin(currentAngle) * radiusZ;
 
           // Card faces outward subtly matching angle
-          const rotateY = -Math.cos(currentAngle) * 25;
-          const rotateX = Math.sin(currentAngle) * 10;
-          const rotateZ = Math.cos(currentAngle) * 4;
+          const rotateY = -Math.cos(currentAngle) * 22;
+          const rotateX = Math.sin(currentAngle) * 8;
+          const rotateZ = Math.cos(currentAngle) * 3;
 
           return (
             <OrbitCard
@@ -176,7 +199,6 @@ export default function HeroOrbitRing({ onSelectAsset }) {
               rotateX={rotateX}
               rotateY={rotateY}
               rotateZ={rotateZ}
-              onSelect={onSelectAsset}
             />
           );
         })}

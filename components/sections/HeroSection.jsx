@@ -6,7 +6,7 @@ import { ArrowUpRight, Play, Sparkles } from 'lucide-react';
 import HeroOrbitRing from '../hero/HeroOrbitRing';
 import HeroDecorations from '../hero/HeroDecorations';
 
-export default function HeroSection({ onSelectVideo }) {
+export default function HeroSection() {
   const heroRef = useRef(null);
   const headlineRef = useRef(null);
   const wordmarkRef = useRef(null);
@@ -55,15 +55,15 @@ export default function HeroSection({ onSelectVideo }) {
     <section
       id="home"
       ref={heroRef}
-      className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-center items-center px-4 pt-32 pb-20 overflow-hidden bg-[#06080C]"
+      className="relative min-h-[115svh] sm:min-h-[120svh] lg:min-h-[125svh] flex flex-col justify-center items-center px-4 pt-36 pb-36 sm:pt-44 sm:pb-44 lg:pt-48 lg:pb-48 bg-[#06080C] overflow-x-clip"
       aria-label="NeoCut Digital Studio Hero"
     >
       {/* Ambient Lighting & Orbit Guides */}
       <HeroDecorations />
 
       {/* 3D Orbit Media Cards Stage */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <HeroOrbitRing onSelectAsset={onSelectVideo} />
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <HeroOrbitRing />
       </div>
 
       {/* Central Content & Editorial Display Typography */}

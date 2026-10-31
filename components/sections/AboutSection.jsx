@@ -12,11 +12,8 @@ export default function AboutSection() {
       <div className="pointer-events-none absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-[#000080]/20 rounded-full blur-[140px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Chapter Header */}
+        {/* Header */}
         <div className="mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#82C8E5] mb-3">
-            <span>[ 04 / STUDIO IDENTITY ]</span>
-          </div>
           <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
             About <span className="text-[#82C8E5] italic font-normal">NeoCut</span>
           </h2>

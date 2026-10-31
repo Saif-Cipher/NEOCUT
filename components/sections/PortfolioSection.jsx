@@ -141,12 +141,9 @@ export default function PortfolioSection({ onSelectVideo }) {
       className="relative py-28 sm:py-36 px-4 bg-[#06080C] border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Header with Chapter Indicator & Category Filter */}
+        {/* Header with Category Filter */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#82C8E5] mb-3">
-              <span>[ 03 / FEATURED PRODUCTIONS ]</span>
-            </div>
             <h2 className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
               Selected <span className="text-[#82C8E5] italic font-normal">Portfolio</span>
             </h2>
