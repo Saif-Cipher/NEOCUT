@@ -1,0 +1,947 @@
+{
+  "public/assets/logo/neocut-logo.png.jpg": {
+    "driveFileId": "1Q124pfJ2SAD3GpZ1497vy2dZ6RtC2dT8",
+    "driveFolderId": "1VPkLOiZqiR57hPhJ8s4QrggNxTcwhpx8",
+    "status": "uploaded"
+  },
+  "public/assets/videos/brand-promotion/promotion-1-video.mp4": {
+    "driveFileId": "1Q9E_e5gQ6CE-rMuJh8MntNHrEnXBd0Pr",
+    "driveFolderId": "1T7IPN0dIhquOFcw050szJugiV9qNgHmW",
+    "status": "uploaded"
+  },
+  "public/assets/thumbnails/brand-promotion/promotion-1-thumbnail.webp": {
+    "driveFileId": "1fYRBGjQCdgxEfLB4ffa1dLW-g3b0AQfO",
+    "driveFolderId": "1T7IPN0dIhquOFcw050szJugiV9qNgHmW",
+    "status": "uploaded"
+  },
+  "public/assets/videos/brand-promotion/promotion-2-video.mp4": {
+    "driveFileId": "1PmzLDHmFe4SKDPV8qCWUXdPvvz113dkz",
+    "driveFolderId": "1T7IPN0dIhquOFcw050szJugiV9qNgHmW",
+    "status": "uploaded"
+  },
+  "public/assets/thumbnails/brand-promotion/promotion-2-thumbnail.webp": {
+    "driveFileId": "1xGfcPTqvdO6huiuwqycY8ddiezwHQ3jY",
+    "driveFolderId": "1T7IPN0dIhquOFcw050szJugiV9qNgHmW",
+    "status": "uploaded"
+  },
+  "public/assets/thumbnails/brand-promotion/references/promotion-1-ref.jpg": {
+    "driveFileId": "1vtH-5gvMGcdH4oikCw9ZnJEZXc-VA04i",
+    "driveFolderId": "1T7IPN0dIhquOFcw050szJugiV9qNgHmW",
+    "fileSize": 401980,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1vtH-5gvMGcdH4oikCw9ZnJEZXc-VA04i/preview",
+    "webViewLink": "https://drive.google.com/file/d/1vtH-5gvMGcdH4oikCw9ZnJEZXc-VA04i/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:09:36.641946Z"
+  },
+  "public/assets/thumbnails/brand-promotion/references/promotion-2-ref.jpg": {
+    "driveFileId": "1YeyJY-sCC53p8mj0buL0RJ8uHsATCGHG",
+    "driveFolderId": "1T7IPN0dIhquOFcw050szJugiV9qNgHmW",
+    "fileSize": 329568,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1YeyJY-sCC53p8mj0buL0RJ8uHsATCGHG/preview",
+    "webViewLink": "https://drive.google.com/file/d/1YeyJY-sCC53p8mj0buL0RJ8uHsATCGHG/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:09:42.413827Z"
+  },
+  "public/assets/thumbnails/cinematography/references/cinematography-1-ref.jpg": {
+    "driveFileId": "1cM-4YM1aumUsmS7k7rWxt6ZJyHRrlDwh",
+    "driveFolderId": "1F0qFBGVUUqboAFGmGc2yx8SFw0ug50sj",
+    "fileSize": 392703,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1cM-4YM1aumUsmS7k7rWxt6ZJyHRrlDwh/preview",
+    "webViewLink": "https://drive.google.com/file/d/1cM-4YM1aumUsmS7k7rWxt6ZJyHRrlDwh/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:09:50.191154Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-1-ref.jpg": {
+    "driveFileId": "1m9cztSrwu3aVMWY-5hG9CkY0RwOMj0lw",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 317876,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1m9cztSrwu3aVMWY-5hG9CkY0RwOMj0lw/preview",
+    "webViewLink": "https://drive.google.com/file/d/1m9cztSrwu3aVMWY-5hG9CkY0RwOMj0lw/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:09:56.369799Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-10-ref.jpg": {
+    "driveFileId": "1gPKpc3mCoxs3qv6vu1mAQeiworcnsfRz",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 414576,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1gPKpc3mCoxs3qv6vu1mAQeiworcnsfRz/preview",
+    "webViewLink": "https://drive.google.com/file/d/1gPKpc3mCoxs3qv6vu1mAQeiworcnsfRz/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:10:06.345425Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-11-ref.jpg": {
+    "driveFileId": "1VlEBG0L7JBkDPEMx_2mNrqFdU4xfd8JM",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 340437,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1VlEBG0L7JBkDPEMx_2mNrqFdU4xfd8JM/preview",
+    "webViewLink": "https://drive.google.com/file/d/1VlEBG0L7JBkDPEMx_2mNrqFdU4xfd8JM/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:10:11.621613Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-12-ref.jpg": {
+    "driveFileId": "1wRjSfLKueJylSL_UKbr_tjzLoyJhInWT",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 385476,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1wRjSfLKueJylSL_UKbr_tjzLoyJhInWT/preview",
+    "webViewLink": "https://drive.google.com/file/d/1wRjSfLKueJylSL_UKbr_tjzLoyJhInWT/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:10:22.082329Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-13-ref.jpg": {
+    "driveFileId": "1RF37fnSNNkcGSGxvZSUVuiGGO7PQ0bUC",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 266361,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1RF37fnSNNkcGSGxvZSUVuiGGO7PQ0bUC/preview",
+    "webViewLink": "https://drive.google.com/file/d/1RF37fnSNNkcGSGxvZSUVuiGGO7PQ0bUC/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:10:27.403610Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-14-ref.jpg": {
+    "driveFileId": "1Ruxf3jMQL0WaOtT5WqHrcDpMhbbwKYxo",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 340367,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1Ruxf3jMQL0WaOtT5WqHrcDpMhbbwKYxo/preview",
+    "webViewLink": "https://drive.google.com/file/d/1Ruxf3jMQL0WaOtT5WqHrcDpMhbbwKYxo/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:10:35.512931Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-15-ref.jpg": {
+    "driveFileId": "1nAbg8asP55FvR3aCMwEXfs_Pxs_v5K7u",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 413153,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1nAbg8asP55FvR3aCMwEXfs_Pxs_v5K7u/preview",
+    "webViewLink": "https://drive.google.com/file/d/1nAbg8asP55FvR3aCMwEXfs_Pxs_v5K7u/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:10:44.111575Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-16-ref.jpg": {
+    "driveFileId": "1OkwJchOZLLOuB4I5IZ1VYDAtXZ_bE0rN",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 292359,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1OkwJchOZLLOuB4I5IZ1VYDAtXZ_bE0rN/preview",
+    "webViewLink": "https://drive.google.com/file/d/1OkwJchOZLLOuB4I5IZ1VYDAtXZ_bE0rN/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:10:50.808211Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-17-ref.jpg": {
+    "driveFileId": "11YTM-YM3HOtXQnToX-ih_MjgTpAV7GoJ",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 417036,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/11YTM-YM3HOtXQnToX-ih_MjgTpAV7GoJ/preview",
+    "webViewLink": "https://drive.google.com/file/d/11YTM-YM3HOtXQnToX-ih_MjgTpAV7GoJ/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:10:56.374644Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-18-ref.jpg": {
+    "driveFileId": "11zKy9xhBDVBuc-TulqKLpKcys9HVo0IM",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 321396,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/11zKy9xhBDVBuc-TulqKLpKcys9HVo0IM/preview",
+    "webViewLink": "https://drive.google.com/file/d/11zKy9xhBDVBuc-TulqKLpKcys9HVo0IM/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:11:02.118371Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-19-ref.jpg": {
+    "driveFileId": "1gYt8SLw-3S_gRvdAXBjRcqebw-w1OA-F",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 240632,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1gYt8SLw-3S_gRvdAXBjRcqebw-w1OA-F/preview",
+    "webViewLink": "https://drive.google.com/file/d/1gYt8SLw-3S_gRvdAXBjRcqebw-w1OA-F/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:11:07.341632Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-2-ref.jpg": {
+    "driveFileId": "1FlC8DB4r-PevxHis7F1ZB1lwcZJPuLb3",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 324381,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1FlC8DB4r-PevxHis7F1ZB1lwcZJPuLb3/preview",
+    "webViewLink": "https://drive.google.com/file/d/1FlC8DB4r-PevxHis7F1ZB1lwcZJPuLb3/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:11:16.429446Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-20-ref.jpg": {
+    "driveFileId": "1ITfBbbpSAo7ROyfXm9Js6vbnUWoOrNyU",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 347035,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1ITfBbbpSAo7ROyfXm9Js6vbnUWoOrNyU/preview",
+    "webViewLink": "https://drive.google.com/file/d/1ITfBbbpSAo7ROyfXm9Js6vbnUWoOrNyU/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:11:26.716540Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-21-ref.jpg": {
+    "driveFileId": "1HIohweZDJRWTodtqupDtu7B0jZvhNvU5",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 357651,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1HIohweZDJRWTodtqupDtu7B0jZvhNvU5/preview",
+    "webViewLink": "https://drive.google.com/file/d/1HIohweZDJRWTodtqupDtu7B0jZvhNvU5/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:11:31.968564Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-22-ref.jpg": {
+    "driveFileId": "1ahyZpxtU8XxYVxkE-3vPj4EkYaRI3Ub-",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 332963,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1ahyZpxtU8XxYVxkE-3vPj4EkYaRI3Ub-/preview",
+    "webViewLink": "https://drive.google.com/file/d/1ahyZpxtU8XxYVxkE-3vPj4EkYaRI3Ub-/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:11:44.657990Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-23-ref.jpg": {
+    "driveFileId": "1SvAHvkvcvZQSd5C1MZwHQWaQP25Z0wTQ",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 272371,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1SvAHvkvcvZQSd5C1MZwHQWaQP25Z0wTQ/preview",
+    "webViewLink": "https://drive.google.com/file/d/1SvAHvkvcvZQSd5C1MZwHQWaQP25Z0wTQ/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:11:50.013526Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-24-ref.jpg": {
+    "driveFileId": "17m-mT1ohLEf2fiR-nn0NAm6k7cyVzXz6",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 408016,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/17m-mT1ohLEf2fiR-nn0NAm6k7cyVzXz6/preview",
+    "webViewLink": "https://drive.google.com/file/d/17m-mT1ohLEf2fiR-nn0NAm6k7cyVzXz6/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:11:55.208743Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-25-ref.jpg": {
+    "driveFileId": "1N3sjjMUHD77Jn0gT3BoS9a6pgh7-oJAw",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 453779,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1N3sjjMUHD77Jn0gT3BoS9a6pgh7-oJAw/preview",
+    "webViewLink": "https://drive.google.com/file/d/1N3sjjMUHD77Jn0gT3BoS9a6pgh7-oJAw/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:01.763783Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-26-ref.jpg": {
+    "driveFileId": "1EjCPlUk0GnKtl1J7HPolW-Z_-PCsm-nX",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 389040,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1EjCPlUk0GnKtl1J7HPolW-Z_-PCsm-nX/preview",
+    "webViewLink": "https://drive.google.com/file/d/1EjCPlUk0GnKtl1J7HPolW-Z_-PCsm-nX/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:07.237317Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-27-ref.jpg": {
+    "driveFileId": "1G-qKAuJRIbxPODT-Z-l-QRdfgWV7R8uJ",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 252396,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1G-qKAuJRIbxPODT-Z-l-QRdfgWV7R8uJ/preview",
+    "webViewLink": "https://drive.google.com/file/d/1G-qKAuJRIbxPODT-Z-l-QRdfgWV7R8uJ/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:17.499822Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-28-ref.jpg": {
+    "driveFileId": "1JsNMBCAaTxEoNXcXBmwMnzAVES9EeMmH",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 586939,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1JsNMBCAaTxEoNXcXBmwMnzAVES9EeMmH/preview",
+    "webViewLink": "https://drive.google.com/file/d/1JsNMBCAaTxEoNXcXBmwMnzAVES9EeMmH/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:23.101796Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-29-ref.jpg": {
+    "driveFileId": "1pVw142L5P-hdFM769VJDRvZHwFycKSEA",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 350575,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1pVw142L5P-hdFM769VJDRvZHwFycKSEA/preview",
+    "webViewLink": "https://drive.google.com/file/d/1pVw142L5P-hdFM769VJDRvZHwFycKSEA/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:29.256820Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-3-ref.jpg": {
+    "driveFileId": "1eUV25EF9hbU9CtRwl1qVko3aU4y_85zF",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 238080,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1eUV25EF9hbU9CtRwl1qVko3aU4y_85zF/preview",
+    "webViewLink": "https://drive.google.com/file/d/1eUV25EF9hbU9CtRwl1qVko3aU4y_85zF/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:34.733408Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-30-ref.jpg": {
+    "driveFileId": "1f6HssUYufIfKnANPiFnXlPrKuCX9t_-I",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 396355,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1f6HssUYufIfKnANPiFnXlPrKuCX9t_-I/preview",
+    "webViewLink": "https://drive.google.com/file/d/1f6HssUYufIfKnANPiFnXlPrKuCX9t_-I/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:40.251748Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-31-ref.jpg": {
+    "driveFileId": "119-9_Pf3j9kRsKwOXOshgF-CDa1F4t1h",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 437585,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/119-9_Pf3j9kRsKwOXOshgF-CDa1F4t1h/preview",
+    "webViewLink": "https://drive.google.com/file/d/119-9_Pf3j9kRsKwOXOshgF-CDa1F4t1h/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:47.656280Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-32-ref.jpg": {
+    "driveFileId": "1wSTvGqVdb-ZxvCbkGlbzxep6iFpReuTB",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 277512,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1wSTvGqVdb-ZxvCbkGlbzxep6iFpReuTB/preview",
+    "webViewLink": "https://drive.google.com/file/d/1wSTvGqVdb-ZxvCbkGlbzxep6iFpReuTB/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:52.853210Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-4-ref.jpg": {
+    "driveFileId": "1KkBVSYyHH8hy-OcCF_1UF8VLaZR84zV1",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 209138,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1KkBVSYyHH8hy-OcCF_1UF8VLaZR84zV1/preview",
+    "webViewLink": "https://drive.google.com/file/d/1KkBVSYyHH8hy-OcCF_1UF8VLaZR84zV1/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:12:58.235501Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-5-ref.jpg": {
+    "driveFileId": "1pQ7glyV8ZvTa5-NNzMlDJuBk6XJ-ZzKK",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 317584,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1pQ7glyV8ZvTa5-NNzMlDJuBk6XJ-ZzKK/preview",
+    "webViewLink": "https://drive.google.com/file/d/1pQ7glyV8ZvTa5-NNzMlDJuBk6XJ-ZzKK/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:04.514047Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-6-ref.jpg": {
+    "driveFileId": "1Fjsqkfggn4tPtiNIZtb8gsVeEINWTwNf",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 210569,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1Fjsqkfggn4tPtiNIZtb8gsVeEINWTwNf/preview",
+    "webViewLink": "https://drive.google.com/file/d/1Fjsqkfggn4tPtiNIZtb8gsVeEINWTwNf/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:10.120786Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-7-ref.jpg": {
+    "driveFileId": "1yN1NJKsGymccn46BCZLJPlGCyP8qycUP",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 399020,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1yN1NJKsGymccn46BCZLJPlGCyP8qycUP/preview",
+    "webViewLink": "https://drive.google.com/file/d/1yN1NJKsGymccn46BCZLJPlGCyP8qycUP/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:16.854167Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-8-ref.jpg": {
+    "driveFileId": "1OU55Fe8Ag4H3Fxz3c8UG93wNhrJY4PYb",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 241028,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1OU55Fe8Ag4H3Fxz3c8UG93wNhrJY4PYb/preview",
+    "webViewLink": "https://drive.google.com/file/d/1OU55Fe8Ag4H3Fxz3c8UG93wNhrJY4PYb/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:22.656012Z"
+  },
+  "public/assets/thumbnails/explanation-videos/references/explanation-9-ref.jpg": {
+    "driveFileId": "18wNCfu2CePbzPoRH9cVu3aj5qusWJ_BL",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 377978,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/18wNCfu2CePbzPoRH9cVu3aj5qusWJ_BL/preview",
+    "webViewLink": "https://drive.google.com/file/d/18wNCfu2CePbzPoRH9cVu3aj5qusWJ_BL/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:28.716261Z"
+  },
+  "public/assets/thumbnails/hero/references/hero-1-ref.jpg": {
+    "driveFileId": "1QBpB7NPXq9bEO64zdNw27pwKhbBvM_sL",
+    "driveFolderId": "1oBgd76rbKmdzAZuZwV7j7byUCmr5ySlY",
+    "fileSize": 429903,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1QBpB7NPXq9bEO64zdNw27pwKhbBvM_sL/preview",
+    "webViewLink": "https://drive.google.com/file/d/1QBpB7NPXq9bEO64zdNw27pwKhbBvM_sL/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:34.833440Z"
+  },
+  "public/assets/thumbnails/kids-animation/references/kids-animation-1-ref.jpg": {
+    "driveFileId": "1P485ES0sNcTgR3IUWbYySXz6KXZ1XvWk",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 424796,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1P485ES0sNcTgR3IUWbYySXz6KXZ1XvWk/preview",
+    "webViewLink": "https://drive.google.com/file/d/1P485ES0sNcTgR3IUWbYySXz6KXZ1XvWk/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:40.494872Z"
+  },
+  "public/assets/thumbnails/kids-animation/references/kids-animation-2-ref.jpg": {
+    "driveFileId": "1CyorZTaBvG6RWDiAcTa9vHibItuLTfcf",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 349476,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1CyorZTaBvG6RWDiAcTa9vHibItuLTfcf/preview",
+    "webViewLink": "https://drive.google.com/file/d/1CyorZTaBvG6RWDiAcTa9vHibItuLTfcf/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:46.097874Z"
+  },
+  "public/assets/thumbnails/kids-animation/references/kids-animation-3-ref.jpg": {
+    "driveFileId": "1xjamG3vtIEzmT7Dw5zxGRaWUW2CllyTw",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 429488,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1xjamG3vtIEzmT7Dw5zxGRaWUW2CllyTw/preview",
+    "webViewLink": "https://drive.google.com/file/d/1xjamG3vtIEzmT7Dw5zxGRaWUW2CllyTw/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:51.040093Z"
+  },
+  "public/assets/thumbnails/kids-animation/references/kids-animation-4-ref.jpg": {
+    "driveFileId": "1tpvfpfYykklvT6Dd6xlvbRlDx1gvf2Iw",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 386314,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1tpvfpfYykklvT6Dd6xlvbRlDx1gvf2Iw/preview",
+    "webViewLink": "https://drive.google.com/file/d/1tpvfpfYykklvT6Dd6xlvbRlDx1gvf2Iw/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:13:57.103407Z"
+  },
+  "public/assets/thumbnails/kids-animation/references/kids-animation-5-ref.jpg": {
+    "driveFileId": "1zcFcS4zXHeMoiv1D51W1i27S3D9AI1Fz",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 348251,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1zcFcS4zXHeMoiv1D51W1i27S3D9AI1Fz/preview",
+    "webViewLink": "https://drive.google.com/file/d/1zcFcS4zXHeMoiv1D51W1i27S3D9AI1Fz/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:14:06.089664Z"
+  },
+  "public/assets/thumbnails/kids-animation/references/kids-animation-6-ref.jpg": {
+    "driveFileId": "1eYsC8qWAJPG89L7UdaMaZ0TIB0O8LElq",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 312927,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1eYsC8qWAJPG89L7UdaMaZ0TIB0O8LElq/preview",
+    "webViewLink": "https://drive.google.com/file/d/1eYsC8qWAJPG89L7UdaMaZ0TIB0O8LElq/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:14:11.166850Z"
+  },
+  "public/assets/thumbnails/kids-animation/references/kids-animation-7-ref.jpg": {
+    "driveFileId": "1br9VdxbCZ08NotYToL0_SvkKNBARMVsb",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 323663,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1br9VdxbCZ08NotYToL0_SvkKNBARMVsb/preview",
+    "webViewLink": "https://drive.google.com/file/d/1br9VdxbCZ08NotYToL0_SvkKNBARMVsb/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:14:16.756709Z"
+  },
+  "public/assets/thumbnails/kids-animation/references/kids-animation-8-ref.jpg": {
+    "driveFileId": "1uceqrJD-yHNktPe-fS747L_itRhS09U3",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 409703,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1uceqrJD-yHNktPe-fS747L_itRhS09U3/preview",
+    "webViewLink": "https://drive.google.com/file/d/1uceqrJD-yHNktPe-fS747L_itRhS09U3/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:14:21.798619Z"
+  },
+  "public/assets/thumbnails/storytelling/references/storytelling-1-ref.jpg": {
+    "driveFileId": "1TubNT6c3lDeJC0jc01c81wzXA0KiZpN8",
+    "driveFolderId": "1H9FP11tmFm9HNlZC4qQ1zVrJpuVDXfFO",
+    "fileSize": 366086,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1TubNT6c3lDeJC0jc01c81wzXA0KiZpN8/preview",
+    "webViewLink": "https://drive.google.com/file/d/1TubNT6c3lDeJC0jc01c81wzXA0KiZpN8/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:14:26.829093Z"
+  },
+  "public/assets/thumbnails/storytelling/references/storytelling-2-ref.jpg": {
+    "driveFileId": "1_7P4mWVHWHFg9KiFnxoLTCBEbEPEGqF6",
+    "driveFolderId": "1H9FP11tmFm9HNlZC4qQ1zVrJpuVDXfFO",
+    "fileSize": 830724,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1_7P4mWVHWHFg9KiFnxoLTCBEbEPEGqF6/preview",
+    "webViewLink": "https://drive.google.com/file/d/1_7P4mWVHWHFg9KiFnxoLTCBEbEPEGqF6/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:14:32.989847Z"
+  },
+  "public/assets/thumbnails/storytelling/references/storytelling-3-ref.jpg": {
+    "driveFileId": "1hhA7dTYG0RIbtg-KBjhZ0iSsvIUVmFZr",
+    "driveFolderId": "1H9FP11tmFm9HNlZC4qQ1zVrJpuVDXfFO",
+    "fileSize": 429903,
+    "mimeType": "image/jpeg",
+    "previewUrl": "https://drive.google.com/file/d/1hhA7dTYG0RIbtg-KBjhZ0iSsvIUVmFZr/preview",
+    "webViewLink": "https://drive.google.com/file/d/1hhA7dTYG0RIbtg-KBjhZ0iSsvIUVmFZr/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:14:37.807536Z"
+  },
+  "public/assets/videos/kids-animation/kids-animation-1-video.mp4": {
+    "driveFileId": "11e3fH19QV9aaWhGzy3oxeeTbQ5m1JCeI",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 312049518,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/11e3fH19QV9aaWhGzy3oxeeTbQ5m1JCeI/preview",
+    "webViewLink": "https://drive.google.com/file/d/11e3fH19QV9aaWhGzy3oxeeTbQ5m1JCeI/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:18:17.731458Z"
+  },
+  "public/assets/videos/kids-animation/kids-animation-2-video.mp4": {
+    "driveFileId": "1cM3tySSp-7dkxnIWExbK5NRbKJPNKkuH",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 492509469,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1cM3tySSp-7dkxnIWExbK5NRbKJPNKkuH/preview",
+    "webViewLink": "https://drive.google.com/file/d/1cM3tySSp-7dkxnIWExbK5NRbKJPNKkuH/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:21:34.379860Z"
+  },
+  "public/assets/videos/kids-animation/kids-animation-3-video.mp4": {
+    "driveFileId": "1sk2B1c4KYPWZM5kEO4QJXNiVIyZrnWjU",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 108549093,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1sk2B1c4KYPWZM5kEO4QJXNiVIyZrnWjU/preview",
+    "webViewLink": "https://drive.google.com/file/d/1sk2B1c4KYPWZM5kEO4QJXNiVIyZrnWjU/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:21:53.079090Z"
+  },
+  "public/assets/videos/kids-animation/kids-animation-4-video.mp4": {
+    "driveFileId": "1w5lqJoOdpsfDoCjuEuavPg5o1KG_j3gq",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 196372349,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1w5lqJoOdpsfDoCjuEuavPg5o1KG_j3gq/preview",
+    "webViewLink": "https://drive.google.com/file/d/1w5lqJoOdpsfDoCjuEuavPg5o1KG_j3gq/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:24:19.797394Z"
+  },
+  "public/assets/videos/kids-animation/kids-animation-5-video.mp4": {
+    "driveFileId": "1eMTiuFr0D48NLELfUpzhTBwA_f4GvGFv",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 30406968,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1eMTiuFr0D48NLELfUpzhTBwA_f4GvGFv/preview",
+    "webViewLink": "https://drive.google.com/file/d/1eMTiuFr0D48NLELfUpzhTBwA_f4GvGFv/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:24:41.002322Z"
+  },
+  "public/assets/videos/kids-animation/kids-animation-6-video.mp4": {
+    "driveFileId": "1IfBAQ7Yoy8XIqRNaQCKtTQbKbafaNlV8",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 298986142,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1IfBAQ7Yoy8XIqRNaQCKtTQbKbafaNlV8/preview",
+    "webViewLink": "https://drive.google.com/file/d/1IfBAQ7Yoy8XIqRNaQCKtTQbKbafaNlV8/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:25:22.900680Z"
+  },
+  "public/assets/videos/kids-animation/kids-animation-7-video.mp4": {
+    "driveFileId": "1saIQOaJ5exGl15o0UqCdzsZjVCzSEqPP",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 258017611,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1saIQOaJ5exGl15o0UqCdzsZjVCzSEqPP/preview",
+    "webViewLink": "https://drive.google.com/file/d/1saIQOaJ5exGl15o0UqCdzsZjVCzSEqPP/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:26:00.409146Z"
+  },
+  "public/assets/videos/kids-animation/kids-animation-8-video.mp4": {
+    "driveFileId": "1jfAAM5a_s-MYk14pbEMrK4Piqnqw0lQK",
+    "driveFolderId": "1I_jQulnAPmpeCbSwYXmDONrxZXdCr9_8",
+    "fileSize": 395168506,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1jfAAM5a_s-MYk14pbEMrK4Piqnqw0lQK/preview",
+    "webViewLink": "https://drive.google.com/file/d/1jfAAM5a_s-MYk14pbEMrK4Piqnqw0lQK/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:26:54.488997Z"
+  },
+  "public/assets/videos/storytelling/storytelling-1-video.mp4": {
+    "driveFileId": "1G82iCKZPVUXzAj35shDSy07CDcfMgo4C",
+    "driveFolderId": "1H9FP11tmFm9HNlZC4qQ1zVrJpuVDXfFO",
+    "fileSize": 195194889,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1G82iCKZPVUXzAj35shDSy07CDcfMgo4C/preview",
+    "webViewLink": "https://drive.google.com/file/d/1G82iCKZPVUXzAj35shDSy07CDcfMgo4C/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:27:23.678487Z"
+  },
+  "public/assets/videos/cinematography/cinematography-1-video.mp4": {
+    "driveFileId": "1qzVK-AHdrt4r4h2zPalCMApEh-tGCGne",
+    "driveFolderId": "1F0qFBGVUUqboAFGmGc2yx8SFw0ug50sj",
+    "fileSize": 278743213,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1qzVK-AHdrt4r4h2zPalCMApEh-tGCGne/preview",
+    "webViewLink": "https://drive.google.com/file/d/1qzVK-AHdrt4r4h2zPalCMApEh-tGCGne/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:28:24.116352Z"
+  },
+  "public/assets/videos/storytelling/storytelling-2-video.mp4": {
+    "driveFileId": "1U6uaGajHeRsecmfIpogNg2nUlA86uQYp",
+    "driveFolderId": "1H9FP11tmFm9HNlZC4qQ1zVrJpuVDXfFO",
+    "fileSize": 243636407,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1U6uaGajHeRsecmfIpogNg2nUlA86uQYp/preview",
+    "webViewLink": "https://drive.google.com/file/d/1U6uaGajHeRsecmfIpogNg2nUlA86uQYp/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:31:47.449833Z"
+  },
+  "public/assets/videos/storytelling/storytelling-3-video.mp4": {
+    "driveFileId": "10aFx7Lyb7DM9dlBpbBr0VHyUhN8Qm6hl",
+    "driveFolderId": "1H9FP11tmFm9HNlZC4qQ1zVrJpuVDXfFO",
+    "fileSize": 76989890,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/10aFx7Lyb7DM9dlBpbBr0VHyUhN8Qm6hl/preview",
+    "webViewLink": "https://drive.google.com/file/d/10aFx7Lyb7DM9dlBpbBr0VHyUhN8Qm6hl/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:32:50.884766Z"
+  },
+  "public/assets/videos/hero/hero-1-video.mp4": {
+    "driveFileId": "1jH_kscPlWnQkeS0oXLAjQN1RELOeEs_1",
+    "driveFolderId": "1XXTZT40Ubc9p2Bz56guJA3QssUQ9z210",
+    "fileSize": 76989890,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1jH_kscPlWnQkeS0oXLAjQN1RELOeEs_1/preview",
+    "webViewLink": "https://drive.google.com/file/d/1jH_kscPlWnQkeS0oXLAjQN1RELOeEs_1/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:33:50.736836Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-1-video.mp4": {
+    "driveFileId": "10I3PBz1vSjVl9PTew38JU8kpFgTO5MO8",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 53455731,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/10I3PBz1vSjVl9PTew38JU8kpFgTO5MO8/preview",
+    "webViewLink": "https://drive.google.com/file/d/10I3PBz1vSjVl9PTew38JU8kpFgTO5MO8/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:34:34.716388Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-2-video.mp4": {
+    "driveFileId": "169qpr9g1XsmL7S93Oc6zTRAluW54_nzu",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 56915670,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/169qpr9g1XsmL7S93Oc6zTRAluW54_nzu/preview",
+    "webViewLink": "https://drive.google.com/file/d/169qpr9g1XsmL7S93Oc6zTRAluW54_nzu/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:35:26.436438Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-3-video.mp4": {
+    "driveFileId": "1jX5ROoIDA4QpLRMbURB2gH85ujTKZiNQ",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 55063761,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1jX5ROoIDA4QpLRMbURB2gH85ujTKZiNQ/preview",
+    "webViewLink": "https://drive.google.com/file/d/1jX5ROoIDA4QpLRMbURB2gH85ujTKZiNQ/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:36:18.358290Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-4-video.mp4": {
+    "driveFileId": "1_Ta65B-lg0rsg387kxJSvErEQGAosENe",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 52748111,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1_Ta65B-lg0rsg387kxJSvErEQGAosENe/preview",
+    "webViewLink": "https://drive.google.com/file/d/1_Ta65B-lg0rsg387kxJSvErEQGAosENe/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:37:12.302051Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-5-video.mp4": {
+    "driveFileId": "1NqunVUJ-ffBjpGOZvMZwfpGes8wFUyFA",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 136923846,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1NqunVUJ-ffBjpGOZvMZwfpGes8wFUyFA/preview",
+    "webViewLink": "https://drive.google.com/file/d/1NqunVUJ-ffBjpGOZvMZwfpGes8wFUyFA/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:39:11.803659Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-6-video.mp4": {
+    "driveFileId": "1-_46Ep_Eu2fGEDoSAkPWQ530-0AZC4gD",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 41025535,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1-_46Ep_Eu2fGEDoSAkPWQ530-0AZC4gD/preview",
+    "webViewLink": "https://drive.google.com/file/d/1-_46Ep_Eu2fGEDoSAkPWQ530-0AZC4gD/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:39:45.716224Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-7-video.mp4": {
+    "driveFileId": "1aNkMc2FEef-rI8745VE-V9yZ3Rx8hzEX",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 124666868,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1aNkMc2FEef-rI8745VE-V9yZ3Rx8hzEX/preview",
+    "webViewLink": "https://drive.google.com/file/d/1aNkMc2FEef-rI8745VE-V9yZ3Rx8hzEX/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:41:59.929831Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-8-video.mp4": {
+    "driveFileId": "17zLiF6xwBJ90l3gIkf5WBEdiiLQfLPpN",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 56882537,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/17zLiF6xwBJ90l3gIkf5WBEdiiLQfLPpN/preview",
+    "webViewLink": "https://drive.google.com/file/d/17zLiF6xwBJ90l3gIkf5WBEdiiLQfLPpN/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:42:48.049302Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-9-video.mp4": {
+    "driveFileId": "1zJoQK3yJipeQOEbJ8c0SV3BjytTqVQ7v",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 74179123,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1zJoQK3yJipeQOEbJ8c0SV3BjytTqVQ7v/preview",
+    "webViewLink": "https://drive.google.com/file/d/1zJoQK3yJipeQOEbJ8c0SV3BjytTqVQ7v/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:43:48.644931Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-10-video.mp4": {
+    "driveFileId": "1I6nC3NvYLUy_5LT1vexTSRMC4Zc9pbyd",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 124587673,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1I6nC3NvYLUy_5LT1vexTSRMC4Zc9pbyd/preview",
+    "webViewLink": "https://drive.google.com/file/d/1I6nC3NvYLUy_5LT1vexTSRMC4Zc9pbyd/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:45:29.812664Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-11-video.mp4": {
+    "driveFileId": "1bkxlmafRGpywq0nTY08DMAyIfPHXXsi9",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 53930707,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1bkxlmafRGpywq0nTY08DMAyIfPHXXsi9/preview",
+    "webViewLink": "https://drive.google.com/file/d/1bkxlmafRGpywq0nTY08DMAyIfPHXXsi9/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:46:13.884591Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-12-video.mp4": {
+    "driveFileId": "1J4xR8woHbHHm9MZKO1PNw0kLskGREZJs",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 47598084,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1J4xR8woHbHHm9MZKO1PNw0kLskGREZJs/preview",
+    "webViewLink": "https://drive.google.com/file/d/1J4xR8woHbHHm9MZKO1PNw0kLskGREZJs/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:46:55.303593Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-13-video.mp4": {
+    "driveFileId": "116WG5dYLKUjzHWOpJhFqrSyhwlPJ9O38",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 111204739,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/116WG5dYLKUjzHWOpJhFqrSyhwlPJ9O38/preview",
+    "webViewLink": "https://drive.google.com/file/d/116WG5dYLKUjzHWOpJhFqrSyhwlPJ9O38/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:48:35.761354Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-14-video.mp4": {
+    "driveFileId": "1obouheYnc_iCJf_iiY7cSPUbeOpYemsT",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 60501506,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1obouheYnc_iCJf_iiY7cSPUbeOpYemsT/preview",
+    "webViewLink": "https://drive.google.com/file/d/1obouheYnc_iCJf_iiY7cSPUbeOpYemsT/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:49:43.932186Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-15-video.mp4": {
+    "driveFileId": "1Gg6QNLUu66dHDsrGX9Fqsg_UijJceyut",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 108760475,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1Gg6QNLUu66dHDsrGX9Fqsg_UijJceyut/preview",
+    "webViewLink": "https://drive.google.com/file/d/1Gg6QNLUu66dHDsrGX9Fqsg_UijJceyut/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:51:09.957550Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-16-video.mp4": {
+    "driveFileId": "1R574QncX6hqhMp4CEdGliqrsT33j-YD3",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 48899789,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1R574QncX6hqhMp4CEdGliqrsT33j-YD3/preview",
+    "webViewLink": "https://drive.google.com/file/d/1R574QncX6hqhMp4CEdGliqrsT33j-YD3/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:51:50.992540Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-17-video.mp4": {
+    "driveFileId": "1ZoNfwElHKF5gHxECMRXv5rjTKO5xukYE",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 58631178,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1ZoNfwElHKF5gHxECMRXv5rjTKO5xukYE/preview",
+    "webViewLink": "https://drive.google.com/file/d/1ZoNfwElHKF5gHxECMRXv5rjTKO5xukYE/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:52:38.784560Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-18-video.mp4": {
+    "driveFileId": "1app1_ekB9e4aJaXFgGNCjhGb5XtjDpCT",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 49435286,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1app1_ekB9e4aJaXFgGNCjhGb5XtjDpCT/preview",
+    "webViewLink": "https://drive.google.com/file/d/1app1_ekB9e4aJaXFgGNCjhGb5XtjDpCT/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:53:20.190334Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-19-video.mp4": {
+    "driveFileId": "1HsAY2OKJrW7Xs8DhQEVtHkLV7Wmp1RwL",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 122171544,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1HsAY2OKJrW7Xs8DhQEVtHkLV7Wmp1RwL/preview",
+    "webViewLink": "https://drive.google.com/file/d/1HsAY2OKJrW7Xs8DhQEVtHkLV7Wmp1RwL/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:54:55.635080Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-20-video.mp4": {
+    "driveFileId": "1PB_EaXI76y9Dl00zXCG9vwrvglX9l_Y7",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 64623440,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1PB_EaXI76y9Dl00zXCG9vwrvglX9l_Y7/preview",
+    "webViewLink": "https://drive.google.com/file/d/1PB_EaXI76y9Dl00zXCG9vwrvglX9l_Y7/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:55:20.990925Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-21-video.mp4": {
+    "driveFileId": "1N8k7_Tw7xOF8_0N7HkdsmnE2-ugPhDYR",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 85945187,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1N8k7_Tw7xOF8_0N7HkdsmnE2-ugPhDYR/preview",
+    "webViewLink": "https://drive.google.com/file/d/1N8k7_Tw7xOF8_0N7HkdsmnE2-ugPhDYR/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:55:39.298692Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-22-video.mp4": {
+    "driveFileId": "1JAchWgckh5VNn7oBNbzBcIm9X1i5yLXO",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 127894888,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1JAchWgckh5VNn7oBNbzBcIm9X1i5yLXO/preview",
+    "webViewLink": "https://drive.google.com/file/d/1JAchWgckh5VNn7oBNbzBcIm9X1i5yLXO/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:56:06.374565Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-23-video.mp4": {
+    "driveFileId": "1qnEwUGBoUXDkL7a6lzo5dXQEK3_GOZNF",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 124164800,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1qnEwUGBoUXDkL7a6lzo5dXQEK3_GOZNF/preview",
+    "webViewLink": "https://drive.google.com/file/d/1qnEwUGBoUXDkL7a6lzo5dXQEK3_GOZNF/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:56:28.380927Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-24-video.mp4": {
+    "driveFileId": "1adgGyB4JYzAdi7ZTojv3zUn3R6JAnGL5",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 65899600,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1adgGyB4JYzAdi7ZTojv3zUn3R6JAnGL5/preview",
+    "webViewLink": "https://drive.google.com/file/d/1adgGyB4JYzAdi7ZTojv3zUn3R6JAnGL5/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:56:41.096625Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-25-video.mp4": {
+    "driveFileId": "19KkLDNh5nB77fz_XKNzqqJLTC_waOoCO",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 109901197,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/19KkLDNh5nB77fz_XKNzqqJLTC_waOoCO/preview",
+    "webViewLink": "https://drive.google.com/file/d/19KkLDNh5nB77fz_XKNzqqJLTC_waOoCO/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:56:58.872107Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-26-video.mp4": {
+    "driveFileId": "1d9Q5eZrQk2JG0cR-mraOG1RbGK6Skk01",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 108520612,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1d9Q5eZrQk2JG0cR-mraOG1RbGK6Skk01/preview",
+    "webViewLink": "https://drive.google.com/file/d/1d9Q5eZrQk2JG0cR-mraOG1RbGK6Skk01/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:57:17.855886Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-27-video.mp4": {
+    "driveFileId": "1nTNyY7WIxGv0HnDskdm9dKhPPqcw-G6H",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 57279929,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1nTNyY7WIxGv0HnDskdm9dKhPPqcw-G6H/preview",
+    "webViewLink": "https://drive.google.com/file/d/1nTNyY7WIxGv0HnDskdm9dKhPPqcw-G6H/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:57:29.145315Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-28-video.mp4": {
+    "driveFileId": "1JBKc6Dq4ys-pEThntmRloFRN9rpVjbq4",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 55715765,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1JBKc6Dq4ys-pEThntmRloFRN9rpVjbq4/preview",
+    "webViewLink": "https://drive.google.com/file/d/1JBKc6Dq4ys-pEThntmRloFRN9rpVjbq4/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:57:42.001551Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-29-video.mp4": {
+    "driveFileId": "1Ovoy7Q7hFUoqR3A8sCDp4ioipvRwbBnM",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 81263711,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1Ovoy7Q7hFUoqR3A8sCDp4ioipvRwbBnM/preview",
+    "webViewLink": "https://drive.google.com/file/d/1Ovoy7Q7hFUoqR3A8sCDp4ioipvRwbBnM/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:57:59.516851Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-30-video.mp4": {
+    "driveFileId": "13wn0_YQBUvlPNiPDwUEqjvCUYQrpcx_m",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 73233261,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/13wn0_YQBUvlPNiPDwUEqjvCUYQrpcx_m/preview",
+    "webViewLink": "https://drive.google.com/file/d/13wn0_YQBUvlPNiPDwUEqjvCUYQrpcx_m/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:58:14.789728Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-31-video.mp4": {
+    "driveFileId": "1IEH2ji0oRI_zwCem76XadNWPU1LeGlhg",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 52106050,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1IEH2ji0oRI_zwCem76XadNWPU1LeGlhg/preview",
+    "webViewLink": "https://drive.google.com/file/d/1IEH2ji0oRI_zwCem76XadNWPU1LeGlhg/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:58:28.456828Z"
+  },
+  "public/assets/videos/explanation-videos/explanation-32-video.mp4": {
+    "driveFileId": "1iiYFIuRUd_l7iS5iAeporXZJuPr8AsJ8",
+    "driveFolderId": "1eMBFMLy3di1IDQv0L9hfIuDUxxuZcpJv",
+    "fileSize": 115869157,
+    "mimeType": "video/mp4",
+    "previewUrl": "https://drive.google.com/file/d/1iiYFIuRUd_l7iS5iAeporXZJuPr8AsJ8/preview",
+    "webViewLink": "https://drive.google.com/file/d/1iiYFIuRUd_l7iS5iAeporXZJuPr8AsJ8/view?usp=drivesdk",
+    "status": "uploaded",
+    "uploadedAt": "2026-10-31T07:58:48.465827Z"
+  }
+}
