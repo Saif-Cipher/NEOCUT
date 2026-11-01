@@ -138,3 +138,48 @@ body {
     transform: none !important;
   }
 }
+
+/* ==============================================================================
+   Circular Iris Page Transition Keyframes (Anubi.io Specification: 0.65s, expo.inOut)
+   ============================================================================== */
+
+@keyframes irisClipExpand {
+  0% {
+    clip-path: circle(0% at var(--origin-x, 50%) var(--origin-y, 50%));
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(150% at var(--origin-x, 50%) var(--origin-y, 50%));
+    opacity: 1;
+  }
+}
+
+@keyframes irisClipReveal {
+  0% {
+    clip-path: circle(150% at var(--origin-x, 50%) var(--origin-y, 50%));
+    opacity: 1;
+  }
+  100% {
+    clip-path: circle(150% at var(--origin-x, 50%) var(--origin-y, 50%));
+    opacity: 0;
+  }
+}
+
+.iris-clip-expand {
+  animation: irisClipExpand 0.65s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+  will-change: clip-path;
+}
+
+.iris-clip-reveal {
+  animation: irisClipReveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iris-clip-expand,
+  .iris-clip-reveal {
+    animation: none !important;
+    clip-path: none !important;
+    opacity: 0 !important;
+  }
+}

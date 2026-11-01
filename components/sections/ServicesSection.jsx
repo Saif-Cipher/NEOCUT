@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Film, Sparkles, Wand2, Eye, Compass } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
+import { TransitionLink } from '../motion/TransitionProvider';
 
 const SERVICES = [
   {
@@ -165,17 +166,30 @@ export default function ServicesSection() {
                   <span className="text-[11px] font-mono text-slate-500">
                     {srv.metric}
                   </span>
-                  <a
-                    href="#portfolio"
+                  <TransitionLink
+                    href="/services"
                     className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:bg-[#82C8E5] group-hover:text-[#06080C] group-hover:rotate-45 transition-all duration-300"
-                    aria-label={`View ${srv.title} projects`}
+                    aria-label={`View ${srv.title} service details`}
                   >
                     <ArrowUpRight className="w-4 h-4" />
-                  </a>
+                  </TransitionLink>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Section Bottom CTA to Dedicated Services Route */}
+        <div className="mt-16 text-center">
+          <TransitionLink
+            href="/services"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider border border-white/10 hover:border-[#82C8E5]/50 transition-all duration-300 shadow-xl group"
+          >
+            <StretchSnapText as="span" level="subtle" split="words" interactive>
+              View All Services
+            </StretchSnapText>
+            <ArrowUpRight className="w-4 h-4 text-[#82C8E5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </TransitionLink>
         </div>
       </div>
     </section>

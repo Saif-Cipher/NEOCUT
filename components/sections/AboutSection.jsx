@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, Award, Video, Cpu, ShieldCheck } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
+import { TransitionLink } from '../motion/TransitionProvider';
 
 export default function AboutSection() {
   return (
@@ -111,8 +112,18 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* CTA */}
-            <div className="pt-6">
+            {/* CTAs */}
+            <div className="pt-6 flex flex-wrap items-center gap-4">
+              <TransitionLink
+                href="/about"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider border border-white/10 hover:border-[#82C8E5]/50 transition-all duration-300 shadow-xl group"
+              >
+                <StretchSnapText as="span" level="subtle" split="words" interactive>
+                  About the Studio
+                </StretchSnapText>
+                <ArrowUpRight className="w-4 h-4 text-[#82C8E5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </TransitionLink>
+
               <a
                 href="https://wa.me/8801931245914"
                 target="_blank"

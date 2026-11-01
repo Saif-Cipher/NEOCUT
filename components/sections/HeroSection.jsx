@@ -6,6 +6,7 @@ import { ArrowUpRight, Play, Sparkles } from 'lucide-react';
 import HeroOrbitRing from '../hero/HeroOrbitRing';
 import HeroDecorations from '../hero/HeroDecorations';
 import StretchSnapText from '../motion/StretchSnapText';
+import { TransitionLink } from '../motion/TransitionProvider';
 
 export default function HeroSection() {
   const heroRef = useRef(null);
@@ -132,17 +133,17 @@ export default function HeroSection() {
           We help brands, creators, and businesses turn ideas into powerful cinematic stories using AI-powered video production.
         </StretchSnapText>
 
-        {/* CTAs: Primary (View Portfolio) & Secondary (Start a Project via WhatsApp) */}
+        {/* CTAs: Primary (View Portfolio) & Secondary (Start a Project) */}
         <div ref={ctaRef} className="flex flex-wrap items-center justify-center gap-4 mt-10">
-          <a
-            href="#portfolio"
+          <TransitionLink
+            href="/portfolio"
             className="group px-7 py-3.5 rounded-full bg-white text-[#06080C] font-semibold text-xs uppercase tracking-wider hover:bg-[#82C8E5] hover:text-[#06080C] transition-all duration-300 shadow-xl shadow-white/10 active:scale-95 flex items-center gap-2"
           >
             <Play className="w-3.5 h-3.5 fill-current" />
             <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.9}>
               View Portfolio
             </StretchSnapText>
-          </a>
+          </TransitionLink>
 
           <a
             href="https://wa.me/8801931245914"

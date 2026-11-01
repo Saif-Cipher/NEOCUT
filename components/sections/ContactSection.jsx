@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, MessageSquare, Mail, Phone, Sparkles } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
+import { TransitionLink } from '../motion/TransitionProvider';
 
 export default function ContactSection() {
   return (
@@ -87,16 +88,26 @@ export default function ContactSection() {
           </a>
         </div>
 
-        {/* Primary Start a Project Button */}
-        <div className="mt-12">
+        {/* Action CTAs */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+          <TransitionLink
+            href="/contact"
+            className="group inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#000080] via-[#0047AB] to-[#0055CC] hover:from-[#0047AB] hover:to-[#82C8E5] hover:text-[#06080C] text-white font-bold text-sm uppercase tracking-wider border border-[#82C8E5]/50 shadow-2xl shadow-[#0047AB]/40 transition-all duration-300 active:scale-95"
+          >
+            <StretchSnapText as="span" level="subtle" split="words" interactive>
+              Contact Us
+            </StretchSnapText>
+            <ArrowUpRight className="w-5 h-5 text-[#82C8E5] group-hover:text-[#06080C] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </TransitionLink>
+
           <a
             href="https://wa.me/8801931245914"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-[#000080] via-[#0047AB] to-[#0055CC] hover:from-[#0047AB] hover:to-[#82C8E5] hover:text-[#06080C] text-white font-bold text-sm uppercase tracking-wider border border-[#82C8E5]/50 shadow-2xl shadow-[#0047AB]/40 transition-all duration-300 active:scale-95"
+            className="inline-flex items-center gap-2 px-8 py-5 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-sm uppercase tracking-wider border border-white/10 hover:border-[#82C8E5]/50 transition-all duration-300"
           >
-            <span>Start a Project</span>
-            <ArrowUpRight className="w-5 h-5 text-[#82C8E5] group-hover:text-[#06080C] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <span>WhatsApp Direct</span>
+            <ArrowUpRight className="w-4 h-4 text-[#82C8E5]" />
           </a>
         </div>
       </div>

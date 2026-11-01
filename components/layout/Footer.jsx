@@ -2,14 +2,15 @@
 
 import { ArrowUpRight, Database, ExternalLink } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
+import { TransitionLink } from '../motion/TransitionProvider';
 
 const FOOTER_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'About', href: '#about' },
-  { label: 'Process', href: '#process' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'About', href: '/about' },
+  { label: 'Process', href: '/process' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Footer() {
@@ -50,13 +51,13 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-3 list-none p-0 m-0">
               {FOOTER_LINKS.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <TransitionLink
                     href={link.href}
                     className="text-xs text-slate-400 hover:text-[#82C8E5] transition-colors flex items-center gap-1 group"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </TransitionLink>
                 </li>
               ))}
             </ul>

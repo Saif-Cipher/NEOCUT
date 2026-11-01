@@ -1,5 +1,6 @@
 import './globals.css';
 import GlobalAmbientBackground from '@/components/effects/GlobalAmbientBackground';
+import TransitionProvider from '@/components/motion/TransitionProvider';
 
 export const metadata = {
   title: 'NeoCut Digital — High-Impact Video Production Studio',
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className="dark">
       <body className="min-h-screen bg-[#050914] text-[#EDEDED] antialiased relative">
         <GlobalAmbientBackground />
-        {children}
+        <TransitionProvider>
+          {children}
+        </TransitionProvider>
       </body>
     </html>
   );

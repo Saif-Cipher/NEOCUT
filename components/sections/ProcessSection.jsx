@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { Lightbulb, FileText, Clapperboard, CheckCircle2 } from 'lucide-react';
+import { Lightbulb, FileText, Clapperboard, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import WireframeTorus from '../3d/WireframeTorus';
 import StretchSnapText from '../motion/StretchSnapText';
+import { TransitionLink } from '../motion/TransitionProvider';
 
 const PROCESS_STEPS = [
   {
@@ -140,6 +141,19 @@ export default function ProcessSection() {
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
             <WireframeTorus />
           </div>
+        </div>
+
+        {/* Section Bottom CTA to Dedicated Process Route */}
+        <div className="mt-16 text-center">
+          <TransitionLink
+            href="/process"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider border border-white/10 hover:border-[#82C8E5]/50 transition-all duration-300 shadow-xl group"
+          >
+            <StretchSnapText as="span" level="subtle" split="words" interactive>
+              Explore Our Process
+            </StretchSnapText>
+            <ArrowUpRight className="w-4 h-4 text-[#82C8E5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </TransitionLink>
         </div>
       </div>
     </section>

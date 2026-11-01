@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Play, Film, ArrowUpRight, Sparkles, Layers } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
+import { TransitionLink } from '../motion/TransitionProvider';
 
 const CATEGORIES = [
   { id: 'all', label: 'All Works' },
@@ -280,26 +281,36 @@ export default function PortfolioSection({ onSelectVideo }) {
               </StretchSnapText>
             </div>
 
-            {/* Category Filter Pills */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-              {CATEGORIES.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => {
-                    setSelectedFilter(cat.id);
-                    setActiveIndex(0);
-                  }}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${
-                    selectedFilter === cat.id
-                      ? 'bg-[#0047AB] text-white border border-[#82C8E5]/50 shadow-lg shadow-[#0047AB]/30'
-                      : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
-                  }`}
-                >
-                  <StretchSnapText as="span" level="subtle" split="words" interactive>
-                    {cat.label}
-                  </StretchSnapText>
-                </button>
-              ))}
+            {/* Category Filter Pills & All Projects Route CTA */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
+              <div className="flex items-center gap-1.5">
+                {CATEGORIES.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => {
+                      setSelectedFilter(cat.id);
+                      setActiveIndex(0);
+                    }}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide whitespace-nowrap transition-all duration-300 ${
+                      selectedFilter === cat.id
+                        ? 'bg-[#0047AB] text-white border border-[#82C8E5]/50 shadow-lg shadow-[#0047AB]/30'
+                        : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
+                    }`}
+                  >
+                    <StretchSnapText as="span" level="subtle" split="words" interactive>
+                      {cat.label}
+                    </StretchSnapText>
+                  </button>
+                ))}
+              </div>
+
+              <TransitionLink
+                href="/portfolio"
+                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#000080]/60 hover:bg-[#0047AB] text-white font-semibold text-xs tracking-wider border border-[#82C8E5]/40 transition-all duration-300 whitespace-nowrap shadow-lg shadow-[#000080]/30 group"
+              >
+                <span>View All Projects</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#82C8E5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </TransitionLink>
             </div>
           </div>
 
