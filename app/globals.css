@@ -183,3 +183,75 @@ body {
     opacity: 0 !important;
   }
 }
+
+
+/* ==============================================================================
+   21st.dev Inverted Cursor Styling
+   - Hides native cursor only on desktop fine-pointer devices when custom cursor active
+   - Preserves text I-beam for inputs, textareas, contenteditable
+   ============================================================================== */
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button,
+  html.custom-cursor-active [role="button"],
+  html.custom-cursor-active .cursor-pointer {
+    cursor: none !important;
+  }
+
+  html.custom-cursor-active input:not([type="button"]):not([type="submit"]):not([type="reset"]),
+  html.custom-cursor-active textarea,
+  html.custom-cursor-active [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+/* ==============================================================================
+   Tilted Grid Hero Keyframes & Marquee
+   - Smooth continuous streaming animation without jumps
+   - Reduced motion pause support
+   ============================================================================== */
+@keyframes tiltedStreamLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes tiltedStreamRight {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.tilted-stream-left {
+  animation: tiltedStreamLeft 40s linear infinite;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.tilted-stream-right {
+  animation: tiltedStreamRight 45s linear infinite;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.tilted-stream-left-slow {
+  animation: tiltedStreamLeft 48s linear infinite;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilted-stream-left,
+  .tilted-stream-right,
+  .tilted-stream-left-slow {
+    animation-play-state: paused !important;
+  }
+}
