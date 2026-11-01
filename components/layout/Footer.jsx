@@ -1,117 +1,216 @@
 'use client';
 
-import { ArrowUpRight, Database, ExternalLink } from 'lucide-react';
-import StretchSnapText from '../motion/StretchSnapText';
+import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import { TransitionLink } from '../motion/TransitionProvider';
+import HalftoneWordmark from './HalftoneWordmark';
 
-const FOOTER_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'About', href: '/about' },
-  { label: 'Process', href: '/process' },
-  { label: 'Contact', href: '/contact' },
-];
-
+/**
+ * Global Footer — Interactive Halftone Wordmark (Specification #17)
+ * 
+ * Minimal editorial 4-column layout, thin divider, accessible Back to Top utility,
+ * and an oversized interactive halftone NEOCUT wordmark cropped at the bottom edge.
+ */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const handleScrollToTop = () => {
+    const isReduced = typeof window !== 'undefined' && 
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (typeof window !== 'undefined') {
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: isReduced });
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: isReduced ? 'auto' : 'smooth',
+        });
+      }
+    }
+  };
+
+  const handleKeyDownToTop = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleScrollToTop();
+    }
+  };
+
   return (
-    <footer className="relative bg-transparent border-t border-white/5 pt-20 pb-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Top Tier: Logo, Navigation, Direct Channels */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/5 items-start">
-          {/* Brand Info */}
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl overflow-hidden border border-white/10 bg-black/60 p-1">
-                <img
-                  src="/assets/logo/neocut-logo.png.jpg"
-                  alt="NeoCut Logo"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div>
-                <span className="font-bold text-base tracking-tight text-white block">NEOCUT</span>
-                <span className="text-[10px] uppercase tracking-widest text-[#82C8E5] font-semibold block -mt-0.5">
-                  DIGITAL STUDIO
-                </span>
-              </div>
+    <footer
+      role="contentinfo"
+      className="relative z-20 w-full bg-[#050914] text-[#EDEDED] border-t border-white/5 pt-16 sm:pt-20 overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Top Information Columns (4-Column Editorial Grid) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16">
+          
+          {/* Column 1 — Studio identity */}
+          <div className="space-y-4">
+            <span className="font-mono text-[11px] tracking-[0.25em] text-[#82C8E5] uppercase font-semibold block">
+              01 // STUDIO
+            </span>
+            <div className="space-y-1.5">
+              <h2 className="text-sm sm:text-base font-bold tracking-[0.16em] uppercase text-white m-0">
+                NEOCUT DIGITAL
+              </h2>
+              <p className="text-xs tracking-[0.14em] uppercase text-[#6D8196] leading-relaxed max-w-xs m-0">
+                AI VIDEO PRODUCTION &amp; CINEMATIC STORYTELLING
+              </p>
             </div>
-            <StretchSnapText as="p" level="subtle" split="words" className="text-slate-400 text-xs sm:text-sm max-w-sm leading-relaxed">
-              Award-winning creative production studio synthesizing AI visual synthesis, 3D character design, and cinematic storytelling.
-            </StretchSnapText>
+            <address className="not-italic text-xs tracking-[0.12em] text-[#6D8196] pt-1 block space-y-0.5">
+              <span>© {currentYear || 2026}</span>
+              <span className="block text-slate-400 font-mono text-[11px]">Dhaka, Bangladesh</span>
+            </address>
           </div>
 
-          {/* Quick Navigation Links */}
-          <div className="md:col-span-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-slate-500 block mb-4">
-              [ NAVIGATION ]
+          {/* Column 2 — Work */}
+          <nav aria-label="Work navigation" className="space-y-4">
+            <span className="font-mono text-[11px] tracking-[0.25em] text-[#82C8E5] uppercase font-semibold block">
+              02 // WORK
             </span>
-            <ul className="grid grid-cols-2 gap-3 list-none p-0 m-0">
-              {FOOTER_LINKS.map((link) => (
-                <li key={link.label}>
-                  <TransitionLink
-                    href={link.href}
-                    className="text-xs text-slate-400 hover:text-[#82C8E5] transition-colors flex items-center gap-1 group"
-                  >
-                    <span>{link.label}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </TransitionLink>
-                </li>
-              ))}
+            <ul className="space-y-3 list-none p-0 m-0 text-xs tracking-[0.16em] uppercase">
+              <li>
+                <TransitionLink
+                  href="/portfolio"
+                  className="text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                >
+                  <span>Portfolio</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#82C8E5]" />
+                </TransitionLink>
+              </li>
+              <li>
+                <TransitionLink
+                  href="/services"
+                  className="text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                >
+                  <span>Services</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#82C8E5]" />
+                </TransitionLink>
+              </li>
+              <li>
+                <TransitionLink
+                  href="/portfolio"
+                  className="text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                >
+                  <span>Selected Projects</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#82C8E5]" />
+                </TransitionLink>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Column 3 — Studio */}
+          <nav aria-label="Studio navigation" className="space-y-4">
+            <span className="font-mono text-[11px] tracking-[0.25em] text-[#82C8E5] uppercase font-semibold block">
+              03 // DIRECTORY
+            </span>
+            <ul className="space-y-3 list-none p-0 m-0 text-xs tracking-[0.16em] uppercase">
+              <li>
+                <TransitionLink
+                  href="/about"
+                  className="text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                >
+                  <span>About</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#82C8E5]" />
+                </TransitionLink>
+              </li>
+              <li>
+                <TransitionLink
+                  href="/process"
+                  className="text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                >
+                  <span>Process</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#82C8E5]" />
+                </TransitionLink>
+              </li>
+              <li>
+                <TransitionLink
+                  href="/contact"
+                  className="text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                >
+                  <span>Contact</span>
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#82C8E5]" />
+                </TransitionLink>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Column 4 — Contact */}
+          <div className="space-y-4">
+            <span className="font-mono text-[11px] tracking-[0.25em] text-[#82C8E5] uppercase font-semibold block">
+              04 // CONTACT
+            </span>
+            <ul className="space-y-3 list-none p-0 m-0 text-xs tracking-[0.14em]">
+              <li>
+                <a
+                  href="mailto:pixelcraftbysaif@gmail.com"
+                  className="text-[#EDEDED] hover:text-[#82C8E5] transition-colors duration-200 block truncate"
+                  title="pixelcraftbysaif@gmail.com"
+                >
+                  pixelcraftbysaif@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+8801931245914"
+                  className="text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 font-mono block"
+                >
+                  +8801931245914
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/8801931245914"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 uppercase tracking-[0.16em] group"
+                >
+                  <span>WhatsApp</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#82C8E5] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <span className="sr-only">(opens in new tab)</span>
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Direct Contact & Channels */}
-          <div className="md:col-span-3 space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-slate-500 block mb-4">
-              [ CHANNELS ]
+        </div>
+
+        {/* Thin Horizontal Divider */}
+        <div className="w-full border-t border-white/10" />
+
+        {/* Back to Top Row */}
+        <div className="py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="text-[11px] font-mono tracking-[0.22em] text-[#6D8196] uppercase">
+            NEOCUT DIGITAL // PRODUCTION ARCHIVE
+          </div>
+
+          <button
+            type="button"
+            onClick={handleScrollToTop}
+            onKeyDown={handleKeyDownToTop}
+            aria-label="Back to top of page"
+            className="group inline-flex items-center gap-2 text-xs font-mono tracking-[0.24em] text-[#EDEDED] uppercase hover:text-[#82C8E5] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#82C8E5] py-1 cursor-pointer"
+          >
+            <span>BACK TO TOP</span>
+            <span
+              aria-hidden="true"
+              className="inline-block transition-transform duration-300 ease-out group-hover:-translate-y-1 text-[#82C8E5]"
+            >
+              ↑
             </span>
-            <a
-              href="https://wa.me/8801931245914"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-slate-400 hover:text-white transition-colors block"
-            >
-              WhatsApp: <span className="text-slate-200">+880 1931 245914</span>
-            </a>
-            <a
-              href="mailto:pixelcraftbysaif@gmail.com"
-              className="text-xs text-slate-400 hover:text-white transition-colors block"
-            >
-              Email: <span className="text-slate-200">pixelcraftbysaif@gmail.com</span>
-            </a>
-            <a
-              href="https://github.com/Saif-Cipher/NEOCUT"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-[#82C8E5] hover:underline pt-2"
-            >
-              <span>GitHub Repository</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          </div>
+          </button>
         </div>
+      </div>
 
-        {/* Giant Signature Anubi-Style Background Brand Wordmark */}
-        <div className="py-12 select-none overflow-hidden text-center opacity-10 pointer-events-none">
-          <span className="font-editorial text-7xl sm:text-9xl md:text-[13rem] font-bold text-white tracking-tighter whitespace-nowrap block leading-none">
-            NEOCUT DIGITAL
-          </span>
-        </div>
-
-        {/* Bottom Tier: Copyright & Google Drive Database Active Badge */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <div>
-            &copy; {currentYear} NeoCut Digital. All rights reserved. Proprietary creative production.
-          </div>
-
-          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-emerald-400 text-[11px] font-mono">
-            <Database className="w-3 h-3" />
-            <span>Google Drive Asset Database Active (48 Master Films)</span>
-          </div>
-        </div>
+      {/* Giant Interactive Halftone Wordmark (Cropped at Viewport / Container Bottom) */}
+      <div className="w-full relative mt-4 overflow-hidden">
+        <HalftoneWordmark
+          wordmark="NEOCUT"
+          className="w-full h-[220px] sm:h-[300px] md:h-[380px] lg:h-[460px]"
+          minHeight="220px"
+        />
       </div>
     </footer>
   );

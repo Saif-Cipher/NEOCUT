@@ -28,6 +28,7 @@ export default function SmoothScroll({ children }) {
     });
 
     lenisRef.current = lenis;
+    window.__lenis = lenis;
 
     // Synchronize Lenis scroll position with GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update);
@@ -48,6 +49,7 @@ export default function SmoothScroll({ children }) {
     return () => {
       clearTimeout(refreshTimer);
       gsap.ticker.remove(updateTicker);
+      window.__lenis = null;
       lenis.destroy();
     };
   }, []);
