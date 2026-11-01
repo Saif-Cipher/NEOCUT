@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { 
   Sparkles, 
   ArrowUpRight, 
@@ -139,77 +140,94 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 3. Founder & Creative Direction Feature */}
-        <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-32">
+        {/* 3. Dedicated Founder Profile Section */}
+        <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-32" aria-label="Founder & Creative Director Profile">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left: Founder Card */}
+            {/* Left: Founder Editorial Portrait */}
             <div className="lg:col-span-5 relative">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#315B58]/60 bg-gradient-to-br from-[#103638] via-[#174448] to-[#195052]/30 p-8 flex flex-col justify-between shadow-2xl shadow-black/90 group">
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-[#071F22]/70 border border-[#315B58]/40 flex items-center justify-center p-2 backdrop-blur-md">
-                    <img
-                      src="/assets/logo/neocut-logo.png.jpg"
-                      alt="NeoCut Crest"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <span className="font-mono text-xs text-[#65C6B5] tracking-widest uppercase">
-                    FOUNDER &amp; DIRECTORIAL LEAD
+              <div className="relative rounded-3xl overflow-hidden border border-[#315B58]/60 bg-[#103638]/70 shadow-2xl shadow-black/90 flex flex-col group">
+                {/* Header Tag */}
+                <div className="px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/70 backdrop-blur-md">
+                  <span className="font-mono text-xs text-[#65C6B5] tracking-widest uppercase font-semibold">
+                    FOUNDER PROFILE
+                  </span>
+                  <span className="font-mono text-[11px] text-[#B5CEC7]">
+                    DHAKA / GLOBAL
                   </span>
                 </div>
 
-                <div className="relative flex flex-col items-center justify-center py-10 text-center">
-                  <div className="w-28 h-28 rounded-full bg-gradient-to-tr from-[#195052] via-[#20565A] to-[#65C6B5] p-0.5 shadow-2xl shadow-[#195052]/50 mb-6 group-hover:scale-105 transition-transform duration-500">
-                    <div className="w-full h-full rounded-full bg-[#071F22] flex items-center justify-center">
-                      <span className="font-editorial text-4xl font-bold text-[#F7FCFA] tracking-wider">
-                        NC
-                      </span>
-                    </div>
-                  </div>
-                  <StretchSnapText as="h3" level="secondary" className="font-editorial text-3xl font-bold text-[#F7FCFA]">
-                    Saif
-                  </StretchSnapText>
-                  <p className="text-xs font-mono uppercase tracking-widest text-[#65C6B5] mt-1.5">
-                    Creative Technologist &amp; Founder
-                  </p>
-                  <p className="text-xs text-[#D9F0EA] max-w-xs mt-3 leading-relaxed">
-                    Directing computational aesthetics, procedural 3D world-building, and commercial video narrative systems.
-                  </p>
+                {/* Large Portrait Image Container */}
+                <div className="relative w-full aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-[#071F22]">
+                  <Image
+                    src="/assets/profile/saif-founder.png"
+                    alt="Saif Hossain, founder of NeoCut Digital"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+                    className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
                 </div>
 
-                <div className="pt-4 border-t border-[#254845] flex items-center justify-between text-xs font-mono text-[#B5CEC7]">
-                  <span>EST. 2024</span>
-                  <span className="text-[#65C6B5]">● Dhaka / Global Client Roster</span>
+                {/* Portrait Caption */}
+                <div className="p-6 bg-[#0B2528]/95 border-t border-[#254845] space-y-1">
+                  <div className="flex items-baseline justify-between">
+                    <h3 className="font-editorial text-2xl font-bold text-[#F7FCFA] m-0">
+                      Saif Hossain
+                    </h3>
+                    <span className="text-[11px] font-mono text-[#65C6B5]">Est. 2024</span>
+                  </div>
+                  <p className="text-xs font-mono uppercase tracking-wider text-[#65C6B5] font-semibold m-0">
+                    Founder &amp; Creative Director — NeoCut Digital
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Right: Studio Story & Thesis */}
+            {/* Right: Founder Profile & Directorial Vision */}
             <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#315B58]/50 bg-[#103638]/70 text-[#D9F0EA] text-xs font-mono tracking-wider w-fit">
-                [ THE FOUNDING THESIS ]
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#315B58]/50 bg-[#103638]/70 text-[#65C6B5] text-xs font-mono tracking-wider w-fit">
+                [ FOUNDER &amp; CREATIVE LEADERSHIP ]
               </div>
 
-              <StretchSnapText
-                as="h2"
-                level="secondary"
-                className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-[#F7FCFA] leading-tight"
-              >
-                Traditional production is obsolete.{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F7FCFA] via-[#65C6B5] to-[#195052]">
-                  Agility is the new fidelity.
+              <div>
+                <StretchSnapText
+                  as="h2"
+                  level="display"
+                  className="font-editorial text-3xl sm:text-5xl font-bold text-[#F7FCFA] leading-tight"
+                >
+                  Saif Hossain
+                </StretchSnapText>
+                <p className="font-mono text-xs sm:text-sm uppercase tracking-wider text-[#65C6B5] mt-1 font-semibold">
+                  Founder &amp; Creative Director — NeoCut Digital
+                </p>
+              </div>
+
+              <div className="space-y-4 text-sm sm:text-base leading-relaxed text-[#D9F0EA]">
+                <p>
+                  Saif Hossain established NeoCut Digital to build an agile, technology-driven studio capable of producing broadcast-grade motion media at the velocity required by modern digital brands. Confronting the high friction and prohibitive timelines of traditional agencies, he architected an alternative studio infrastructure engineered for creative agility.
+                </p>
+
+                <p className="text-[#B5CEC7]">
+                  At NeoCut, Saif focuses on developing integrated AI-powered video workflows—combining ComfyUI latent diffusion models, neural frame synthesis, and procedural 3D physics in Blender. Under his leadership, artificial intelligence is deployed as an amplifier for directorial intent, enabling rapid visual iteration without sacrificing cinematic polish.
+                </p>
+
+                <p className="text-[#B5CEC7]">
+                  He oversees creative direction across all five production verticals: commercial brand films, 3D character animations, narrative storytelling, 4K cinematography, and scientific explanation videos. From narrative conception and acoustic design to lighting composition and ACES color grading, Saif steers each production to ensure technical rigor and emotional impact.
+                </p>
+              </div>
+
+              {/* Directorial Creed Blockquote */}
+              <div className="p-5 rounded-2xl bg-[#071F22]/80 border-l-2 border-[#65C6B5] border-y border-r border-[#254845] space-y-2">
+                <p className="font-editorial italic text-base sm:text-lg text-[#F7FCFA] leading-snug m-0">
+                  &ldquo;Artificial intelligence does not replace human artistry—it liberates the director to explore previously impossible scales of visual storytelling with precision and speed.&rdquo;
+                </p>
+                <span className="block text-[11px] font-mono text-[#65C6B5] uppercase tracking-wider">
+                  — Saif Hossain, Founder
                 </span>
-              </StretchSnapText>
+              </div>
 
-              <p className="text-[#D9F0EA] text-base sm:text-lg leading-relaxed">
-                NeoCut Digital was born from a pivotal realization: conventional advertising agencies and commercial production houses take months and hundreds of thousands of dollars to deliver a 30-second spot. In the fast-moving digital economy, that inertia is fatal.
-              </p>
-
-              <p className="text-[#B5CEC7] text-sm sm:text-base leading-relaxed">
-                We re-engineered the entire cinematic pipeline from the ground up. By fusing procedural 3D simulations in Blender with custom-tuned neural generation models, our studio produces television-grade commercials, viral 3D explainers, and engaging animated series at unprecedented velocity without compromising a single pixel of visual integrity.
-              </p>
-
-              <div className="pt-4 flex flex-wrap items-center gap-4">
+              {/* Direct Action Links */}
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <TransitionLink
                   href="/portfolio"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#65C6B5] hover:bg-[#65C6B5]/90 text-[#071F22] text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#195052]/30"
@@ -219,10 +237,10 @@ export default function AboutPage() {
                 </TransitionLink>
 
                 <TransitionLink
-                  href="/process"
+                  href="/contact"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#103638] hover:bg-[#174448] border border-[#315B58] text-[#F7FCFA] text-xs font-semibold uppercase tracking-wider transition-all duration-300"
                 >
-                  <span>View Our Process</span>
+                  <span>Contact Creative Director</span>
                   <ArrowUpRight className="w-4 h-4 text-[#B5CEC7]" />
                 </TransitionLink>
               </div>

@@ -39,8 +39,9 @@ const aboutSchema = {
       description: 'The philosophy, directorial pillars, and creative engineering DNA behind NeoCut Digital.',
       mainEntity: {
         '@type': 'Person',
-        name: 'Saif',
+        name: 'Saif Hossain',
         jobTitle: 'Founder & Creative Director',
+        image: `${siteUrl}/assets/profile/saif-founder.png`,
         worksFor: {
           '@id': `${siteUrl}/#organization`,
         },

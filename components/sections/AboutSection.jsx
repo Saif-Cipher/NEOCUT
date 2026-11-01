@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { ArrowUpRight, Award, Video, Cpu, ShieldCheck } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
 import { TransitionLink } from '../motion/TransitionProvider';
@@ -29,51 +30,53 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Founder & Creative Direction Showcase */}
           <div className="lg:col-span-5 relative">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-[#315B58]/50 bg-gradient-to-br from-[#103638] via-[#174448] to-[#195052]/40 p-8 flex flex-col justify-between shadow-2xl shadow-black/90 group">
-              {/* Monogram / Crest Badge */}
-              <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-[#071F22]/70 border border-[#315B58] flex items-center justify-center p-2 backdrop-blur-md">
-                  <img
-                    src="/assets/logo/neocut-logo.png.jpg"
-                    alt="NeoCut Crest"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+            <div className="relative rounded-3xl overflow-hidden border border-[#315B58]/60 bg-[#103638]/70 shadow-2xl shadow-black/80 flex flex-col group">
+              {/* Header Badge */}
+              <div className="px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/70 backdrop-blur-md">
                 <span className="font-mono text-xs text-[#65C6B5] tracking-widest uppercase font-semibold">
                   FOUNDER / DIRECTION
                 </span>
+                <span className="font-mono text-[11px] text-[#B5CEC7]">
+                  DHAKA / GLOBAL
+                </span>
               </div>
 
-              {/* Editorial Artistic Visual Centerpiece */}
-              <div className="relative flex flex-col items-center justify-center py-10 text-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#195052] via-[#103638] to-[#65C6B5] p-0.5 shadow-2xl shadow-[#195052]/50 mb-6 group-hover:scale-105 transition-transform duration-500">
-                  <div className="w-full h-full rounded-full bg-[#071F22] flex items-center justify-center">
-                    <span className="font-editorial text-3xl font-bold text-[#F7FCFA] tracking-wider">
-                      NC
-                    </span>
-                  </div>
+              {/* Founder Portrait Visual */}
+              <div className="relative w-full aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-[#071F22]">
+                <Image
+                  src="/assets/profile/saif-founder.png"
+                  alt="Saif Hossain, founder of NeoCut Digital"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 440px"
+                  className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Founder Meta & Role */}
+              <div className="p-6 bg-[#0B2528]/95 border-t border-[#254845] space-y-1">
+                <div className="flex items-baseline justify-between">
+                  <h3 className="font-editorial text-2xl font-bold text-[#F7FCFA] m-0">
+                    Saif Hossain
+                  </h3>
+                  <span className="text-[11px] font-mono text-[#65C6B5]">Est. 2024</span>
                 </div>
-                <StretchSnapText as="h4" level="secondary" className="font-editorial text-2xl font-bold text-[#F7FCFA]">
-                  Saif
-                </StretchSnapText>
-                <p className="text-xs font-mono uppercase tracking-widest text-[#65C6B5] mt-1 font-semibold">
-                  Creative Technologist &amp; Founder
+                <p className="text-xs font-mono uppercase tracking-wider text-[#65C6B5] font-semibold m-0">
+                  Founder, NeoCut Digital
                 </p>
-                <StretchSnapText as="p" level="subtle" split="words" className="text-xs text-[#D9F0EA] max-w-xs mt-3 leading-relaxed">
-                  Directing cutting-edge AI visual pipelines, procedural 3D animation, and cinematic commercial films.
-                </StretchSnapText>
-              </div>
-
-              {/* Bottom Credential Tag */}
-              <div className="pt-4 border-t border-[#254845] flex items-center justify-between text-xs font-mono text-[#B5CEC7]">
-                <span>EST. 2024</span>
-                <span className="text-[#65C6B5]">● Dhaka / Global</span>
+                <p className="text-xs text-[#D9F0EA] leading-relaxed pt-2 m-0">
+                  Leading creative direction, algorithmic video systems, and cinematic production for digital brands.
+                </p>
               </div>
             </div>
           </div>
 
           {/* Right Column: Studio Narrative & Vision */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#315B58]/50 bg-[#103638]/70 text-[#65C6B5] text-xs font-mono tracking-wider w-fit">
+              [ FOUNDER &amp; CREATIVE DIRECTION ]
+            </div>
+
             <StretchSnapText
               as="h3"
               level="secondary"
@@ -86,11 +89,11 @@ export default function AboutSection() {
             </StretchSnapText>
 
             <StretchSnapText as="p" level="subtle" split="words" className="text-[#D9F0EA] text-base sm:text-lg leading-relaxed">
-              NeoCut Digital was founded on a singular conviction: traditional video production is too slow, too rigid, and too costly for modern digital brands. By marrying cutting-edge neural rendering, 3D character animation, and high-end cinematic post-production, we empower forward-thinking creators and enterprises to tell unforgettable visual stories.
+              Founded by Saif Hossain, NeoCut Digital was built on a singular conviction: traditional video production is too slow, too rigid, and too costly for modern digital brands. By marrying cutting-edge neural rendering, 3D character animation, and high-end cinematic post-production, we empower forward-thinking creators and enterprises to tell unforgettable visual stories.
             </StretchSnapText>
 
             <StretchSnapText as="p" level="subtle" split="words" className="text-[#B5CEC7] text-sm sm:text-base leading-relaxed">
-              Whether architecting a hyper-realistic 3D anatomical explainer, producing a viral commercial product campaign, or animating preschool educational characters, our team treats every frame as an artistic statement.
+              Under Saif&apos;s directorial vision, our studio treats every frame as an artistic statement—whether architecting a hyper-realistic 3D biomedical explainer, producing a viral commercial product campaign, or animating preschool educational series.
             </StretchSnapText>
 
             {/* Core Pillars */}
@@ -119,7 +122,7 @@ export default function AboutSection() {
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#103638] hover:bg-[#174448] text-[#F7FCFA] font-semibold text-xs uppercase tracking-wider border border-[#315B58] hover:border-[#65C6B5]/50 transition-all duration-300 shadow-xl group"
               >
                 <StretchSnapText as="span" level="subtle" split="words" interactive>
-                  About the Studio
+                  About the Studio &amp; Founder
                 </StretchSnapText>
                 <ArrowUpRight className="w-4 h-4 text-[#65C6B5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </TransitionLink>
