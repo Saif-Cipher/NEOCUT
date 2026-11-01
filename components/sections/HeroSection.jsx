@@ -71,11 +71,11 @@ export default function HeroSection() {
         {/* Central Display Wordmark (Anubi Editorial Staging with Stretch Snap Kinetics) */}
         <div className="select-none mb-3">
           <StretchSnapText
-            as="h2"
+            as="p"
             level="display"
             trigger="mount"
             delay={0.2}
-            className="font-editorial text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white drop-shadow-[0_15px_30px_rgba(0,0,128,0.5)]"
+            className="font-editorial text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white drop-shadow-[0_15px_30px_rgba(0,0,128,0.5)] m-0"
           >
             NEOCUT
             <span className="text-[#82C8E5] italic ml-2 sm:ml-4 font-normal">Digital</span>
@@ -154,6 +154,7 @@ export default function HeroSection() {
             <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.95}>
               Start a Project
             </StretchSnapText>
+            <span className="sr-only">(opens in a new tab)</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-[#82C8E5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>

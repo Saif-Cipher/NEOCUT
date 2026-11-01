@@ -1,18 +1,26 @@
 import { NextResponse } from 'next/server';
-import { mediaService, checkRateLimit } from '@/lib/mediaService';
+import { mediaService, checkRateLimit, extractClientIp, getCorsHeaders } from '@/lib/mediaService';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(request, context) {
-  // 1. Rate Limiting
-  const forwardedFor = request.headers.get('x-forwarded-for');
-  const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : '127.0.0.1';
+export async function OPTIONS(request) {
+  return new NextResponse(null, {
+    status: 204,
+    headers: getCorsHeaders(request),
+  });
+}
 
+export async function GET(request, context) {
+  const corsHeaders = getCorsHeaders(request);
+
+  // 1. Rate Limiting (hardened against IP spoofing)
+  const clientIp = extractClientIp(request);
   const rateCheck = checkRateLimit(clientIp);
+
   if (!rateCheck.allowed) {
     return NextResponse.json(
       { error: 'Too Many Requests', message: 'Rate limit exceeded. Please try again shortly.' },
-      { status: 429, headers: { 'Retry-After': '60' } }
+      { status: 429, headers: { ...corsHeaders, 'Retry-After': '60' } }
     );
   }
 
@@ -20,15 +28,15 @@ export async function GET(request, context) {
   const params = await context.params;
   const assetId = params?.id;
 
-  // Enforce strict assetId naming: lowercase letters, digits, and hyphens only
+  // Enforce boundary check & strict assetId naming: lowercase letters, digits, and hyphens only
   const ASSET_ID_REGEX = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-  if (!assetId || !ASSET_ID_REGEX.test(assetId)) {
+  if (!assetId || typeof assetId !== 'string' || assetId.length > 64 || !ASSET_ID_REGEX.test(assetId)) {
     return NextResponse.json(
       {
         error: 'Bad Request',
-        message: 'Invalid asset identifier format. Must match [a-z0-9-]+.',
+        message: 'Invalid asset identifier format. Must match [a-z0-9-]+ with max length 64.',
       },
-      { status: 400 }
+      { status: 400, headers: corsHeaders }
     );
   }
 
@@ -42,7 +50,7 @@ export async function GET(request, context) {
         error: 'Not Found',
         message: `Asset '${assetId}' not found or is not approved for public viewing.`,
       },
-      { status: 404 }
+      { status: 404, headers: corsHeaders }
     );
   }
 
@@ -55,6 +63,7 @@ export async function GET(request, context) {
     {
       status: 200,
       headers: {
+        ...corsHeaders,
         'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
       },
     }

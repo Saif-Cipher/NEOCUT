@@ -28,17 +28,19 @@ export default function TransitionProvider({ children }) {
   const [origin, setOrigin] = useState({ x: '50%', y: '50%' });
   const pendingUrlRef = useRef(null);
   const safetyTimerRef = useRef(null);
+  const pushTimerRef = useRef(null);
 
-  // Clear watchdog on unmount
+  // Clear watchdog & push timers on unmount
   useEffect(() => {
     return () => {
       if (safetyTimerRef.current) clearTimeout(safetyTimerRef.current);
+      if (pushTimerRef.current) clearTimeout(pushTimerRef.current);
     };
   }, []);
 
   // When pathname changes, trigger reveal phase and reset
   useEffect(() => {
-    if (phase === 'expanding') {
+    if (phase === 'expanding' || isTransitioning) {
       setPhase('revealing');
       const timer = setTimeout(() => {
         setIsTransitioning(false);
@@ -67,6 +69,13 @@ export default function TransitionProvider({ children }) {
         }
       }
 
+      // Pre-warm route bundle immediately as secondary guarantee
+      try {
+        router.prefetch(url);
+      } catch (err) {
+        // Silently catch unsupported prefetch environments
+      }
+
       // Capture click origin coordinates
       let x = '50%';
       let y = '50%';
@@ -83,25 +92,26 @@ export default function TransitionProvider({ children }) {
       setIsTransitioning(true);
       setPhase('expanding');
 
-      // Expand phase: exactly 0.65s (expo.inOut) before route push
-      const pushTimer = setTimeout(() => {
+      // OPTIMIZATION: Initiate router.push at 120ms rather than 650ms.
+      // Calling router.push early allows Next.js route resolution to occur
+      // concurrently with the iris animation, eliminating perceived latency.
+      if (pushTimerRef.current) clearTimeout(pushTimerRef.current);
+      pushTimerRef.current = setTimeout(() => {
         router.push(url);
-      }, 650);
+      }, 120);
 
-      // Fail-safe watchdog: ensure user is NEVER stuck on a blank page if route push stalls
+      // Fail-safe watchdog: ensure user is NEVER stuck on an overlay if route stalls
       if (safetyTimerRef.current) clearTimeout(safetyTimerRef.current);
       safetyTimerRef.current = setTimeout(() => {
         setIsTransitioning(false);
         setPhase('idle');
       }, 1500);
-
-      return () => clearTimeout(pushTimer);
     },
-    [pathname, router, phase]
+    [pathname, router]
   );
 
   return (
-    <TransitionContext.Provider value={{ navigate, isTransitioning, phase, origin }}>
+    <TransitionContext.Provider value={{ navigate, isTransitioning, phase, origin, router }}>
       {children}
 
       {/* Anubi-Inspired Circular Iris Clip-Path Overlay */}
@@ -139,10 +149,56 @@ export default function TransitionProvider({ children }) {
 
 /**
  * Reusable TransitionLink component that uses circular iris transition on click.
+ * Automatically prefetches target route on mount and hover.
  */
-export function TransitionLink({ href, children, className, onClick, ...props }) {
+export function TransitionLink({
+  href,
+  children,
+  className,
+  onClick,
+  onMouseEnter,
+  onFocus,
+  onTouchStart,
+  prefetch = true,
+  ...props
+}) {
+  const router = useRouter();
   const { navigate } = usePageTransition();
   const pathname = usePathname();
+
+  // Prefetch route on mount if it's an internal route
+  useEffect(() => {
+    if (!prefetch || !href) return;
+    const isInternal =
+      typeof href === 'string' &&
+      href.startsWith('/') &&
+      !href.startsWith('//') &&
+      !href.startsWith('/#');
+
+    if (isInternal && href !== pathname) {
+      try {
+        router.prefetch(href);
+      } catch (e) {
+        // Silently catch prefetch errors
+      }
+    }
+  }, [href, prefetch, pathname, router]);
+
+  const handleWarmup = useCallback(() => {
+    if (!prefetch || !href) return;
+    const isInternal =
+      typeof href === 'string' &&
+      href.startsWith('/') &&
+      !href.startsWith('//');
+
+    if (isInternal) {
+      try {
+        router.prefetch(href);
+      } catch (e) {
+        // Silently catch
+      }
+    }
+  }, [href, prefetch, router]);
 
   const handleClick = (e) => {
     // Allow default browser behavior for modifier clicks (Ctrl/Cmd/Shift/Alt or middle click)
@@ -152,8 +208,13 @@ export function TransitionLink({ href, children, className, onClick, ...props })
 
     if (onClick) onClick(e);
 
-    // If external link, let standard browser navigation handle it
-    if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    // If external link or anchor-only, let standard browser navigation handle it
+    if (
+      href.startsWith('http') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      href.startsWith('#')
+    ) {
       return;
     }
 
@@ -162,7 +223,24 @@ export function TransitionLink({ href, children, className, onClick, ...props })
   };
 
   return (
-    <a href={href} onClick={handleClick} className={className} {...props}>
+    <a
+      href={href}
+      onClick={handleClick}
+      onMouseEnter={(e) => {
+        handleWarmup();
+        if (onMouseEnter) onMouseEnter(e);
+      }}
+      onFocus={(e) => {
+        handleWarmup();
+        if (onFocus) onFocus(e);
+      }}
+      onTouchStart={(e) => {
+        handleWarmup();
+        if (onTouchStart) onTouchStart(e);
+      }}
+      className={className}
+      {...props}
+    >
       {children}
     </a>
   );

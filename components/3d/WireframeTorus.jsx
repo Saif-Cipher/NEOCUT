@@ -38,7 +38,6 @@ export default function WireframeTorus() {
     container.appendChild(renderer.domElement);
 
     // 2. Parametric Wireframe Torus Geometry & Material
-    // Anubi Blueprint: Parametric torus, wireframe, interactive rotation
     const geometry = new THREE.TorusGeometry(1.2, 0.45, 18, 48);
     const material = new THREE.MeshBasicMaterial({
       color: 0x82C8E5,
@@ -68,6 +67,19 @@ export default function WireframeTorus() {
     let previousPointerY = 0;
     let pointerIsDown = false;
     let isVisible = true;
+    let isTabActive = !document.hidden;
+
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let prefersReduced = motionQuery.matches;
+    const onMotionChange = (e) => {
+      prefersReduced = e.matches;
+    };
+    motionQuery.addEventListener('change', onMotionChange);
+
+    const onVisibilityChange = () => {
+      isTabActive = !document.hidden;
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
 
     const onPointerDown = (e) => {
       pointerIsDown = true;
@@ -110,10 +122,10 @@ export default function WireframeTorus() {
     let animId;
     const animate = () => {
       animId = requestAnimationFrame(animate);
-      if (!isVisible) return;
+      if (!isVisible || !isTabActive) return;
 
-      // Base idle continuous rotation
-      if (!pointerIsDown) {
+      // Base idle continuous rotation (paused under reduced motion)
+      if (!pointerIsDown && !prefersReduced) {
         targetRotationY += 0.004;
         targetRotationX += 0.002;
       }
@@ -145,6 +157,8 @@ export default function WireframeTorus() {
     return () => {
       observer.disconnect();
       cancelAnimationFrame(animId);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      motionQuery.removeEventListener('change', onMotionChange);
       container.removeEventListener('pointerdown', onPointerDown);
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerup', onPointerUp);
@@ -172,7 +186,7 @@ export default function WireframeTorus() {
   }
 
   return (
-    <div className="relative w-full aspect-square max-w-[340px] sm:max-w-[420px] mx-auto select-none">
+    <div className="relative w-full aspect-square max-w-[340px] sm:max-w-[420px] mx-auto select-none" aria-hidden="true">
       <div
         ref={mountRef}
         className={`w-full h-full cursor-grab active:cursor-grabbing rounded-3xl border border-white/10 bg-gradient-to-b from-[#0C1017] to-[#06080C] p-4 flex items-center justify-center transition-all duration-300 ${
@@ -180,7 +194,7 @@ export default function WireframeTorus() {
         }`}
       />
       <div className="absolute bottom-3 left-0 right-0 text-center pointer-events-none">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500 bg-black/60 px-3 py-1 rounded-full border border-white/5">
+        <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400 bg-black/60 px-3 py-1 rounded-full border border-white/5">
           Drag to rotate 3D wireframe
         </span>
       </div>

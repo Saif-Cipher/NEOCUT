@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import StretchSnapText from '../motion/StretchSnapText';
@@ -19,25 +19,48 @@ export default function FloatingCapsuleNav() {
   const pathname = usePathname() || '/';
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Close mobile drawer on Escape key and lock body scroll when drawer is open
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && mobileOpen) {
+        setMobileOpen(false);
+      }
+    };
+
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileOpen]);
+
   return (
     <>
       {/* Floating Capsule Bar */}
-      <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
+      <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-3 sm:px-4 pointer-events-none">
         <nav
-          className="pointer-events-auto flex items-center gap-2 sm:gap-6 px-4 py-2.5 rounded-full glass-capsule transition-all duration-500 scale-100 shadow-2xl shadow-black/80"
+          className="pointer-events-auto flex items-center justify-between sm:justify-start gap-1.5 sm:gap-6 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full glass-capsule transition-all duration-500 scale-100 shadow-2xl shadow-black/80 max-w-full"
           aria-label="Main Navigation"
         >
           {/* Logo & Brand Wordmark */}
           <TransitionLink
             href="/"
-            className="flex items-center gap-2.5 group pr-2 border-r border-white/10"
+            className="flex items-center gap-2 group pr-1.5 sm:pr-2 border-r border-white/10 shrink-0"
             aria-label="NeoCut Digital Home"
           >
-            <div className="w-8 h-8 rounded-full overflow-hidden border border-white/15 bg-black/60 flex items-center justify-center p-0.5 group-hover:border-cyan-400/50 transition-colors">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-white/15 bg-black/60 flex items-center justify-center p-0.5 group-hover:border-cyan-400/50 transition-colors">
               <img
                 src="/assets/logo/neocut-logo.png.jpg"
-                alt="NeoCut"
+                alt="NeoCut Logo"
                 className="w-full h-full object-contain"
+                width={32}
+                height={32}
               />
             </div>
             <div className="hidden lg:flex flex-col">
@@ -54,7 +77,8 @@ export default function FloatingCapsuleNav() {
                 <li key={link.label}>
                   <TransitionLink
                     href={link.href}
-                    className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 ${
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5] ${
                       isActive
                         ? 'text-white bg-white/10 font-semibold shadow-inner shadow-white/5'
                         : 'text-slate-400 hover:text-white hover:bg-white/5'
@@ -72,35 +96,44 @@ export default function FloatingCapsuleNav() {
             })}
           </ul>
 
-          {/* Start a Project Primary CTA Button */}
-          <div className="flex items-center gap-2">
+          {/* CTA & Mobile Controls */}
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <TransitionLink
               href="/contact"
-              className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#000080] to-[#0047AB] hover:from-[#0047AB] hover:to-[#0055CC] text-white text-xs font-semibold tracking-wide border border-[#82C8E5]/30 hover:border-[#82C8E5]/70 shadow-lg shadow-[#0047AB]/25 transition-all duration-300 active:scale-95"
+              className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#000080] to-[#0047AB] hover:from-[#0047AB] hover:to-[#0055CC] text-white text-xs font-semibold tracking-wide border border-[#82C8E5]/30 hover:border-[#82C8E5]/70 shadow-lg shadow-[#0047AB]/25 transition-all duration-300 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
             >
               <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.25}>
-                Start a Project
+                <span className="hidden min-[360px]:inline">Start a Project</span>
+                <span className="min-[360px]:hidden">Start</span>
               </StretchSnapText>
               <span className="w-4 h-4 rounded-full bg-white/15 flex items-center justify-center group-hover:rotate-45 group-hover:bg-white/30 transition-transform duration-300">
                 <ArrowUpRight className="w-3 h-3 text-[#82C8E5]" />
               </span>
             </TransitionLink>
 
-            {/* Mobile Hamburger Button */}
+            {/* Mobile Hamburger Button (Compliant with >= 44x44px touch target) */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white"
-              aria-label="Toggle navigation menu"
+              className="md:hidden min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+              aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav-drawer"
             >
-              {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              {mobileOpen ? <X className="w-5 h-5 text-[#82C8E5]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </nav>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-black/90 backdrop-blur-xl md:hidden flex flex-col justify-center px-8">
+        <div
+          id="mobile-nav-drawer"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile Navigation Menu"
+          className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl md:hidden flex flex-col justify-center px-8 animate-in fade-in duration-200"
+        >
           <ul className="space-y-6 text-center list-none p-0 m-0">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
@@ -109,7 +142,8 @@ export default function FloatingCapsuleNav() {
                   <TransitionLink
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`font-editorial text-3xl font-medium transition-colors ${
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`font-serif text-3xl font-medium transition-colors block py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5] rounded-xl ${
                       isActive ? 'text-[#82C8E5] font-bold' : 'text-slate-200 hover:text-[#82C8E5]'
                     }`}
                   >
@@ -123,7 +157,7 @@ export default function FloatingCapsuleNav() {
             <TransitionLink
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#000080] to-[#0047AB] text-white font-semibold text-sm border border-[#82C8E5]/40"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#000080] to-[#0047AB] text-white font-semibold text-sm border border-[#82C8E5]/40 shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
             >
               Start a Project <ArrowUpRight className="w-4 h-4 text-[#82C8E5]" />
             </TransitionLink>

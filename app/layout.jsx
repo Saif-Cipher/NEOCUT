@@ -1,5 +1,5 @@
 import './globals.css';
-import GlobalAmbientBackground from '@/components/effects/GlobalAmbientBackground';
+import GlassFold from '@/components/ui/glass-fold';
 import TransitionProvider from '@/components/motion/TransitionProvider';
 import InvertedCursor from '@/components/ui/inverted-cursor';
 
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
       <body className="min-h-screen bg-[#050914] text-[#EDEDED] antialiased relative">
-        <GlobalAmbientBackground />
+        <GlassFold />
         <InvertedCursor />
         <TransitionProvider>
           {children}

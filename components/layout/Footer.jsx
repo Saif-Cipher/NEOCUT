@@ -52,9 +52,9 @@ export default function Footer() {
               01 // STUDIO
             </span>
             <div className="space-y-1.5">
-              <h2 className="text-sm sm:text-base font-bold tracking-[0.16em] uppercase text-white m-0">
+              <p className="text-sm sm:text-base font-bold tracking-[0.16em] uppercase text-white m-0">
                 NEOCUT DIGITAL
-              </h2>
+              </p>
               <p className="text-xs tracking-[0.14em] uppercase text-[#6D8196] leading-relaxed max-w-xs m-0">
                 AI VIDEO PRODUCTION &amp; CINEMATIC STORYTELLING
               </p>
@@ -91,10 +91,10 @@ export default function Footer() {
               </li>
               <li>
                 <TransitionLink
-                  href="/portfolio"
+                  href="/process"
                   className="text-[#6D8196] hover:text-[#82C8E5] transition-colors duration-200 inline-flex items-center gap-1 group"
                 >
-                  <span>Selected Projects</span>
+                  <span>Production Pipeline</span>
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#82C8E5]" />
                 </TransitionLink>
               </li>

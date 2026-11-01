@@ -1,30 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { Film } from 'lucide-react';
 
-export default function OrbitCard({
-  item,
-  x,
-  y,
-  z,
-  rotateX = 0,
-  rotateY = 0,
-  rotateZ = 0,
-}) {
+const OrbitCard = forwardRef(function OrbitCard(
+  {
+    item,
+    isLeadingCard = false,
+  },
+  ref
+) {
   const [hovered, setHovered] = useState(false);
-
-  // Smooth scale animation (1.12x) with subtle forward Z elevation
-  const currentZ = hovered ? z + 50 : z;
-  const currentScale = hovered ? 1.12 : 1.0;
-  const transformStyle = `translate3d(${x}px, ${y}px, ${currentZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${currentScale})`;
 
   return (
     <div
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 sm:w-44 md:w-52 lg:w-60 aspect-video cursor-pointer orbit-card-3d rounded-xl sm:rounded-2xl overflow-hidden pointer-events-auto transition-transform duration-300 ease-out select-none"
+      ref={ref}
+      className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 sm:w-44 md:w-52 lg:w-60 aspect-video cursor-pointer orbit-card-3d rounded-xl sm:rounded-2xl overflow-hidden pointer-events-auto transition-[transform,box-shadow,border-color] duration-300 ease-out select-none ${
+        hovered ? 'scale-110' : ''
+      }`}
       style={{
-        transform: transformStyle,
-        zIndex: Math.round(z + 500) + (hovered ? 300 : 0),
+        willChange: 'transform',
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -47,7 +42,11 @@ export default function OrbitCard({
             src={item.thumbnailUrl}
             alt={item.name?.replace('-video.mp4', '').replace(/-/g, ' ') || 'NeoCut Portfolio Preview'}
             className="w-full h-full object-cover transition-transform duration-500"
-            loading="lazy"
+            loading={isLeadingCard ? 'eager' : 'lazy'}
+            fetchPriority={isLeadingCard ? 'high' : 'auto'}
+            decoding="async"
+            width={480}
+            height={270}
             onError={(e) => {
               e.currentTarget.style.display = 'none';
             }}
@@ -60,4 +59,6 @@ export default function OrbitCard({
       </div>
     </div>
   );
-}
+});
+
+export default OrbitCard;

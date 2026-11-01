@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
 import { X, ShieldCheck, Film, Play, ExternalLink } from 'lucide-react';
 import SmoothScroll from '@/components/motion/SmoothScroll';
 import FloatingCapsuleNav from '@/components/layout/FloatingCapsuleNav';
@@ -9,28 +10,74 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ProcessSection from '@/components/sections/ProcessSection';
-import ParticleTypography from '@/components/3d/ParticleTypography';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/layout/Footer';
 import StretchSnapText from '@/components/motion/StretchSnapText';
 
+// Dynamic import for WebGL Three.js Particle Typography to drop ~140KB gzip from initial critical bundle
+const ParticleTypography = dynamic(
+  () => import('@/components/3d/ParticleTypography'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-[280px] sm:h-[320px] flex flex-col items-center justify-center gap-3" aria-hidden="true">
+        <div className="w-8 h-8 rounded-full border border-white/20 border-t-[#82C8E5] animate-spin" />
+        <span className="text-[10px] font-mono uppercase tracking-widest text-[#82C8E5]/60">
+          Loading Particle Engine...
+        </span>
+      </div>
+    ),
+  }
+);
+
 export default function HomePage() {
   const [activeModalVideo, setActiveModalVideo] = useState(null);
+  const triggerElementRef = useRef(null);
+  const modalCloseBtnRef = useRef(null);
 
-  // Close modal on Escape key
+  const handleOpenModal = (video, triggerEl) => {
+    triggerElementRef.current = triggerEl || document.activeElement;
+    setActiveModalVideo(video);
+  };
+
+  const handleCloseModal = () => {
+    setActiveModalVideo(null);
+    if (triggerElementRef.current && typeof triggerElementRef.current.focus === 'function') {
+      setTimeout(() => triggerElementRef.current.focus(), 50);
+    }
+  };
+
+  // Accessible Modal Keyboard Management (Escape dismiss & initial focus placement)
   useEffect(() => {
+    if (!activeModalVideo) return;
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
-        setActiveModalVideo(null);
+        e.preventDefault();
+        handleCloseModal();
       }
     };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    const timer = setTimeout(() => {
+      if (modalCloseBtnRef.current) {
+        modalCloseBtnRef.current.focus();
+      }
+    }, 50);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      clearTimeout(timer);
+    };
+  }, [activeModalVideo]);
 
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden outline-none"
+      >
         {/* Floating Capsule Navigation Bar */}
         <FloatingCapsuleNav />
 
@@ -40,8 +87,8 @@ export default function HomePage() {
         {/* Section 02: Services Preview */}
         <ServicesSection />
 
-        {/* Section 03: Portfolio Preview (Sticky Card Stacking via GSAP ScrollTrigger) */}
-        <PortfolioSection onSelectVideo={(item) => setActiveModalVideo(item)} />
+        {/* Section 03: Portfolio Preview */}
+        <PortfolioSection onSelectVideo={(item) => handleOpenModal(item)} />
 
         {/* Section 04: About Preview */}
         <AboutSection />
@@ -50,13 +97,13 @@ export default function HomePage() {
         <ProcessSection />
 
         {/* Anubi-Inspired WebGL Interactive Particle Typography Interlude */}
-        <section className="py-12 bg-transparent border-t border-white/5 relative overflow-hidden text-center">
+        <section className="py-12 bg-transparent border-t border-white/5 relative overflow-hidden text-center" aria-label="WebGL Particle Visualizer">
           <div className="max-w-4xl mx-auto px-4">
             <span className="text-[10px] font-mono uppercase tracking-widest text-[#82C8E5] block mb-2">
               [ WEBGL SENSORY CRAFT ]
             </span>
             <ParticleTypography />
-            <StretchSnapText as="p" level="subtle" split="words" className="text-xs font-mono text-slate-500 mt-2">
+            <StretchSnapText as="p" level="subtle" split="words" className="text-xs font-mono text-slate-400 mt-2">
               Move cursor over particles to interact with neural point-cloud repulsion.
             </StretchSnapText>
           </div>
@@ -75,7 +122,7 @@ export default function HomePage() {
             role="dialog"
             aria-modal="true"
             aria-label={`Playing ${activeModalVideo.name || activeModalVideo.title}`}
-            onClick={() => setActiveModalVideo(null)}
+            onClick={handleCloseModal}
           >
             <div
               className="relative w-full max-w-4xl bg-[#0C1017] border border-white/15 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col cursor-default"
@@ -97,17 +144,19 @@ export default function HomePage() {
                       href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white text-xs font-mono transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white text-xs font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
                       title="Open directly in Google Drive"
                     >
                       <ExternalLink className="w-3.5 h-3.5 text-[#82C8E5]" />
                       <span className="hidden sm:inline">Drive Cloud</span>
+                      <span className="sr-only">(opens in a new tab)</span>
                     </a>
                   )}
                   <button
-                    onClick={() => setActiveModalVideo(null)}
-                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-95"
-                    aria-label="Close modal"
+                    ref={modalCloseBtnRef}
+                    onClick={handleCloseModal}
+                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+                    aria-label="Close modal dialog"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -153,17 +202,18 @@ export default function HomePage() {
                     href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#82C8E5] hover:underline inline-flex items-center gap-1"
+                    className="text-[#82C8E5] hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
                   >
                     Open in Drive
                     <ExternalLink className="w-3 h-3" />
+                    <span className="sr-only">(opens in a new tab)</span>
                   </a>
                 </div>
               </div>
             </div>
           </div>
         )}
-      </div>
+      </main>
     </SmoothScroll>
   );
 }

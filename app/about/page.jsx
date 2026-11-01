@@ -78,7 +78,11 @@ const ARSENAL_TOOLS = [
 export default function AboutPage() {
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden pt-28">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden pt-28 outline-none"
+      >
         <FloatingCapsuleNav />
 
         {/* 1. Page Hero Intro */}
@@ -364,7 +368,7 @@ export default function AboutPage() {
 
         {/* Global Footer */}
         <Footer />
-      </div>
+      </main>
     </SmoothScroll>
   );
 }

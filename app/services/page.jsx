@@ -111,7 +111,11 @@ const COMPARISON_TIERS = [
 export default function ServicesPage() {
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden pt-28">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden pt-28 outline-none"
+      >
         <FloatingCapsuleNav />
 
         {/* Page Hero Header */}
@@ -264,9 +268,9 @@ export default function ServicesPage() {
               <span className="text-xs font-mono uppercase tracking-widest text-[#82C8E5] block">
                 [ PRODUCTION GUARANTEE ]
               </span>
-              <h3 className="font-editorial text-3xl sm:text-4xl font-bold text-white">
+              <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-white">
                 Enterprise Cloud Asset Infrastructure
-              </h3>
+              </h2>
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
                 Every NeoCut production is archived and served through our verified Google Drive Cloud Asset Database. Clients receive perpetual streaming previews, lossless master exports up to 4K, and structured project folders that never expire.
               </p>
@@ -290,7 +294,7 @@ export default function ServicesPage() {
         </section>
 
         <Footer />
-      </div>
+      </main>
     </SmoothScroll>
   );
 }

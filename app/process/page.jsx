@@ -165,7 +165,11 @@ export default function ProcessPage() {
 
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden pt-28">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden pt-28 outline-none"
+      >
         <FloatingCapsuleNav />
 
         {/* 1. Page Hero Intro */}
@@ -197,10 +201,11 @@ export default function ProcessPage() {
         </section>
 
         {/* 2. Interactive Production Pipeline Workbench (Left: Interactive Stages, Right: Stage Details & 3D Visualizer) */}
-        <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-32">
+        <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-32" aria-label="Interactive Production Pipeline">
+          <h2 className="sr-only">Interactive Production Pipeline &amp; Workbench</h2>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Interactive Stages List */}
-            <div className="lg:col-span-5 space-y-3">
+            <div className="lg:col-span-5 space-y-3" role="tablist" aria-label="Production Stages">
               <span className="text-xs font-mono text-[#82C8E5] uppercase tracking-widest block mb-4">
                 [ PRODUCTION PHASES ]
               </span>
@@ -209,8 +214,18 @@ export default function ProcessPage() {
                 return (
                   <div
                     key={stage.number}
+                    role="tab"
+                    tabIndex={0}
+                    aria-selected={isActive}
+                    aria-expanded={isActive}
                     onClick={() => setActiveStage(idx)}
-                    className={`cursor-pointer rounded-2xl p-5 border transition-all duration-300 ${
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setActiveStage(idx);
+                      }
+                    }}
+                    className={`cursor-pointer rounded-2xl p-5 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5] ${
                       isActive
                         ? 'bg-[#0E1422] border-[#82C8E5]/60 shadow-xl shadow-[#0047AB]/20 scale-[1.01]'
                         : 'bg-[#080B10]/90 border-white/5 hover:border-white/15 opacity-70 hover:opacity-100'
@@ -404,9 +419,9 @@ export default function ProcessPage() {
                 <div className="flex items-start gap-3">
                   <HelpCircle className="w-5 h-5 text-[#82C8E5] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-white font-semibold text-base mb-2">
+                    <h3 className="text-white font-semibold text-base mb-2">
                       {faq.q}
-                    </h4>
+                    </h3>
                     <p className="text-slate-300 text-sm leading-relaxed">
                       {faq.a}
                     </p>
@@ -458,7 +473,7 @@ export default function ProcessPage() {
 
         {/* Global Footer */}
         <Footer />
-      </div>
+      </main>
     </SmoothScroll>
   );
 }

@@ -1,8 +1,19 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false, // Security: hide X-Powered-By header
+  productionBrowserSourceMaps: false, // Security: strictly prevent source map exposure (VULN-10)
+  compress: true, // Performance: enable gzip / brotli compression
+  outputFileTracingRoot: path.resolve(__dirname), // Fix multiple lockfile root detection
+
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -14,8 +25,19 @@ const nextConfig = {
       },
     ],
   },
+
   async headers() {
     return [
+      {
+        // 1-year immutable caching for static assets
+        source: '/assets/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
       {
         source: '/(.*)',
         headers: [
@@ -47,16 +69,18 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
+              "script-src 'self' 'unsafe-inline'", // Hardened: removed 'unsafe-eval' (VULN-04)
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https://drive.google.com https://*.googleusercontent.com",
               "font-src 'self' data:",
-              "frame-src 'self' https://drive.google.com https://*.google.com https://*.googleusercontent.com",
-              "connect-src 'self' https://drive.google.com https://*.google.com https://*.googleusercontent.com https://www.googleapis.com",
-              "media-src 'self' blob: https://drive.google.com https://*.google.com https://*.googleusercontent.com",
+              "frame-src 'self' https://drive.google.com https://*.googleusercontent.com",
+              "connect-src 'self' https://drive.google.com https://*.googleusercontent.com https://www.googleapis.com",
+              "media-src 'self' blob: https://drive.google.com https://*.googleusercontent.com",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
+              "frame-ancestors 'self'", // Clickjacking protection (VULN-02)
+              "upgrade-insecure-requests",
             ].join('; '),
           },
         ],

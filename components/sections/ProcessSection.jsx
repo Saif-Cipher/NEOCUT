@@ -1,10 +1,26 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Lightbulb, FileText, Clapperboard, CheckCircle2, ArrowUpRight } from 'lucide-react';
-import WireframeTorus from '../3d/WireframeTorus';
 import StretchSnapText from '../motion/StretchSnapText';
 import { TransitionLink } from '../motion/TransitionProvider';
+
+// Dynamic import for WebGL Three.js Wireframe Torus to eliminate Three.js from eager entry chunk
+const WireframeTorus = dynamic(
+  () => import('../3d/WireframeTorus'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full min-h-[360px] flex flex-col items-center justify-center gap-3" aria-hidden="true">
+        <div className="w-24 h-24 rounded-full border-2 border-dashed border-[#82C8E5]/30 animate-pulse" />
+        <span className="text-[10px] font-mono uppercase tracking-widest text-[#82C8E5]/50">
+          Loading 3D Visualizer...
+        </span>
+      </div>
+    ),
+  }
+);
 
 const PROCESS_STEPS = [
   {
@@ -48,9 +64,10 @@ export default function ProcessSection() {
     <section
       id="process"
       className="relative py-28 sm:py-36 px-4 bg-transparent border-t border-white/5 overflow-hidden"
+      aria-label="Creative Process Overview"
     >
       {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#000080]/20 rounded-full blur-[140px]" />
+      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#000080]/20 rounded-full blur-[140px]" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
@@ -75,7 +92,7 @@ export default function ProcessSection() {
         {/* Process Layout: Left interactive timeline + Right interactive 3D Wireframe Torus */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: 4 Steps Accordion / Chapters */}
-          <div className="lg:col-span-7 space-y-4">
+          <div className="lg:col-span-7 space-y-4" role="tablist" aria-label="Process Steps">
             {PROCESS_STEPS.map((step, idx) => {
               const Icon = step.icon;
               const isActive = activeStep === idx;
@@ -83,8 +100,18 @@ export default function ProcessSection() {
               return (
                 <div
                   key={step.number}
+                  role="tab"
+                  tabIndex={0}
+                  aria-selected={isActive}
+                  aria-expanded={isActive}
                   onClick={() => setActiveStep(idx)}
-                  className={`cursor-pointer rounded-2xl p-6 border transition-all duration-300 ${
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setActiveStep(idx);
+                    }
+                  }}
+                  className={`cursor-pointer rounded-2xl p-6 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5] ${
                     isActive
                       ? 'bg-[#0E131E] border-[#82C8E5]/50 shadow-xl shadow-[#0047AB]/20 scale-[1.01]'
                       : 'bg-[#080B10] border-white/5 hover:border-white/15 opacity-75 hover:opacity-100'
@@ -105,7 +132,7 @@ export default function ProcessSection() {
                     {/* Step Title & Content */}
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <StretchSnapText as="h4" level="secondary" className="font-editorial text-2xl font-bold text-white">
+                        <StretchSnapText as="h3" level="secondary" className="font-editorial text-2xl font-bold text-white">
                           {step.title}
                         </StretchSnapText>
                         <span className="text-[11px] font-mono text-[#82C8E5] uppercase tracking-wider">
@@ -147,7 +174,7 @@ export default function ProcessSection() {
         <div className="mt-16 text-center">
           <TransitionLink
             href="/process"
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider border border-white/10 hover:border-[#82C8E5]/50 transition-all duration-300 shadow-xl group"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider border border-white/10 hover:border-[#82C8E5]/50 transition-all duration-300 shadow-xl group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
           >
             <StretchSnapText as="span" level="subtle" split="words" interactive>
               Explore Our Process
