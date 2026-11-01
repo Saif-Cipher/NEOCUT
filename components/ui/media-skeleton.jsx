@@ -45,7 +45,7 @@ export default function MediaSkeleton({
 
   return (
     <div
-      className={`relative w-full overflow-hidden bg-[#080B10] ${aspectRatio} ${className}`}
+      className={`relative w-full overflow-hidden bg-[#071F22] ${aspectRatio} ${className}`}
       aria-busy={!isLoaded && !hasError}
       {...props}
     >
@@ -58,9 +58,9 @@ export default function MediaSkeleton({
 
       {/* Error Fallback Placeholder */}
       {hasError ? (
-        <div className="absolute inset-0 z-0 flex flex-col items-center justify-center gap-2 p-4 text-center bg-[#0C1017] text-slate-500">
-          <Film className="w-8 h-8 text-slate-600" />
-          <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+        <div className="absolute inset-0 z-0 flex flex-col items-center justify-center gap-2 p-4 text-center bg-[#103638] text-[#B5CEC7]">
+          <Film className="w-8 h-8 text-[#65C6B5]/60" />
+          <span className="text-[11px] font-mono text-[#D9F0EA] uppercase tracking-wider">
             Media Stream Offline
           </span>
         </div>

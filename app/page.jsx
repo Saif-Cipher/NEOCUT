@@ -21,8 +21,8 @@ const ParticleTypography = dynamic(
     ssr: false,
     loading: () => (
       <div className="w-full h-[280px] sm:h-[320px] flex flex-col items-center justify-center gap-3" aria-hidden="true">
-        <div className="w-8 h-8 rounded-full border border-white/20 border-t-[#82C8E5] animate-spin" />
-        <span className="text-[10px] font-mono uppercase tracking-widest text-[#82C8E5]/60">
+        <div className="w-8 h-8 rounded-full border border-white/20 border-t-[#65C6B5] animate-spin" />
+        <span className="text-[10px] font-mono uppercase tracking-widest text-[#65C6B5]/70">
           Loading Particle Engine...
         </span>
       </div>
@@ -76,7 +76,7 @@ export default function HomePage() {
       <main
         id="main-content"
         tabIndex={-1}
-        className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden outline-none"
+        className="relative min-h-screen bg-transparent text-[#F7FCFA] selection:bg-[#65C6B5] selection:text-[#071F22] overflow-x-hidden outline-none"
       >
         {/* Floating Capsule Navigation Bar */}
         <FloatingCapsuleNav />
@@ -97,13 +97,13 @@ export default function HomePage() {
         <ProcessSection />
 
         {/* Anubi-Inspired WebGL Interactive Particle Typography Interlude */}
-        <section className="py-12 bg-transparent border-t border-white/5 relative overflow-hidden text-center" aria-label="WebGL Particle Visualizer">
+        <section className="py-12 bg-transparent border-t border-[#254845] relative overflow-hidden text-center" aria-label="WebGL Particle Visualizer">
           <div className="max-w-4xl mx-auto px-4">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#82C8E5] block mb-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#65C6B5] block mb-2 font-semibold">
               [ WEBGL SENSORY CRAFT ]
             </span>
             <ParticleTypography />
-            <StretchSnapText as="p" level="subtle" split="words" className="text-xs font-mono text-slate-400 mt-2">
+            <StretchSnapText as="p" level="subtle" split="words" className="text-xs font-mono text-[#D9F0EA] mt-2">
               Move cursor over particles to interact with neural point-cloud repulsion.
             </StretchSnapText>
           </div>
@@ -118,23 +118,23 @@ export default function HomePage() {
         {/* Cinematic Video Modal Player */}
         {activeModalVideo && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-[#071F22]/90 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
             role="dialog"
             aria-modal="true"
             aria-label={`Playing ${activeModalVideo.name || activeModalVideo.title}`}
             onClick={handleCloseModal}
           >
             <div
-              className="relative w-full max-w-4xl bg-[#0C1017] border border-white/15 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col cursor-default"
+              className="relative w-full max-w-4xl bg-[#103638] border border-[#315B58]/60 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/50">
+              <div className="px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/60">
                 <div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#82C8E5]">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#65C6B5]">
                     {activeModalVideo.category || activeModalVideo.categoryLabel}
                   </span>
-                  <h3 className="text-base font-semibold text-white leading-tight mt-0.5">
+                  <h3 className="text-base font-semibold text-[#F7FCFA] leading-tight mt-0.5">
                     {activeModalVideo.title || activeModalVideo.name?.replace('-video.mp4', '').replace(/-/g, ' ')}
                   </h3>
                 </div>
@@ -144,10 +144,10 @@ export default function HomePage() {
                       href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white text-xs font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#071F22]/70 hover:bg-[#174448] text-[#D9F0EA] hover:text-[#F7FCFA] text-xs font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
                       title="Open directly in Google Drive"
                     >
-                      <ExternalLink className="w-3.5 h-3.5 text-[#82C8E5]" />
+                      <ExternalLink className="w-3.5 h-3.5 text-[#65C6B5]" />
                       <span className="hidden sm:inline">Drive Cloud</span>
                       <span className="sr-only">(opens in a new tab)</span>
                     </a>
@@ -155,7 +155,7 @@ export default function HomePage() {
                   <button
                     ref={modalCloseBtnRef}
                     onClick={handleCloseModal}
-                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+                    className="w-9 h-9 rounded-full bg-[#071F22]/70 hover:bg-[#174448] text-[#F7FCFA] flex items-center justify-center transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
                     aria-label="Close modal dialog"
                   >
                     <X className="w-4 h-4" />
@@ -166,9 +166,9 @@ export default function HomePage() {
               {/* Iframe Video Embed Player (Official Google Drive Streaming) */}
               <div className="relative aspect-video w-full bg-black flex items-center justify-center">
                 {/* Background Loading Spinner */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-slate-500 pointer-events-none">
-                  <div className="w-8 h-8 rounded-full border-2 border-white/20 border-t-[#82C8E5] animate-spin" />
-                  <span className="font-mono text-xs tracking-wider uppercase text-slate-400">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-[#B5CEC7] pointer-events-none">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#315B58] border-t-[#65C6B5] animate-spin" />
+                  <span className="font-mono text-xs tracking-wider uppercase text-[#D9F0EA]">
                     Connecting to Google Drive Stream...
                   </span>
                 </div>
@@ -188,12 +188,12 @@ export default function HomePage() {
               </div>
 
               {/* Modal Footer */}
-              <div className="p-4 bg-black/50 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-400 gap-2">
+              <div className="p-4 bg-[#071F22]/60 border-t border-[#254845] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#B5CEC7] gap-2">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
                   <span>Streamed via verified Google Drive preview player</span>
                 </div>
-                <div className="flex items-center gap-4 font-mono text-slate-400">
+                <div className="flex items-center gap-4 font-mono text-[#D9F0EA]">
                   <span>{activeModalVideo.aspectRatio || '16:9'}</span>
                   <span>●</span>
                   <span>{activeModalVideo.duration || 'Full Film'}</span>
@@ -202,7 +202,7 @@ export default function HomePage() {
                     href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#82C8E5] hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+                    className="text-[#65C6B5] hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
                   >
                     Open in Drive
                     <ExternalLink className="w-3 h-3" />

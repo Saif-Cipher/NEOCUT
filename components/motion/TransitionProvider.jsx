@@ -140,7 +140,7 @@ export default function TransitionProvider({ children }) {
           }}
         >
           <div
-            className={`w-full h-full bg-[#050914] ${
+            className={`w-full h-full bg-[#071F22] ${
               phase === 'expanding' ? 'iris-clip-expand' : 'iris-clip-reveal'
             }`}
             style={{
@@ -152,7 +152,7 @@ export default function TransitionProvider({ children }) {
             <div
               className="absolute inset-0 opacity-40 pointer-events-none"
               style={{
-                background: `radial-gradient(circle at var(--origin-x) var(--origin-y), rgba(0, 71, 171, 0.4) 0%, rgba(0, 0, 128, 0.2) 50%, transparent 80%)`,
+                background: `radial-gradient(circle at var(--origin-x) var(--origin-y), rgba(25, 80, 82, 0.45) 0%, rgba(16, 54, 56, 0.3) 50%, transparent 80%)`,
               }}
             />
           </div>

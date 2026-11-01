@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { X, ShieldCheck, Film, Play, ExternalLink, Sparkles, Filter, Layers, Clock } from 'lucide-react';
+import { X, ShieldCheck, Play, ExternalLink, Sparkles } from 'lucide-react';
 import SmoothScroll from '@/components/motion/SmoothScroll';
 import FloatingCapsuleNav from '@/components/layout/FloatingCapsuleNav';
 import Footer from '@/components/layout/Footer';
@@ -230,22 +230,29 @@ export default function PortfolioPage() {
         if (!res.ok) return;
         const json = await res.json();
         if (json.success && Array.isArray(json.data) && json.data.length > 0 && isMounted) {
-          const mapped = json.data.map((item) => {
-            const catObj = CATEGORIES.find((c) => c.id === item.category);
-            return {
-              assetId: item.assetId,
-              title: item.name ? item.name.replace('-video.mp4', '').replace(/-/g, ' ') : 'Studio Film',
-              category: item.category,
-              categoryLabel: catObj ? catObj.label : item.category,
-              duration: item.durationFormatted || 'Full Film',
-              aspectRatio: item.aspectRatio || '16:9',
-              description: item.shortDescription || 'A bespoke video production engineered with cinematic precision.',
-              driveFileId: item.previewUrl ? item.previewUrl.split('/d/')[1]?.split('/')[0] : null,
-              previewUrl: item.previewUrl,
-              webViewLink: item.previewUrl ? item.previewUrl.replace('/preview', '/view?usp=drivesdk') : null,
-              thumbnailUrl: item.thumbnailUrl || '/assets/thumbnails/hero/references/hero-1-ref.jpg',
-            };
-          });
+          const mapped = json.data
+            .filter((item) => 
+              item.type !== 'image' && 
+              item.category !== 'brand-assets' && 
+              item.assetId !== 'neocut-logo-master' && 
+              !item.thumbnailUrl?.includes('logo')
+            )
+            .map((item) => {
+              const catObj = CATEGORIES.find((c) => c.id === item.category);
+              return {
+                assetId: item.assetId,
+                title: item.name ? item.name.replace('-video.mp4', '').replace(/-/g, ' ') : 'Studio Film',
+                category: item.category,
+                categoryLabel: catObj ? catObj.label : item.category,
+                duration: item.durationFormatted || null,
+                aspectRatio: item.aspectRatio || '16:9',
+                description: item.shortDescription || 'A bespoke video production engineered with cinematic precision.',
+                driveFileId: item.previewUrl ? item.previewUrl.split('/d/')[1]?.split('/')[0] : null,
+                previewUrl: item.previewUrl,
+                webViewLink: item.previewUrl ? item.previewUrl.replace('/preview', '/view?usp=drivesdk') : null,
+                thumbnailUrl: item.thumbnailUrl || '/assets/thumbnails/hero/references/hero-1-ref.jpg',
+              };
+            });
 
           // Combine with fallbacks ensuring no duplicate asset IDs
           const existingIds = new Set(mapped.map((m) => m.assetId));
@@ -273,13 +280,13 @@ export default function PortfolioPage() {
       <main
         id="main-content"
         tabIndex={-1}
-        className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden pt-28 outline-none"
+        className="relative min-h-screen bg-transparent text-[#F7FCFA] selection:bg-[#65C6B5] selection:text-[#071F22] overflow-x-hidden pt-28 outline-none"
       >
         <FloatingCapsuleNav />
 
         {/* Page Hero Header */}
         <section className="relative px-4 pt-16 pb-12 max-w-7xl mx-auto text-center" aria-label="Portfolio Introduction">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#82C8E5]/30 bg-[#0C1017]/80 backdrop-blur-md text-[#82C8E5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#65C6B5]/40 bg-[#103638]/85 backdrop-blur-md text-[#65C6B5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
             <Sparkles className="w-3.5 h-3.5" />
             <span>[ ARCHIVE & CLOUD STREAMING CATALOG ]</span>
           </div>
@@ -287,16 +294,16 @@ export default function PortfolioPage() {
           <StretchSnapText
             as="h1"
             level="display"
-            className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-tight"
+            className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#F7FCFA] leading-tight"
           >
-            Film Archive & <span className="text-[#82C8E5] italic font-normal">Repertoire</span>
+            Film Archive & <span className="text-[#65C6B5] italic font-normal">Repertoire</span>
           </StretchSnapText>
 
           <StretchSnapText
             as="p"
             level="subtle"
             split="words"
-            className="text-slate-400 text-base sm:text-xl max-w-3xl mx-auto mt-6 leading-relaxed"
+            className="text-[#D9F0EA] text-base sm:text-xl max-w-3xl mx-auto mt-6 leading-relaxed"
           >
             Every commercial, preschool musical song, documentary, and viral 3D anatomical explainer streamed with adaptive resolution from our Google Drive cloud database.
           </StretchSnapText>
@@ -309,10 +316,10 @@ export default function PortfolioPage() {
                 type="button"
                 aria-pressed={selectedFilter === cat.id}
                 onClick={() => setSelectedFilter(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5] ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5] ${
                   selectedFilter === cat.id
-                    ? 'bg-[#0047AB] text-white border border-[#82C8E5]/60 shadow-lg shadow-[#0047AB]/30 scale-105'
-                    : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10 border border-white/5'
+                    ? 'bg-[#65C6B5] text-[#071F22] border border-[#65C6B5] shadow-lg shadow-[#195052]/30 scale-105 font-bold'
+                    : 'bg-[#103638]/80 text-[#D9F0EA] hover:text-[#F7FCFA] hover:bg-[#174448] border border-[#315B58]/50'
                 }`}
               >
                 <StretchSnapText as="span" level="subtle" split="words" interactive>
@@ -340,7 +347,7 @@ export default function PortfolioPage() {
                     handleOpenModal(project, e.currentTarget);
                   }
                 }}
-                className="group/card rounded-3xl overflow-hidden border border-white/10 bg-[#0C1017]/85 backdrop-blur-xl shadow-xl shadow-black/80 hover:border-[#82C8E5]/50 focus-visible:border-[#82C8E5] focus-visible:ring-2 focus-visible:ring-[#82C8E5] focus-visible:outline-none transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#0047AB]/25 cursor-pointer flex flex-col justify-between"
+                className="group/card rounded-3xl overflow-hidden border border-[#315B58]/50 bg-[#103638]/85 backdrop-blur-xl shadow-xl shadow-black/80 hover:border-[#65C6B5] hover:bg-[#174448] focus-visible:border-[#65C6B5] focus-visible:ring-2 focus-visible:ring-[#65C6B5] focus-visible:outline-none transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#195052]/30 cursor-pointer flex flex-col justify-between"
               >
                 {/* Media Thumbnail Container with Progressive Shimmer Loading */}
                 <MediaSkeleton
@@ -350,46 +357,26 @@ export default function PortfolioPage() {
                   className="w-full"
                   imgClassName="transition-transform duration-700 group-hover/card:scale-[1.08]"
                 >
-                  {/* Hover Overlay */}
+                  {/* Central Play Button */}
                   <div className="absolute inset-0 bg-black/40 group-hover/card:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                    <div className="w-14 h-14 rounded-full bg-[#0047AB]/90 border border-[#82C8E5]/50 text-white flex items-center justify-center shadow-2xl group-hover/card:scale-110 group-hover/card:bg-[#82C8E5] group-hover/card:text-[#06080C] transition-all duration-300">
+                    <div className="w-14 h-14 rounded-full bg-[#195052] border border-[#65C6B5] text-[#F7FCFA] flex items-center justify-center shadow-2xl group-hover/card:scale-110 group-hover/card:bg-[#65C6B5] group-hover/card:text-[#071F22] transition-all duration-300">
                       <Play className="w-5 h-5 ml-0.5 fill-current" />
                     </div>
                   </div>
-
-                  {/* Duration Tag */}
-                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-[11px] font-mono text-white pointer-events-none">
-                    {project.duration}
-                  </div>
-
-                  {/* Aspect Ratio Badge */}
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-mono font-semibold text-[#82C8E5] uppercase tracking-wider pointer-events-none">
-                    {project.aspectRatio}
-                  </div>
                 </MediaSkeleton>
 
-                {/* Card Info Footer */}
+                {/* Card Info */}
                 <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#82C8E5] block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#65C6B5] block">
                       {project.categoryLabel}
                     </span>
-                    <h3 className="font-editorial text-lg sm:text-xl font-bold text-white mt-1 group-hover/card:text-[#82C8E5] transition-colors line-clamp-1">
+                    <h3 className="font-editorial text-lg sm:text-xl font-bold text-[#F7FCFA] mt-1 group-hover/card:text-[#65C6B5] transition-colors line-clamp-1">
                       {project.title}
                     </h3>
-                    <p className="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
+                    <p className="text-[#D9F0EA] text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
                       {project.description}
                     </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
-                    <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      Drive Stream
-                    </span>
-                    <span className="text-white group-hover/card:text-[#82C8E5] transition-colors flex items-center gap-1">
-                      Play Film <Play className="w-3 h-3 fill-current ml-0.5" />
-                    </span>
                   </div>
                 </div>
               </div>
@@ -397,17 +384,17 @@ export default function PortfolioPage() {
           </div>
 
           {/* Bottom Custom Production Callout */}
-          <div className="mt-20 p-8 sm:p-12 rounded-3xl border border-white/10 bg-[#0C1017]/80 backdrop-blur-xl text-center space-y-5">
-            <h2 className="font-editorial text-2xl sm:text-4xl font-bold text-white">
+          <div className="mt-20 p-8 sm:p-12 rounded-3xl border border-[#315B58]/60 bg-[#103638]/90 backdrop-blur-xl text-center space-y-5">
+            <h2 className="font-editorial text-2xl sm:text-4xl font-bold text-[#F7FCFA]">
               Need A Bespoke Production Treatment?
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-[#D9F0EA] text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
               We design custom animation sequences, 3D character worlds, and narrative brand films tailored to your precise campaign benchmarks.
             </p>
             <div className="pt-2">
               <TransitionLink
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#000080] via-[#0047AB] to-[#0055CC] hover:from-[#0047AB] hover:to-[#82C8E5] hover:text-[#06080C] text-white font-bold text-xs uppercase tracking-wider border border-[#82C8E5]/40 shadow-xl shadow-[#0047AB]/25 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#65C6B5] hover:bg-[#65C6B5]/90 text-[#071F22] font-bold text-xs uppercase tracking-wider border border-[#65C6B5] shadow-xl shadow-[#195052]/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
               >
                 <span>Request Custom Production</span>
               </TransitionLink>
@@ -421,23 +408,23 @@ export default function PortfolioPage() {
         {/* Cinematic Video Modal Player */}
         {activeModalVideo && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-[#071F22]/90 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
             role="dialog"
             aria-modal="true"
             aria-label={`Playing ${activeModalVideo.name || activeModalVideo.title}`}
             onClick={handleCloseModal}
           >
             <div
-              className="relative w-full max-w-4xl bg-[#0C1017] border border-white/15 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col cursor-default"
+              className="relative w-full max-w-4xl bg-[#103638] border border-[#315B58]/60 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/50">
+              <div className="px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/60">
                 <div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#82C8E5]">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#65C6B5]">
                     {activeModalVideo.category || activeModalVideo.categoryLabel}
                   </span>
-                  <h3 className="text-base font-semibold text-white leading-tight mt-0.5">
+                  <h3 className="text-base font-semibold text-[#F7FCFA] leading-tight mt-0.5">
                     {activeModalVideo.title || activeModalVideo.name?.replace('-video.mp4', '').replace(/-/g, ' ')}
                   </h3>
                 </div>
@@ -447,10 +434,10 @@ export default function PortfolioPage() {
                       href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white text-xs font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#071F22]/70 hover:bg-[#174448] text-[#D9F0EA] hover:text-[#F7FCFA] text-xs font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
                       title="Open directly in Google Drive"
                     >
-                      <ExternalLink className="w-3.5 h-3.5 text-[#82C8E5]" />
+                      <ExternalLink className="w-3.5 h-3.5 text-[#65C6B5]" />
                       <span className="hidden sm:inline">Drive Cloud</span>
                       <span className="sr-only">(opens in a new tab)</span>
                     </a>
@@ -458,7 +445,7 @@ export default function PortfolioPage() {
                   <button
                     ref={modalCloseBtnRef}
                     onClick={handleCloseModal}
-                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+                    className="w-9 h-9 rounded-full bg-[#071F22]/70 hover:bg-[#174448] text-[#F7FCFA] flex items-center justify-center transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
                     aria-label="Close modal dialog"
                   >
                     <X className="w-4 h-4" />
@@ -467,12 +454,12 @@ export default function PortfolioPage() {
               </div>
 
               {/* Iframe Video Embed Player */}
-              <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+              <div className="relative aspect-video w-full bg-[#071F22] flex items-center justify-center">
                 {/* Background Loading Spinner */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-slate-500 pointer-events-none">
-                  <div className="w-8 h-8 rounded-full border-2 border-white/20 border-t-[#82C8E5] animate-spin" />
-                  <span className="font-mono text-xs tracking-wider uppercase text-slate-400">
-                    Connecting to Google Drive Stream...
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-[#B5CEC7] pointer-events-none">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#315B58]/40 border-t-[#65C6B5] animate-spin" />
+                  <span className="font-mono text-xs tracking-wider uppercase text-[#D9F0EA]">
+                    Loading High-Definition Stream...
                   </span>
                 </div>
 
@@ -491,23 +478,25 @@ export default function PortfolioPage() {
               </div>
 
               {/* Modal Footer */}
-              <div className="p-4 bg-black/50 border-t border-white/5 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-slate-400 gap-2">
+              <div className="p-4 bg-[#071F22]/60 border-t border-[#254845] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#B5CEC7] gap-2">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>Streamed via verified Google Drive preview player</span>
+                  <ShieldCheck className="w-4 h-4 text-[#65C6B5]" />
+                  <span>Verified High-Definition Production Stream</span>
                 </div>
-                <div className="flex items-center gap-4 font-mono text-slate-400">
-                  <span>{activeModalVideo.aspectRatio || '16:9'}</span>
-                  <span>●</span>
-                  <span>{activeModalVideo.duration || 'Full Film'}</span>
-                  <span>●</span>
+                <div className="flex items-center gap-4 font-mono text-[#B5CEC7]">
+                  {activeModalVideo.duration && (
+                    <>
+                      <span>{activeModalVideo.duration}</span>
+                      <span>●</span>
+                    </>
+                  )}
                   <a
                     href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#82C8E5] hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5]"
+                    className="text-[#65C6B5] hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
                   >
-                    Open in Drive
+                    Open Master Video
                     <ExternalLink className="w-3 h-3" />
                     <span className="sr-only">(opens in a new tab)</span>
                   </a>

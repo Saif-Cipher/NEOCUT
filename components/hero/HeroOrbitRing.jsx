@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import OrbitCard from './OrbitCard';
 
-// Approved 8 featured portfolio showpieces with verified local thumbnails
+// Approved 10 featured portfolio showpieces with verified local thumbnails (Exactly 10 unique assets)
 const FEATURED_ORBIT_ASSETS = [
   {
     assetId: 'hero-1-video',
@@ -41,18 +41,18 @@ const FEATURED_ORBIT_ASSETS = [
     category: 'Explainer',
     categoryLabel: '3D Medical Explainer',
     thumbnailUrl: '/assets/thumbnails/explanation-videos/references/explanation-1-ref.jpg',
-    driveFileId: '1qR_v6X5Q8-w1xQ2T-4s8B9-uK0LmNoPq',
+    driveFileId: '10I3PBz1vSjVl9PTew38JU8kpFgTO5MO8',
     duration: '1:15',
     aspectRatio: '16:9',
   },
   {
     assetId: 'brand-promotion-2-video',
-    title: 'Cyberpunk Sneaker Launch Spot',
+    title: 'TOTOPAC Waterproof Pouch Commercial',
     category: 'Commercial',
     categoryLabel: 'Commercial Ad',
     thumbnailUrl: '/assets/thumbnails/brand-promotion/promotion-2-thumbnail.webp',
-    driveFileId: '1P9a_b2C3d4E5f6G7h8I9j0K1L2M3N4O5',
-    duration: '0:45',
+    driveFileId: '1PmzLDHmFe4SKDPV8qCWUXdPvvz113dkz',
+    duration: '0:41',
     aspectRatio: '16:9',
   },
   {
@@ -61,28 +61,48 @@ const FEATURED_ORBIT_ASSETS = [
     category: 'Cinematography',
     categoryLabel: '4K Aerial Film',
     thumbnailUrl: '/assets/thumbnails/cinematography/references/cinematography-1-ref.jpg',
-    driveFileId: '1Z9y_x8W7v6U5t4S3r2Q1p0O9n8M7l6K5',
+    driveFileId: '1qzVK-AHdrt4r4h2zPalCMApEh-tGCGne',
     duration: '1:45',
     aspectRatio: '16:9',
   },
   {
+    assetId: 'storytelling-3-video',
+    title: 'Road Guardians Safety 3D Narrative',
+    category: 'Storytelling',
+    categoryLabel: 'Cinematic Narrative',
+    thumbnailUrl: '/assets/thumbnails/storytelling/references/storytelling-3-ref.jpg',
+    driveFileId: '10aFx7Lyb7DM9dlBpbBr0VHyUhN8Qm6hl',
+    duration: '0:30',
+    aspectRatio: '16:9',
+  },
+  {
+    assetId: 'kids-animation-2-video',
+    title: 'Alero Kids Nursery Rhymes Ensemble',
+    category: 'Animation',
+    categoryLabel: '3D Musical Series',
+    thumbnailUrl: '/assets/thumbnails/kids-animation/references/kids-animation-2-ref.jpg',
+    driveFileId: '1cM3tySSp-7dkxnIWExbK5NRbKJPNKkuH',
+    duration: '3:15',
+    aspectRatio: '16:9',
+  },
+  {
     assetId: 'explanation-2-video',
-    title: 'Human Heart Valve Mechanics Simulation',
+    title: 'Human Diaphragm & Vocal Cord Simulation',
     category: 'Explainer',
     categoryLabel: 'Anatomical 3D',
     thumbnailUrl: '/assets/thumbnails/explanation-videos/references/explanation-2-ref.jpg',
-    driveFileId: '1A2b_c3D4e5F6g7H8i9J0k1L2m3N4o5P6',
+    driveFileId: '169qpr9g1XsmL7S93Oc6zTRAluW54_nzu',
     duration: '0:58',
     aspectRatio: '16:9',
   },
   {
-    assetId: 'storytelling-1-video',
-    title: 'The Artisan Watchmaker Documentary',
-    category: 'Storytelling',
-    categoryLabel: 'Cinematic Narrative',
-    thumbnailUrl: '/assets/thumbnails/storytelling/references/storytelling-1-ref.jpg',
-    driveFileId: '1B3c_d4E5f6G7h8I9j0K1l2M3n4O5p6Q7',
-    duration: '3:20',
+    assetId: 'explanation-3-video',
+    title: 'Human Lacrimal Tear Gland Anatomy',
+    category: 'Explainer',
+    categoryLabel: 'Physiological 3D',
+    thumbnailUrl: '/assets/thumbnails/explanation-videos/references/explanation-3-ref.jpg',
+    driveFileId: '1jX5ROoIDA4QpLRMbURB2gH85ujTKZiNQ',
+    duration: '0:43',
     aspectRatio: '16:9',
   },
 ];
@@ -99,23 +119,11 @@ export default function HeroOrbitRing() {
   const targetMouseRef = useRef({ x: 0, y: 0 });
   const currentMouseRef = useRef({ x: 0, y: 0 });
 
-  const [viewportWidth, setViewportWidth] = useState(1280);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const handleResize = () => {
-      setViewportWidth(window.innerWidth);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
     // Respect user's motion preferences
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(motionQuery.matches);
-    const handleMotionChange = (e) => setPrefersReducedMotion(e.matches);
-    motionQuery.addEventListener('change', handleMotionChange);
 
     // Background tab throttling (pauses RAF loop when tab is hidden)
     const handleVisibilityChange = () => {
@@ -144,14 +152,6 @@ export default function HeroOrbitRing() {
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Viewport-based radii
-    const isMobile = window.innerWidth < 640;
-    const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024;
-    const radiusX = isMobile ? Math.min(window.innerWidth * 0.42, 175) : isTablet ? 360 : 520;
-    const radiusY = isMobile ? 110 : isTablet ? 150 : 200;
-    const radiusZ = isMobile ? 140 : isTablet ? 240 : 380;
-    const totalCards = isMobile ? 4 : isTablet ? 6 : 8;
-
     // High-performance RAF loop (zero React setState calls = 0 component re-renders per second)
     let lastTime = performance.now();
     const updateLoop = (now) => {
@@ -161,6 +161,15 @@ export default function HeroOrbitRing() {
       // Only advance when active, tab is visible, and container is on-screen
       if (!isPausedRef.current && isTabVisibleRef.current && isIntersectingRef.current && !motionQuery.matches) {
         angleRef.current = (angleRef.current + delta * 0.12) % (Math.PI * 2);
+
+        // Dynamically compute responsive radii for fluid adaptation without clipping
+        const width = window.innerWidth;
+        const isMobile = width < 640;
+        const isTablet = width >= 640 && width < 1024;
+        const radiusX = isMobile ? Math.min(width * 0.36, 140) : isTablet ? 360 : 540;
+        const radiusY = isMobile ? 120 : isTablet ? 160 : 210;
+        const radiusZ = isMobile ? 150 : isTablet ? 250 : 390;
+        const totalCards = FEATURED_ORBIT_ASSETS.length;
 
         // Smooth mouse lerp damping
         currentMouseRef.current.x += (targetMouseRef.current.x - currentMouseRef.current.x) * 0.05;
@@ -200,23 +209,15 @@ export default function HeroOrbitRing() {
     animFrameRef.current = requestAnimationFrame(updateLoop);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
-      motionQuery.removeEventListener('change', handleMotionChange);
       observer.disconnect();
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
     };
   }, []);
 
-  // Viewport-based card subsets
-  const isMobile = viewportWidth < 640;
-  const isTablet = viewportWidth >= 640 && viewportWidth < 1024;
-  const displayAssets = isMobile
-    ? FEATURED_ORBIT_ASSETS.slice(0, 4)
-    : isTablet
-    ? FEATURED_ORBIT_ASSETS.slice(0, 6)
-    : FEATURED_ORBIT_ASSETS;
+  // Exactly 10 unique video thumbnails rendered in 3D orbit
+  const displayAssets = FEATURED_ORBIT_ASSETS;
 
   return (
     <div

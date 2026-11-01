@@ -61,8 +61,8 @@ export default function HeroSection() {
       {/* Central Content & Editorial Display Typography */}
       <div className="relative z-20 max-w-5xl mx-auto text-center flex flex-col items-center pointer-events-auto">
         {/* Studio Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#82C8E5]/30 bg-[#0C1017]/80 backdrop-blur-md text-[#82C8E5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
-          <Sparkles className="w-3.5 h-3.5 text-[#82C8E5]" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#65C6B5]/40 bg-[#103638]/85 backdrop-blur-md text-[#65C6B5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
+          <Sparkles className="w-3.5 h-3.5 text-[#65C6B5]" />
           <StretchSnapText as="span" level="subtle" split="words" trigger="mount" delay={0.1}>
             AI Video Production &amp; Cinematic Storytelling
           </StretchSnapText>
@@ -75,10 +75,10 @@ export default function HeroSection() {
             level="display"
             trigger="mount"
             delay={0.2}
-            className="font-editorial text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white drop-shadow-[0_15px_30px_rgba(0,0,128,0.5)] m-0"
+            className="font-editorial text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-[#F7FCFA] drop-shadow-[0_15px_30px_rgba(25,80,82,0.5)] m-0"
           >
             NEOCUT
-            <span className="text-[#82C8E5] italic ml-2 sm:ml-4 font-normal">Digital</span>
+            <span className="text-[#65C6B5] italic ml-2 sm:ml-4 font-normal">Digital</span>
           </StretchSnapText>
         </div>
 
@@ -89,10 +89,10 @@ export default function HeroSection() {
             level="display"
             trigger="mount"
             delay={0.45}
-            className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-100 leading-[1.15]"
+            className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#F7FCFA] leading-[1.15]"
           >
             Cinematic Video Production for{' '}
-            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#82C8E5] to-[#0047AB]">
+            <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#F7FCFA] via-[#65C6B5] to-[#195052]">
               Modern Brands
             </span>
           </StretchSnapText>
@@ -110,7 +110,7 @@ export default function HeroSection() {
                 <path
                   ref={doodleRef}
                   d="M4 14C55 5 170 3 256 12C200 6 110 8 45 16"
-                  stroke="#82C8E5"
+                  stroke="#65C6B5"
                   strokeWidth="3.5"
                   strokeLinecap="round"
                   strokeDasharray="600"
@@ -128,7 +128,7 @@ export default function HeroSection() {
           split="words"
           trigger="mount"
           delay={0.7}
-          className="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed"
+          className="mt-6 text-base sm:text-lg text-[#D9F0EA] max-w-2xl leading-relaxed"
         >
           We help brands, creators, and businesses turn ideas into powerful cinematic stories using AI-powered video production.
         </StretchSnapText>
@@ -137,7 +137,7 @@ export default function HeroSection() {
         <div ref={ctaRef} className="flex flex-wrap items-center justify-center gap-4 mt-10">
           <TransitionLink
             href="/portfolio"
-            className="group px-7 py-3.5 rounded-full bg-white text-[#06080C] font-semibold text-xs uppercase tracking-wider hover:bg-[#82C8E5] hover:text-[#06080C] transition-all duration-300 shadow-xl shadow-white/10 active:scale-95 flex items-center gap-2"
+            className="group px-7 py-3.5 rounded-full bg-[#65C6B5] text-[#071F22] font-bold text-xs uppercase tracking-wider hover:bg-[#65C6B5]/90 hover:text-[#071F22] transition-all duration-300 shadow-xl shadow-[#195052]/30 active:scale-95 flex items-center gap-2"
           >
             <Play className="w-3.5 h-3.5 fill-current" />
             <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.9}>
@@ -149,13 +149,13 @@ export default function HeroSection() {
             href="https://wa.me/8801931245914"
             target="_blank"
             rel="noopener noreferrer"
-            className="group px-7 py-3.5 rounded-full border border-white/20 hover:border-[#82C8E5] bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg active:scale-95 flex items-center gap-2"
+            className="group px-7 py-3.5 rounded-full border border-[#315B58] hover:border-[#65C6B5] bg-[#103638]/70 hover:bg-[#174448] text-[#F7FCFA] font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg active:scale-95 flex items-center gap-2"
           >
             <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.95}>
               Start a Project
             </StretchSnapText>
             <span className="sr-only">(opens in a new tab)</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#82C8E5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-[#65C6B5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
       </div>

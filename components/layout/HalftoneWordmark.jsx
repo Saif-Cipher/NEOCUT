@@ -7,8 +7,8 @@ const DAMPING = 0.88;
 const REPEL_RADIUS = 135;
 const REPEL_STRENGTH = 16;
 const GRID_STEP = 7;
-const BASE_COLOR = { r: 226, g: 232, b: 240, a: 0.82 };
-const ACCENT_COLOR = { r: 130, g: 200, b: 229, a: 1.0 };
+const BASE_COLOR = { r: 247, g: 252, b: 250, a: 0.85 }; // #F7FCFA
+const ACCENT_COLOR = { r: 101, g: 198, b: 181, a: 1.0 }; // #65C6B5 (Midnight Teal Accent)
 
 /**
  * HalftoneWordmark
@@ -233,7 +233,7 @@ export default function HalftoneWordmark({
 
         totalMotion += Math.abs(p.vx) + Math.abs(p.vy) + prox;
 
-        // Modulate color from soft white to cyan accent (#82C8E5)
+        // Modulate color from soft white to teal accent (#65C6B5)
         const r = Math.round(BASE_COLOR.r + (ACCENT_COLOR.r - BASE_COLOR.r) * prox);
         const g = Math.round(BASE_COLOR.g + (ACCENT_COLOR.g - BASE_COLOR.g) * prox);
         const b = Math.round(BASE_COLOR.b + (ACCENT_COLOR.b - BASE_COLOR.b) * prox);

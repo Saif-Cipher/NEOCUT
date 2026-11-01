@@ -208,9 +208,9 @@ export default function GlassFold({
   speed = 0.3,
   scale = 1.0,
   noise = 0.08,
-  color1 = [0.0, 0.278, 0.6705],       // #0047AB
-  color2 = [0.0196, 0.0353, 0.0784],   // #050914
-  color3 = [0.5098, 0.7843, 0.8980],   // #82C8E5
+  color1 = [0.0980, 0.3137, 0.3216],   // #195052 (GlassFold body)
+  color2 = [0.0275, 0.1216, 0.1333],   // #071F22 (GlassFold background)
+  color3 = [0.3961, 0.7765, 0.7098],   // #65C6B5 (GlassFold illuminated edges)
   interactive = true,
 }: GlassFoldProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -461,15 +461,15 @@ export default function GlassFold({
   return (
     <div
       aria-hidden="true"
-      className={`fixed inset-0 pointer-events-none -z-50 overflow-hidden select-none bg-[#050914] ${className}`.trim()}
+      className={`fixed inset-0 pointer-events-none -z-50 overflow-hidden select-none bg-[#071F22] ${className}`.trim()}
     >
       {webglFailed ? (
-        // Static CSS Fallback: rich navy gradient with subtle cyan accent
+        // Static CSS Fallback: rich midnight teal gradient with subtle cyan-teal illuminated accent
         <div
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(ellipse 85% 65% at 50% 15%, rgba(0, 71, 171, 0.35) 0%, rgba(5, 9, 20, 0.92) 68%, #050914 100%), radial-gradient(circle at 78% 40%, rgba(130, 200, 229, 0.14) 0%, transparent 60%)',
+              'radial-gradient(ellipse 85% 65% at 50% 15%, rgba(25, 80, 82, 0.45) 0%, rgba(7, 31, 34, 0.94) 68%, #071F22 100%), radial-gradient(circle at 78% 40%, rgba(101, 198, 181, 0.16) 0%, transparent 60%)',
           }}
         />
       ) : (

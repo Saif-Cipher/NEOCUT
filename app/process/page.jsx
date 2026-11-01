@@ -168,13 +168,13 @@ export default function ProcessPage() {
       <main
         id="main-content"
         tabIndex={-1}
-        className="relative min-h-screen bg-transparent text-[#EDEDED] selection:bg-[#82C8E5] selection:text-[#06080C] overflow-x-hidden pt-28 outline-none"
+        className="relative min-h-screen bg-transparent text-[#F7FCFA] selection:bg-[#65C6B5] selection:text-[#071F22] overflow-x-hidden pt-28 outline-none"
       >
         <FloatingCapsuleNav />
 
         {/* 1. Page Hero Intro */}
         <section className="relative px-4 pt-12 pb-16 max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#82C8E5]/30 bg-[#0C1017]/80 backdrop-blur-md text-[#82C8E5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#65C6B5]/40 bg-[#103638]/85 backdrop-blur-md text-[#65C6B5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
             <Sparkles className="w-3.5 h-3.5" />
             <span>[ SYSTEMATIC WORKFLOW PIPELINE ]</span>
           </div>
@@ -182,10 +182,10 @@ export default function ProcessPage() {
           <StretchSnapText
             as="h1"
             level="display"
-            className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.08] max-w-5xl mx-auto"
+            className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#F7FCFA] leading-[1.08] max-w-5xl mx-auto"
           >
             Mathematical Rhythm,{' '}
-            <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-[#82C8E5] to-[#0047AB]">
+            <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#F7FCFA] via-[#65C6B5] to-[#195052]">
               Uncompromising Vision.
             </span>
           </StretchSnapText>
@@ -194,7 +194,7 @@ export default function ProcessPage() {
             as="p"
             level="subtle"
             split="words"
-            className="text-slate-300 text-base sm:text-xl max-w-3xl mx-auto mt-8 leading-relaxed font-light"
+            className="text-[#D9F0EA] text-base sm:text-xl max-w-3xl mx-auto mt-8 leading-relaxed font-light"
           >
             Our disciplined six-stage creative engineering framework transforms abstract concepts into broadcast-grade digital cinema with complete transparency at every milestone.
           </StretchSnapText>
@@ -206,7 +206,7 @@ export default function ProcessPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Interactive Stages List */}
             <div className="lg:col-span-5 space-y-3" role="tablist" aria-label="Production Stages">
-              <span className="text-xs font-mono text-[#82C8E5] uppercase tracking-widest block mb-4">
+              <span className="text-xs font-mono text-[#65C6B5] uppercase tracking-widest block mb-4">
                 [ PRODUCTION PHASES ]
               </span>
               {PRODUCTION_STAGES.map((stage, idx) => {
@@ -225,10 +225,10 @@ export default function ProcessPage() {
                         setActiveStage(idx);
                       }
                     }}
-                    className={`cursor-pointer rounded-2xl p-5 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#82C8E5] ${
+                    className={`cursor-pointer rounded-2xl p-5 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5] ${
                       isActive
-                        ? 'bg-[#0E1422] border-[#82C8E5]/60 shadow-xl shadow-[#0047AB]/20 scale-[1.01]'
-                        : 'bg-[#080B10]/90 border-white/5 hover:border-white/15 opacity-70 hover:opacity-100'
+                        ? 'bg-[#174448] border-[#65C6B5] shadow-xl shadow-[#195052]/30 scale-[1.01]'
+                        : 'bg-[#103638]/90 border-[#315B58]/40 hover:border-[#65C6B5]/50 opacity-80 hover:opacity-100'
                     }`}
                   >
                     <div className="flex items-center justify-between">
@@ -236,8 +236,8 @@ export default function ProcessPage() {
                         <span
                           className={`w-9 h-9 rounded-xl border flex items-center justify-center font-mono text-xs font-bold transition-colors ${
                             isActive
-                              ? 'bg-[#0047AB] border-[#82C8E5] text-white shadow-md'
-                              : 'bg-white/5 border-white/10 text-slate-400'
+                              ? 'bg-[#195052] border-[#65C6B5] text-[#F7FCFA] shadow-md'
+                              : 'bg-[#071F22]/70 border-[#315B58]/40 text-[#B5CEC7]'
                           }`}
                         >
                           {stage.number}
@@ -245,19 +245,19 @@ export default function ProcessPage() {
                         <div>
                           <h3
                             className={`font-semibold text-sm sm:text-base transition-colors ${
-                              isActive ? 'text-white' : 'text-slate-300'
+                              isActive ? 'text-[#F7FCFA]' : 'text-[#D9F0EA]'
                             }`}
                           >
                             {stage.title}
                           </h3>
-                          <span className="text-xs text-[#82C8E5]/80 font-mono block mt-0.5">
+                          <span className="text-xs text-[#65C6B5] font-mono block mt-0.5">
                             {stage.timeline}
                           </span>
                         </div>
                       </div>
                       <ArrowUpRight
                         className={`w-4 h-4 transition-transform ${
-                          isActive ? 'text-[#82C8E5] translate-x-0.5 -translate-y-0.5' : 'text-slate-500'
+                          isActive ? 'text-[#65C6B5] translate-x-0.5 -translate-y-0.5' : 'text-[#B5CEC7]'
                         }`}
                       />
                     </div>
@@ -268,45 +268,45 @@ export default function ProcessPage() {
 
             {/* Right Column: Active Stage Deep-Dive Card + 3D Torus Visualizer */}
             <div className="lg:col-span-7">
-              <div className="rounded-3xl p-8 sm:p-10 bg-[#0C1017]/95 border border-white/10 shadow-2xl shadow-black/90 relative overflow-hidden">
+              <div className="rounded-3xl p-8 sm:p-10 bg-[#103638]/95 border border-[#315B58]/60 shadow-2xl shadow-black/90 relative overflow-hidden">
                 {/* Stage Header Info */}
-                <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/10">
+                <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[#254845]">
                   <div className="flex items-center gap-3">
-                    <span className="font-editorial text-3xl sm:text-4xl font-bold text-[#82C8E5]">
+                    <span className="font-editorial text-3xl sm:text-4xl font-bold text-[#65C6B5]">
                       {PRODUCTION_STAGES[activeStage].number}
                     </span>
                     <div>
-                      <h4 className="font-editorial text-xl sm:text-2xl font-bold text-white">
+                      <h4 className="font-editorial text-xl sm:text-2xl font-bold text-[#F7FCFA]">
                         {PRODUCTION_STAGES[activeStage].title}
                       </h4>
-                      <p className="text-xs font-mono text-slate-400 uppercase tracking-wider mt-0.5">
+                      <p className="text-xs font-mono text-[#B5CEC7] uppercase tracking-wider mt-0.5">
                         {PRODUCTION_STAGES[activeStage].phase}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0047AB]/20 border border-[#82C8E5]/30 text-xs font-mono text-[#82C8E5]">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#071F22]/70 border border-[#65C6B5]/40 text-xs font-mono text-[#65C6B5]">
                     <Clock className="w-3.5 h-3.5" />
                     <span>{PRODUCTION_STAGES[activeStage].timeline}</span>
                   </div>
                 </div>
 
                 {/* Stage Description */}
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed my-6">
+                <p className="text-[#D9F0EA] text-sm sm:text-base leading-relaxed my-6">
                   {PRODUCTION_STAGES[activeStage].description}
                 </p>
 
                 {/* Stage Deliverables */}
                 <div className="mb-6">
-                  <span className="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-3">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#B5CEC7] block mb-3">
                     KEY MILESTONE DELIVERABLES:
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {PRODUCTION_STAGES[activeStage].deliverables.map((item) => (
                       <div
                         key={item}
-                        className="flex items-start gap-2.5 p-3 rounded-xl bg-white/5 border border-white/5 text-xs text-slate-200"
+                        className="flex items-start gap-2.5 p-3 rounded-xl bg-[#071F22]/70 border border-[#315B58]/40 text-xs text-[#D9F0EA]"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-[#82C8E5] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#65C6B5] shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -314,33 +314,33 @@ export default function ProcessPage() {
                 </div>
 
                 {/* Client Checkpoint Box */}
-                <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-between">
+                <div className="p-4 rounded-2xl bg-[#071F22]/80 border border-[#315B58]/60 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
+                    <ShieldCheck className="w-5 h-5 text-[#65C6B5] shrink-0" />
                     <div>
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 block">
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#65C6B5] block">
                         MILESTONE CHECKPOINT &amp; SIGN-OFF:
                       </span>
-                      <span className="text-white text-xs sm:text-sm font-semibold">
+                      <span className="text-[#F7FCFA] text-xs sm:text-sm font-semibold">
                         {PRODUCTION_STAGES[activeStage].checkpoint}
                       </span>
                     </div>
                   </div>
-                  <span className="text-[11px] font-mono text-emerald-300/80 px-2.5 py-1 rounded-md bg-emerald-500/20">
+                  <span className="text-[11px] font-mono text-[#65C6B5] px-2.5 py-1 rounded-md bg-[#195052]/60 border border-[#65C6B5]/30">
                     REQUIRED
                   </span>
                 </div>
 
                 {/* Integrated Interactive Three.js Wireframe Torus Canvas */}
-                <div className="mt-8 pt-6 border-t border-white/10">
+                <div className="mt-8 pt-6 border-t border-[#254845]">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-mono text-slate-400 uppercase tracking-wider flex items-center gap-2">
-                      <Zap className="w-3.5 h-3.5 text-[#82C8E5]" />
+                    <span className="text-xs font-mono text-[#B5CEC7] uppercase tracking-wider flex items-center gap-2">
+                      <Zap className="w-3.5 h-3.5 text-[#65C6B5]" />
                       <span>Interactive 3D Geometry Core (Drag to Rotate)</span>
                     </span>
-                    <span className="text-[11px] font-mono text-[#82C8E5]">WebGL Engine</span>
+                    <span className="text-[11px] font-mono text-[#65C6B5]">WebGL Engine</span>
                   </div>
-                  <div className="relative aspect-[16/7] rounded-2xl overflow-hidden border border-white/5 bg-[#080B10]">
+                  <div className="relative aspect-[16/7] rounded-2xl overflow-hidden border border-[#315B58]/50 bg-[#071F22]">
                     <WireframeTorus />
                   </div>
                 </div>
@@ -352,17 +352,17 @@ export default function ProcessPage() {
         {/* 3. Studio SLA & Production Guarantees */}
         <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#82C8E5] block mb-2">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#65C6B5] block mb-2">
               [ SERVICE LEVEL COMMITMENT ]
             </span>
             <StretchSnapText
               as="h2"
               level="secondary"
-              className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight"
+              className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-[#F7FCFA] tracking-tight"
             >
               Enterprise-Grade Production Standards
             </StretchSnapText>
-            <p className="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
+            <p className="text-[#D9F0EA] text-sm sm:text-base mt-3 leading-relaxed">
               We eliminate guesswork with contractual delivery dates, clear milestone checkpoints, and total IP ownership.
             </p>
           </div>
@@ -373,20 +373,20 @@ export default function ProcessPage() {
               return (
                 <div
                   key={sla.title}
-                  className="p-6 rounded-3xl bg-[#0C1017]/90 border border-white/10 hover:border-[#82C8E5]/40 transition-all duration-300 flex flex-col justify-between shadow-xl shadow-black/80 group"
+                  className="p-6 rounded-3xl bg-[#103638]/90 border border-[#315B58]/50 hover:border-[#65C6B5] hover:bg-[#174448] transition-all duration-300 flex flex-col justify-between shadow-xl shadow-black/80 group"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#82C8E5] group-hover:scale-110 group-hover:bg-[#0047AB]/20 transition-all duration-300 mb-5">
+                    <div className="w-12 h-12 rounded-2xl bg-[#071F22]/70 border border-[#315B58]/50 flex items-center justify-center text-[#65C6B5] group-hover:scale-110 group-hover:bg-[#195052]/40 transition-all duration-300 mb-5">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="font-semibold text-white text-base mb-2 group-hover:text-[#82C8E5] transition-colors">
+                    <h3 className="font-semibold text-[#F7FCFA] text-base mb-2 group-hover:text-[#65C6B5] transition-colors">
                       {sla.title}
                     </h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-[#D9F0EA] leading-relaxed">
                       {sla.desc}
                     </p>
                   </div>
-                  <div className="pt-4 mt-6 border-t border-white/5 flex items-center gap-1.5 text-[11px] font-mono text-emerald-400">
+                  <div className="pt-4 mt-6 border-t border-[#254845] flex items-center gap-1.5 text-[11px] font-mono text-[#65C6B5]">
                     <CheckCircle2 className="w-3.5 h-3.5" /> GUARANTEED
                   </div>
                 </div>
@@ -398,13 +398,13 @@ export default function ProcessPage() {
         {/* 4. Production FAQ Section */}
         <section className="relative max-w-4xl mx-auto px-4 sm:px-6 mb-32">
           <div className="text-center mb-12">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#82C8E5] block mb-2">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#65C6B5] block mb-2">
               [ FREQUENTLY ASKED QUESTIONS ]
             </span>
             <StretchSnapText
               as="h2"
               level="secondary"
-              className="font-editorial text-3xl sm:text-4xl font-bold text-white tracking-tight"
+              className="font-editorial text-3xl sm:text-4xl font-bold text-[#F7FCFA] tracking-tight"
             >
               Client Workflow Inquiries
             </StretchSnapText>
@@ -414,15 +414,15 @@ export default function ProcessPage() {
             {FAQS.map((faq) => (
               <div
                 key={faq.q}
-                className="p-6 rounded-2xl bg-[#0C1017]/80 border border-white/10"
+                className="p-6 rounded-2xl bg-[#103638]/85 border border-[#315B58]/50"
               >
                 <div className="flex items-start gap-3">
-                  <HelpCircle className="w-5 h-5 text-[#82C8E5] shrink-0 mt-0.5" />
+                  <HelpCircle className="w-5 h-5 text-[#65C6B5] shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="text-white font-semibold text-base mb-2">
+                    <h3 className="text-[#F7FCFA] font-semibold text-base mb-2">
                       {faq.q}
                     </h3>
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                    <p className="text-[#D9F0EA] text-sm leading-relaxed">
                       {faq.a}
                     </p>
                   </div>
@@ -434,27 +434,27 @@ export default function ProcessPage() {
 
         {/* 5. Direct Action CTA */}
         <section className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center mb-28">
-          <div className="p-12 sm:p-16 rounded-3xl border border-[#82C8E5]/30 bg-gradient-to-b from-[#0C1017]/90 to-[#080B10] shadow-2xl shadow-black/90 relative overflow-hidden">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#0047AB]/20 via-transparent to-transparent" />
+          <div className="p-12 sm:p-16 rounded-3xl border border-[#315B58]/60 bg-[#103638]/95 shadow-2xl shadow-black/90 relative overflow-hidden">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#195052]/30 via-transparent to-transparent" />
             
-            <span className="text-xs font-mono uppercase tracking-widest text-[#82C8E5] block mb-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#65C6B5] block mb-4">
               [ KICK OFF YOUR PROJECT ]
             </span>
             <StretchSnapText
               as="h2"
               level="display"
-              className="font-editorial text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight"
+              className="font-editorial text-3xl sm:text-5xl md:text-6xl font-bold text-[#F7FCFA] leading-tight"
             >
-              Experience the NeoCut <span className="text-[#82C8E5] italic font-normal">precision.</span>
+              Experience the NeoCut <span className="text-[#65C6B5] italic font-normal">precision.</span>
             </StretchSnapText>
-            <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mt-4 leading-relaxed">
+            <p className="text-[#D9F0EA] text-sm sm:text-base max-w-xl mx-auto mt-4 leading-relaxed">
               Submit your project brief to receive a customized timeline breakdown, script treatment, and production estimate within 24 hours.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <TransitionLink
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#000080] via-[#0047AB] to-[#0055CC] hover:from-[#0047AB] hover:to-[#82C8E5] hover:text-[#06080C] text-white font-bold text-xs uppercase tracking-wider border border-[#82C8E5]/50 shadow-xl shadow-[#0047AB]/40 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#65C6B5] hover:bg-[#65C6B5]/90 text-[#071F22] font-bold text-xs uppercase tracking-wider border border-[#65C6B5] shadow-xl shadow-[#195052]/30 transition-all duration-300"
               >
                 <span>Initiate Production Sprint</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -462,10 +462,10 @@ export default function ProcessPage() {
 
               <TransitionLink
                 href="/portfolio"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 text-white font-semibold text-xs uppercase tracking-wider border border-white/10 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#071F22]/80 hover:bg-[#174448] text-[#F7FCFA] font-semibold text-xs uppercase tracking-wider border border-[#315B58] transition-all duration-300"
               >
                 <span>Review Shipped Works</span>
-                <ArrowUpRight className="w-4 h-4 text-slate-400" />
+                <ArrowUpRight className="w-4 h-4 text-[#B5CEC7]" />
               </TransitionLink>
             </div>
           </div>

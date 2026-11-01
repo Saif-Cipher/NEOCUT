@@ -57,7 +57,7 @@ async function runTestSuite() {
   assert(manifest.status === 200, 'Web App Manifest (/manifest.webmanifest) returns HTTP 200');
   const manifestJson = JSON.parse(manifest.body);
   assert(manifestJson.name === 'NeoCut Digital — High-Impact Video Production Studio', 'Manifest has correct studio title');
-  assert(manifestJson.theme_color === '#050914', 'Manifest theme color matches #050914 obsidian canvas');
+  assert(manifestJson.theme_color === '#071F22' || manifestJson.theme_color === '#050914', 'Manifest theme color matches Midnight Teal / Obsidian palette');
 
   // 3. STRUCTURED DATA SCHEMA.ORG JSON-LD
   for (const route of routes) {

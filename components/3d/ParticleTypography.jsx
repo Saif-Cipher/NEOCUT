@@ -78,9 +78,9 @@ export default function ParticleTypography() {
     const posAttr = new THREE.Float32BufferAttribute(particlePositions, 3);
     geometry.setAttribute('position', posAttr);
 
-    // Particle Shader Material in NeoCut Cyan Ice / Cobalt (#82C8E5)
+    // Particle Shader Material in NeoCut Midnight Teal Accent (#65C6B5)
     const material = new THREE.PointsMaterial({
-      color: 0x82C8E5,
+      color: 0x65C6B5,
       size: 2.2,
       transparent: true,
       opacity: 0.85,

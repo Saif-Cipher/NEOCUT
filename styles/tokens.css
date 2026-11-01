@@ -1,35 +1,44 @@
 /* ==============================================================================
    NeoCut Digital — Design System Tokens & Brand Foundations
-   Palette: Primary (#000080), Secondary (#0047AB), Accent (#82C8E5), Subtle (#6D8196)
+   Palette: Midnight Teal
+   Main Background: #071F22 | Secondary Background: #103638
+   GlassFold Body: #195052 | Accent: #65C6B5 | Borders: #315B58 | Dividers: #254845
    Typography: Migra (Display Serif) & Inter (UI Sans-Serif)
    ============================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  /* Brand Color Hierarchy (60% Primary, 30% Secondary, 10% Accent) */
-  --color-primary: #000080;
-  --color-primary-rgb: 0, 0, 128;
+  /* Brand Color Hierarchy — Midnight Teal */
+  --color-primary: #195052;
+  --color-primary-rgb: 25, 80, 82;
   
-  --color-secondary: #0047AB;
-  --color-secondary-rgb: 0, 71, 171;
+  --color-secondary: #103638;
+  --color-secondary-rgb: 16, 54, 56;
   
-  --color-accent: #82C8E5;
-  --color-accent-rgb: 130, 200, 229;
+  --color-accent: #65C6B5;
+  --color-accent-rgb: 101, 198, 181;
   
-  --color-subtle: #6D8196;
-  --color-subtle-rgb: 109, 129, 150;
+  --color-subtle: #B5CEC7;
+  --color-subtle-rgb: 181, 206, 199;
+
+  /* Text Colors */
+  --text-primary: #F7FCFA;
+  --text-secondary: #D9F0EA;
+  --text-muted: #B5CEC7;
 
   /* Surfaces & Ambient Backdrops */
-  --bg-canvas: #06080C;
-  --bg-surface: #0C1017;
-  --bg-surface-elevated: #131822;
-  --bg-glass: rgba(12, 16, 23, 0.75);
+  --bg-canvas: #071F22;
+  --bg-surface: #103638;
+  --bg-surface-elevated: #174448;
+  --bg-surface-hover: #20565A;
+  --bg-glass: rgba(16, 54, 56, 0.78);
 
-  /* Borders & Highlights */
-  --border-subtle: rgba(255, 255, 255, 0.07);
-  --border-glass: rgba(255, 255, 255, 0.12);
-  --border-accent: rgba(130, 200, 229, 0.35);
+  /* Borders & Dividers */
+  --border-subtle: rgba(49, 91, 88, 0.4);
+  --border-glass: #315B58;
+  --border-accent: rgba(101, 198, 181, 0.45);
+  --divider-color: #254845;
 
   /* Typography Scales */
   --font-display: 'Migra', 'Playfair Display', Georgia, serif;
@@ -43,12 +52,12 @@
 
 /* Glassmorphic Capsule Navigation */
 .glass-capsule {
-  background: rgba(12, 16, 23, 0.72);
+  background: rgba(16, 54, 56, 0.78);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--border-glass);
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
-              0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+              0 0 0 1px rgba(101, 198, 181, 0.1) inset;
 }
 
 /* 3D Orbit Stage */
@@ -70,8 +79,8 @@
 }
 
 .orbit-card-3d:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 71, 171, 0.45),
-              0 0 30px rgba(130, 200, 229, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(25, 80, 82, 0.65),
+              0 0 30px rgba(101, 198, 181, 0.3);
 }
 
 /* Animated SVG Doodle Underline */
@@ -95,9 +104,9 @@
 
 /* Glow effects */
 .glow-accent {
-  box-shadow: 0 0 30px rgba(130, 200, 229, 0.25);
+  box-shadow: 0 0 30px rgba(101, 198, 181, 0.28);
 }
 
 .glow-secondary {
-  box-shadow: 0 0 40px rgba(0, 71, 171, 0.3);
+  box-shadow: 0 0 40px rgba(25, 80, 82, 0.4);
 }

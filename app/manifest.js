@@ -10,8 +10,8 @@ export default function manifest() {
     description: 'NeoCut Digital delivers premium brand promotions, kids animation, cinematic storytelling, and viral 3D explanation videos.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#050914',
-    theme_color: '#050914',
+    background_color: '#071F22',
+    theme_color: '#071F22',
     icons: [
       {
         src: '/assets/logo/neocut-logo.png.jpg',
