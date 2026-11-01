@@ -30,9 +30,9 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Founder & Creative Direction Showcase */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-[#315B58]/60 bg-[#103638]/70 shadow-2xl shadow-black/80 flex flex-col group">
+            <div className="relative rounded-3xl overflow-hidden border border-[#315B58]/60 bg-[#103638]/70 shadow-2xl shadow-black/80 flex flex-col items-center group">
               {/* Header Badge */}
-              <div className="px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/70 backdrop-blur-md">
+              <div className="w-full px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/70 backdrop-blur-md">
                 <span className="font-mono text-xs text-[#65C6B5] tracking-widest uppercase font-semibold">
                   FOUNDER / DIRECTION
                 </span>
@@ -41,30 +41,36 @@ export default function AboutSection() {
                 </span>
               </div>
 
-              {/* Founder Portrait Visual */}
-              <div className="relative w-full aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-[#071F22]">
-                <Image
-                  src="/assets/profile/saif-founder.png"
-                  alt="Saif Hossain, founder of NeoCut Digital"
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 440px"
-                  className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
+              {/* Founder Circular Profile Stage with Ample Spacing */}
+              <div className="py-8 sm:py-10 px-6 flex flex-col items-center justify-center w-full">
+                {/* Circular Portrait Container (Mobile: 210px, Tablet: 260px, Desktop: 300px) */}
+                <div 
+                  className="relative w-[210px] h-[210px] sm:w-[260px] sm:h-[260px] lg:w-[300px] lg:h-[300px] aspect-square rounded-full shrink-0 overflow-hidden border-2 border-[#315B58] ring-4 ring-[#103638]/90 ring-offset-2 ring-offset-[#071F22] shadow-[0_0_50px_rgba(101,198,181,0.2),0_20px_40px_rgba(7,31,34,0.7)] transition-all duration-500 group-hover:border-[#65C6B5]/60 group-hover:shadow-[0_0_60px_rgba(101,198,181,0.3),0_25px_45px_rgba(7,31,34,0.8)]"
+                  style={{ borderRadius: '50%' }}
+                >
+                  <Image
+                    src="/assets/profile/saif-founder.png"
+                    alt="Saif Hossain, founder of NeoCut Digital"
+                    fill
+                    sizes="(max-width: 640px) 210px, (max-width: 1024px) 260px, 300px"
+                    className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
               </div>
 
               {/* Founder Meta & Role */}
-              <div className="p-6 bg-[#0B2528]/95 border-t border-[#254845] space-y-1">
-                <div className="flex items-baseline justify-between">
+              <div className="w-full p-6 bg-[#0B2528]/95 border-t border-[#254845] text-center space-y-1.5">
+                <div className="flex items-center justify-center gap-3">
                   <h3 className="font-editorial text-2xl font-bold text-[#F7FCFA] m-0">
                     Saif Hossain
                   </h3>
-                  <span className="text-[11px] font-mono text-[#65C6B5]">Est. 2024</span>
+                  <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#103638] border border-[#315B58] text-[#65C6B5]">Est. 2024</span>
                 </div>
                 <p className="text-xs font-mono uppercase tracking-wider text-[#65C6B5] font-semibold m-0">
                   Founder, NeoCut Digital
                 </p>
-                <p className="text-xs text-[#D9F0EA] leading-relaxed pt-2 m-0">
+                <p className="text-xs text-[#D9F0EA] leading-relaxed pt-1 max-w-sm mx-auto m-0">
                   Leading creative direction, algorithmic video systems, and cinematic production for digital brands.
                 </p>
               </div>

@@ -1,5 +1,5 @@
 """
-NeoCut Digital — Founder Portrait Integration Verification Suite
+NeoCut Digital — Founder Portrait Integration & Circular Profile Verification Suite
 Validates:
 1. Asset exists at public/assets/profile/saif-founder.png with authentic dimensions & quality.
 2. Homepage Studio/About preview (AboutSection.jsx) integrates the founder portrait:
@@ -7,11 +7,27 @@ Validates:
    - Role: Founder, NeoCut Digital
    - Descriptive alt text: 'Saif Hossain, founder of NeoCut Digital'
    - Clear link to /about
+   - Circular Profile styling:
+     * rounded-full & border-radius: 50%
+     * aspect-square (1:1 ratio)
+     * object-cover & object-[center_20%]
+     * Subtle Midnight Teal border (border-2 border-[#315B58])
+     * Restrained cyan outer glow (rgba(101,198,181...))
+     * Responsive diameter: mobile ~210px (180-240px range), desktop ~300px (280-360px range)
+     * No rectangular aspect ratio (aspect-[3/4]) leftovers
 3. About Page (app/about/page.jsx) prominently features the founder profile:
    - Name: Saif Hossain
    - Role: Founder & Creative Director — NeoCut Digital
    - Genuine biographical focus: AI-powered video production, creative direction, narrative systems
    - Reuses identical asset path
+   - Circular Profile styling:
+     * rounded-full & border-radius: 50%
+     * aspect-square (1:1 ratio)
+     * object-cover & object-[center_20%]
+     * Subtle Midnight Teal border (border-2 border-[#315B58])
+     * Restrained cyan outer glow (rgba(101,198,181...))
+     * Responsive diameter: mobile ~210px (180-240px range), desktop ~320px (280-360px range)
+     * No rectangular aspect ratio (aspect-[3/4]) leftovers
 4. Zero local computer paths leaked in source code.
 5. Schema.org JSON-LD in app/about/layout.jsx matches Saif Hossain.
 """
@@ -72,6 +88,24 @@ def run_tests():
     assert_test('C:/' not in home_src and 'C:\\' not in home_src, 
                 "Zero local computer paths leaked in AboutSection.jsx")
 
+    # Circular profile assertions
+    assert_test('rounded-full' in home_src and ("borderRadius: '50%'" in home_src or 'border-radius: 50%' in home_src),
+                "Homepage portrait uses circular container with border-radius: 50% (rounded-full)")
+    assert_test('aspect-square' in home_src,
+                "Homepage portrait enforces 1:1 aspect ratio (aspect-square)")
+    assert_test('object-cover' in home_src,
+                "Homepage portrait applies object-fit: cover (object-cover)")
+    assert_test('object-[center_20%]' in home_src,
+                "Homepage portrait applies object-position: center 20% to keep face centered")
+    assert_test('border-2 border-[#315B58]' in home_src,
+                "Homepage portrait applies subtle Midnight Teal border (#315B58)")
+    assert_test('101,198,181' in home_src,
+                "Homepage portrait applies restrained cyan outer glow")
+    assert_test('w-[210px]' in home_src and 'lg:w-[300px]' in home_src,
+                "Homepage portrait enforces responsive diameters (mobile ~210px in 180-240px range, desktop ~300px in 280-360px range)")
+    assert_test('aspect-[3/4]' not in home_src,
+                "Homepage portrait supersedes rectangular aspect-[3/4] treatment")
+
     print("\n=======================================================")
     print("TEST SUITE: ABOUT PAGE FOUNDER PROFILE (app/about/page.jsx)")
     print("=======================================================")
@@ -95,6 +129,24 @@ def run_tests():
                 "About page Image uses descriptive alt text")
     assert_test('C:/' not in about_src and 'C:\\' not in about_src, 
                 "Zero local computer paths leaked in app/about/page.jsx")
+
+    # Circular profile assertions
+    assert_test('rounded-full' in about_src and ("borderRadius: '50%'" in about_src or 'border-radius: 50%' in about_src),
+                "About page portrait uses circular container with border-radius: 50% (rounded-full)")
+    assert_test('aspect-square' in about_src,
+                "About page portrait enforces 1:1 aspect ratio (aspect-square)")
+    assert_test('object-cover' in about_src,
+                "About page portrait applies object-fit: cover (object-cover)")
+    assert_test('object-[center_20%]' in about_src,
+                "About page portrait applies object-position: center 20% to keep face centered")
+    assert_test('border-2 border-[#315B58]' in about_src,
+                "About page portrait applies subtle Midnight Teal border (#315B58)")
+    assert_test('101,198,181' in about_src,
+                "About page portrait applies restrained cyan outer glow")
+    assert_test('w-[210px]' in about_src and 'lg:w-[320px]' in about_src,
+                "About page portrait enforces responsive diameters (mobile ~210px in 180-240px range, desktop ~320px in 280-360px range)")
+    assert_test('aspect-[3/4]' not in about_src,
+                "About page portrait supersedes rectangular aspect-[3/4] treatment")
 
     print("\n=======================================================")
     print("TEST SUITE: SCHEMA.ORG METADATA (app/about/layout.jsx)")

@@ -143,11 +143,11 @@ export default function AboutPage() {
         {/* 3. Dedicated Founder Profile Section */}
         <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-32" aria-label="Founder & Creative Director Profile">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left: Founder Editorial Portrait */}
+            {/* Left: Founder Circular Profile Stage */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-[#315B58]/60 bg-[#103638]/70 shadow-2xl shadow-black/90 flex flex-col group">
+              <div className="relative rounded-3xl overflow-hidden border border-[#315B58]/60 bg-[#103638]/70 shadow-2xl shadow-black/90 flex flex-col items-center group">
                 {/* Header Tag */}
-                <div className="px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/70 backdrop-blur-md">
+                <div className="w-full px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/70 backdrop-blur-md">
                   <span className="font-mono text-xs text-[#65C6B5] tracking-widest uppercase font-semibold">
                     FOUNDER PROFILE
                   </span>
@@ -156,29 +156,38 @@ export default function AboutPage() {
                   </span>
                 </div>
 
-                {/* Large Portrait Image Container */}
-                <div className="relative w-full aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-[#071F22]">
-                  <Image
-                    src="/assets/profile/saif-founder.png"
-                    alt="Saif Hossain, founder of NeoCut Digital"
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
-                    className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-[1.02]"
-                    loading="lazy"
-                  />
+                {/* Circular Portrait Container Stage (Mobile: 210px, Tablet: 270px, Desktop: 320px) */}
+                <div className="py-10 sm:py-12 px-6 flex flex-col items-center justify-center w-full">
+                  <div 
+                    className="relative w-[210px] h-[210px] sm:w-[270px] sm:h-[270px] lg:w-[320px] lg:h-[320px] aspect-square rounded-full shrink-0 overflow-hidden border-2 border-[#315B58] ring-4 ring-[#103638]/90 ring-offset-2 ring-offset-[#071F22] shadow-[0_0_55px_rgba(101,198,181,0.22),0_25px_50px_rgba(7,31,34,0.85)] transition-all duration-500 group-hover:border-[#65C6B5]/60 group-hover:shadow-[0_0_65px_rgba(101,198,181,0.32),0_30px_55px_rgba(7,31,34,0.9)]"
+                    style={{ borderRadius: '50%' }}
+                  >
+                    <Image
+                      src="/assets/profile/saif-founder.png"
+                      alt="Saif Hossain, founder of NeoCut Digital"
+                      fill
+                      sizes="(max-width: 640px) 210px, (max-width: 1024px) 270px, 320px"
+                      className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
 
-                {/* Portrait Caption */}
-                <div className="p-6 bg-[#0B2528]/95 border-t border-[#254845] space-y-1">
-                  <div className="flex items-baseline justify-between">
+                {/* Portrait Caption & Status */}
+                <div className="w-full p-6 bg-[#0B2528]/95 border-t border-[#254845] text-center space-y-2">
+                  <div className="flex items-center justify-center gap-3">
                     <h3 className="font-editorial text-2xl font-bold text-[#F7FCFA] m-0">
                       Saif Hossain
                     </h3>
-                    <span className="text-[11px] font-mono text-[#65C6B5]">Est. 2024</span>
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#103638] border border-[#315B58] text-[#65C6B5]">Est. 2024</span>
                   </div>
                   <p className="text-xs font-mono uppercase tracking-wider text-[#65C6B5] font-semibold m-0">
                     Founder &amp; Creative Director — NeoCut Digital
                   </p>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#071F22]/80 border border-[#254845] text-[11px] font-mono text-[#D9F0EA] mt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#65C6B5] animate-pulse" />
+                    <span>Directorial Lead · Active Studio Production</span>
+                  </div>
                 </div>
               </div>
             </div>
