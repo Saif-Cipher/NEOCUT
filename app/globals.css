@@ -35,10 +35,24 @@ body {
 }
 
 /* ==============================================================================
-   Kindle-Style Global Ambient Background Animations
-   - Organic, slow-breathing harmonic bloom oscillations
-   - Hardware accelerated (translate3d, scale, will-change)
+   Floating Animations for Hero Orbit
    ============================================================================== */
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-floating-slow { animation: floating 6s ease-in-out infinite; }
+.animate-floating-medium { animation: floating 4.5s ease-in-out infinite; }
+.animate-floating-fast { animation: floating 3s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-floating-slow,
+  .animate-floating-medium,
+  .animate-floating-fast {
+    animation: none;
+  }
+}
 
 @keyframes kindleBloomPrimary {
   0% {

@@ -271,39 +271,21 @@ export default function TiltedGridHero({ onSelectProject }) {
           }}
         />
 
-        {/* Ambient Dark Overlay with Glowing Play Pill on Hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-
-        {/* Center Hover Action */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 pointer-events-none">
-          <div className="w-12 h-12 rounded-full bg-[#1D4ED8] border border-[#5CB2FF] text-[#FFFFFF] flex items-center justify-center shadow-xl shadow-[#1D4ED8]/60 transform scale-90 group-hover:scale-100 transition-transform">
-            <Play className="w-5 h-5 ml-0.5 fill-current text-[#5CB2FF]" />
-          </div>
-        </div>
-
-        {/* Subtle Category & Duration Corner Pill */}
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-[#FFFFFF] pointer-events-none">
-          <span className="px-2 py-0.5 rounded-md bg-[#050B1F]/85 backdrop-blur-md border border-[#26407F]/40 truncate max-w-[70%] text-[#DCE6FF]">
-            {project.category}
-          </span>
-          <span className="px-2 py-0.5 rounded-md bg-[#050B1F]/85 backdrop-blur-md border border-[#26407F]/40 text-[#5CB2FF]">
-            {project.duration}
-          </span>
-        </div>
+        {/* Removed: Metadata Overlay, replaced with clean UI */}
       </div>
     );
   };
 
   return (
     <section className="relative w-full py-20 lg:py-32 bg-transparent overflow-hidden border-t border-[#162A5C]">
-      {/* Background Radial Glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[400px] bg-[#1D4ED8]/20 rounded-full blur-[160px]" />
+      {/* Background Radial Glow — Softened for natural floating focus */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[300px] bg-[#5CB2FF]/5 rounded-full blur-[120px]" />
 
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#5CB2FF]/40 bg-[#0D1B3E]/85 backdrop-blur-md text-[#5CB2FF] text-xs font-semibold tracking-wider uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#5CB2FF]/20 bg-[#103638]/50 backdrop-blur-md text-[#5CB2FF] text-xs font-semibold tracking-wider uppercase mb-4">
               <Sparkles className="w-3.5 h-3.5" />
               <span>[ CURATED CONTINUOUS EXHIBITION ]</span>
             </div>
@@ -328,7 +310,7 @@ export default function TiltedGridHero({ onSelectProject }) {
 
           <TransitionLink
             href="/portfolio"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-[#FFFFFF] text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-xl shadow-[#1D4ED8]/30 w-fit group"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1D4ED8] hover:bg-[#2563EB] text-[#FFFFFF] text-xs font-bold uppercase tracking-wider transition-all duration-300 w-fit group"
           >
             <span>View Full Portfolio Archive</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -338,42 +320,43 @@ export default function TiltedGridHero({ onSelectProject }) {
 
       {/* 3D Tilted Perspective Stage Container */}
       <div
-        className="relative w-full overflow-hidden select-none py-6"
+        className="relative w-full overflow-hidden select-none py-12"
         style={{
-          perspective: '1200px',
+          perspective: '1500px',
         }}
       >
-        {/* Left, Right, Top & Bottom Curved Vignette Edge Fades */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-r from-[#050B1F] via-[#050B1F]/80 to-transparent z-20" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-l from-[#050B1F] via-[#050B1F]/80 to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#050B1F] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050B1F] to-transparent z-20" />
+        {/* Curated Vignette Fade - Subtle, not dark shadows */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#071F22] via-[#071F22]/40 to-transparent z-20" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#071F22] via-[#071F22]/40 to-transparent z-20" />
 
-        {/* Curved 3D Tilted Grid Matrix */}
+        {/* Floating 3D Tilted Grid Matrix */}
         <div
-          className="space-y-6 sm:space-y-8 transform-gpu will-change-transform"
+          className="space-y-8 sm:space-y-12 transform-gpu will-change-transform floating-orbit-container"
           style={{
-            transform: 'rotateX(13deg) rotateZ(-3.5deg) skewX(2deg) scale(1.04)',
+            transform: 'rotateX(8deg) rotateZ(-2deg) skewX(1deg) scale(1.05)',
             transformOrigin: '50% 50%',
             transformStyle: 'preserve-3d',
           }}
         >
           {/* Row 1: Leftward Streaming Track */}
-          <div className="flex gap-5 sm:gap-6 w-max tilted-stream-left hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
+          <div className="flex gap-6 sm:gap-8 w-max tilted-stream-left hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
             {ROW_1.map((project, idx) => renderCard(project, `row1-orig-${idx}`))}
             {ROW_1.map((project, idx) => renderCard(project, `row1-dup-${idx}`))}
+            {ROW_1.map((project, idx) => renderCard(project, `row1-trip-${idx}`))}
           </div>
 
           {/* Row 2: Rightward Streaming Track */}
-          <div className="flex gap-5 sm:gap-6 w-max tilted-stream-right hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
+          <div className="flex gap-6 sm:gap-8 w-max tilted-stream-right hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
             {ROW_2.map((project, idx) => renderCard(project, `row2-orig-${idx}`))}
             {ROW_2.map((project, idx) => renderCard(project, `row2-dup-${idx}`))}
+            {ROW_2.map((project, idx) => renderCard(project, `row2-trip-${idx}`))}
           </div>
 
           {/* Row 3: Leftward Slower Streaming Track */}
-          <div className="flex gap-5 sm:gap-6 w-max tilted-stream-left-slow hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
+          <div className="flex gap-6 sm:gap-8 w-max tilted-stream-left-slow hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
             {ROW_3.map((project, idx) => renderCard(project, `row3-orig-${idx}`))}
             {ROW_3.map((project, idx) => renderCard(project, `row3-dup-${idx}`))}
+            {ROW_3.map((project, idx) => renderCard(project, `row3-trip-${idx}`))}
           </div>
         </div>
       </div>
