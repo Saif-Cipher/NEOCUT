@@ -1,6 +1,7 @@
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neocut.digital';
 
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: '6-Stage Video Production Framework & SLA',
   description: "Discover NeoCut Digital's systematic 6-stage video pipeline: from creative brief and 3D modeling to ACES color grading, sound design, and cloud delivery.",
   alternates: {

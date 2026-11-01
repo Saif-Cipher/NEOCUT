@@ -6,11 +6,12 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingRoot: path.resolve(__dirname),
   reactStrictMode: true,
   poweredByHeader: false, // Security: hide X-Powered-By header
   productionBrowserSourceMaps: false, // Security: strictly prevent source map exposure (VULN-10)
   compress: true, // Performance: enable gzip / brotli compression
-  outputFileTracingRoot: path.resolve(__dirname), // Fix multiple lockfile root detection
+  outputFileTracingRoot: path.resolve(__dirname), // Direct Next.js build tracer to this directory
 
   images: {
     formats: ['image/avif', 'image/webp'],

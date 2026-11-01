@@ -348,7 +348,7 @@ export default function PortfolioPage() {
                   alt={project.title}
                   aspectRatio="aspect-video"
                   className="w-full"
-                  imgClassName="transition-transform duration-700 group-hover/card:scale-108"
+                  imgClassName="transition-transform duration-700 group-hover/card:scale-[1.08]"
                 >
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/40 group-hover/card:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">

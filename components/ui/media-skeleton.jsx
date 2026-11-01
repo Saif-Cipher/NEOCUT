@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Film } from 'lucide-react';
 
@@ -8,6 +8,7 @@ import { Film } from 'lucide-react';
  * MediaSkeleton: Card-level media container that prevents layout shifts (CLS)
  * using an exact aspect ratio box and a dark navy shimmer placeholder.
  * Fades in the media smoothly once fully decoded and loaded.
+ * Resets state when the src prop dynamically changes.
  */
 export default function MediaSkeleton({
   src,
@@ -22,6 +23,16 @@ export default function MediaSkeleton({
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const imgRef = useRef(null);
+
+  // Reset loading state whenever src changes (e.g. category filter changes)
+  useEffect(() => {
+    setIsLoaded(false);
+    setHasError(false);
+    if (imgRef.current && imgRef.current.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, [src]);
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -56,6 +67,7 @@ export default function MediaSkeleton({
       ) : (
         /* Actual Image with Progressive Fade-In */
         <img
+          ref={imgRef}
           src={src}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
@@ -73,5 +85,3 @@ export default function MediaSkeleton({
     </div>
   );
 }
-
-export { MediaSkeleton };

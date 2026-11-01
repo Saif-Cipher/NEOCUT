@@ -29,6 +29,7 @@ export default function TransitionProvider({ children }) {
   const pendingUrlRef = useRef(null);
   const safetyTimerRef = useRef(null);
   const pushTimerRef = useRef(null);
+  const transitionStartRef = useRef(0);
 
   // Clear watchdog & push timers on unmount
   useEffect(() => {
@@ -38,16 +39,29 @@ export default function TransitionProvider({ children }) {
     };
   }, []);
 
-  // When pathname changes, trigger reveal phase and reset
+  // When pathname changes, ensure iris has completed smooth expansion before revealing
   useEffect(() => {
     if (phase === 'expanding' || isTransitioning) {
-      setPhase('revealing');
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-        setPhase('idle');
-        pendingUrlRef.current = null;
-      }, 450);
-      return () => clearTimeout(timer);
+      if (safetyTimerRef.current) {
+        clearTimeout(safetyTimerRef.current);
+        safetyTimerRef.current = null;
+      }
+
+      const elapsed = Date.now() - transitionStartRef.current;
+      const minExpandDuration = 480; // ensure iris smoothly covers screen before revealing
+      const remaining = Math.max(0, minExpandDuration - elapsed);
+
+      const revealTimer = setTimeout(() => {
+        setPhase('revealing');
+        const resetTimer = setTimeout(() => {
+          setIsTransitioning(false);
+          setPhase('idle');
+          pendingUrlRef.current = null;
+        }, 450);
+        return () => clearTimeout(resetTimer);
+      }, remaining);
+
+      return () => clearTimeout(revealTimer);
     }
   }, [pathname]);
 
@@ -89,6 +103,7 @@ export default function TransitionProvider({ children }) {
 
       setOrigin({ x, y });
       pendingUrlRef.current = url;
+      transitionStartRef.current = Date.now();
       setIsTransitioning(true);
       setPhase('expanding');
 

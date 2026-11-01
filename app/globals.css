@@ -284,3 +284,25 @@ textarea:focus-visible,
 .text-slate-500 {
   color: #8BA0B8;
 }
+
+/* ==============================================================================
+   Skeleton Loading Shimmer Animations
+   ============================================================================== */
+
+@keyframes skeleton-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.skeleton-shimmer-sweep {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
+  animation: skeleton-shimmer 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer-sweep {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
+

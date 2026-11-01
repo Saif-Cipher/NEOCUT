@@ -1,6 +1,7 @@
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://neocut.digital';
 
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'Initiate Production Brief & Direct Channels',
   description: 'Start your video production with NeoCut Digital. Submit a project brief for a 24h SLA estimate or reach Director Saif directly via WhatsApp and email.',
   alternates: {

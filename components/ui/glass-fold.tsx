@@ -414,6 +414,8 @@ export default function GlassFold({
 
     window.addEventListener('pointermove', handlePointerMove, { passive: true });
     document.addEventListener('pointerleave', handlePointerLeave);
+    document.addEventListener('mouseleave', handlePointerLeave);
+    window.addEventListener('blur', handlePointerLeave);
 
     // Context loss / restoration
     function handleContextLost(e: Event) {
@@ -444,6 +446,8 @@ export default function GlassFold({
       reducedMotionQuery.removeEventListener('change', handleReducedMotion);
       window.removeEventListener('pointermove', handlePointerMove);
       document.removeEventListener('pointerleave', handlePointerLeave);
+      document.removeEventListener('mouseleave', handlePointerLeave);
+      window.removeEventListener('blur', handlePointerLeave);
       canvas.removeEventListener('webglcontextlost', handleContextLost);
       canvas.removeEventListener('webglcontextrestored', handleContextRestored);
 

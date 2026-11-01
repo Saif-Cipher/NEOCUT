@@ -3,7 +3,7 @@
 /**
  * Base dark navy translucent shimmer skeleton primitive.
  * Designed for dark themes with subtle animated highlight sweep
- * and automatic prefers-reduced-motion fallback.
+ * and automatic prefers-reduced-motion fallback via global styles.
  */
 export function Skeleton({ className = '', style = {}, ...props }) {
   return (
@@ -13,27 +13,7 @@ export function Skeleton({ className = '', style = {}, ...props }) {
       style={style}
       {...props}
     >
-      {/* Subtle sweeping shimmer gradient */}
-      <span
-        className="skeleton-shimmer-sweep absolute inset-0 -translate-x-full pointer-events-none"
-        style={{
-          background:
-            'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%)',
-          animation: 'skeleton-shimmer 2s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-        }}
-      />
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes skeleton-shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .skeleton-shimmer-sweep {
-            animation: none !important;
-            opacity: 0 !important;
-          }
-        }
-      `}} />
+      <span className="skeleton-shimmer-sweep absolute inset-0 -translate-x-full pointer-events-none" />
     </div>
   );
 }
