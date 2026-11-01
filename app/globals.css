@@ -4,8 +4,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #071F22;
-  --foreground: #F7FCFA;
+  --background: #050B1F;
+  --foreground: #FFFFFF;
 }
 
 html {
@@ -24,14 +24,14 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #071F22;
+  background: #050B1F;
 }
 ::-webkit-scrollbar-thumb {
-  background: #195052;
+  background: #1D4ED8;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #20565A;
+  background: #2563EB;
 }
 
 /* ==============================================================================
@@ -261,7 +261,7 @@ body {
    ============================================================================== */
 
 :focus-visible {
-  outline: 2px solid #65C6B5 !important;
+  outline: 2px solid #5CB2FF !important;
   outline-offset: 3px !important;
 }
 
@@ -272,7 +272,7 @@ select:focus-visible,
 textarea:focus-visible,
 [role="button"]:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #65C6B5 !important;
+  outline: 2px solid #5CB2FF !important;
   outline-offset: 3px !important;
 }
 
@@ -280,9 +280,9 @@ textarea:focus-visible,
   outline: none;
 }
 
-/* Ensure text-slate-500 achieves >= 4.5:1 contrast ratio against #071F22 canvas */
+/* Ensure text-slate-500 achieves >= 4.5:1 contrast ratio against #050B1F canvas */
 .text-slate-500 {
-  color: #B5CEC7;
+  color: #A9B8E0;
 }
 
 /* ==============================================================================
@@ -295,7 +295,7 @@ textarea:focus-visible,
 }
 
 .skeleton-shimmer-sweep {
-  background: linear-gradient(90deg, transparent 0%, rgba(101, 198, 181, 0.12) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(92, 178, 255, 0.14) 50%, transparent 100%);
   animation: skeleton-shimmer 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 

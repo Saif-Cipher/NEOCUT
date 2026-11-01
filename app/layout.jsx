@@ -134,11 +134,11 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="min-h-screen bg-[#071F22] text-[#F7FCFA] antialiased relative selection:bg-[#65C6B5] selection:text-[#071F22]">
+      <body className="min-h-screen bg-[#050B1F] text-[#FFFFFF] antialiased relative selection:bg-[#2563EB] selection:text-[#FFFFFF]">
         {/* Skip to Main Content Bypass Link for Keyboard Accessibility (WCAG 2.4.1) */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-5 focus:py-3 focus:bg-[#65C6B5] focus:text-[#071F22] focus:font-bold focus:rounded-full focus:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#65C6B5] transition-all duration-200"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-5 focus:py-3 focus:bg-[#2563EB] focus:text-[#FFFFFF] focus:font-bold focus:rounded-full focus:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#5CB2FF] transition-all duration-200"
         >
           Skip to main content
         </a>

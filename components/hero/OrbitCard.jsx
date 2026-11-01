@@ -33,8 +33,8 @@ const OrbitCard = forwardRef(function OrbitCard(
       <div
         className={`relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden border transition-all duration-300 ${
           hovered
-            ? 'border-[#65C6B5] shadow-[0_20px_50px_rgba(25,80,82,0.65)] brightness-110'
-            : 'border-[#315B58]/50 bg-[#103638]/90 shadow-xl shadow-black/80 brightness-100'
+            ? 'border-[#5CB2FF] shadow-[0_20px_50px_rgba(25,80,82,0.65)] brightness-110'
+            : 'border-[#26407F]/50 bg-[#0D1B3E]/90 shadow-xl shadow-black/80 brightness-100'
         } backdrop-blur-sm`}
       >
         {item.thumbnailUrl ? (

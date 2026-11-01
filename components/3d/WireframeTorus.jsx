@@ -40,7 +40,7 @@ export default function WireframeTorus() {
     // 2. Parametric Wireframe Torus Geometry & Material
     const geometry = new THREE.TorusGeometry(1.2, 0.45, 18, 48);
     const material = new THREE.MeshBasicMaterial({
-      color: 0x65C6B5,
+      color: 0x5CB2FF,
       wireframe: true,
       transparent: true,
       opacity: 0.75,
@@ -52,7 +52,7 @@ export default function WireframeTorus() {
     // Subtle inner glowing ring
     const innerGeo = new THREE.TorusGeometry(1.2, 0.08, 12, 36);
     const innerMat = new THREE.MeshBasicMaterial({
-      color: 0x195052,
+      color: 0x1D4ED8,
       wireframe: true,
       transparent: true,
       opacity: 0.45,
@@ -177,9 +177,9 @@ export default function WireframeTorus() {
 
   if (!webglSupported) {
     return (
-      <div className="w-full h-full flex items-center justify-center text-center p-6 border border-[#315B58]/40 rounded-3xl bg-[#103638]">
-        <div className="w-24 h-24 rounded-full border-2 border-dashed border-[#65C6B5]/50 animate-spin flex items-center justify-center">
-          <span className="font-mono text-xs text-[#65C6B5]">3D</span>
+      <div className="w-full h-full flex items-center justify-center text-center p-6 border border-[#26407F]/40 rounded-3xl bg-[#0D1B3E]">
+        <div className="w-24 h-24 rounded-full border-2 border-dashed border-[#5CB2FF]/50 animate-spin flex items-center justify-center">
+          <span className="font-mono text-xs text-[#5CB2FF]">3D</span>
         </div>
       </div>
     );
@@ -189,12 +189,12 @@ export default function WireframeTorus() {
     <div className="relative w-full aspect-square max-w-[340px] sm:max-w-[420px] mx-auto select-none" aria-hidden="true">
       <div
         ref={mountRef}
-        className={`w-full h-full cursor-grab active:cursor-grabbing rounded-3xl border border-[#315B58]/50 bg-gradient-to-b from-[#103638] to-[#071F22] p-4 flex items-center justify-center transition-all duration-300 ${
-          isDragging ? 'border-[#65C6B5] shadow-2xl shadow-[#195052]/40' : 'hover:border-[#65C6B5]/40'
+        className={`w-full h-full cursor-grab active:cursor-grabbing rounded-3xl border border-[#26407F]/50 bg-gradient-to-b from-[#0D1B3E] to-[#050B1F] p-4 flex items-center justify-center transition-all duration-300 ${
+          isDragging ? 'border-[#5CB2FF] shadow-2xl shadow-[#1D4ED8]/40' : 'hover:border-[#5CB2FF]/40'
         }`}
       />
       <div className="absolute bottom-3 left-0 right-0 text-center pointer-events-none">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-[#B5CEC7] bg-[#071F22]/80 px-3 py-1 rounded-full border border-[#315B58]/30">
+        <span className="text-[10px] font-mono uppercase tracking-widest text-[#A9B8E0] bg-[#050B1F]/80 px-3 py-1 rounded-full border border-[#26407F]/30">
           Drag to rotate 3D wireframe
         </span>
       </div>

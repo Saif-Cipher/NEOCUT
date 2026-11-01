@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Base Midnight Teal translucent shimmer skeleton primitive.
+ * Base Neo Navy translucent shimmer skeleton primitive.
  * Designed for dark teal themes with subtle animated highlight sweep
  * and automatic prefers-reduced-motion fallback via global styles.
  */
@@ -9,7 +9,7 @@ export function Skeleton({ className = '', style = {}, ...props }) {
   return (
     <div
       aria-hidden="true"
-      className={`relative overflow-hidden rounded-xl bg-[#103638]/70 border border-[#315B58]/30 ${className}`}
+      className={`relative overflow-hidden rounded-xl bg-[#0D1B3E]/70 border border-[#26407F]/30 ${className}`}
       style={style}
       {...props}
     >

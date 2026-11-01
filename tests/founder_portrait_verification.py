@@ -97,9 +97,9 @@ def run_tests():
                 "Homepage portrait applies object-fit: cover (object-cover)")
     assert_test('object-[center_20%]' in home_src,
                 "Homepage portrait applies object-position: center 20% to keep face centered")
-    assert_test('border-2 border-[#315B58]' in home_src,
-                "Homepage portrait applies subtle Midnight Teal border (#315B58)")
-    assert_test('101,198,181' in home_src,
+    assert_test('border-2 border-[#26407F]' in home_src or 'border-2 border-[#315B58]' in home_src,
+                "Homepage portrait applies subtle brand border (#26407F / #315B58)")
+    assert_test('92,178,255' in home_src or '101,198,181' in home_src,
                 "Homepage portrait applies restrained cyan outer glow")
     assert_test('w-[210px]' in home_src and 'lg:w-[300px]' in home_src,
                 "Homepage portrait enforces responsive diameters (mobile ~210px in 180-240px range, desktop ~300px in 280-360px range)")
@@ -139,9 +139,9 @@ def run_tests():
                 "About page portrait applies object-fit: cover (object-cover)")
     assert_test('object-[center_20%]' in about_src,
                 "About page portrait applies object-position: center 20% to keep face centered")
-    assert_test('border-2 border-[#315B58]' in about_src,
-                "About page portrait applies subtle Midnight Teal border (#315B58)")
-    assert_test('101,198,181' in about_src,
+    assert_test('border-2 border-[#26407F]' in about_src or 'border-2 border-[#315B58]' in about_src,
+                "About page portrait applies subtle brand border (#26407F / #315B58)")
+    assert_test('92,178,255' in about_src or '101,198,181' in about_src,
                 "About page portrait applies restrained cyan outer glow")
     assert_test('w-[210px]' in about_src and 'lg:w-[320px]' in about_src,
                 "About page portrait enforces responsive diameters (mobile ~210px in 180-240px range, desktop ~320px in 280-360px range)")

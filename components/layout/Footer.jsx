@@ -7,7 +7,7 @@ import HalftoneWordmark from './HalftoneWordmark';
 
 /**
  * Global Footer — Interactive Halftone Wordmark (Specification #17)
- * Midnight Teal Palette Update
+ * Neo Navy Palette Update
  * 
  * Minimal editorial 4-column layout, thin divider, accessible Back to Top utility,
  * and an oversized interactive halftone NEOCUT wordmark cropped at the bottom edge.
@@ -41,7 +41,7 @@ export default function Footer() {
   return (
     <footer
       role="contentinfo"
-      className="relative z-20 w-full bg-[#071F22] text-[#F7FCFA] border-t border-[#254845] pt-16 sm:pt-20 overflow-hidden"
+      className="relative z-20 w-full bg-[#030716] text-[#FFFFFF] border-t border-[#162A5C] pt-16 sm:pt-20 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Top Information Columns (4-Column Editorial Grid) */}
@@ -49,54 +49,54 @@ export default function Footer() {
           
           {/* Column 1 — Studio identity */}
           <div className="space-y-4">
-            <span className="font-mono text-[11px] tracking-[0.25em] text-[#65C6B5] uppercase font-semibold block">
+            <span className="font-mono text-[11px] tracking-[0.25em] text-[#5CB2FF] uppercase font-semibold block">
               01 // STUDIO
             </span>
             <div className="space-y-1.5">
-              <p className="text-sm sm:text-base font-bold tracking-[0.16em] uppercase text-[#F7FCFA] m-0">
+              <p className="text-sm sm:text-base font-bold tracking-[0.16em] uppercase text-[#FFFFFF] m-0">
                 NEOCUT DIGITAL
               </p>
-              <p className="text-xs tracking-[0.14em] uppercase text-[#D9F0EA] leading-relaxed max-w-xs m-0">
+              <p className="text-xs tracking-[0.14em] uppercase text-[#DCE6FF] leading-relaxed max-w-xs m-0">
                 AI VIDEO PRODUCTION &amp; CINEMATIC STORYTELLING
               </p>
             </div>
-            <address className="not-italic text-xs tracking-[0.12em] text-[#B5CEC7] pt-1 block space-y-0.5">
+            <address className="not-italic text-xs tracking-[0.12em] text-[#A9B8E0] pt-1 block space-y-0.5">
               <span>© {currentYear || 2026}</span>
-              <span className="block text-[#B5CEC7] font-mono text-[11px]">Dhaka, Bangladesh</span>
+              <span className="block text-[#A9B8E0] font-mono text-[11px]">Dhaka, Bangladesh</span>
             </address>
           </div>
 
           {/* Column 2 — Work */}
           <nav aria-label="Work navigation" className="space-y-4">
-            <span className="font-mono text-[11px] tracking-[0.25em] text-[#65C6B5] uppercase font-semibold block">
+            <span className="font-mono text-[11px] tracking-[0.25em] text-[#5CB2FF] uppercase font-semibold block">
               02 // WORK
             </span>
             <ul className="space-y-3 list-none p-0 m-0 text-xs tracking-[0.16em] uppercase">
               <li>
                 <TransitionLink
                   href="/portfolio"
-                  className="text-[#D9F0EA] hover:text-[#65C6B5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                  className="text-[#DCE6FF] hover:text-[#5CB2FF] transition-colors duration-200 inline-flex items-center gap-1 group"
                 >
                   <span>Portfolio</span>
-                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#65C6B5]" />
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#5CB2FF]" />
                 </TransitionLink>
               </li>
               <li>
                 <TransitionLink
                   href="/services"
-                  className="text-[#D9F0EA] hover:text-[#65C6B5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                  className="text-[#DCE6FF] hover:text-[#5CB2FF] transition-colors duration-200 inline-flex items-center gap-1 group"
                 >
                   <span>Services</span>
-                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#65C6B5]" />
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#5CB2FF]" />
                 </TransitionLink>
               </li>
               <li>
                 <TransitionLink
                   href="/process"
-                  className="text-[#D9F0EA] hover:text-[#65C6B5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                  className="text-[#DCE6FF] hover:text-[#5CB2FF] transition-colors duration-200 inline-flex items-center gap-1 group"
                 >
                   <span>Production Pipeline</span>
-                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#65C6B5]" />
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#5CB2FF]" />
                 </TransitionLink>
               </li>
             </ul>
@@ -104,35 +104,35 @@ export default function Footer() {
 
           {/* Column 3 — Studio */}
           <nav aria-label="Studio navigation" className="space-y-4">
-            <span className="font-mono text-[11px] tracking-[0.25em] text-[#65C6B5] uppercase font-semibold block">
+            <span className="font-mono text-[11px] tracking-[0.25em] text-[#5CB2FF] uppercase font-semibold block">
               03 // DIRECTORY
             </span>
             <ul className="space-y-3 list-none p-0 m-0 text-xs tracking-[0.16em] uppercase">
               <li>
                 <TransitionLink
                   href="/about"
-                  className="text-[#D9F0EA] hover:text-[#65C6B5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                  className="text-[#DCE6FF] hover:text-[#5CB2FF] transition-colors duration-200 inline-flex items-center gap-1 group"
                 >
                   <span>About</span>
-                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#65C6B5]" />
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#5CB2FF]" />
                 </TransitionLink>
               </li>
               <li>
                 <TransitionLink
                   href="/process"
-                  className="text-[#D9F0EA] hover:text-[#65C6B5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                  className="text-[#DCE6FF] hover:text-[#5CB2FF] transition-colors duration-200 inline-flex items-center gap-1 group"
                 >
                   <span>Process</span>
-                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#65C6B5]" />
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#5CB2FF]" />
                 </TransitionLink>
               </li>
               <li>
                 <TransitionLink
                   href="/contact"
-                  className="text-[#D9F0EA] hover:text-[#65C6B5] transition-colors duration-200 inline-flex items-center gap-1 group"
+                  className="text-[#DCE6FF] hover:text-[#5CB2FF] transition-colors duration-200 inline-flex items-center gap-1 group"
                 >
                   <span>Contact</span>
-                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#65C6B5]" />
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#5CB2FF]" />
                 </TransitionLink>
               </li>
             </ul>
@@ -140,14 +140,14 @@ export default function Footer() {
 
           {/* Column 4 — Contact */}
           <div className="space-y-4">
-            <span className="font-mono text-[11px] tracking-[0.25em] text-[#65C6B5] uppercase font-semibold block">
+            <span className="font-mono text-[11px] tracking-[0.25em] text-[#5CB2FF] uppercase font-semibold block">
               04 // CONTACT
             </span>
             <ul className="space-y-3 list-none p-0 m-0 text-xs tracking-[0.14em]">
               <li>
                 <a
                   href="mailto:pixelcraftbysaif@gmail.com"
-                  className="text-[#F7FCFA] hover:text-[#65C6B5] transition-colors duration-200 block truncate"
+                  className="text-[#FFFFFF] hover:text-[#5CB2FF] transition-colors duration-200 block truncate"
                   title="pixelcraftbysaif@gmail.com"
                 >
                   pixelcraftbysaif@gmail.com
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+8801931245914"
-                  className="text-[#D9F0EA] hover:text-[#65C6B5] transition-colors duration-200 font-mono block"
+                  className="text-[#DCE6FF] hover:text-[#5CB2FF] transition-colors duration-200 font-mono block"
                 >
                   +8801931245914
                 </a>
@@ -166,10 +166,10 @@ export default function Footer() {
                   href="https://wa.me/8801931245914"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[#D9F0EA] hover:text-[#65C6B5] transition-colors duration-200 uppercase tracking-[0.16em] group"
+                  className="inline-flex items-center gap-1.5 text-[#DCE6FF] hover:text-[#5CB2FF] transition-colors duration-200 uppercase tracking-[0.16em] group"
                 >
                   <span>WhatsApp</span>
-                  <ArrowUpRight className="w-3 h-3 text-[#65C6B5] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="w-3 h-3 text-[#5CB2FF] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   <span className="sr-only">(opens in new tab)</span>
                 </a>
               </li>
@@ -179,11 +179,11 @@ export default function Footer() {
         </div>
 
         {/* Thin Horizontal Divider */}
-        <div className="w-full border-t border-[#254845]" />
+        <div className="w-full border-t border-[#162A5C]" />
 
         {/* Back to Top Row */}
         <div className="py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="text-[11px] font-mono tracking-[0.22em] text-[#B5CEC7] uppercase">
+          <div className="text-[11px] font-mono tracking-[0.22em] text-[#A9B8E0] uppercase">
             NEOCUT DIGITAL // PRODUCTION ARCHIVE
           </div>
 
@@ -192,12 +192,12 @@ export default function Footer() {
             onClick={handleScrollToTop}
             onKeyDown={handleKeyDownToTop}
             aria-label="Back to top of page"
-            className="group inline-flex items-center gap-2 text-xs font-mono tracking-[0.24em] text-[#F7FCFA] uppercase hover:text-[#65C6B5] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#65C6B5] py-1 cursor-pointer"
+            className="group inline-flex items-center gap-2 text-xs font-mono tracking-[0.24em] text-[#FFFFFF] uppercase hover:text-[#5CB2FF] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#5CB2FF] py-1 cursor-pointer"
           >
             <span>BACK TO TOP</span>
             <span
               aria-hidden="true"
-              className="inline-block transition-transform duration-300 ease-out group-hover:-translate-y-1 text-[#65C6B5]"
+              className="inline-block transition-transform duration-300 ease-out group-hover:-translate-y-1 text-[#5CB2FF]"
             >
               ↑
             </span>

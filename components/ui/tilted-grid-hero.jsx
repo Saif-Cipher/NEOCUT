@@ -254,7 +254,7 @@ export default function TiltedGridHero({ onSelectProject }) {
         onMouseLeave={() => setHoveredKey(null)}
         onFocus={() => setHoveredKey(uniqueKey)}
         onBlur={() => setHoveredKey(null)}
-        className="relative flex-shrink-0 w-[260px] sm:w-[320px] md:w-[360px] aspect-video rounded-2xl overflow-hidden bg-[#103638] border border-[#315B58]/60 hover:border-[#65C6B5] focus:border-[#65C6B5] focus:outline-none focus:ring-2 focus:ring-[#65C6B5]/50 transition-all duration-300 cursor-pointer shadow-xl shadow-black/80 group transform-gpu"
+        className="relative flex-shrink-0 w-[260px] sm:w-[320px] md:w-[360px] aspect-video rounded-2xl overflow-hidden bg-[#0D1B3E] border border-[#26407F]/60 hover:border-[#5CB2FF] focus:border-[#5CB2FF] focus:outline-none focus:ring-2 focus:ring-[#5CB2FF]/50 transition-all duration-300 cursor-pointer shadow-xl shadow-black/80 group transform-gpu"
         style={{
           transform: isHovered ? 'scale(1.06) translateZ(30px)' : 'scale(1) translateZ(0px)',
           zIndex: isHovered ? 25 : 1,
@@ -276,17 +276,17 @@ export default function TiltedGridHero({ onSelectProject }) {
 
         {/* Center Hover Action */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-all duration-300 pointer-events-none">
-          <div className="w-12 h-12 rounded-full bg-[#195052] border border-[#65C6B5] text-[#F7FCFA] flex items-center justify-center shadow-xl shadow-[#195052]/60 transform scale-90 group-hover:scale-100 transition-transform">
-            <Play className="w-5 h-5 ml-0.5 fill-current text-[#65C6B5]" />
+          <div className="w-12 h-12 rounded-full bg-[#1D4ED8] border border-[#5CB2FF] text-[#FFFFFF] flex items-center justify-center shadow-xl shadow-[#1D4ED8]/60 transform scale-90 group-hover:scale-100 transition-transform">
+            <Play className="w-5 h-5 ml-0.5 fill-current text-[#5CB2FF]" />
           </div>
         </div>
 
         {/* Subtle Category & Duration Corner Pill */}
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-[#F7FCFA] pointer-events-none">
-          <span className="px-2 py-0.5 rounded-md bg-[#071F22]/85 backdrop-blur-md border border-[#315B58]/40 truncate max-w-[70%] text-[#D9F0EA]">
+        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-[#FFFFFF] pointer-events-none">
+          <span className="px-2 py-0.5 rounded-md bg-[#050B1F]/85 backdrop-blur-md border border-[#26407F]/40 truncate max-w-[70%] text-[#DCE6FF]">
             {project.category}
           </span>
-          <span className="px-2 py-0.5 rounded-md bg-[#071F22]/85 backdrop-blur-md border border-[#315B58]/40 text-[#65C6B5]">
+          <span className="px-2 py-0.5 rounded-md bg-[#050B1F]/85 backdrop-blur-md border border-[#26407F]/40 text-[#5CB2FF]">
             {project.duration}
           </span>
         </div>
@@ -295,15 +295,15 @@ export default function TiltedGridHero({ onSelectProject }) {
   };
 
   return (
-    <section className="relative w-full py-20 lg:py-32 bg-transparent overflow-hidden border-t border-[#254845]">
+    <section className="relative w-full py-20 lg:py-32 bg-transparent overflow-hidden border-t border-[#162A5C]">
       {/* Background Radial Glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#195052]/20 rounded-full blur-[160px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#1D4ED8]/20 rounded-full blur-[160px]" />
 
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#65C6B5]/40 bg-[#103638]/85 backdrop-blur-md text-[#65C6B5] text-xs font-semibold tracking-wider uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#5CB2FF]/40 bg-[#0D1B3E]/85 backdrop-blur-md text-[#5CB2FF] text-xs font-semibold tracking-wider uppercase mb-4">
               <Sparkles className="w-3.5 h-3.5" />
               <span>[ CURATED CONTINUOUS EXHIBITION ]</span>
             </div>
@@ -311,16 +311,16 @@ export default function TiltedGridHero({ onSelectProject }) {
             <StretchSnapText
               as="h2"
               level="display"
-              className="font-editorial text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#F7FCFA] leading-tight"
+              className="font-editorial text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] leading-tight"
             >
-              Selected <span className="text-[#65C6B5] italic font-normal">Portfolio</span>
+              Selected <span className="text-[#5CB2FF] italic font-normal">Portfolio</span>
             </StretchSnapText>
 
             <StretchSnapText
               as="p"
               level="subtle"
               split="words"
-              className="text-[#D9F0EA] text-sm sm:text-base mt-3 max-w-xl leading-relaxed"
+              className="text-[#DCE6FF] text-sm sm:text-base mt-3 max-w-xl leading-relaxed"
             >
               A continuously streaming 3D exhibition of master commercial films, 3D character narratives, and medical animations.
             </StretchSnapText>
@@ -328,7 +328,7 @@ export default function TiltedGridHero({ onSelectProject }) {
 
           <TransitionLink
             href="/portfolio"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#65C6B5] hover:bg-[#65C6B5]/90 text-[#071F22] text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-xl shadow-[#195052]/30 w-fit group"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-[#FFFFFF] text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-xl shadow-[#1D4ED8]/30 w-fit group"
           >
             <span>View Full Portfolio Archive</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -344,10 +344,10 @@ export default function TiltedGridHero({ onSelectProject }) {
         }}
       >
         {/* Left, Right, Top & Bottom Curved Vignette Edge Fades */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-r from-[#071F22] via-[#071F22]/80 to-transparent z-20" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-l from-[#071F22] via-[#071F22]/80 to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#071F22] to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#071F22] to-transparent z-20" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-r from-[#050B1F] via-[#050B1F]/80 to-transparent z-20" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-l from-[#050B1F] via-[#050B1F]/80 to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#050B1F] to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#050B1F] to-transparent z-20" />
 
         {/* Curved 3D Tilted Grid Matrix */}
         <div

@@ -1,44 +1,54 @@
 /* ==============================================================================
    NeoCut Digital — Design System Tokens & Brand Foundations
-   Palette: Midnight Teal
-   Main Background: #071F22 | Secondary Background: #103638
-   GlassFold Body: #195052 | Accent: #65C6B5 | Borders: #315B58 | Dividers: #254845
+   Palette: Neo Navy
+   Main Background: #050B1F | Secondary Background: #0A1533 | Deep Background: #030716
+   GlassFold Body: #1D4ED8 | Accent: #5CB2FF | Illuminated Edges: #7CC8FF
+   Borders: #26407F | Form Borders: #5A7DD0 | Dividers: #162A5C
    Typography: Migra (Display Serif) & Inter (UI Sans-Serif)
    ============================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
-  /* Brand Color Hierarchy — Midnight Teal */
-  --color-primary: #195052;
-  --color-primary-rgb: 25, 80, 82;
+  /* Brand Color Hierarchy — Neo Navy */
+  --color-primary: #1D4ED8;
+  --color-primary-rgb: 29, 78, 216;
   
-  --color-secondary: #103638;
-  --color-secondary-rgb: 16, 54, 56;
+  --color-secondary: #0A1533;
+  --color-secondary-rgb: 10, 21, 51;
   
-  --color-accent: #65C6B5;
-  --color-accent-rgb: 101, 198, 181;
+  --color-accent: #5CB2FF;
+  --color-accent-rgb: 92, 178, 255;
+
+  --color-edges: #7CC8FF;
+  --color-edges-rgb: 124, 200, 255;
+
+  --color-button: #2563EB;
+  --color-button-hover: #1D4ED8;
   
-  --color-subtle: #B5CEC7;
-  --color-subtle-rgb: 181, 206, 199;
+  --color-subtle: #A9B8E0;
+  --color-subtle-rgb: 169, 184, 224;
 
   /* Text Colors */
-  --text-primary: #F7FCFA;
-  --text-secondary: #D9F0EA;
-  --text-muted: #B5CEC7;
+  --text-primary: #FFFFFF;
+  --text-secondary: #DCE6FF;
+  --text-muted: #A9B8E0;
 
   /* Surfaces & Ambient Backdrops */
-  --bg-canvas: #071F22;
-  --bg-surface: #103638;
-  --bg-surface-elevated: #174448;
-  --bg-surface-hover: #20565A;
-  --bg-glass: rgba(16, 54, 56, 0.78);
+  --bg-canvas: #050B1F;
+  --bg-surface: #0D1B3E;
+  --bg-surface-elevated: #122556;
+  --bg-surface-hover: #1A3377;
+  --bg-deep: #030716;
+  --bg-glass: rgba(13, 27, 62, 0.78);
 
   /* Borders & Dividers */
-  --border-subtle: rgba(49, 91, 88, 0.4);
-  --border-glass: #315B58;
-  --border-accent: rgba(101, 198, 181, 0.45);
-  --divider-color: #254845;
+  --border-subtle: rgba(38, 64, 127, 0.5);
+  --border-glass: #26407F;
+  --border-form: #5A7DD0;
+  --border-accent: rgba(92, 178, 255, 0.45);
+  --divider-color: #162A5C;
+  --color-error: #FF9A8F;
 
   /* Typography Scales */
   --font-display: 'Migra', 'Playfair Display', Georgia, serif;
@@ -52,12 +62,12 @@
 
 /* Glassmorphic Capsule Navigation */
 .glass-capsule {
-  background: rgba(16, 54, 56, 0.78);
+  background: rgba(13, 27, 62, 0.78);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid var(--border-glass);
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
-              0 0 0 1px rgba(101, 198, 181, 0.1) inset;
+              0 0 0 1px rgba(92, 178, 255, 0.1) inset;
 }
 
 /* 3D Orbit Stage */
@@ -79,8 +89,8 @@
 }
 
 .orbit-card-3d:hover {
-  box-shadow: 0 25px 50px -12px rgba(25, 80, 82, 0.65),
-              0 0 30px rgba(101, 198, 181, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(29, 78, 216, 0.55),
+              0 0 30px rgba(92, 178, 255, 0.3);
 }
 
 /* Animated SVG Doodle Underline */
@@ -104,9 +114,9 @@
 
 /* Glow effects */
 .glow-accent {
-  box-shadow: 0 0 30px rgba(101, 198, 181, 0.28);
+  box-shadow: 0 0 30px rgba(92, 178, 255, 0.28);
 }
 
 .glow-secondary {
-  box-shadow: 0 0 40px rgba(25, 80, 82, 0.4);
+  box-shadow: 0 0 40px rgba(29, 78, 216, 0.4);
 }

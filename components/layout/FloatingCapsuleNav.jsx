@@ -51,10 +51,10 @@ export default function FloatingCapsuleNav() {
           {/* Logo & Brand Wordmark */}
           <TransitionLink
             href="/"
-            className="flex items-center gap-2 group pr-1.5 sm:pr-2 border-r border-[#315B58]/50 shrink-0"
+            className="flex items-center gap-2 group pr-1.5 sm:pr-2 border-r border-[#26407F]/50 shrink-0"
             aria-label="NeoCut Digital Home"
           >
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-[#315B58] bg-[#071F22] flex items-center justify-center p-0.5 group-hover:border-[#65C6B5]/60 transition-colors">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-[#26407F] bg-[#050B1F] flex items-center justify-center p-0.5 group-hover:border-[#5CB2FF]/60 transition-colors">
               <img
                 src="/assets/logo/neocut-logo.png.jpg"
                 alt="NeoCut Logo"
@@ -64,8 +64,8 @@ export default function FloatingCapsuleNav() {
               />
             </div>
             <div className="hidden lg:flex flex-col">
-              <span className="font-bold text-xs tracking-tight text-[#F7FCFA] leading-none">NEOCUT</span>
-              <span className="text-[9px] font-semibold tracking-widest text-[#65C6B5] leading-none mt-0.5">DIGITAL</span>
+              <span className="font-bold text-xs tracking-tight text-[#FFFFFF] leading-none">NEOCUT</span>
+              <span className="text-[9px] font-semibold tracking-widest text-[#5CB2FF] leading-none mt-0.5">DIGITAL</span>
             </div>
           </TransitionLink>
 
@@ -78,17 +78,17 @@ export default function FloatingCapsuleNav() {
                   <TransitionLink
                     href={link.href}
                     aria-current={isActive ? 'page' : undefined}
-                    className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5] ${
+                    className={`relative px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF] ${
                       isActive
-                        ? 'text-[#F7FCFA] bg-[#195052]/70 font-semibold shadow-inner shadow-white/5 border border-[#315B58]/40'
-                        : 'text-[#B5CEC7] hover:text-[#F7FCFA] hover:bg-[#103638]/60'
+                        ? 'text-[#FFFFFF] bg-[#1D4ED8]/70 font-semibold shadow-inner shadow-white/5 border border-[#26407F]/40'
+                        : 'text-[#A9B8E0] hover:text-[#FFFFFF] hover:bg-[#0D1B3E]/60'
                     }`}
                   >
                     <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.05 + idx * 0.03}>
                       {link.label}
                     </StretchSnapText>
                     {isActive && (
-                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#65C6B5]" />
+                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#5CB2FF]" />
                     )}
                   </TransitionLink>
                 </li>
@@ -100,26 +100,26 @@ export default function FloatingCapsuleNav() {
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <TransitionLink
               href="/contact"
-              className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#65C6B5] hover:bg-[#65C6B5]/90 text-[#071F22] text-xs font-bold tracking-wide border border-[#65C6B5] shadow-lg shadow-[#195052]/30 transition-all duration-300 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
+              className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-[#FFFFFF] text-xs font-bold tracking-wide border border-[#5CB2FF] shadow-lg shadow-[#1D4ED8]/30 transition-all duration-300 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF]"
             >
               <StretchSnapText as="span" level="subtle" split="words" interactive trigger="mount" delay={0.25}>
                 <span className="hidden min-[360px]:inline">Start a Project</span>
                 <span className="min-[360px]:hidden">Start</span>
               </StretchSnapText>
-              <span className="w-4 h-4 rounded-full bg-[#071F22]/20 flex items-center justify-center group-hover:rotate-45 group-hover:bg-[#071F22]/30 transition-transform duration-300">
-                <ArrowUpRight className="w-3 h-3 text-[#071F22]" />
+              <span className="w-4 h-4 rounded-full bg-[#050B1F]/20 flex items-center justify-center group-hover:rotate-45 group-hover:bg-[#050B1F]/30 transition-transform duration-300">
+                <ArrowUpRight className="w-3 h-3 text-[#050B1F]" />
               </span>
             </TransitionLink>
 
             {/* Mobile Hamburger Button (Compliant with >= 44x44px touch target) */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-[#103638]/70 border border-[#315B58] flex items-center justify-center text-[#D9F0EA] hover:text-[#F7FCFA] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
+              className="md:hidden min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-[#0D1B3E]/70 border border-[#26407F] flex items-center justify-center text-[#DCE6FF] hover:text-[#FFFFFF] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF]"
               aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav-drawer"
             >
-              {mobileOpen ? <X className="w-5 h-5 text-[#65C6B5]" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? <X className="w-5 h-5 text-[#5CB2FF]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </nav>
@@ -132,7 +132,7 @@ export default function FloatingCapsuleNav() {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
-          className="fixed inset-0 z-40 bg-[#071F22]/95 backdrop-blur-2xl md:hidden flex flex-col justify-center px-8 animate-in fade-in duration-200"
+          className="fixed inset-0 z-40 bg-[#030716]/95 backdrop-blur-2xl md:hidden flex flex-col justify-center px-8 animate-in fade-in duration-200"
         >
           <ul className="space-y-6 text-center list-none p-0 m-0">
             {NAV_LINKS.map((link) => {
@@ -143,8 +143,8 @@ export default function FloatingCapsuleNav() {
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
                     aria-current={isActive ? 'page' : undefined}
-                    className={`font-serif text-3xl font-medium transition-colors block py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5] rounded-xl ${
-                      isActive ? 'text-[#65C6B5] font-bold' : 'text-[#D9F0EA] hover:text-[#65C6B5]'
+                    className={`font-serif text-3xl font-medium transition-colors block py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF] rounded-xl ${
+                      isActive ? 'text-[#5CB2FF] font-bold' : 'text-[#DCE6FF] hover:text-[#5CB2FF]'
                     }`}
                   >
                     {link.label}
@@ -157,9 +157,9 @@ export default function FloatingCapsuleNav() {
             <TransitionLink
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#65C6B5] text-[#071F22] font-bold text-sm border border-[#65C6B5] shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#2563EB] text-[#FFFFFF] font-bold text-sm border border-[#5CB2FF] shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF]"
             >
-              Start a Project <ArrowUpRight className="w-4 h-4 text-[#071F22]" />
+              Start a Project <ArrowUpRight className="w-4 h-4 text-[#050B1F]" />
             </TransitionLink>
           </div>
         </div>

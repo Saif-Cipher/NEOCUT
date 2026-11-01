@@ -280,13 +280,13 @@ export default function PortfolioPage() {
       <main
         id="main-content"
         tabIndex={-1}
-        className="relative min-h-screen bg-transparent text-[#F7FCFA] selection:bg-[#65C6B5] selection:text-[#071F22] overflow-x-hidden pt-28 outline-none"
+        className="relative min-h-screen bg-transparent text-[#FFFFFF] selection:bg-[#2563EB] selection:text-[#FFFFFF] overflow-x-hidden pt-28 outline-none"
       >
         <FloatingCapsuleNav />
 
         {/* Page Hero Header */}
         <section className="relative px-4 pt-16 pb-12 max-w-7xl mx-auto text-center" aria-label="Portfolio Introduction">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#65C6B5]/40 bg-[#103638]/85 backdrop-blur-md text-[#65C6B5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#5CB2FF]/40 bg-[#0D1B3E]/85 backdrop-blur-md text-[#5CB2FF] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
             <Sparkles className="w-3.5 h-3.5" />
             <span>[ ARCHIVE & CLOUD STREAMING CATALOG ]</span>
           </div>
@@ -294,16 +294,16 @@ export default function PortfolioPage() {
           <StretchSnapText
             as="h1"
             level="display"
-            className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#F7FCFA] leading-tight"
+            className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#FFFFFF] leading-tight"
           >
-            Film Archive & <span className="text-[#65C6B5] italic font-normal">Repertoire</span>
+            Film Archive & <span className="text-[#5CB2FF] italic font-normal">Repertoire</span>
           </StretchSnapText>
 
           <StretchSnapText
             as="p"
             level="subtle"
             split="words"
-            className="text-[#D9F0EA] text-base sm:text-xl max-w-3xl mx-auto mt-6 leading-relaxed"
+            className="text-[#DCE6FF] text-base sm:text-xl max-w-3xl mx-auto mt-6 leading-relaxed"
           >
             Every commercial, preschool musical song, documentary, and viral 3D anatomical explainer streamed with adaptive resolution from our Google Drive cloud database.
           </StretchSnapText>
@@ -316,10 +316,10 @@ export default function PortfolioPage() {
                 type="button"
                 aria-pressed={selectedFilter === cat.id}
                 onClick={() => setSelectedFilter(cat.id)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5] ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF] ${
                   selectedFilter === cat.id
-                    ? 'bg-[#65C6B5] text-[#071F22] border border-[#65C6B5] shadow-lg shadow-[#195052]/30 scale-105 font-bold'
-                    : 'bg-[#103638]/80 text-[#D9F0EA] hover:text-[#F7FCFA] hover:bg-[#174448] border border-[#315B58]/50'
+                    ? 'bg-[#2563EB] text-[#FFFFFF] border border-[#5CB2FF] shadow-lg shadow-[#1D4ED8]/30 scale-105 font-bold'
+                    : 'bg-[#0D1B3E]/80 text-[#DCE6FF] hover:text-[#FFFFFF] hover:bg-[#122556] border border-[#26407F]/50'
                 }`}
               >
                 <StretchSnapText as="span" level="subtle" split="words" interactive>
@@ -347,7 +347,7 @@ export default function PortfolioPage() {
                     handleOpenModal(project, e.currentTarget);
                   }
                 }}
-                className="group/card rounded-3xl overflow-hidden border border-[#315B58]/50 bg-[#103638]/85 backdrop-blur-xl shadow-xl shadow-black/80 hover:border-[#65C6B5] hover:bg-[#174448] focus-visible:border-[#65C6B5] focus-visible:ring-2 focus-visible:ring-[#65C6B5] focus-visible:outline-none transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#195052]/30 cursor-pointer flex flex-col justify-between"
+                className="group/card rounded-3xl overflow-hidden border border-[#26407F]/50 bg-[#0D1B3E]/85 backdrop-blur-xl shadow-xl shadow-black/80 hover:border-[#5CB2FF] hover:bg-[#122556] focus-visible:border-[#5CB2FF] focus-visible:ring-2 focus-visible:ring-[#5CB2FF] focus-visible:outline-none transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#1D4ED8]/30 cursor-pointer flex flex-col justify-between"
               >
                 {/* Media Thumbnail Container with Progressive Shimmer Loading */}
                 <MediaSkeleton
@@ -359,7 +359,7 @@ export default function PortfolioPage() {
                 >
                   {/* Central Play Button */}
                   <div className="absolute inset-0 bg-black/40 group-hover/card:bg-black/15 transition-colors flex items-center justify-center pointer-events-none">
-                    <div className="w-14 h-14 rounded-full bg-[#195052] border border-[#65C6B5] text-[#F7FCFA] flex items-center justify-center shadow-2xl group-hover/card:scale-110 group-hover/card:bg-[#65C6B5] group-hover/card:text-[#071F22] transition-all duration-300">
+                    <div className="w-14 h-14 rounded-full bg-[#1D4ED8] border border-[#5CB2FF] text-[#FFFFFF] flex items-center justify-center shadow-2xl group-hover/card:scale-110 group-hover/card:bg-[#5CB2FF] group-hover/card:text-[#050B1F] transition-all duration-300">
                       <Play className="w-5 h-5 ml-0.5 fill-current" />
                     </div>
                   </div>
@@ -368,13 +368,13 @@ export default function PortfolioPage() {
                 {/* Card Info */}
                 <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#65C6B5] block">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#5CB2FF] block">
                       {project.categoryLabel}
                     </span>
-                    <h3 className="font-editorial text-lg sm:text-xl font-bold text-[#F7FCFA] mt-1 group-hover/card:text-[#65C6B5] transition-colors line-clamp-1">
+                    <h3 className="font-editorial text-lg sm:text-xl font-bold text-[#FFFFFF] mt-1 group-hover/card:text-[#5CB2FF] transition-colors line-clamp-1">
                       {project.title}
                     </h3>
-                    <p className="text-[#D9F0EA] text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
+                    <p className="text-[#DCE6FF] text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed">
                       {project.description}
                     </p>
                   </div>
@@ -384,17 +384,17 @@ export default function PortfolioPage() {
           </div>
 
           {/* Bottom Custom Production Callout */}
-          <div className="mt-20 p-8 sm:p-12 rounded-3xl border border-[#315B58]/60 bg-[#103638]/90 backdrop-blur-xl text-center space-y-5">
-            <h2 className="font-editorial text-2xl sm:text-4xl font-bold text-[#F7FCFA]">
+          <div className="mt-20 p-8 sm:p-12 rounded-3xl border border-[#26407F]/60 bg-[#0D1B3E]/90 backdrop-blur-xl text-center space-y-5">
+            <h2 className="font-editorial text-2xl sm:text-4xl font-bold text-[#FFFFFF]">
               Need A Bespoke Production Treatment?
             </h2>
-            <p className="text-[#D9F0EA] text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-[#DCE6FF] text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
               We design custom animation sequences, 3D character worlds, and narrative brand films tailored to your precise campaign benchmarks.
             </p>
             <div className="pt-2">
               <TransitionLink
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#65C6B5] hover:bg-[#65C6B5]/90 text-[#071F22] font-bold text-xs uppercase tracking-wider border border-[#65C6B5] shadow-xl shadow-[#195052]/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-[#FFFFFF] font-bold text-xs uppercase tracking-wider border border-[#5CB2FF] shadow-xl shadow-[#1D4ED8]/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF]"
               >
                 <span>Request Custom Production</span>
               </TransitionLink>
@@ -408,23 +408,23 @@ export default function PortfolioPage() {
         {/* Cinematic Video Modal Player */}
         {activeModalVideo && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-[#071F22]/90 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-[#030716]/90 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
             role="dialog"
             aria-modal="true"
             aria-label={`Playing ${activeModalVideo.name || activeModalVideo.title}`}
             onClick={handleCloseModal}
           >
             <div
-              className="relative w-full max-w-4xl bg-[#103638] border border-[#315B58]/60 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col cursor-default"
+              className="relative w-full max-w-4xl bg-[#0D1B3E] border border-[#26407F]/60 rounded-3xl overflow-hidden shadow-2xl shadow-black flex flex-col cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/60">
+              <div className="px-6 py-4 border-b border-[#162A5C] flex items-center justify-between bg-[#050B1F]/60">
                 <div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#65C6B5]">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#5CB2FF]">
                     {activeModalVideo.category || activeModalVideo.categoryLabel}
                   </span>
-                  <h3 className="text-base font-semibold text-[#F7FCFA] leading-tight mt-0.5">
+                  <h3 className="text-base font-semibold text-[#FFFFFF] leading-tight mt-0.5">
                     {activeModalVideo.title || activeModalVideo.name?.replace('-video.mp4', '').replace(/-/g, ' ')}
                   </h3>
                 </div>
@@ -434,10 +434,10 @@ export default function PortfolioPage() {
                       href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#071F22]/70 hover:bg-[#174448] text-[#D9F0EA] hover:text-[#F7FCFA] text-xs font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#050B1F]/70 hover:bg-[#122556] text-[#DCE6FF] hover:text-[#FFFFFF] text-xs font-mono transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF]"
                       title="Open directly in Google Drive"
                     >
-                      <ExternalLink className="w-3.5 h-3.5 text-[#65C6B5]" />
+                      <ExternalLink className="w-3.5 h-3.5 text-[#5CB2FF]" />
                       <span className="hidden sm:inline">Drive Cloud</span>
                       <span className="sr-only">(opens in a new tab)</span>
                     </a>
@@ -445,7 +445,7 @@ export default function PortfolioPage() {
                   <button
                     ref={modalCloseBtnRef}
                     onClick={handleCloseModal}
-                    className="w-9 h-9 rounded-full bg-[#071F22]/70 hover:bg-[#174448] text-[#F7FCFA] flex items-center justify-center transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
+                    className="w-9 h-9 rounded-full bg-[#050B1F]/70 hover:bg-[#122556] text-[#FFFFFF] flex items-center justify-center transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF]"
                     aria-label="Close modal dialog"
                   >
                     <X className="w-4 h-4" />
@@ -454,11 +454,11 @@ export default function PortfolioPage() {
               </div>
 
               {/* Iframe Video Embed Player */}
-              <div className="relative aspect-video w-full bg-[#071F22] flex items-center justify-center">
+              <div className="relative aspect-video w-full bg-[#050B1F] flex items-center justify-center">
                 {/* Background Loading Spinner */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-[#B5CEC7] pointer-events-none">
-                  <div className="w-8 h-8 rounded-full border-2 border-[#315B58]/40 border-t-[#65C6B5] animate-spin" />
-                  <span className="font-mono text-xs tracking-wider uppercase text-[#D9F0EA]">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-[#A9B8E0] pointer-events-none">
+                  <div className="w-8 h-8 rounded-full border-2 border-[#26407F]/40 border-t-[#5CB2FF] animate-spin" />
+                  <span className="font-mono text-xs tracking-wider uppercase text-[#DCE6FF]">
                     Loading High-Definition Stream...
                   </span>
                 </div>
@@ -478,12 +478,12 @@ export default function PortfolioPage() {
               </div>
 
               {/* Modal Footer */}
-              <div className="p-4 bg-[#071F22]/60 border-t border-[#254845] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#B5CEC7] gap-2">
+              <div className="p-4 bg-[#050B1F]/60 border-t border-[#162A5C] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#A9B8E0] gap-2">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#65C6B5]" />
+                  <ShieldCheck className="w-4 h-4 text-[#5CB2FF]" />
                   <span>Verified High-Definition Production Stream</span>
                 </div>
-                <div className="flex items-center gap-4 font-mono text-[#B5CEC7]">
+                <div className="flex items-center gap-4 font-mono text-[#A9B8E0]">
                   {activeModalVideo.duration && (
                     <>
                       <span>{activeModalVideo.duration}</span>
@@ -494,7 +494,7 @@ export default function PortfolioPage() {
                     href={activeModalVideo.webViewLink || activeModalVideo.previewUrl?.replace('/preview', '/view?usp=drivesdk')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#65C6B5] hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
+                    className="text-[#5CB2FF] hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF]"
                   >
                     Open Master Video
                     <ExternalLink className="w-3 h-3" />

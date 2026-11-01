@@ -13,8 +13,8 @@ const WireframeTorus = dynamic(
     ssr: false,
     loading: () => (
       <div className="w-full h-full min-h-[360px] flex flex-col items-center justify-center gap-3" aria-hidden="true">
-        <div className="w-24 h-24 rounded-full border-2 border-dashed border-[#65C6B5]/40 animate-pulse" />
-        <span className="text-[10px] font-mono uppercase tracking-widest text-[#65C6B5]/70">
+        <div className="w-24 h-24 rounded-full border-2 border-dashed border-[#5CB2FF]/40 animate-pulse" />
+        <span className="text-[10px] font-mono uppercase tracking-widest text-[#5CB2FF]/70">
           Loading 3D Visualizer...
         </span>
       </div>
@@ -63,11 +63,11 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="relative py-28 sm:py-36 px-4 bg-transparent border-t border-[#254845] overflow-hidden"
+      className="relative py-28 sm:py-36 px-4 bg-transparent border-t border-[#162A5C] overflow-hidden"
       aria-label="Creative Process Overview"
     >
       {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#195052]/20 rounded-full blur-[140px]" aria-hidden="true" />
+      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#1D4ED8]/20 rounded-full blur-[140px]" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
@@ -75,15 +75,15 @@ export default function ProcessSection() {
           <StretchSnapText
             as="h2"
             level="display"
-            className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#F7FCFA] leading-none"
+            className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#FFFFFF] leading-none"
           >
-            Creative <span className="text-[#65C6B5] italic font-normal">Process</span>
+            Creative <span className="text-[#5CB2FF] italic font-normal">Process</span>
           </StretchSnapText>
           <StretchSnapText
             as="p"
             level="subtle"
             split="words"
-            className="text-[#D9F0EA] max-w-xl text-sm sm:text-base mt-4 leading-relaxed"
+            className="text-[#DCE6FF] max-w-xl text-sm sm:text-base mt-4 leading-relaxed"
           >
             Our disciplined four-stage pipeline transforms raw concepts into market-defining digital cinema.
           </StretchSnapText>
@@ -111,10 +111,10 @@ export default function ProcessSection() {
                       setActiveStep(idx);
                     }
                   }}
-                  className={`cursor-pointer rounded-2xl p-6 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5] ${
+                  className={`cursor-pointer rounded-2xl p-6 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF] ${
                     isActive
-                      ? 'bg-[#174448] border-[#65C6B5] shadow-xl shadow-[#195052]/30 scale-[1.01]'
-                      : 'bg-[#103638]/80 border-[#315B58]/40 hover:border-[#65C6B5]/40 opacity-80 hover:opacity-100'
+                      ? 'bg-[#122556] border-[#5CB2FF] shadow-xl shadow-[#1D4ED8]/30 scale-[1.01]'
+                      : 'bg-[#0D1B3E]/80 border-[#26407F]/40 hover:border-[#5CB2FF]/40 opacity-80 hover:opacity-100'
                   }`}
                 >
                   <div className="flex items-start gap-4 sm:gap-6">
@@ -122,8 +122,8 @@ export default function ProcessSection() {
                     <div
                       className={`w-12 h-12 rounded-xl border flex items-center justify-center font-mono text-sm font-bold transition-colors ${
                         isActive
-                          ? 'bg-[#195052] border-[#65C6B5] text-[#F7FCFA] shadow-lg'
-                          : 'bg-[#071F22]/70 border-[#315B58] text-[#B5CEC7]'
+                          ? 'bg-[#1D4ED8] border-[#5CB2FF] text-[#FFFFFF] shadow-lg'
+                          : 'bg-[#050B1F]/70 border-[#26407F] text-[#A9B8E0]'
                       }`}
                     >
                       {step.number}
@@ -132,25 +132,25 @@ export default function ProcessSection() {
                     {/* Step Title & Content */}
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <StretchSnapText as="h3" level="secondary" className="font-editorial text-2xl font-bold text-[#F7FCFA]">
+                        <StretchSnapText as="h3" level="secondary" className="font-editorial text-2xl font-bold text-[#FFFFFF]">
                           {step.title}
                         </StretchSnapText>
-                        <span className="text-[11px] font-mono text-[#65C6B5] uppercase tracking-wider font-semibold">
+                        <span className="text-[11px] font-mono text-[#5CB2FF] uppercase tracking-wider font-semibold">
                           {step.phase}
                         </span>
                       </div>
 
-                      <StretchSnapText as="p" level="subtle" split="words" className="text-[#D9F0EA] text-sm mt-2 leading-relaxed">
+                      <StretchSnapText as="p" level="subtle" split="words" className="text-[#DCE6FF] text-sm mt-2 leading-relaxed">
                         {step.description}
                       </StretchSnapText>
 
                       {/* Deliverables tags on active */}
                       {isActive && (
-                        <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-[#254845] animate-in fade-in duration-300">
+                        <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-[#162A5C] animate-in fade-in duration-300">
                           {step.deliverables.map((del) => (
                             <span
                               key={del}
-                              className="px-3 py-1 rounded-full bg-[#071F22]/70 border border-[#315B58] text-[11px] font-mono text-[#D9F0EA]"
+                              className="px-3 py-1 rounded-full bg-[#050B1F]/70 border border-[#26407F] text-[11px] font-mono text-[#DCE6FF]"
                             >
                               ✓ {del}
                             </span>
@@ -174,12 +174,12 @@ export default function ProcessSection() {
         <div className="mt-16 text-center">
           <TransitionLink
             href="/process"
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#103638] hover:bg-[#174448] text-[#F7FCFA] font-semibold text-xs uppercase tracking-wider border border-[#315B58] hover:border-[#65C6B5]/50 transition-all duration-300 shadow-xl group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#65C6B5]"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#0D1B3E] hover:bg-[#122556] text-[#FFFFFF] font-semibold text-xs uppercase tracking-wider border border-[#26407F] hover:border-[#5CB2FF]/50 transition-all duration-300 shadow-xl group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF]"
           >
             <StretchSnapText as="span" level="subtle" split="words" interactive>
               Explore Our Process
             </StretchSnapText>
-            <ArrowUpRight className="w-4 h-4 text-[#65C6B5] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <ArrowUpRight className="w-4 h-4 text-[#5CB2FF] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </TransitionLink>
         </div>
       </div>

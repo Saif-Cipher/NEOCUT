@@ -8,7 +8,7 @@ import FloatingCapsuleNav from '@/components/layout/FloatingCapsuleNav';
  */
 export function ServicesSkeleton() {
   return (
-    <div className="relative min-h-screen bg-transparent text-[#F7FCFA] overflow-x-hidden pt-28">
+    <div className="relative min-h-screen bg-transparent text-[#FFFFFF] overflow-x-hidden pt-28">
       <FloatingCapsuleNav />
 
       {/* Hero Header */}
@@ -26,7 +26,7 @@ export function ServicesSkeleton() {
         {[1, 2, 3].map((idx) => (
           <div
             key={idx}
-            className="p-8 sm:p-12 rounded-3xl border border-[#315B58]/50 bg-[#103638]/85 backdrop-blur-xl shadow-2xl"
+            className="p-8 sm:p-12 rounded-3xl border border-[#26407F]/50 bg-[#0D1B3E]/85 backdrop-blur-xl shadow-2xl"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column (7 cols) */}
@@ -44,7 +44,7 @@ export function ServicesSkeleton() {
                   <Skeleton className="h-4 w-4/5 rounded" />
                 </div>
                 {/* Capabilities checkmarks */}
-                <div className="pt-4 border-t border-[#254845] grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="pt-4 border-t border-[#162A5C] grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {[1, 2, 3, 4].map((c) => (
                     <Skeleton key={c} className="h-6 w-full rounded-lg" />
                   ))}
@@ -52,7 +52,7 @@ export function ServicesSkeleton() {
               </div>
 
               {/* Right Column (5 cols) */}
-              <div className="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-[#071F22]/90 border border-[#315B58]/40 space-y-5">
+              <div className="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-[#050B1F]/90 border border-[#26407F]/40 space-y-5">
                 <div className="flex items-center gap-3">
                   <Skeleton className="w-10 h-10 rounded-xl" />
                   <div className="space-y-1.5">
@@ -84,7 +84,7 @@ export function ServicesSkeleton() {
  */
 export function AboutSkeleton() {
   return (
-    <div className="relative min-h-screen bg-transparent text-[#F7FCFA] overflow-x-hidden pt-28">
+    <div className="relative min-h-screen bg-transparent text-[#FFFFFF] overflow-x-hidden pt-28">
       <FloatingCapsuleNav />
 
       {/* Hero Header */}
@@ -96,7 +96,7 @@ export function AboutSkeleton() {
 
       {/* Metrics Bar */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-24">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-[#103638]/80 border border-[#315B58]/40">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-[#0D1B3E]/80 border border-[#26407F]/40">
           {[1, 2, 3, 4].map((m) => (
             <div key={m} className="p-4 space-y-2">
               <Skeleton className="h-10 w-20 rounded" />
@@ -111,7 +111,7 @@ export function AboutSkeleton() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
-            <div className="aspect-[4/5] rounded-3xl border border-[#315B58]/50 bg-[#103638]/90 p-8 flex flex-col justify-between">
+            <div className="aspect-[4/5] rounded-3xl border border-[#26407F]/50 bg-[#0D1B3E]/90 p-8 flex flex-col justify-between">
               <div className="flex justify-between">
                 <Skeleton className="w-12 h-12 rounded-2xl" />
                 <Skeleton className="h-4 w-36 rounded" />
@@ -121,7 +121,7 @@ export function AboutSkeleton() {
                 <Skeleton className="h-8 w-32 rounded-lg" />
                 <Skeleton className="h-4 w-44 rounded" />
               </div>
-              <div className="flex justify-between pt-4 border-t border-[#254845]">
+              <div className="flex justify-between pt-4 border-t border-[#162A5C]">
                 <Skeleton className="h-4 w-20 rounded" />
                 <Skeleton className="h-4 w-28 rounded" />
               </div>
@@ -151,7 +151,7 @@ export function AboutSkeleton() {
  */
 export function ProcessSkeleton() {
   return (
-    <div className="relative min-h-screen bg-transparent text-[#F7FCFA] overflow-x-hidden pt-28">
+    <div className="relative min-h-screen bg-transparent text-[#FFFFFF] overflow-x-hidden pt-28">
       <FloatingCapsuleNav />
 
       {/* Hero Header */}
@@ -167,7 +167,7 @@ export function ProcessSkeleton() {
           {/* Left Column: 6 Stages */}
           <div className="lg:col-span-5 space-y-3">
             {[1, 2, 3, 4, 5, 6].map((st) => (
-              <div key={st} className="rounded-2xl p-5 border border-[#315B58]/30 bg-[#071F22]/90 flex items-center gap-4">
+              <div key={st} className="rounded-2xl p-5 border border-[#26407F]/30 bg-[#050B1F]/90 flex items-center gap-4">
                 <Skeleton className="w-9 h-9 rounded-xl" />
                 <div className="space-y-1.5 flex-1">
                   <Skeleton className="h-4 w-3/4 rounded" />
@@ -179,8 +179,8 @@ export function ProcessSkeleton() {
 
           {/* Right Column: Stage Details & 3D Core */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl p-8 sm:p-10 bg-[#103638]/95 border border-[#315B58]/50 space-y-6">
-              <div className="flex justify-between items-center pb-6 border-b border-[#254845]">
+            <div className="rounded-3xl p-8 sm:p-10 bg-[#0D1B3E]/95 border border-[#26407F]/50 space-y-6">
+              <div className="flex justify-between items-center pb-6 border-b border-[#162A5C]">
                 <div className="space-y-2">
                   <Skeleton className="h-8 w-48 rounded-lg" />
                   <Skeleton className="h-3 w-32 rounded" />
@@ -197,7 +197,7 @@ export function ProcessSkeleton() {
                 ))}
               </div>
               <Skeleton className="h-14 w-full rounded-2xl" />
-              <div className="pt-6 border-t border-[#254845] space-y-2">
+              <div className="pt-6 border-t border-[#162A5C] space-y-2">
                 <Skeleton className="h-4 w-48 rounded" />
                 <Skeleton className="aspect-[16/7] w-full rounded-2xl" />
               </div>
@@ -214,7 +214,7 @@ export function ProcessSkeleton() {
  */
 export function ContactSkeleton() {
   return (
-    <div className="relative min-h-screen bg-transparent text-[#F7FCFA] overflow-x-hidden pt-28">
+    <div className="relative min-h-screen bg-transparent text-[#FFFFFF] overflow-x-hidden pt-28">
       <FloatingCapsuleNav />
 
       {/* Hero Header */}
@@ -229,8 +229,8 @@ export function ContactSkeleton() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Form Skeleton */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl p-8 sm:p-10 bg-[#103638]/95 border border-[#315B58]/50 space-y-8">
-              <div className="flex justify-between items-center pb-6 border-b border-[#254845]">
+            <div className="rounded-3xl p-8 sm:p-10 bg-[#0D1B3E]/95 border border-[#26407F]/50 space-y-8">
+              <div className="flex justify-between items-center pb-6 border-b border-[#162A5C]">
                 <div className="space-y-1.5">
                   <Skeleton className="h-7 w-48 rounded-lg" />
                   <Skeleton className="h-3 w-56 rounded" />
@@ -259,7 +259,7 @@ export function ContactSkeleton() {
               </div>
 
               {/* Step 4: Text inputs */}
-              <div className="space-y-4 pt-4 border-t border-[#254845]">
+              <div className="space-y-4 pt-4 border-t border-[#162A5C]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <Skeleton className="h-12 rounded-xl" />
                   <Skeleton className="h-12 rounded-xl" />
@@ -277,12 +277,12 @@ export function ContactSkeleton() {
 
           {/* Right Column Skeleton */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="rounded-3xl p-8 bg-[#103638]/90 border border-[#315B58]/40 space-y-5">
+            <div className="rounded-3xl p-8 bg-[#0D1B3E]/90 border border-[#26407F]/40 space-y-5">
               <Skeleton className="h-4 w-40 rounded" />
               <Skeleton className="h-20 w-full rounded-2xl" />
               <Skeleton className="h-20 w-full rounded-2xl" />
             </div>
-            <div className="rounded-3xl p-8 bg-[#103638]/90 border border-[#315B58]/40 space-y-4">
+            <div className="rounded-3xl p-8 bg-[#0D1B3E]/90 border border-[#26407F]/40 space-y-4">
               <Skeleton className="h-4 w-36 rounded" />
               <Skeleton className="h-16 w-full rounded-xl" />
               <Skeleton className="h-16 w-full rounded-xl" />
@@ -299,7 +299,7 @@ export function ContactSkeleton() {
  */
 export default function PageSkeleton() {
   return (
-    <div className="relative min-h-screen bg-transparent text-[#F7FCFA] overflow-x-hidden pt-28">
+    <div className="relative min-h-screen bg-transparent text-[#FFFFFF] overflow-x-hidden pt-28">
       <FloatingCapsuleNav />
       <section className="relative px-4 pt-16 pb-20 max-w-7xl mx-auto text-center flex flex-col items-center">
         <Skeleton className="h-7 w-60 rounded-full mb-6" />

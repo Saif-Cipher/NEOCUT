@@ -82,13 +82,13 @@ export default function AboutPage() {
       <main
         id="main-content"
         tabIndex={-1}
-        className="relative min-h-screen bg-transparent text-[#F7FCFA] selection:bg-[#65C6B5] selection:text-[#071F22] overflow-x-hidden pt-28 outline-none"
+        className="relative min-h-screen bg-transparent text-[#FFFFFF] selection:bg-[#2563EB] selection:text-[#FFFFFF] overflow-x-hidden pt-28 outline-none"
       >
         <FloatingCapsuleNav />
 
         {/* 1. Page Hero Intro */}
         <section className="relative px-4 pt-12 pb-16 max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#65C6B5]/40 bg-[#103638]/85 backdrop-blur-md text-[#65C6B5] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#5CB2FF]/40 bg-[#0D1B3E]/85 backdrop-blur-md text-[#5CB2FF] text-xs font-semibold tracking-wider uppercase mb-6 shadow-lg shadow-black/50">
             <Sparkles className="w-3.5 h-3.5" />
             <span>[ STUDIO PHILOSOPHY &amp; DNA ]</span>
           </div>
@@ -96,10 +96,10 @@ export default function AboutPage() {
           <StretchSnapText
             as="h1"
             level="display"
-            className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#F7FCFA] leading-[1.08] max-w-5xl mx-auto"
+            className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[#FFFFFF] leading-[1.08] max-w-5xl mx-auto"
           >
             Where Neural Innovation Meets{' '}
-            <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#F7FCFA] via-[#65C6B5] to-[#195052]">
+            <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#5CB2FF] to-[#1D4ED8]">
               Cinematic Intuition.
             </span>
           </StretchSnapText>
@@ -108,7 +108,7 @@ export default function AboutPage() {
             as="p"
             level="subtle"
             split="words"
-            className="text-[#D9F0EA] text-base sm:text-xl max-w-3xl mx-auto mt-8 leading-relaxed font-light"
+            className="text-[#DCE6FF] text-base sm:text-xl max-w-3xl mx-auto mt-8 leading-relaxed font-light"
           >
             NeoCut Digital is an avant-garde creative studio operating at the frontier of high-impact visual storytelling, advanced 3D motion systems, and algorithmic video engineering.
           </StretchSnapText>
@@ -116,23 +116,23 @@ export default function AboutPage() {
 
         {/* 2. Studio Metrics Bar */}
         <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-24">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-[#103638]/85 border border-[#315B58]/50 backdrop-blur-xl shadow-2xl shadow-black/80">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-[#0D1B3E]/85 border border-[#26407F]/50 backdrop-blur-xl shadow-2xl shadow-black/80">
             {STUDIO_METRICS.map((metric, idx) => (
               <div 
                 key={metric.label}
                 className={`p-4 sm:p-6 flex flex-col justify-between ${
-                  idx !== STUDIO_METRICS.length - 1 ? 'lg:border-r lg:border-[#254845]' : ''
+                  idx !== STUDIO_METRICS.length - 1 ? 'lg:border-r lg:border-[#162A5C]' : ''
                 }`}
               >
                 <div>
-                  <span className="font-editorial text-3xl sm:text-5xl font-bold text-[#F7FCFA] tracking-tight block">
+                  <span className="font-editorial text-3xl sm:text-5xl font-bold text-[#FFFFFF] tracking-tight block">
                     {metric.value}
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold text-[#65C6B5] uppercase tracking-wider mt-2 block">
+                  <span className="text-xs sm:text-sm font-semibold text-[#5CB2FF] uppercase tracking-wider mt-2 block">
                     {metric.label}
                   </span>
                 </div>
-                <p className="text-xs text-[#D9F0EA] mt-3 leading-relaxed hidden sm:block">
+                <p className="text-xs text-[#DCE6FF] mt-3 leading-relaxed hidden sm:block">
                   {metric.detail}
                 </p>
               </div>
@@ -145,13 +145,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left: Founder Circular Profile Stage */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl overflow-hidden border border-[#315B58]/60 bg-[#103638]/70 shadow-2xl shadow-black/90 flex flex-col items-center group">
+              <div className="relative rounded-3xl overflow-hidden border border-[#26407F]/60 bg-[#0D1B3E]/70 shadow-2xl shadow-black/90 flex flex-col items-center group">
                 {/* Header Tag */}
-                <div className="w-full px-6 py-4 border-b border-[#254845] flex items-center justify-between bg-[#071F22]/70 backdrop-blur-md">
-                  <span className="font-mono text-xs text-[#65C6B5] tracking-widest uppercase font-semibold">
+                <div className="w-full px-6 py-4 border-b border-[#162A5C] flex items-center justify-between bg-[#050B1F]/70 backdrop-blur-md">
+                  <span className="font-mono text-xs text-[#5CB2FF] tracking-widest uppercase font-semibold">
                     FOUNDER PROFILE
                   </span>
-                  <span className="font-mono text-[11px] text-[#B5CEC7]">
+                  <span className="font-mono text-[11px] text-[#A9B8E0]">
                     DHAKA / GLOBAL
                   </span>
                 </div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 {/* Circular Portrait Container Stage (Mobile: 210px, Tablet: 270px, Desktop: 320px) */}
                 <div className="py-10 sm:py-12 px-6 flex flex-col items-center justify-center w-full">
                   <div 
-                    className="relative w-[210px] h-[210px] sm:w-[270px] sm:h-[270px] lg:w-[320px] lg:h-[320px] aspect-square rounded-full shrink-0 overflow-hidden border-2 border-[#315B58] ring-4 ring-[#103638]/90 ring-offset-2 ring-offset-[#071F22] shadow-[0_0_55px_rgba(101,198,181,0.22),0_25px_50px_rgba(7,31,34,0.85)] transition-all duration-500 group-hover:border-[#65C6B5]/60 group-hover:shadow-[0_0_65px_rgba(101,198,181,0.32),0_30px_55px_rgba(7,31,34,0.9)]"
+                    className="relative w-[210px] h-[210px] sm:w-[270px] sm:h-[270px] lg:w-[320px] lg:h-[320px] aspect-square rounded-full shrink-0 overflow-hidden border-2 border-[#26407F] ring-4 ring-[#0D1B3E]/90 ring-offset-2 ring-offset-[#050B1F] shadow-[0_0_55px_rgba(101,198,181,0.22),0_25px_50px_rgba(7,31,34,0.85)] transition-all duration-500 group-hover:border-[#5CB2FF]/60 group-hover:shadow-[0_0_65px_rgba(101,198,181,0.32),0_30px_55px_rgba(7,31,34,0.9)]"
                     style={{ borderRadius: '50%' }}
                   >
                     <Image
@@ -174,18 +174,18 @@ export default function AboutPage() {
                 </div>
 
                 {/* Portrait Caption & Status */}
-                <div className="w-full p-6 bg-[#0B2528]/95 border-t border-[#254845] text-center space-y-2">
+                <div className="w-full p-6 bg-[#030716]/95 border-t border-[#162A5C] text-center space-y-2">
                   <div className="flex items-center justify-center gap-3">
-                    <h3 className="font-editorial text-2xl font-bold text-[#F7FCFA] m-0">
+                    <h3 className="font-editorial text-2xl font-bold text-[#FFFFFF] m-0">
                       Saif Hossain
                     </h3>
-                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#103638] border border-[#315B58] text-[#65C6B5]">Est. 2024</span>
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#0D1B3E] border border-[#26407F] text-[#5CB2FF]">Est. 2024</span>
                   </div>
-                  <p className="text-xs font-mono uppercase tracking-wider text-[#65C6B5] font-semibold m-0">
+                  <p className="text-xs font-mono uppercase tracking-wider text-[#5CB2FF] font-semibold m-0">
                     Founder &amp; Creative Director — NeoCut Digital
                   </p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#071F22]/80 border border-[#254845] text-[11px] font-mono text-[#D9F0EA] mt-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#65C6B5] animate-pulse" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#050B1F]/80 border border-[#162A5C] text-[11px] font-mono text-[#DCE6FF] mt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#5CB2FF] animate-pulse" />
                     <span>Directorial Lead · Active Studio Production</span>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ export default function AboutPage() {
 
             {/* Right: Founder Profile & Directorial Vision */}
             <div className="lg:col-span-7 flex flex-col justify-center space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#315B58]/50 bg-[#103638]/70 text-[#65C6B5] text-xs font-mono tracking-wider w-fit">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#26407F]/50 bg-[#0D1B3E]/70 text-[#5CB2FF] text-xs font-mono tracking-wider w-fit">
                 [ FOUNDER &amp; CREATIVE LEADERSHIP ]
               </div>
 
@@ -202,35 +202,35 @@ export default function AboutPage() {
                 <StretchSnapText
                   as="h2"
                   level="display"
-                  className="font-editorial text-3xl sm:text-5xl font-bold text-[#F7FCFA] leading-tight"
+                  className="font-editorial text-3xl sm:text-5xl font-bold text-[#FFFFFF] leading-tight"
                 >
                   Saif Hossain
                 </StretchSnapText>
-                <p className="font-mono text-xs sm:text-sm uppercase tracking-wider text-[#65C6B5] mt-1 font-semibold">
+                <p className="font-mono text-xs sm:text-sm uppercase tracking-wider text-[#5CB2FF] mt-1 font-semibold">
                   Founder &amp; Creative Director — NeoCut Digital
                 </p>
               </div>
 
-              <div className="space-y-4 text-sm sm:text-base leading-relaxed text-[#D9F0EA]">
+              <div className="space-y-4 text-sm sm:text-base leading-relaxed text-[#DCE6FF]">
                 <p>
                   Saif Hossain established NeoCut Digital to build an agile, technology-driven studio capable of producing broadcast-grade motion media at the velocity required by modern digital brands. Confronting the high friction and prohibitive timelines of traditional agencies, he architected an alternative studio infrastructure engineered for creative agility.
                 </p>
 
-                <p className="text-[#B5CEC7]">
+                <p className="text-[#A9B8E0]">
                   At NeoCut, Saif focuses on developing integrated AI-powered video workflows—combining ComfyUI latent diffusion models, neural frame synthesis, and procedural 3D physics in Blender. Under his leadership, artificial intelligence is deployed as an amplifier for directorial intent, enabling rapid visual iteration without sacrificing cinematic polish.
                 </p>
 
-                <p className="text-[#B5CEC7]">
+                <p className="text-[#A9B8E0]">
                   He oversees creative direction across all five production verticals: commercial brand films, 3D character animations, narrative storytelling, 4K cinematography, and scientific explanation videos. From narrative conception and acoustic design to lighting composition and ACES color grading, Saif steers each production to ensure technical rigor and emotional impact.
                 </p>
               </div>
 
               {/* Directorial Creed Blockquote */}
-              <div className="p-5 rounded-2xl bg-[#071F22]/80 border-l-2 border-[#65C6B5] border-y border-r border-[#254845] space-y-2">
-                <p className="font-editorial italic text-base sm:text-lg text-[#F7FCFA] leading-snug m-0">
+              <div className="p-5 rounded-2xl bg-[#050B1F]/80 border-l-2 border-[#5CB2FF] border-y border-r border-[#162A5C] space-y-2">
+                <p className="font-editorial italic text-base sm:text-lg text-[#FFFFFF] leading-snug m-0">
                   &ldquo;Artificial intelligence does not replace human artistry—it liberates the director to explore previously impossible scales of visual storytelling with precision and speed.&rdquo;
                 </p>
-                <span className="block text-[11px] font-mono text-[#65C6B5] uppercase tracking-wider">
+                <span className="block text-[11px] font-mono text-[#5CB2FF] uppercase tracking-wider">
                   — Saif Hossain, Founder
                 </span>
               </div>
@@ -239,7 +239,7 @@ export default function AboutPage() {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <TransitionLink
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#65C6B5] hover:bg-[#65C6B5]/90 text-[#071F22] text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#195052]/30"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-[#FFFFFF] text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#1D4ED8]/30"
                 >
                   <span>Explore Master Gallery</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -247,10 +247,10 @@ export default function AboutPage() {
 
                 <TransitionLink
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#103638] hover:bg-[#174448] border border-[#315B58] text-[#F7FCFA] text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0D1B3E] hover:bg-[#122556] border border-[#26407F] text-[#FFFFFF] text-xs font-semibold uppercase tracking-wider transition-all duration-300"
                 >
                   <span>Contact Creative Director</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#B5CEC7]" />
+                  <ArrowUpRight className="w-4 h-4 text-[#A9B8E0]" />
                 </TransitionLink>
               </div>
             </div>
@@ -260,18 +260,18 @@ export default function AboutPage() {
         {/* 4. Four Core Pillars Grid */}
         <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#65C6B5]/40 bg-[#103638]/85 backdrop-blur-md text-[#65C6B5] text-xs font-semibold tracking-wider uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#5CB2FF]/40 bg-[#0D1B3E]/85 backdrop-blur-md text-[#5CB2FF] text-xs font-semibold tracking-wider uppercase mb-4">
               <Target className="w-3.5 h-3.5" />
               <span>[ GUIDING PRINCIPLES ]</span>
             </div>
             <StretchSnapText
               as="h2"
               level="display"
-              className="font-editorial text-3xl sm:text-5xl font-bold text-[#F7FCFA] tracking-tight"
+              className="font-editorial text-3xl sm:text-5xl font-bold text-[#FFFFFF] tracking-tight"
             >
-              The Four Pillars of <span className="text-[#65C6B5] italic font-normal">NeoCut</span>
+              The Four Pillars of <span className="text-[#5CB2FF] italic font-normal">NeoCut</span>
             </StretchSnapText>
-            <p className="text-[#D9F0EA] text-sm sm:text-base mt-4 leading-relaxed">
+            <p className="text-[#DCE6FF] text-sm sm:text-base mt-4 leading-relaxed">
               Every production that leaves our workstations is rigorously measured against these four non-negotiable standards.
             </p>
           </div>
@@ -282,32 +282,32 @@ export default function AboutPage() {
               return (
                 <div
                   key={pillar.number}
-                  className="group relative p-8 sm:p-10 rounded-3xl bg-[#103638]/90 border border-[#315B58]/50 hover:border-[#65C6B5] hover:bg-[#174448] transition-all duration-500 shadow-xl shadow-black/80 flex flex-col justify-between"
+                  className="group relative p-8 sm:p-10 rounded-3xl bg-[#0D1B3E]/90 border border-[#26407F]/50 hover:border-[#5CB2FF] hover:bg-[#122556] transition-all duration-500 shadow-xl shadow-black/80 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-2xl bg-[#071F22]/70 border border-[#315B58]/50 flex items-center justify-center text-[#65C6B5] group-hover:scale-110 group-hover:bg-[#195052]/40 transition-all duration-300">
+                      <div className="w-12 h-12 rounded-2xl bg-[#050B1F]/70 border border-[#26407F]/50 flex items-center justify-center text-[#5CB2FF] group-hover:scale-110 group-hover:bg-[#1D4ED8]/40 transition-all duration-300">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="font-mono text-xs text-[#B5CEC7] uppercase tracking-widest">
+                      <span className="font-mono text-xs text-[#A9B8E0] uppercase tracking-widest">
                         PILLAR // {pillar.number}
                       </span>
                     </div>
 
-                    <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-[#F7FCFA] group-hover:text-[#65C6B5] transition-colors">
+                    <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-[#FFFFFF] group-hover:text-[#5CB2FF] transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs font-mono text-[#65C6B5] uppercase tracking-wider mt-1 mb-4">
+                    <p className="text-xs font-mono text-[#5CB2FF] uppercase tracking-wider mt-1 mb-4">
                       {pillar.subtitle}
                     </p>
-                    <p className="text-sm text-[#D9F0EA] leading-relaxed">
+                    <p className="text-sm text-[#DCE6FF] leading-relaxed">
                       {pillar.description}
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-[#254845] flex items-center justify-between text-xs text-[#B5CEC7] font-mono">
+                  <div className="pt-6 mt-6 border-t border-[#162A5C] flex items-center justify-between text-xs text-[#A9B8E0] font-mono">
                     <span>STANDARD SPECIFICATION</span>
-                    <span className="text-[#65C6B5] flex items-center gap-1.5">
+                    <span className="text-[#5CB2FF] flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5" /> CERTIFIED
                     </span>
                   </div>
@@ -319,19 +319,19 @@ export default function AboutPage() {
 
         {/* 5. Production Arsenal & Hardware / Software Stack */}
         <section className="relative max-w-7xl mx-auto px-4 sm:px-6 mb-32">
-          <div className="p-8 sm:p-12 rounded-3xl bg-[#103638]/90 border border-[#315B58]/60 shadow-2xl shadow-black/90">
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#0D1B3E]/90 border border-[#26407F]/60 shadow-2xl shadow-black/90">
             <div className="max-w-2xl mb-10">
-              <span className="text-xs font-mono text-[#65C6B5] uppercase tracking-widest block mb-2">
+              <span className="text-xs font-mono text-[#5CB2FF] uppercase tracking-widest block mb-2">
                 [ STUDIO INFRASTRUCTURE ]
               </span>
               <StretchSnapText
                 as="h2"
                 level="secondary"
-                className="font-editorial text-3xl sm:text-4xl font-bold text-[#F7FCFA] tracking-tight"
+                className="font-editorial text-3xl sm:text-4xl font-bold text-[#FFFFFF] tracking-tight"
               >
                 The Technical Arsenal
               </StretchSnapText>
-              <p className="text-sm text-[#D9F0EA] mt-3 leading-relaxed">
+              <p className="text-sm text-[#DCE6FF] mt-3 leading-relaxed">
                 We combine industry-standard visual effects suites with proprietary deep-learning pipelines to deliver seamless, photo-real execution.
               </p>
             </div>
@@ -340,12 +340,12 @@ export default function AboutPage() {
               {ARSENAL_TOOLS.map((tool) => (
                 <div
                   key={tool.name}
-                  className="p-5 rounded-2xl bg-[#071F22]/70 border border-[#315B58]/40 hover:border-[#65C6B5] hover:bg-[#174448] transition-all duration-300 flex flex-col justify-between"
+                  className="p-5 rounded-2xl bg-[#050B1F]/70 border border-[#26407F]/40 hover:border-[#5CB2FF] hover:bg-[#122556] transition-all duration-300 flex flex-col justify-between"
                 >
-                  <span className="text-[#F7FCFA] font-semibold text-sm sm:text-base block">
+                  <span className="text-[#FFFFFF] font-semibold text-sm sm:text-base block">
                     {tool.name}
                   </span>
-                  <span className="text-xs font-mono text-[#65C6B5] tracking-wider mt-2 block">
+                  <span className="text-xs font-mono text-[#5CB2FF] tracking-wider mt-2 block">
                     {tool.category}
                   </span>
                 </div>
@@ -356,27 +356,27 @@ export default function AboutPage() {
 
         {/* 6. Closing Directorial CTA */}
         <section className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center mb-28">
-          <div className="p-12 sm:p-16 rounded-3xl border border-[#315B58]/60 bg-[#103638]/95 shadow-2xl shadow-black/90 relative overflow-hidden">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#195052]/30 via-transparent to-transparent" />
+          <div className="p-12 sm:p-16 rounded-3xl border border-[#26407F]/60 bg-[#0D1B3E]/95 shadow-2xl shadow-black/90 relative overflow-hidden">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#1D4ED8]/30 via-transparent to-transparent" />
             
-            <span className="text-xs font-mono uppercase tracking-widest text-[#65C6B5] block mb-4">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#5CB2FF] block mb-4">
               [ DIRECT STUDIO COLLABORATION ]
             </span>
             <StretchSnapText
               as="h2"
               level="display"
-              className="font-editorial text-3xl sm:text-5xl md:text-6xl font-bold text-[#F7FCFA] leading-tight"
+              className="font-editorial text-3xl sm:text-5xl md:text-6xl font-bold text-[#FFFFFF] leading-tight"
             >
-              Ready to elevate your <span className="text-[#65C6B5] italic font-normal">visual narrative?</span>
+              Ready to elevate your <span className="text-[#5CB2FF] italic font-normal">visual narrative?</span>
             </StretchSnapText>
-            <p className="text-[#D9F0EA] text-sm sm:text-base max-w-xl mx-auto mt-4 leading-relaxed">
+            <p className="text-[#DCE6FF] text-sm sm:text-base max-w-xl mx-auto mt-4 leading-relaxed">
               Connect directly with our founding director to analyze your brand story, schedule a production sprint, and review our creative workflow.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <TransitionLink
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#65C6B5] hover:bg-[#65C6B5]/90 text-[#071F22] font-bold text-xs uppercase tracking-wider border border-[#65C6B5] shadow-xl shadow-[#195052]/30 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-[#FFFFFF] font-bold text-xs uppercase tracking-wider border border-[#5CB2FF] shadow-xl shadow-[#1D4ED8]/30 transition-all duration-300"
               >
                 <span>Initiate Studio Brief</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -384,10 +384,10 @@ export default function AboutPage() {
 
               <TransitionLink
                 href="/services"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#071F22]/80 hover:bg-[#174448] text-[#F7FCFA] font-semibold text-xs uppercase tracking-wider border border-[#315B58] transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#050B1F]/80 hover:bg-[#122556] text-[#FFFFFF] font-semibold text-xs uppercase tracking-wider border border-[#26407F] transition-all duration-300"
               >
                 <span>Explore Services</span>
-                <ArrowUpRight className="w-4 h-4 text-[#B5CEC7]" />
+                <ArrowUpRight className="w-4 h-4 text-[#A9B8E0]" />
               </TransitionLink>
             </div>
           </div>

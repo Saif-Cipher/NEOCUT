@@ -5,7 +5,7 @@ import FloatingCapsuleNav from '@/components/layout/FloatingCapsuleNav';
 
 export default function PortfolioSkeleton() {
   return (
-    <div className="relative min-h-screen bg-transparent text-[#F7FCFA] overflow-x-hidden pt-28">
+    <div className="relative min-h-screen bg-transparent text-[#FFFFFF] overflow-x-hidden pt-28">
       <FloatingCapsuleNav />
 
       {/* Hero Header Skeleton */}
@@ -36,25 +36,25 @@ export default function PortfolioSkeleton() {
           {Array.from({ length: 6 }).map((_, idx) => (
             <div
               key={idx}
-              className="rounded-3xl overflow-hidden border border-[#315B58]/50 bg-[#103638]/85 backdrop-blur-xl shadow-xl shadow-black/80 flex flex-col justify-between"
+              className="rounded-3xl overflow-hidden border border-[#26407F]/50 bg-[#0D1B3E]/85 backdrop-blur-xl shadow-xl shadow-black/80 flex flex-col justify-between"
             >
               {/* Media Thumbnail Container Skeleton */}
-              <div className="relative aspect-video w-full bg-[#071F22] overflow-hidden">
+              <div className="relative aspect-video w-full bg-[#050B1F] overflow-hidden">
                 <Skeleton className="w-full h-full rounded-none border-0" />
 
                 {/* Simulated Center Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Skeleton className="w-14 h-14 rounded-full bg-white/10 border border-[#315B58]/40" />
+                  <Skeleton className="w-14 h-14 rounded-full bg-white/10 border border-[#26407F]/40" />
                 </div>
 
                 {/* Simulated Aspect Ratio Tag */}
                 <div className="absolute top-3 left-3">
-                  <Skeleton className="h-5 w-12 rounded-md bg-[#071F22]/80 border border-[#315B58]/40" />
+                  <Skeleton className="h-5 w-12 rounded-md bg-[#050B1F]/80 border border-[#26407F]/40" />
                 </div>
 
                 {/* Simulated Duration Tag */}
                 <div className="absolute bottom-3 right-3">
-                  <Skeleton className="h-5 w-14 rounded-md bg-[#071F22]/80 border border-[#315B58]/40" />
+                  <Skeleton className="h-5 w-14 rounded-md bg-[#050B1F]/80 border border-[#26407F]/40" />
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export default function PortfolioSkeleton() {
                 </div>
 
                 {/* Footer Bar */}
-                <div className="pt-4 border-t border-[#254845] flex items-center justify-between">
+                <div className="pt-4 border-t border-[#162A5C] flex items-center justify-between">
                   <Skeleton className="h-4 w-24 rounded" />
                   <Skeleton className="h-4 w-20 rounded" />
                 </div>
@@ -85,7 +85,7 @@ export default function PortfolioSkeleton() {
         </div>
 
         {/* Bottom Custom Production Callout Skeleton */}
-        <div className="mt-20 p-8 sm:p-12 rounded-3xl border border-[#315B58]/50 bg-[#103638]/80 backdrop-blur-xl text-center flex flex-col items-center space-y-4">
+        <div className="mt-20 p-8 sm:p-12 rounded-3xl border border-[#26407F]/50 bg-[#0D1B3E]/80 backdrop-blur-xl text-center flex flex-col items-center space-y-4">
           <Skeleton className="h-8 sm:h-10 w-2/3 max-w-md rounded-xl" />
           <Skeleton className="h-4 w-4/5 max-w-lg rounded-md" />
           <Skeleton className="h-11 w-52 rounded-full mt-2" />
