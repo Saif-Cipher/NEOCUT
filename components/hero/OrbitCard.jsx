@@ -15,7 +15,7 @@ const OrbitCard = forwardRef(function OrbitCard(
   return (
     <div
       ref={ref}
-      className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 sm:w-44 md:w-52 lg:w-60 aspect-video cursor-pointer orbit-card-3d rounded-xl sm:rounded-2xl overflow-hidden pointer-events-auto transition-[transform,box-shadow,border-color] duration-300 ease-out select-none ${
+      className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 sm:w-28 md:w-44 lg:w-52 xl:w-60 aspect-video cursor-pointer orbit-card-3d rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden pointer-events-auto transition-[transform,box-shadow,border-color] duration-300 ease-out select-none ${
         hovered ? 'scale-110 !z-[9999]' : ''
       }`}
       style={{

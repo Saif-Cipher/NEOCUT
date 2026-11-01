@@ -158,15 +158,15 @@ export default function AboutPage() {
 
                 {/* Circular Portrait Container Stage (Mobile: 210px, Tablet: 270px, Desktop: 320px) */}
                 <div className="py-10 sm:py-12 px-6 flex flex-col items-center justify-center w-full">
-                  <div 
-                    className="relative w-[210px] h-[210px] sm:w-[270px] sm:h-[270px] lg:w-[320px] lg:h-[320px] aspect-square rounded-full shrink-0 overflow-hidden border-2 border-[#26407F] ring-4 ring-[#0D1B3E]/90 ring-offset-2 ring-offset-[#050B1F] shadow-[0_0_55px_rgba(101,198,181,0.22),0_25px_50px_rgba(7,31,34,0.85)] transition-all duration-500 group-hover:border-[#5CB2FF]/60 group-hover:shadow-[0_0_65px_rgba(101,198,181,0.32),0_30px_55px_rgba(7,31,34,0.9)]"
+                  <div
+                    className="relative w-[min(82vw,210px)] h-[min(82vw,210px)] sm:w-[min(46vw,270px)] sm:h-[min(46vw,270px)] lg:w-[320px] lg:h-[320px] aspect-square rounded-full shrink-0 overflow-hidden border-2 border-[#26407F] ring-4 ring-[#0D1B3E]/90 ring-offset-2 ring-offset-[#050B1F] shadow-[0_0_55px_rgba(101,198,181,0.22),0_25px_50px_rgba(7,31,34,0.85)] transition-all duration-500 group-hover:border-[#5CB2FF]/60 group-hover:shadow-[0_0_65px_rgba(101,198,181,0.32),0_30px_55px_rgba(7,31,34,0.9)]"
                     style={{ borderRadius: '50%' }}
                   >
                     <Image
                       src="/assets/profile/saif-founder.png"
                       alt="Saif Hossain, founder of NeoCut Digital"
                       fill
-                      sizes="(max-width: 640px) 210px, (max-width: 1024px) 270px, 320px"
+                      sizes="(max-width: 640px) min(82vw, 210px), (max-width: 1024px) min(46vw, 270px), 320px"
                       className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />

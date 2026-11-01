@@ -67,15 +67,15 @@ export default function ProcessSection() {
       aria-label="Creative Process Overview"
     >
       {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#1D4ED8]/20 rounded-full blur-[140px]" aria-hidden="true" />
+      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[140vw] h-[350px] bg-[#1D4ED8]/20 rounded-full blur-[140px]" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-12">
           <StretchSnapText
             as="h2"
             level="display"
-            className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#FFFFFF] leading-none"
+            className="font-editorial text-[1.85rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#FFFFFF] leading-none"
           >
             Creative <span className="text-[#5CB2FF] italic font-normal">Process</span>
           </StretchSnapText>
@@ -83,16 +83,16 @@ export default function ProcessSection() {
             as="p"
             level="subtle"
             split="words"
-            className="text-[#DCE6FF] max-w-xl text-sm sm:text-base mt-4 leading-relaxed"
+            className="text-[#DCE6FF] max-w-xl text-[0.9rem] sm:text-base mt-3 leading-relaxed"
           >
             Our disciplined four-stage pipeline transforms raw concepts into market-defining digital cinema.
           </StretchSnapText>
         </div>
 
         {/* Process Layout: Left interactive timeline + Right interactive 3D Wireframe Torus */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Column: 4 Steps Accordion / Chapters */}
-          <div className="lg:col-span-7 space-y-4" role="tablist" aria-label="Process Steps">
+          <div className="lg:col-span-7 space-y-3" role="tablist" aria-label="Process Steps">
             {PROCESS_STEPS.map((step, idx) => {
               const Icon = step.icon;
               const isActive = activeStep === idx;
@@ -111,16 +111,16 @@ export default function ProcessSection() {
                       setActiveStep(idx);
                     }
                   }}
-                  className={`cursor-pointer rounded-2xl p-6 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF] ${
+                  className={`cursor-pointer rounded-2xl p-4 sm:p-6 border transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CB2FF] ${
                     isActive
                       ? 'bg-[#122556] border-[#5CB2FF] shadow-xl shadow-[#1D4ED8]/30 scale-[1.01]'
                       : 'bg-[#0D1B3E]/80 border-[#26407F]/40 hover:border-[#5CB2FF]/40 opacity-80 hover:opacity-100'
                   }`}
                 >
-                  <div className="flex items-start gap-4 sm:gap-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     {/* Number Badge */}
                     <div
-                      className={`w-12 h-12 rounded-xl border flex items-center justify-center font-mono text-sm font-bold transition-colors ${
+                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl border flex items-center justify-center font-mono text-xs sm:text-sm font-bold transition-colors shrink-0 ${
                         isActive
                           ? 'bg-[#1D4ED8] border-[#5CB2FF] text-[#FFFFFF] shadow-lg'
                           : 'bg-[#050B1F]/70 border-[#26407F] text-[#A9B8E0]'
@@ -130,27 +130,27 @@ export default function ProcessSection() {
                     </div>
 
                     {/* Step Title & Content */}
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <StretchSnapText as="h3" level="secondary" className="font-editorial text-2xl font-bold text-[#FFFFFF]">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-2">
+                        <StretchSnapText as="h3" level="secondary" className="font-editorial text-lg sm:text-2xl font-bold text-[#FFFFFF]">
                           {step.title}
                         </StretchSnapText>
-                        <span className="text-[11px] font-mono text-[#5CB2FF] uppercase tracking-wider font-semibold">
+                        <span className="text-[10px] font-mono text-[#5CB2FF] uppercase tracking-wider font-semibold shrink-0">
                           {step.phase}
                         </span>
                       </div>
 
-                      <StretchSnapText as="p" level="subtle" split="words" className="text-[#DCE6FF] text-sm mt-2 leading-relaxed">
+                      <StretchSnapText as="p" level="subtle" split="words" className="text-[#DCE6FF] text-[0.85rem] sm:text-sm mt-1 leading-relaxed">
                         {step.description}
                       </StretchSnapText>
 
                       {/* Deliverables tags on active */}
                       {isActive && (
-                        <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-[#162A5C] animate-in fade-in duration-300">
+                        <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-[#162A5C] animate-in fade-in duration-300">
                           {step.deliverables.map((del) => (
                             <span
                               key={del}
-                              className="px-3 py-1 rounded-full bg-[#050B1F]/70 border border-[#26407F] text-[11px] font-mono text-[#DCE6FF]"
+                              className="px-2.5 py-1 rounded-full bg-[#050B1F]/70 border border-[#26407F] text-[10px] font-mono text-[#DCE6FF]"
                             >
                               ✓ {del}
                             </span>

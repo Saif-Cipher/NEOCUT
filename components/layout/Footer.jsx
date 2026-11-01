@@ -43,9 +43,9 @@ export default function Footer() {
       role="contentinfo"
       className="relative z-20 w-full bg-[#030716] text-[#FFFFFF] border-t border-[#162A5C] pt-16 sm:pt-20 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Top Information Columns (4-Column Editorial Grid) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-14">
           
           {/* Column 1 — Studio identity */}
           <div className="space-y-4">

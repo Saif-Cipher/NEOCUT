@@ -11,7 +11,7 @@ export default function ContactSection() {
       className="relative py-32 sm:py-44 px-4 bg-transparent border-t border-[#162A5C] overflow-hidden"
     >
       {/* Background glowing sphere */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[900px] h-[450px] bg-gradient-to-tr from-[#1D4ED8]/30 via-[#0D1B3E]/25 to-transparent blur-[160px] rounded-full" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] sm:w-[900px] h-[450px] bg-gradient-to-tr from-[#1D4ED8]/30 via-[#0D1B3E]/25 to-transparent blur-[160px] rounded-full" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
         {/* Subhead Tag */}

@@ -89,16 +89,16 @@ export default function ServicesSection() {
       className="relative py-28 sm:py-36 px-4 bg-transparent border-t border-[#162A5C] overflow-hidden"
     >
       {/* Ambient background glow */}
-      <div className="pointer-events-none absolute top-1/2 -right-40 w-96 h-96 bg-[#1D4ED8]/15 rounded-full blur-[140px]" />
+      <div className="pointer-events-none absolute top-1/2 -right-40 w-[120vw] h-[120vw] bg-[#1D4ED8]/15 rounded-full blur-[140px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col items-center text-center md:items-end md:text-left mb-12 gap-6">
           <div>
             <StretchSnapText
               as="h2"
               level="display"
-              className="font-editorial text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#FFFFFF] leading-none"
+              className="font-editorial text-[1.85rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#FFFFFF] leading-none"
             >
               Services <span className="text-[#5CB2FF] italic font-normal">&amp; Verticals</span>
             </StretchSnapText>
@@ -107,14 +107,14 @@ export default function ServicesSection() {
             as="p"
             level="subtle"
             split="words"
-            className="text-[#DCE6FF] max-w-md text-sm sm:text-base leading-relaxed"
+            className="text-[#DCE6FF] max-w-md text-[0.9rem] sm:text-base leading-relaxed"
           >
             Five specialized creative pipelines fusing advanced AI modeling, cinematic camera craft, and narrative pacing.
           </StretchSnapText>
         </div>
 
         {/* Asymmetric Services Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {SERVICES.map((srv, index) => {
             const Icon = srv.icon;
             const isLarge = index === 0 || index === 4;
@@ -123,18 +123,18 @@ export default function ServicesSection() {
               <div
                 key={srv.number}
                 ref={(el) => (cardsRef.current[index] = el)}
-                className={`group relative rounded-3xl p-8 border border-[#26407F]/50 bg-gradient-to-br ${srv.gradient} bg-[#0D1B3E]/85 backdrop-blur-xl hover:border-[#5CB2FF] hover:bg-[#122556] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#1D4ED8]/30 flex flex-col justify-between ${
+                className={`group relative rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#26407F]/50 bg-gradient-to-br ${srv.gradient} bg-[#0D1B3E]/85 backdrop-blur-xl hover:border-[#5CB2FF] hover:bg-[#122556] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#1D4ED8]/30 flex flex-col justify-between ${
                   isLarge ? 'md:col-span-2 lg:col-span-1' : ''
                 }`}
               >
                 {/* Card Top: Number & Category Icon */}
                 <div>
-                  <div className="flex items-center justify-between pb-6 border-b border-[#162A5C]">
-                    <span className="font-mono text-xs font-bold tracking-widest text-[#5CB2FF]">
+                  <div className="flex items-center justify-between pb-4 border-b border-[#162A5C]">
+                    <span className="font-mono text-[11px] font-bold tracking-widest text-[#5CB2FF]">
                       {srv.number}
                     </span>
-                    <div className="w-10 h-10 rounded-2xl bg-[#050B1F]/70 border border-[#26407F] flex items-center justify-center group-hover:border-[#5CB2FF]/60 transition-colors">
-                      <Icon className="w-5 h-5 text-[#5CB2FF]" />
+                    <div className="w-9 h-9 rounded-xl bg-[#050B1F]/70 border border-[#26407F] flex items-center justify-center group-hover:border-[#5CB2FF]/60 transition-colors">
+                      <Icon className="w-4 h-4 text-[#5CB2FF]" />
                     </div>
                   </div>
 
@@ -142,11 +142,11 @@ export default function ServicesSection() {
                   <StretchSnapText
                     as="h3"
                     level="secondary"
-                    className="font-editorial text-2xl sm:text-3xl font-bold text-[#FFFFFF] mt-6 group-hover:text-[#5CB2FF] transition-colors leading-tight"
+                    className="font-editorial text-xl sm:text-2xl md:text-3xl font-bold text-[#FFFFFF] mt-4 group-hover:text-[#5CB2FF] transition-colors leading-tight"
                   >
                     {srv.title}
                   </StretchSnapText>
-                  <div className="text-xs uppercase font-mono tracking-wider text-[#A9B8E0] mt-1 font-medium">
+                  <div className="text-[11px] uppercase font-mono tracking-wider text-[#A9B8E0] mt-1 font-medium">
                     {srv.subtitle}
                   </div>
 
@@ -155,20 +155,20 @@ export default function ServicesSection() {
                     as="p"
                     level="subtle"
                     split="words"
-                    className="text-[#DCE6FF] text-sm mt-4 leading-relaxed"
+                    className="text-[#DCE6FF] text-[0.85rem] sm:text-sm mt-3 leading-relaxed"
                   >
                     {srv.description}
                   </StretchSnapText>
                 </div>
 
                 {/* Card Footer: Metric & Action */}
-                <div className="pt-8 mt-8 border-t border-[#162A5C] flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-[#A9B8E0]">
+                <div className="pt-5 mt-5 border-t border-[#162A5C] flex items-center justify-between">
+                  <span className="text-[10px] font-mono text-[#A9B8E0] truncate mr-2">
                     {srv.metric}
                   </span>
                   <TransitionLink
                     href="/services"
-                    className="w-8 h-8 rounded-full bg-[#050B1F]/70 border border-[#26407F] flex items-center justify-center text-[#DCE6FF] group-hover:bg-[#5CB2FF] group-hover:text-[#050B1F] group-hover:rotate-45 transition-all duration-300"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#050B1F]/70 border border-[#26407F] flex items-center justify-center text-[#DCE6FF] group-hover:bg-[#5CB2FF] group-hover:text-[#050B1F] group-hover:rotate-45 transition-all duration-300 shrink-0"
                     aria-label={`View ${srv.title} service details`}
                   >
                     <ArrowUpRight className="w-4 h-4" />
@@ -180,10 +180,10 @@ export default function ServicesSection() {
         </div>
 
         {/* Section Bottom CTA to Dedicated Services Route */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
           <TransitionLink
             href="/services"
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#0D1B3E] hover:bg-[#122556] text-[#FFFFFF] font-semibold text-xs uppercase tracking-wider border border-[#26407F] hover:border-[#5CB2FF]/50 transition-all duration-300 shadow-xl group"
+            className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#0D1B3E] hover:bg-[#122556] text-[#FFFFFF] font-semibold text-xs uppercase tracking-wider border border-[#26407F] hover:border-[#5CB2FF]/50 transition-all duration-300 shadow-xl group"
           >
             <StretchSnapText as="span" level="subtle" split="words" interactive>
               View All Services

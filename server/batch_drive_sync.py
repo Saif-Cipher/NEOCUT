@@ -23,11 +23,15 @@ INVENTORY_FILE = os.path.join(ROOT_DIR, "documentation", "ASSET-INVENTORY.md")
 GDRIVE_BIN = shutil.which("gdrive") or r"C:\Users\DELL\.gemini\antigravity\bin\gdrive.cmd"
 
 def run_cmd(cmd_list, timeout=600):
-    """Executes a command and returns (returncode, stdout, stderr)."""
+    """Executes a command and returns (returncode, stdout, stderr).
+
+    Runs with shell=False and a fully-formed argument list so no caller-supplied
+    string is ever interpreted by a shell. Callers must pass lists, never strings.
+    """
     try:
         proc = subprocess.run(
             cmd_list,
-            shell=True,
+            shell=False,
             capture_output=True,
             text=True,
             timeout=timeout,
@@ -65,7 +69,7 @@ def upload_file_to_drive(local_rel_path, target_folder_id, max_retries=3):
         t0 = time.time()
         
         # 1. Upload
-        cmd = f'"{GDRIVE_BIN}" mutate upload "{full_local_path}" --parent {target_folder_id}'
+        cmd = [GDRIVE_BIN, "mutate", "upload", full_local_path, "--parent", target_folder_id]
         code, out, err = run_cmd(cmd, timeout=600)
         elapsed = time.time() - t0
 
@@ -75,9 +79,9 @@ def upload_file_to_drive(local_rel_path, target_folder_id, max_retries=3):
             if match:
                 file_id = match.group(1)
                 print(f" -> Uploaded successfully in {elapsed:.1f}s. Drive File ID: {file_id}")
-                
+
                 # 2. Set public reader permission
-                share_cmd = f'"{GDRIVE_BIN}" mutate share {file_id} --role reader --type anyone --notify=false'
+                share_cmd = [GDRIVE_BIN, "mutate", "share", file_id, "--role", "reader", "--type", "anyone", "--notify=false"]
                 s_code, s_out, s_err = run_cmd(share_cmd, timeout=60)
                 if s_code == 0:
                     print(f" -> Granted public reader permission.")

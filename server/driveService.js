@@ -1,7 +1,18 @@
 /**
  * NeoCut Digital — Node.js / Next.js Server-Side Drive Asset Service
  * Keeps all Drive queries on the backend so no private credentials reach client bundles.
+ *
+ * ⚠️  DEPRECATED — DO NOT USE.
+ * This module is retained only for historical reference. All Drive asset
+ * resolution must go through the hardened `lib/mediaService.js`, which enforces
+ * manifest whitelisting, input sanitization, and rate limiting. Importing this
+ * module throws so it cannot be silently reintroduced as a fallback path.
  */
+
+throw new Error(
+  'server/driveService.js is deprecated and must not be imported. ' +
+  'Use lib/mediaService.js instead.'
+);
 
 import fs from 'fs';
 import path from 'path';

@@ -20,7 +20,7 @@ const ParticleTypography = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="w-full h-[280px] sm:h-[320px] flex flex-col items-center justify-center gap-3" aria-hidden="true">
+      <div className="w-full h-[200px] sm:h-[320px] flex flex-col items-center justify-center gap-3" aria-hidden="true">
         <div className="w-8 h-8 rounded-full border border-white/20 border-t-[#5CB2FF] animate-spin" />
         <span className="text-[10px] font-mono uppercase tracking-widest text-[#5CB2FF]/70">
           Loading Particle Engine...

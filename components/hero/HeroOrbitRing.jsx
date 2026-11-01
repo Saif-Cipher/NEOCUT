@@ -223,7 +223,7 @@ export default function HeroOrbitRing() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="relative w-full h-full min-h-[640px] sm:min-h-[760px] lg:min-h-[860px] flex items-center justify-center orbit-stage-container pointer-events-none select-none"
+      className="relative w-full h-full min-h-[420px] sm:min-h-[640px] lg:min-h-[860px] flex items-center justify-center orbit-stage-container pointer-events-none select-none"
       onMouseEnter={() => {
         isPausedRef.current = true;
       }}

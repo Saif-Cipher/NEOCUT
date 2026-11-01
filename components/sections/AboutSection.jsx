@@ -12,7 +12,7 @@ export default function AboutSection() {
       className="relative py-28 sm:py-36 px-4 bg-transparent border-t border-[#162A5C] overflow-hidden"
     >
       {/* Background radial glow */}
-      <div className="pointer-events-none absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-[#1D4ED8]/20 rounded-full blur-[140px]" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 w-[120vw] h-[500px] bg-[#1D4ED8]/20 rounded-full blur-[140px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
@@ -44,15 +44,15 @@ export default function AboutSection() {
               {/* Founder Circular Profile Stage with Ample Spacing */}
               <div className="py-8 sm:py-10 px-6 flex flex-col items-center justify-center w-full">
                 {/* Circular Portrait Container (Mobile: 210px, Tablet: 260px, Desktop: 300px) */}
-                <div 
-                  className="relative w-[210px] h-[210px] sm:w-[260px] sm:h-[260px] lg:w-[300px] lg:h-[300px] aspect-square rounded-full shrink-0 overflow-hidden border-2 border-[#26407F] ring-4 ring-[#0D1B3E]/90 ring-offset-2 ring-offset-[#050B1F] shadow-[0_0_50px_rgba(101,198,181,0.2),0_20px_40px_rgba(7,31,34,0.7)] transition-all duration-500 group-hover:border-[#5CB2FF]/60 group-hover:shadow-[0_0_60px_rgba(101,198,181,0.3),0_25px_45px_rgba(7,31,34,0.8)]"
+                <div
+                  className="relative w-[min(82vw,210px)] h-[min(82vw,210px)] sm:w-[min(46vw,260px)] sm:h-[min(46vw,260px)] lg:w-[300px] lg:h-[300px] aspect-square rounded-full shrink-0 overflow-hidden border-2 border-[#26407F] ring-4 ring-[#0D1B3E]/90 ring-offset-2 ring-offset-[#050B1F] shadow-[0_0_50px_rgba(101,198,181,0.2),0_20px_40px_rgba(7,31,34,0.7)] transition-all duration-500 group-hover:border-[#5CB2FF]/60 group-hover:shadow-[0_0_60px_rgba(101,198,181,0.3),0_25px_45px_rgba(7,31,34,0.8)]"
                   style={{ borderRadius: '50%' }}
                 >
                   <Image
                     src="/assets/profile/saif-founder.png"
                     alt="Saif Hossain, founder of NeoCut Digital"
                     fill
-                    sizes="(max-width: 640px) 210px, (max-width: 1024px) 260px, 300px"
+                    sizes="(max-width: 640px) min(82vw, 210px), (max-width: 1024px) min(46vw, 260px), 300px"
                     className="object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />

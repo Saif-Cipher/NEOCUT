@@ -4,8 +4,19 @@ import re
 import os
 import shutil
 
-ROOT_ID = "1BmM2GJC1-CLsy8zIXaFfwN2nj-I1pJfp"
-CONFIG_FILE = r"D:\Software\NeoCut-Digital\config\drive-folders.json"
+# Root Drive folder ID. Reads from NEOCUT_DRIVE_ROOT_ID (or NEOCUT_ROOT_FOLDER_ID)
+# so the provisioner is not hard-coded to one environment; falls back to the known
+# production root only when the variable is unset.
+ROOT_ID = (
+    os.environ.get("NEOCUT_DRIVE_ROOT_ID")
+    or os.environ.get("NEOCUT_ROOT_FOLDER_ID")
+    or "1BmM2GJC1-CLsy8zIXaFfwN2nj-I1pJfp"
+)
+
+CONFIG_FILE = os.environ.get(
+    "NEOCUT_FOLDERS_FILE",
+    r"D:\Software\NeoCut-Digital\config\drive-folders.json",
+)
 
 gdrive_cmd = shutil.which("gdrive") or r"C:\Users\DELL\.gemini\antigravity\bin\gdrive.cmd"
 
@@ -19,7 +30,7 @@ structure = {
 
 def mkdir(name, parent_id):
     cmd = [gdrive_cmd, "mutate", "mkdir", name, "--parent", parent_id]
-    res = subprocess.run(cmd, capture_output=True, text=True, shell=True)
+    res = subprocess.run(cmd, capture_output=True, text=True, shell=False)
     out = res.stdout.strip()
     print(f"mkdir '{name}' under '{parent_id}': {out}")
     m = re.search(r"ID:\s*([a-zA-Z0-9_\-]+)", out)

@@ -254,7 +254,7 @@ export default function TiltedGridHero({ onSelectProject }) {
         onMouseLeave={() => setHoveredKey(null)}
         onFocus={() => setHoveredKey(uniqueKey)}
         onBlur={() => setHoveredKey(null)}
-        className="relative flex-shrink-0 w-[260px] sm:w-[320px] md:w-[360px] aspect-video rounded-2xl overflow-hidden bg-[#0D1B3E] border border-[#26407F]/60 hover:border-[#5CB2FF] focus:border-[#5CB2FF] focus:outline-none focus:ring-2 focus:ring-[#5CB2FF]/50 transition-all duration-300 cursor-pointer shadow-xl shadow-black/80 group transform-gpu"
+        className="relative flex-shrink-0 w-[160px] sm:w-[200px] md:w-[260px] lg:w-[320px] xl:w-[360px] aspect-video rounded-xl overflow-hidden bg-[#0D1B3E] border border-[#26407F]/60 hover:border-[#5CB2FF] focus:border-[#5CB2FF] focus:outline-none focus:ring-2 focus:ring-[#5CB2FF]/50 transition-all duration-300 cursor-pointer shadow-xl shadow-black/80 group transform-gpu"
         style={{
           transform: isHovered ? 'scale(1.06) translateZ(30px)' : 'scale(1) translateZ(0px)',
           zIndex: isHovered ? 25 : 1,
@@ -297,7 +297,7 @@ export default function TiltedGridHero({ onSelectProject }) {
   return (
     <section className="relative w-full py-20 lg:py-32 bg-transparent overflow-hidden border-t border-[#162A5C]">
       {/* Background Radial Glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#1D4ED8]/20 rounded-full blur-[160px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[400px] bg-[#1D4ED8]/20 rounded-full blur-[160px]" />
 
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16">
